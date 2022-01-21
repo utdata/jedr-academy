@@ -7,29 +7,70 @@ output: html_notebook
 library(tidyverse)
 ```
 
+## Starwars
+
 ```{r}
 starwars
 ```
 
 
 ```{r}
-read_csv("data/characters.csv")
+starwars %>% select(name, gender)
 ```
 
 ```{r}
-read_csv("data/planets.csv")
+starwars
 ```
 
 
-```{r}
-read_csv("data/species.csv")
-```
+## Characters
 
 ```{r}
-read_csv("data/starships.csv")
+characters <- read_csv("data/characters.csv")
+
+characters
 ```
 
+# Planets
+
 ```{r}
-read_csv("data/vehicles.csv")
+planets <- read_csv("data/planets.csv")
+
+planets
+```
+
+## Species
+
+```{r species-import}
+species <- read_csv("data/species.csv")
+
+species
+```
+
+### Species Exploration
+
+```{r}
+species %>% count(language)
+```
+
+
+
+
+## Starships
+
+
+```{r}
+starships <- read_csv("data/starships.csv")
+
+
+starships
+```
+
+## Vehicles
+
+```{r}
+vehicles <- read_csv("data/vehicles.csv")
+
+vehicles
 ```
 

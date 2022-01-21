@@ -1,7 +1,7 @@
 ---
 title: "Categorization"
 tutorial:
-  id: "jedr-tutorials-categorization"
+  id: "jedr-categorization"
 output:
   learnr::tutorial:
     progressive: true
@@ -14,9 +14,14 @@ runtime: shiny_prerendered
 library(tidyverse)
 library(janitor)
 library(learnr)
+library(gradethis)
+
+planets <- read_csv("data/planets.csv")
 ```
 
 ## How to make categories from data
+
+Welcome Padawan. May your quest to become a JedR Master be fruitful. "Do or do not. There is no try."
 
 Sometimes as journalists (or data scientist) we need to create new categories for our data. An example might be where we have a column of data that has too many different values to plot effectively. We might be able to re-categorize those values to fewer individual choices, maybe combining less important values into a generic term like "other".
 
@@ -33,7 +38,6 @@ We're taking records and putting them into piles or groups based on one or more 
 
 - To apply [`recode()`](https://dplyr.tidyverse.org/reference/recode.html) within a `mutate()` to create data categories. It's a one-to-one match, for the most part.
 - To apply [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) within a `mutate()` to create data categories. This allows more complex logic.
-- ~~To demonstrate how the re-categorization might be applied.~~
 
 ## Our scenario
 
@@ -51,7 +55,7 @@ To accomplish this, it would be helpful to have a "species_category" variable us
 Let's take a look at the species column using [`count()`](https://dplyr.tidyverse.org/reference/count.html).
 
 ```{r species-count}
-starwars %>% count(species, sort = TRUE)
+starwars %>% count(species, sort = TRUE, name = "cnt")
 ```
 
 You can see that **Human** and **Droid** values dominate the data. The next most frequent values is `NA`. Maybe we can convince our editor to make that category **Other/Unknown**.
@@ -64,7 +68,7 @@ To make clear our goal here for the _Galactic Hub News_: We want to create a new
 
 ### How recode works
 
-We use the `recode()` function within a `mutate()` function, naming a new column and then filling it with the results of the recode.
+While is is possible to recode values into the same column, a good JedR will use the `recode()` function within a `mutate()` function, creating a new column and then filling it with the results of the recode.
 
 ```r
 data %>% 
@@ -77,7 +81,7 @@ data %>%
   )
 ```
 
-- The mutate is standard ... you create the new column and then set it to a value. In this case, we are setting the value to the result of the `recode()` function.
+- This is standard usage for the `mutate()` function ... you create the new column and then set it to a value. In this case, we are setting the value to the result of the `recode()` function.
 - Within `recode()`, we have to first name the column we are pulling from, then list the recoded values in order of old value, then new value.
 
 **Note:** If you look at the [documentation](https://dplyr.tidyverse.org/reference/recode.html), you'll see that there is a **lifecycle question** about how the function works. Most R functions name a thing before assigning it: You have to have a planet before you can fill it with sentient beings. The `recode()` function breaks that convention by naming the old thing first, then describing what the new value is. We just have to get over it for now.
@@ -98,7 +102,7 @@ starwars %>%
 
 In the example above, we use `slice()` to skip down to part of the data where we can see the change. (The first 20 rows are all humans and droids.) We also used `select()` to focus on our columns of interest.
 
-Note we've only changed _two_ of the 36 values we need to change, though. This method is very handy if you have just a few things to change.
+Note we've only changed _two_ of the 36 values we need to change, though. (You can see Toydarian and Dug have not been changed.) This method is very handy if you have just a few things to change.
 
 In our case here, we _could_ list all 36 changes, but ... Use the Force, Luke.
 
@@ -134,7 +138,7 @@ YLMV\*: The method you choose to use will depend on your needs. \*(Your Lightspe
 
 Here we save the recoded data into a new object called `sw_species` and then run a `count()` on our two columns to check the results.
 
-```{r recode-check}
+```{r recode-count}
 sw_species <- starwars %>% 
   mutate(
     species_category = recode(
@@ -153,13 +157,75 @@ sw_species %>%
 
 The `recode()` function works great if you have one-to-one changes that don't require logic. But when you have more complex needs, we need more Force.
 
+## Padawan practice: recode
+
+If you look at the `gender` column in the data, you'll see there are two values: **masculine** and **feminine**, but there are four records that don't have a `gender` value are listed as `NA`.
+
+```{r gender-reveal}
+starwars %>% count(gender)
+```
+
+For this quest, you will use `recode()` to fill in those blank values with **unknown**.
+
+Note in the code we are creating a new dataframe and filling with mutated `starwars` data.
+
+Within the recode section you'll need to note what variable you are working form, and then use one of the special helpers to fill the values as required.
+
+At the end it prints the results.
+
+```{r recode-exercise, exercise = TRUE}
+gender_reveal <- starwars %>% 
+  mutate(
+    gender_clean = recode(
+      # Fill in here
+    )
+  )
+
+gender_reveal %>% select(name, gender, gender_clean)
+```
+
+<div id="recode-exercise-hint">
+**Hint:** You should only have to set the base variable and the `.missing = ` values.
+</div>
+
+```{r recode-exercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+gender_reveal <- starwars %>% 
+  mutate(
+    gender_clean = recode(
+      gender,
+      .missing = "unknown"
+    )
+  )
+
+gender_reveal %>% select(name, gender, gender_clean)
+```
+
+```{r recode-exercise-check}
+grade_this_code()
+```
+
+
+### Quiz
+
+(Just page through the results of your quest above.)
+
+```{r recode-quiz, echo=FALSE}
+question("Which of these characters has an unknown gender?",
+  answer("Yoda"),
+  answer("C-3PO"),
+  answer("Captain Phasma", correct = TRUE),
+  answer("Cordé")
+)
+```
+
+
 ## Using `case_when()`
 
 The [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) function is useful when you need to set new values based on some kind of logic.
 
 Here we will use `case_when` to do the same thing we did above with `recode()` and then explain how it is working below.
 
-```{r}
+```{r casewhen-show}
 starwars %>% 
   mutate(
     species_category = case_when(
@@ -183,7 +249,7 @@ Unlike `recode()` where you are drawing from values in one specific column, the 
 
 While this is a silly example, here we create a column called `size_compare` that notes if a character is "larger" or "smaller" than an average human, unless they are a droid, in which case they are labeled "mechanical".
 
-```{r}
+```{r casewhen-complex-show}
 starwars %>% 
   mutate(
     size_compare = case_when(
@@ -196,4 +262,8 @@ starwars %>%
 
 ```
 
+Note we started with the rule for "Droid" because that is the most specific thing we needed to change. When then set the "larger" value, and the rest got "smaller."
 
+That's it for now. We hope to include a practice quest and quiz for `case_when()` soon.
+
+-30-

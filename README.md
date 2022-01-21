@@ -22,6 +22,8 @@ The project is in its infancy. You know, like Baby Yoda.
 
 ### From Kaggle
 
+All this data will need checking and cleaning.
+
 -   `characters`
 -   `planets`
 -   `species`
