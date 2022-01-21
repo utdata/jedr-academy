@@ -1,0 +1,205 @@
+---
+title: "Select"
+tutorial:
+  id: "rwdir-learnr/select"
+  version: .9
+output:
+  learnr::tutorial:
+    progressive: true
+    theme: lumen
+    highlight: espresso
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(janitor)
+library(learnr)
+library(gradethis)
+
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+This is a work in progress. The goal is to write an example **learnr** lesson for Reporting with Data in R. This is just a draft concept.
+
+To Do:
+
+- [ ] Add more challenges between explanations
+- [ ] Add new challenge with new data
+
+## Learn the Force: Select
+
+The **[select](https://dplyr.tidyverse.org/reference/select.html)** function lets you pick and choose columns (a.k.a. variables) in your data. It comes with a bunch of **selection helpers**, which we'll also cover.
+
+### Use cases
+
+- You might select specific columns from a dataset just to see them better. For instance, if you want to compare the values in two columns but there are many columns between them in output.
+- You might want to remove unwanted columns from your data.
+- You might want to change the order of the columns to put the most important information first.
+
+As always, we start with `starwars` data. You can [review the data here](https://dplyr.tidyverse.org/reference/starwars.html). (BUT UPDATE THIS TO A LOCAL VERSION)
+
+Let's take a quick look at the column names in `starwars`:
+
+```{r select-intro}
+starwars %>% glimpse()
+```
+
+### Select specific variables
+
+The most basic use of `select()` is list the columns you want to keep by separating them with commas in the order you want them.
+
+Here we use `select()` to "select" the **name**, **homeworld** and **birthyear** columns from our `starwars` data.
+
+```{r select-show, echo=TRUE}
+starwars %>% 
+  select(name, homeworld, birth_year)
+```
+
+#### Padawan: Use select
+
+1. Use `select()` to print the **name**, **species** and **homeworld** columns.
+
+```{r select-select, exercise=TRUE}
+starwars
+```
+
+```{r select-select-solution}
+starwars %>% 
+  select(name, species, homeworld)
+```
+
+```{r select-select-check}
+grade_this_code()
+```
+
+### Drop a specific column
+
+Or, if it is easier to remove a few columns, you could do that by putting `!` in front of a column name. Think `!` as "negate" or the "inverse of". Like "everything but this thing listed." This is a dumb example for starwars, but this removes the `name` column:
+
+```{r select-remove, echo=TRUE}
+starwars %>% 
+  select(!name)
+```
+
+To negate more than one columns, use combine `c()` to list the columns. This also works with the negate `!` as `!c()`.
+
+With this, we namethree columns to remove.
+
+```{r select-drop-multiple, echo=TRUE}
+starwars %>% 
+  select(!c(height, mass, birth_year))
+```
+
+> SIDE NOTE: You can also use `-` to remove columns, but I think this is out of favor. Works like this: `select(-height, -mass)`.
+
+#### Padawan: Drop columns
+
+1. Using the starwars data, use `select()` and the selection helper `contains()` to display the **name** column and **all the columns with "color" in their name**. 
+
+```{r quest, exercise=TRUE}
+starwars
+```
+
+```{r quest-solution, include=FALSE}
+starwars %>% 
+  select(name, contains("color"))
+```
+
+```{r quest-check, include=FALSE}
+grade_this_code()
+```
+
+### Select based on a range
+
+You can use the ordinal number of the columns (the first starts with 1), including with a range using `:`. So this gets you the first four columns in the tibble:
+
+```{r select-range, echo=TRUE}
+starwars %>% 
+  select(1:4)
+```
+
+But you can also use that range with well-formatted columns names. This also gets the first four columns, but really it is selecting everything between `name` and `hair_color`.
+
+Here is a named range example:
+
+```{r select-range-name, echo=TRUE}
+starwars %>% 
+  select(name:hair_color)
+```
+
+
+#### Padawan: Remove a range
+
+1. Remove the **birth_year** column along with **films-through-starships columns**. (i.e., use a named range).
+
+```{r select-drop-quest, exercise=TRUE}
+starwars
+```
+
+```{r select-drop-quest-solution}
+starwars %>% 
+  select(!c(name, birth_year, films:starships))
+```
+
+```{r select-drop-quest-check}
+grade_this_code()
+```
+
+
+### Selection helpers
+
+There are a bunch of helpers to select columns as well. See the list in the [select docs](https://dplyr.tidyverse.org/reference/select.html) but here are some examples of more useful ones.
+
+There are different `*_with` operators where you can pluck out columns based on part of their name. This is part of the reason a JedR Knight is anal retentive about naming columns.
+
+We can use `ends_with()` to fetch columns that have part of a name, like this:
+
+```{r select-ends, exercise=TRUE}
+starwars %>% 
+  select(ends_with("_color"))
+```
+
+There is also `starts_with()` and `contains()` that works similarly.
+
+Sometimes you just want to move a column or two to the front of the tibble but then leave the rest. The function `everything()` is good for that as it includes every column not already called.
+
+This example selects all the "color" columns first, then uses `everything()` to include the rest.
+
+```{r select-everything, exercise=TRUE}
+starwars %>% 
+  select(ends_with("color"), everything())
+```
+
+
+## Use the Force: Select
+
+
+## Scoobydoo
+
+- Data from [TidyTuesday, 2021-07-13,  Scooby-doo](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-13/readme.md)
+- About [Scooby-doo Complete](https://www.kaggle.com/williamschooleman/scoobydoo-complete)
+
+```{r import-scoobydoo, message=FALSE, warning=FALSE, include=FALSE}
+# scoobydoo <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-07-13/scoobydoo.csv')
+# scoobydoo %>% write_csv("data/scoobydoo.csv")
+
+scoobydoo <- read_csv("data/scoobydoo.csv")
+scoobydoo %>% glimpse()
+```
+
+## Crime stats
+
+- [Crime Reports About the data](https://data.austintexas.gov/Public-Safety/Crime-Reports/fdj4-gpfu)
+- Export is export of 2021 data only (downloaded 1/2/2022)
+
+```{r import-crime, include=FALSE}
+crime <- read_csv("data/atx-crime-2021.csv") %>% janitor::clean_names()
+crime %>% glimpse()
+```
+
+
+
+
+
+

@@ -1,0 +1,199 @@
+---
+title: "Categorization"
+tutorial:
+  id: "jedr-tutorials-categorization"
+output:
+  learnr::tutorial:
+    progressive: true
+    theme: lumen
+    highlight: espresso
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(janitor)
+library(learnr)
+```
+
+## How to make categories from data
+
+Sometimes as journalists (or data scientist) we need to create new categories for our data. An example might be where we have a column of data that has too many different values to plot effectively. We might be able to re-categorize those values to fewer individual choices, maybe combining less important values into a generic term like "other".
+
+Some real-worldish examples:
+
+- You want to show race/ethnicity breakdowns in a chart or story about Hispanic representation. There are eight different values and some are quite small. You might create a column to use the values Asian, Black, Hispanic and White with all others changed to "Other".
+- Perhaps you are doing a story on crime and want to highlight violent crimes vs property vs other crimes. You might create a new column that categorizes many individual charges into these buckets.
+
+We're taking records and putting them into piles or groups based on one or more values.
+
+> **JedR Mind Trick:** When we categorize values like this, we want to create a new column intead of overwriting an existing one. This way you can check your work. You can always remove or rename columns later.
+
+### Goals of this training session
+
+- To apply [`recode()`](https://dplyr.tidyverse.org/reference/recode.html) within a `mutate()` to create data categories. It's a one-to-one match, for the most part.
+- To apply [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) within a `mutate()` to create data categories. This allows more complex logic.
+- ~~To demonstrate how the re-categorization might be applied.~~
+
+## Our scenario
+
+Here at the _Galactic News Hub_, we have a dataset of all the sources we connect with on a regular basis: The `starwars` data set that comes with the `tidyverse` library.
+
+```{r sw-setup}
+library(tidyverse)
+starwars
+```
+
+This data includes a variable called `species`, and our editor wants a report breaking down the species of our source list based on three broad categories: **human**, **droid**, and **other**. Our editor is hoping we can later cross reference these categories against gender and other variables within the source list.
+
+To accomplish this, it would be helpful to have a "species_category" variable using these three values so we can group and aggregate with other columns.
+
+Let's take a look at the species column using [`count()`](https://dplyr.tidyverse.org/reference/count.html).
+
+```{r species-count}
+starwars %>% count(species, sort = TRUE)
+```
+
+You can see that **Human** and **Droid** values dominate the data. The next most frequent values is `NA`. Maybe we can convince our editor to make that category **Other/Unknown**.
+
+## Using `recode()`
+
+One of the easier methods to categorize data is to use [`recode()`](https://dplyr.tidyverse.org/reference/recode.html). The logic is straighforward: For this value, substitute that value.
+
+To make clear our goal here for the _Galactic Hub News_: We want to create a new column called `species_category` that has three values: Human, Droid, Other/Unknown. And they need to be based on the existing `species` variable.
+
+### How recode works
+
+We use the `recode()` function within a `mutate()` function, naming a new column and then filling it with the results of the recode.
+
+```r
+data %>% 
+  mutate(
+    new_column = recode(
+      existing_column,
+      "Old Value 1 from existing_column" = "New Value 1",
+      "Old Value 2 from existing_column" = "New Value 2",
+    )
+  )
+```
+
+- The mutate is standard ... you create the new column and then set it to a value. In this case, we are setting the value to the result of the `recode()` function.
+- Within `recode()`, we have to first name the column we are pulling from, then list the recoded values in order of old value, then new value.
+
+**Note:** If you look at the [documentation](https://dplyr.tidyverse.org/reference/recode.html), you'll see that there is a **lifecycle question** about how the function works. Most R functions name a thing before assigning it: You have to have a planet before you can fill it with sentient beings. The `recode()` function breaks that convention by naming the old thing first, then describing what the new value is. We just have to get over it for now.
+
+So, with our `starwars` data, a partial solution might look like this:
+
+```{r recode-ex}
+starwars %>% 
+  mutate(
+    species_category = recode(
+      species,
+      "Gungan" = "Other/Unknown",
+      "Neimodian" = "Other/Unknown"
+    )
+  ) %>% # using select and slice to focus on the change
+  select(name, species, species_category) %>% slice(31:40)
+```
+
+In the example above, we use `slice()` to skip down to part of the data where we can see the change. (The first 20 rows are all humans and droids.) We also used `select()` to focus on our columns of interest.
+
+Note we've only changed _two_ of the 36 values we need to change, though. This method is very handy if you have just a few things to change.
+
+In our case here, we _could_ list all 36 changes, but ... Use the Force, Luke.
+
+### Using .default and .missing
+
+There are two special values in recode() we can leverage here:
+
+- `.default` recodes everything not specified.
+- `.missing` recodes `NA` (or blank) values.
+
+Using these, we can set Human to Human and Droid to Droid, but then everything else to Other/Unknown.
+
+```{r recode-default}
+starwars %>% 
+  mutate(
+    species_category = recode(
+      species,
+      "Human" = "Human",
+      "Droid" = "Droid",
+      .default = "Other/Unknown",
+      .missing = "Other/Unknown"
+    )
+  ) %>% # using select and slice to focus on change
+  select(name, species, species_category) %>% slice(31:40)
+
+```
+
+YLMV\*: The method you choose to use will depend on your needs. \*(Your Lightspeed May Vary)
+
+### Check your results
+
+> **JedR Mind Trick:** Even with these few rows, it's hard to _see all_ the changes made in your data. It is sometimes helpful to do a `count()` on your changes to check them. Just be sure to count the already-changed data, not the result you are saving into the new object.
+
+Here we save the recoded data into a new object called `sw_species` and then run a `count()` on our two columns to check the results.
+
+```{r recode-check}
+sw_species <- starwars %>% 
+  mutate(
+    species_category = recode(
+      species,
+      "Human" = "Human",
+      "Droid" = "Droid",
+      .default = "Other/Unknown",
+      .missing = "Other/Unknown"
+    )
+  )
+
+sw_species %>% 
+  count(species, species_category, sort = TRUE)
+
+```
+
+The `recode()` function works great if you have one-to-one changes that don't require logic. But when you have more complex needs, we need more Force.
+
+## Using `case_when()`
+
+The [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) function is useful when you need to set new values based on some kind of logic.
+
+Here we will use `case_when` to do the same thing we did above with `recode()` and then explain how it is working below.
+
+```{r}
+starwars %>% 
+  mutate(
+    species_category = case_when(
+      species == "Human" ~ "Human",
+      species == "Droid" ~ "Droid",
+      TRUE ~ "Other/Unknown"
+    )
+  ) %>%
+  select(name, species, species_category) %>% slice(31:40)
+```
+
+You can see the syntax works differently (once we are past the mutate).
+
+- Within the `case_when()`, there are rules that split with `~`. On the left is a logical test, and on the right is a new value designation.
+- Each rule is run in order. A value is set only once, so if a value is set in one rule, it will NOT be reset by subsequent rules. You must write your rules from the most specific to the most general.
+- The last line `TRUE ~` handles all values not already changed. If left out, values not specified would be set `NA`.
+
+### A more complex example
+
+Unlike `recode()` where you are drawing from values in one specific column, the logic tests used with `case_when()` can be just about anything as long as they evaluate to `TRUE` or `FALSE`.
+
+While this is a silly example, here we create a column called `size_compare` that notes if a character is "larger" or "smaller" than an average human, unless they are a droid, in which case they are labeled "mechanical".
+
+```{r}
+starwars %>% 
+  mutate(
+    size_compare = case_when(
+      species == "Droid" ~ "mechanical",
+      height >= 170 & mass >= 80 ~ "larger",
+      TRUE ~ "smaller"
+    )
+  ) %>% 
+  select(name, size_compare)
+
+```
+
+

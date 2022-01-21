@@ -1,0 +1,35 @@
+---
+title: "Data exploration and testing"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+```
+
+```{r}
+starwars
+```
+
+
+```{r}
+read_csv("data/characters.csv")
+```
+
+```{r}
+read_csv("data/planets.csv")
+```
+
+
+```{r}
+read_csv("data/species.csv")
+```
+
+```{r}
+read_csv("data/starships.csv")
+```
+
+```{r}
+read_csv("data/vehicles.csv")
+```
+
