@@ -15,8 +15,6 @@ library(tidyverse)
 library(janitor)
 library(learnr)
 library(gradethis)
-
-planets <- read_csv("data/planets.csv")
 ```
 
 ## How to make categories from data
@@ -264,6 +262,41 @@ starwars %>%
 
 Note we started with the rule for "Droid" because that is the most specific thing we needed to change. When then set the "larger" value, and the rest got "smaller."
 
-That's it for now. We hope to include a practice quest and quiz for `case_when()` soon.
+## Padawan practice: case_when
+
+Create a column called `main_planet` using the `homeworld` column. For each characters with a homeworld of "Tatooine" or "Naboo", label it as `TRUE` and otherwise label as `FALSE`, which will create a logical datatype column.
+
+(This is a fill-in-the-blank thing ...)
+
+```{r casewhen-quest, exercise = TRUE}
+mainchars <- starwars %>% 
+  mutate(
+    main_planet_origin = case_when(
+      str_detect(_________, "Tatooine|Naboo") ~ ____,
+      TRUE ~ _____
+    )
+  )
+mainchars %>% select(name, homeworld, main_planet_origin)
+```
+
+
+```{r casewhen-quest-solution, exercise.reveal_solution = FALSE, include = FALSE}
+mainchars <- starwars %>% 
+  mutate(
+    main_planet_origin = case_when(
+      str_detect(homeworld, "Tatooine|Naboo") ~ TRUE,
+      TRUE ~ FALSE
+    )
+  )
+mainchars %>% select(name, homeworld, main_planet_origin)
+```
+
+```{r casewhen-quest-check}
+grade_this_code()
+```
+
+Page through your results to check your answers.
+
+That's it for now.
 
 -30-
