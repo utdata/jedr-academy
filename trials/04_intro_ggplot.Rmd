@@ -1,0 +1,60 @@
+---
+title: "JedR Knight Trail: Visualizing"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+#library(gradethis)
+
+starwars <- starwars
+```
+
+> THIS ONE COULD USE AN EDIT REVIEW
+
+Hello again! In this exercise, you'll be practicing the skills you learned in Chapter 7 of [our textbook](https://utdata.github.io/rwdir/ggplot-intro.html).  Like our previous exercise, we'll be using the dataset `starwars` in the `tidyverse` packages.
+
+## Summarizing
+
+If you recall from our earlier exercise, `starwars` is a dataset with 87 Star Wars characters.
+
+```{r glimpse}
+glimpse(starwars)
+```
+
+Like in our earlier exercise, let's group these characters by species and count the number of characters!
+
+```{r speciesctexercise, exercise = TRUE}
+starwars_count <- starwars %>%
+```
+
+<div id="speciesctexercise-hint">
+**Hint:** If you need a refresher, check out [Chapter 4](https://utdata.github.io/rwdir/count-analysis.html#group-by).
+</div>
+
+```{r speciesctexercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+starwars_count <- starwars %>%
+  group_by(species) %>% #groups the character by species
+  summarize(count = n()) #count the number of characters of each species
+```
+
+## Plotting
+Now that we have our 
+
+```{r speciesplot, exercise = TRUE, exercise.setup = "speciesctexercise-solution"}
+ggplot()
+```
+
+<div id="speciesplot-hint">
+**Hint:** Don't forget to `reorder()` the x-axis! Check out [Chapter 7](https://utdata.github.io/rwdir/ggplot-intro.html#reorder-the-bars) for more.
+</div>
+
+```{r speciesplot-solution, exercise.reveal_solution = FALSE, include = FALSE}
+ggplot(starwars_count, aes(x = reorder(species, count), y = count)) +
+  geom_col() +
+  coord_flip()
+```

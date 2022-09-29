@@ -1,0 +1,73 @@
+---
+title: "JedR Knight Trail: Summarizing by Math"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+#library(gradethis)
+
+starwars <- starwars
+```
+
+> THIS ONE COULD USE AN EDIT REVIEW
+
+Hello again! In this exercise, you'll be practicing the skills you learned in Chapter 5 of [our textbook](https://utdata.github.io/rwdir/sums-analyze.html#item-quantities-totals-for-local-agencies).  Like our previous exercise, we'll be using the dataset `starwars` in the `tidyverse` packages.
+
+## Summarizing
+
+If you recall from our earlier exercise, `starwars` is a dataset with 87 Star Wars characters.
+
+```{r glimpse}
+glimpse(starwars)
+```
+
+In our earlier exercise, we counted the number of characters that were different species. In this exercise, we'll use `group_by()` again. But, instead of getting a count of the characters, let's get the **mean**, or average, height of each species.
+
+```{r avgexercise, exercise = TRUE}
+starwars %>%
+  group_by(species)
+```
+
+<div id="gbsumexercise-hint">
+**Hint:** Hmm..
+</div>
+
+```{r avgexercise-solution, exercise.reveal_solution = FALSE}
+starwars %>%
+  group_by(species) %>%
+  summarize(height_avg = mean(height))
+```
+
+How would we arrange this information?
+```{r arrangeexercise, exercise = TRUE}
+starwars %>%
+  group_by(species)
+```
+
+<div id="arrangeexercise-hint">
+**Hint:** Don't forget that you want to sort this information in **desc**ending order, as we do in [Chapter 4](https://utdata.github.io/rwdir/count-analysis.html#arrange-the-results)
+</div>
+
+```{r arrangeexercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+starwars %>%
+  group_by(species) %>%
+  summarize(height_avg = mean(height)) %>%
+  arrange(height_avg %>% desc())
+```
+
+
+```{r quiz-arrange, include = FALSE}
+quiz(
+  question("On average, what Star Wars species is the tallest?",
+    answer("Wookiee"),
+    answer("Droid"),
+    answer("Quermian", correct = TRUE),
+    answer("Ewok")
+  )
+)
+```

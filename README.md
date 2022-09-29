@@ -1,7 +1,7 @@
 JedR Master Tutorials
 ================
 
-A series of R tutorials based on a common set of Star Wars datasets.
+A series of R tutorials and trails based on a common set of Star Wars datasets.
 
 The project is in its infancy. You know, like Baby Yoda.
 
@@ -9,16 +9,20 @@ The project is in its infancy. You know, like Baby Yoda.
 
 ## Tutorials
 
--   [Categorization](categorization.html): When you need to
+- [Categorization](): When you need to
     re-categorize your data.
--   
+
+## Trails
+
+- [01 Tidyverse](https://utdata.shinyapps.io/01_tidyverse/)
+- [02 Summarize with count](https://utdata.shinyapps.io/02_summarize_count/)
+- [03 Summarize with math](https://utdata.shinyapps.io/03_summarize_math/)
+- [04 Intro to ggplot](https://utdata.shinyapps.io/04_intro_ggplot/)
 
 ## Data sources
 
--   [starwars](https://dplyr.tidyverse.org/reference/starwars.html)
-    characters dataset from the tidyverse. It’s our main data set. Small
-    enough to wrap your head around; complex and dirty enough to provide
-    a perfect example.
+- [starwars](https://dplyr.tidyverse.org/reference/starwars.html) characters dataset from the tidyverse. It’s our main data set. Small enough to wrap your head around; complex and dirty enough to provide a perfect example.
+- [starwarsrebels]() A list of episodes from the *Star Wars Rebels* animated series, scrapped from [tvmaze](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes). The dates have been purposefully mucked for the trail it is used in.
 
 ### From Kaggle
 
