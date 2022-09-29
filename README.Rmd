@@ -11,9 +11,15 @@ The project is in its infancy. You know, like Baby Yoda.
 
 ## Tutorials
 
-- [Categorization](categorization.html): When you need to re-categorize your data.
-- [Select]: Exploring and learning `select()` and its variations.
+- [Categorization](https://utdata.shinyapps.io/jedr-categorization/): When you need to re-categorize your data.
 
+### Others to come?
+
+- Exploring and learning `select()` and its variations. (Started)
+- ggplot basics. (Started)
+- The GSA combo. Count?
+- Using `slice()` and its variations.
+- Using `across()`. Maybe [this can help](https://github.com/utdata/r-across-examples)
 
 ## Data sources
 

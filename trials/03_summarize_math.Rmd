@@ -1,5 +1,5 @@
 ---
-title: "JedR Knight Trail: Summarizing by Math"
+title: "JedR Trail 3: Summarizing by Math"
 output: 
   learnr::tutorial:
     progressive: true
@@ -14,9 +14,9 @@ library(tidyverse)
 starwars <- starwars
 ```
 
-> THIS ONE COULD USE AN EDIT REVIEW
+## JedR Trail 3: Summarize with math
 
-Hello again! In this exercise, you'll be practicing the skills you learned in Chapter 5 of [our textbook](https://utdata.github.io/rwdir/sums-analyze.html#item-quantities-totals-for-local-agencies).  Like our previous exercise, we'll be using the dataset `starwars` in the `tidyverse` packages.
+Welcome, Padawan. In this exercise, you'll be tested on skills using math-based `summarize()` functions. This is covered in Reporting with Data in R [Chapter 5](https://utdata.github.io/rwdir/sums-analyze.html#item-quantities-totals-for-local-agencies).  Like our previous exercise, we'll be using the dataset `starwars` in the `tidyverse` packages.
 
 ## Summarizing
 
