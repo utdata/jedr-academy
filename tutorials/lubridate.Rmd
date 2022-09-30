@@ -84,7 +84,7 @@ You can find more examples and tips [in this cheatsheet](https://rawgit.com/rstu
 
 ### Another way of parsing dates
 
-Base R also has a function to parse dates, called `as.Date()`, which you can read more about [here](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/as.Date). 
+Base R also has a function to parse dates, called `as.Date()`, which you can read more about [here](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/as.Date).
 
 ## Working with dates
 
@@ -125,6 +125,26 @@ rebels_cl |>
 rebels_cl |> 
   filter(air_date_fixed >= "2016-02-01" & air_date_fixed < "2016-03-01")
 ```
+
+#### Padawan practice: using filter() with dates
+
+Identify the episodes that aired in October 2017:
+
+```{r filter-exercise, exercise = TRUE}
+rebels_cl |> 
+  filter() # fill out the filter function!
+```
+
+```{r filter-exercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+rebels_cl |> 
+  filter(air_date_fixed >= "2017-10-01" & air_date_fixed < "2017-11-01")
+```
+
+```{r filter-exercise-check}
+grade_this_code()
+```
+
+
 
 ### Which month had the most episodes (throughout the entire period)?
 
