@@ -186,9 +186,8 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
 dates in R. In doing so, we’ll examine a dataset, scraped from <a
 href="https://www.tvmaze.com/shows/117/star-wars-rebels/episodes">tvmaze.com</a>,
 with information about the <em>Star Wars Rebels</em> series.</p>
-</div>
-<div id="section-load-packages" class="section level2">
-<h2>Load packages</h2>
+<div id="section-load-packages" class="section level3">
+<h3>Load packages</h3>
 <div class="sourceCode" id="section-cb1"><pre
 class="sourceCode r"><code class="sourceCode r"><span id="section-cb1-1"><a href="#section-cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate) <span class="co"># to work with dates and time</span></span>
 <span id="section-cb1-2"><a href="#section-cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># to clean and wrangle the data</span></span>
@@ -197,8 +196,8 @@ class="sourceCode r"><code class="sourceCode r"><span id="section-cb1-1"><a href
 <span id="section-cb1-5"><a href="#section-cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gradethis)</span>
 <span id="section-cb1-6"><a href="#section-cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span></code></pre></div>
 </div>
-<div id="section-import-data" class="section level2">
-<h2>Import data</h2>
+<div id="section-import-data" class="section level3">
+<h3>Import data</h3>
 <div class="sourceCode" id="section-cb2"><pre
 class="sourceCode r"><code class="sourceCode r"><span id="section-cb2-1"><a href="#section-cb2-1" aria-hidden="true" tabindex="-1"></a>rebels_raw <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;https://github.com/utdata/jedr-training/blob/date-tutorial/data/starwarsrebels.csv?raw=true&quot;</span>) <span class="co"># import data</span></span></code></pre></div>
 <pre><code>## Rows: 69 Columns: 4
@@ -233,6 +232,7 @@ class="sourceCode r"><code class="sourceCode r"><span id="section-cb6-1"><a href
 ## $ episode_title     &lt;chr&gt; &quot;Droids in Distress&quot;, &quot;Fighter Flight&quot;, &quot;Rise of the…
 ## $ season            &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2…</code></pre>
 <p>Now, the column names are easier to work with.</p>
+</div>
 </div>
 <div
 id="section-parsing-dates-making-sure-that-dates-are-recognized-as-such-in-r"

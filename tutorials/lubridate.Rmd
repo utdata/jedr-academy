@@ -14,7 +14,7 @@ runtime: shiny_prerendered
 
 Hello, young Padawan! In this tutorial we'll look at how the `Lubridate` package can make life easier when dealing with dates in R. In doing so, we'll examine a dataset, scraped from [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes), with information about the *Star Wars Rebels* series.
 
-## Load packages
+### Load packages
 
 ```{r setup, warning=FALSE, message=FALSE}
 library(lubridate) # to work with dates and time
@@ -25,7 +25,7 @@ library(gradethis)
 library(rsconnect)
 ```
 
-## Import data
+### Import data
 
 ```{r import}
 rebels_raw <- read_csv("https://github.com/utdata/jedr-training/blob/date-tutorial/data/starwarsrebels.csv?raw=true") # import data
