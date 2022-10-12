@@ -14,15 +14,22 @@ runtime: shiny_prerendered
 
 Hello, young Padawan! In this tutorial we'll look at how the `Lubridate` package can make life easier when dealing with dates in R. In doing so, we'll examine a dataset, scraped from [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes), with information about the *Star Wars Rebels* series.
 
-### Load packages
-
-```{r setup, warning=FALSE, message=FALSE}
+```{r setup, warning=FALSE, message=FALSE, include=FALSE}
 library(lubridate) # to work with dates and time
 library(tidyverse) # to clean and wrangle the data
 library(janitor) # to clean column names
 library(learnr)
 library(gradethis)
 library(rsconnect)
+library(praise)
+
+### setup dataframes for the exercises
+rebels_cl <- read_csv("https://github.com/utdata/jedr-training/blob/date-tutorial/data/starwarsrebels.csv?raw=true") |> 
+  clean_names() |> 
+  mutate(air_date_fixed = dmy(original_air_date)) |> 
+  select(-original_air_date) |> 
+  mutate(month = month(air_date_fixed, label = TRUE)) |> 
+  mutate(year = year(air_date_fixed))
 ```
 
 ### Import data
@@ -36,7 +43,7 @@ This dataset has information about the *Star Wars Rebels* series. For each of th
 
 Note that some of the column names has spaces in them, which can make life harder. To fix it, let's use the `clean_names()` function from the `Janitor` package:
 
-```{r}
+```{r clean_names}
 rebels <- rebels_raw |> clean_names() # clean the names
 rebels |> glimpse() # glimpse the "rebels" object
 ```
@@ -49,7 +56,7 @@ Notice that when we used the `glimpse()` above, we also got info about the type 
 
 To work effectively with dates, we need R to recognize when we're reading with dates. Do fix this, we can use `lubridate`'s [parse date functions](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf). In this particular dataset, the dates are written in the *dmy* (date-month-year) format. (If you look in the `glimpse()` output above, you'll see that the first observation, for example, was: "13-Oct-14"). Let's use `lubridate`'s `dmy()` function to create a new version of the dataset, called *rebels_fix*, which has a new column called *air_date_fixed*:
 
-```{r}
+```{r glimpse}
 rebels |> 
   mutate(air_date_fixed = dmy(original_air_date)) |> 
   glimpse()
@@ -57,7 +64,7 @@ rebels |>
 
 Notice that, in the chunk above, we're just looking at the output to see that this worked as intented. See that the `air_date_fixed` column is being read as a `date` whereas the `original_air_date` column was read as a `character`? Also, we're not saving it into a new object using the `<-` operator. Let's use the `<-` operator operator to save our work in a new object, called `rebels_cl`, without the `original_air_date` column, which we're not going to need:
 
-```{r}
+```{r arrange}
 rebels_cl <- rebels |> 
   mutate(air_date_fixed = dmy(original_air_date)) |> 
   select(-original_air_date)
@@ -72,7 +79,7 @@ Two key things to notice here:
 
 In this example, `lubridate`'s `dmy()` function came in handy. Here are some other functions we might've used if the dates had been formatted differently:
 
-```{r}
+```{r mdy_ymd}
 ### when using the mdy function, R knows that the first value is month, followed by day, followed by year
 mdy("May 15, 1988")
 
@@ -96,14 +103,14 @@ We can use the `arrange()` function to sort data frames based on dates.
 
 #### The oldest episodes
 
-```{r}
+```{r arrange2}
 rebels_cl |> 
   arrange(air_date_fixed)
 ```
 
 #### The newest episodes
 
-```{r}
+```{r newest}
 rebels_cl |> 
   arrange(desc(air_date_fixed)) # add "desc" to sort in descending order
 ```
@@ -114,14 +121,14 @@ We can use the `filter()` function to only view episodes that aired before or af
 
 #### Episodes aired in 2018 (the last year available)
 
-```{r}
+```{r datefix}
 rebels_cl |> 
   filter(air_date_fixed >= "2018-01-01") #Notice that the date is written in quotes!
 ```
 
 #### Episodes that aired in February 2016
 
-```{r}
+```{r filtering}
 rebels_cl |> 
   filter(air_date_fixed >= "2016-02-01" & air_date_fixed < "2016-03-01")
 ```
@@ -141,10 +148,9 @@ rebels_cl |>
 ```
 
 ```{r filter-exercise-check}
-grade_this_code()
+that_correct <- c('That is correct!')
+grade_this_code(correct = paste(that_correct, praise() ) )
 ```
-
-
 
 ### Which month had the most episodes (throughout the entire period)?
 
@@ -180,7 +186,7 @@ rebels_cl |>
 
 Going back to our question about which month had the most episodes
 
-```{r}
+```{r groupby}
 rebels_cl |> 
   group_by(month) |> 
   count(name = "number_of_episodes") |> 
@@ -189,25 +195,45 @@ rebels_cl |>
 
 It looks like there were lot's of new episodes in October, November, February, and March. 
 
-### Which year had the most episodes?
+#### Padawan practice: using the `year()` function
 
-To get information about specific years, we can use the `year()` function, which is quite similar:
+To get information about specific years, we can use the `year()` function, which is quite similar. Try to create a variable called `year` see we can check how many episodes aired in each year:
 
-```{r year}
+```{r month-function-exercise, exercise = TRUE}
 rebels_cl <- rebels_cl |> 
-  mutate(year = year(air_date_fixed))
+  mutate(### USE THE YEAR() FUNCTION HERE TO CREATE A NEW VARIABLE CALLED "YEAR"
+           )
 
+### finding number of episodes per year (you don't need to change the code below)
 rebels_cl |> 
   group_by(year) |> 
   count(name = "number_of_episodes") |> 
   arrange(desc(number_of_episodes) )
 ```
 
+```{r month-function-exercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+rebels_cl <- rebels_cl |> 
+  mutate(year = year(air_date_fixed)
+           )
+
+### finding number of episodes per year (you don't need to change the code below)
+rebels_cl |> 
+  group_by(year) |> 
+  count(name = "number_of_episodes") |> 
+  arrange(desc(number_of_episodes) )
+```
+
+```{r month-function-exercise-check}
+that_correct <- c('That is correct!')
+grade_this_code(correct = paste(that_correct, praise() ) )
+```
+
+
 ### Round_date()
 
 An alternative would be to use `Lubridate`'s `round_date()` function, which let's us round date-time objects to their nearest year, month, week, day, etc. It works like this:
 
-```{r}
+```{r rebels_rounded_cols}
 rebels_rounded_cols <- rebels_cl |> 
   mutate(year = round_date(air_date_fixed, "year")) |>
   mutate(month = round_date(air_date_fixed, "month")) |>
@@ -223,17 +249,17 @@ Rounding the dates to their nearest year/month/week/day/etc can be helpful later
 
 What if we wanted to identify the earliest, each year, that an episode aired? For that purpose, we could use the `yday()` (year day) function, which simply tells us how many days into a year a given date is. My son and I share the same birthday (February 5). That's the 36th day of the year:
 
-```{r}
+```{r yday}
 yday("2022-02-05")
 ```
 
 To find the earliest episode airdate for each year, we could do this:
 
-```{r}
+```{r dy_chunk}
 rebels_cl |>
   mutate(
-    dy = yday(air_date_fixed)
-    ) |> 
+    dy = yday(air_date_fixed),
+    year = year(air_date_fixed)) |> 
   group_by(year) |> 
   slice_min(air_date_fixed) |> 
   ungroup() |>
@@ -254,4 +280,4 @@ There are few things going on in the chunk above. Here's a quick recap of what e
 
 ## The end
 
-That's it for now, young Padawan! Good luck on your quest, stay safe, and may the force be with you! 💪
+That's it for now, young Padawan! Good luck on your next quest, stay safe, and may the force be with you! 💪
