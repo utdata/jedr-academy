@@ -15,7 +15,7 @@ Tutorial by: Christian Staal Bruun Overgaard, JedR trainer
 
 ## Introduction
 
-Hello, young Padawan! In this tutorial we'll look at how the `Lubridate` package can make life easier when dealing with dates in R. In doing so, we'll examine a dataset, scraped from [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes), with information about the *Star Wars Rebels* series. Good luck and may the force be with you!
+Hello, young Padawan! In this tutorial we'll look at how the `Lubridate` package can make life easier when dealing with dates in R. In doing so, we'll examine a dataset, scraped from [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes), with information about the *Star Wars Rebels* series. I encourage you to follow along in your own R notebook! Good luck and may the force be with you!
 
 ```{r setup, warning=FALSE, message=FALSE, include=FALSE}
 library(lubridate) # to work with dates and time
@@ -38,6 +38,14 @@ rebels_cl_newcols <- read_csv("https://github.com/utdata/jedr-training/blob/date
   mutate(month = month(air_date_fixed, label = TRUE)) |> 
   mutate(year = year(air_date_fixed)) |> 
   select(-original_air_date)
+
+parsing_practice_df <- rebels_cl |> 
+  head(10) |>
+  mutate(
+    date2 = c("10-13-2014", "10-20-2014", "10-27-2014", "11-03-2014", "11-10-2014", "11-17-2014", "11-24-2014", "01-05-2015", "01-19-2015", "02-02-2015"),
+    date3 = c("13-Oct-2014", "20-Oct-2014", "27-Oct-2014", "03-Nov-2014", "10-Nov-2014", "17-Nov-2014","24-Nov-2014", "05-Jan-2015", "19-Jan-2015", "02-Feb-2015"),
+    date1 = as.character(air_date_fixed)) |> 
+  select(episode_title, date1, date2, date3)
 ```
 
 ### Import data
@@ -47,9 +55,9 @@ rebels_raw <- read_csv("https://github.com/utdata/jedr-training/blob/date-tutori
 rebels_raw |> head() # see what the data looks like
 ```
 
-This dataset has information about the *Star Wars Rebels* series. For each of the show's 69 episodes, we have it's episode number, air date, title, and season.
+This dataset has information about the *Star Wars Rebels* series. For each of the show's 69 episodes, we have its episode number, air date, title, and season.
 
-Note that some of the column names has spaces in them, which can make life harder. To fix it, let's use the `clean_names()` function from the `Janitor` package:
+Note that some of the column names have spaces in them, which can make life harder. To fix it, let's use the `clean_names()` function from the `Janitor` package:
 
 ```{r clean_names}
 rebels <- rebels_raw |> clean_names() # clean the names
@@ -58,7 +66,7 @@ rebels |> glimpse() # glimpse the "rebels" object
 
 Now, the column names are easier to work with.
 
-## Converting ("parsing") dates: Reconizing dates in R 
+## Parsing dates: How to reconize dates in R
 
 Notice that when we used the `glimpse()` above, we also got info about the type of each column. The episode number and season are read as *dbl* ("doubles, which is a number"), whereas the episode title and air date are read as *chr* ("characters").
 
@@ -97,7 +105,79 @@ ymd("1988-May-15")
 
 You can find more examples and tips [in this cheatsheet](https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf).
 
-### Another way of parsing dates
+#### Padawan practice: Parsing dates
+
+```{r make_parsing_practice_df, include=FALSE}
+parsing_practice_df <- rebels_cl |> 
+  head(10) |>
+  mutate(
+    date2 = c("10-13-2014", "10-20-2014", "10-27-2014", "11-03-2014", "11-10-2014", "11-17-2014", "11-24-2014", "01-05-2015", "01-19-2015", "02-02-2015"),
+    date3 = c("13-Oct-2014", "20-Oct-2014", "27-Oct-2014", "03-Nov-2014", "10-Nov-2014", "11-17-2014","24-Nov-2014", "05-Jan-2015", "19-Jan-2015", "02-Feb-2015"),
+    date1 = as.character(air_date_fixed)) |> 
+  select(episode_title, date1, date2, date3)
+```
+
+Here's a small portion of the data, called `parsing_practice_df`, with three columns that need to be parsed:
+
+```{r pars_prac}
+parsing_practice_df
+```
+
+Each column is currently written in the *character* format and should be converted to the *date* format. Can you figure out how to do this?
+
+##### Practice: Parse `date1`
+
+*Hint: Replace the three lines, `___` with the appropriate function.*
+
+```{r parsing_practice1a-exercise, exercise = TRUE}
+parsing_practice_df |> 
+  mutate(date1_cleaned = ___(date1))
+```
+
+```{r parsing_practice1a-exercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+parsing_practice_df |> 
+  mutate(date1_cleaned = ymd(date1))
+```
+
+```{r parsing_practice1a-exercise-check}
+grade_this_code(correct = paste("Correct, young Padawan! We're using the ymd() function to indicate that the year goes first, followed by month, followed by day. This is our way of telling R how to parse this date."))
+```
+
+Here, as in the two following exercises, we're not saving the output but only displaying it. If we wanted to save it, we'd use the `<-` operator. Okay, see if you can solve the two following exercises, too!
+
+##### Practice: Parse `date2`
+
+```{r parsing_practice2a-exercise, exercise = TRUE}
+parsing_practice_df |> 
+  mutate(date2_cleaned = ___(date2))
+```
+
+```{r parsing_practice2a-exercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+parsing_practice_df |> 
+  mutate(date2_cleaned = mdy(date2))
+```
+
+```{r parsing_practice2a-exercise-check}
+grade_this_code(correct = paste("Bravo, Padawan! Looks like the new column is in the date format!"))
+```
+
+##### Practice: Parse `date3`
+
+```{r parsing_practice3a-exercise, exercise = TRUE}
+parsing_practice_df |> 
+  mutate(date3_cleaned = ___(date3))
+```
+
+```{r parsing_practice3a-exercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+parsing_practice_df |> 
+  mutate(date3_cleaned = dmy(date3))
+```
+
+```{r parsing_practice3a-exercise-check}
+grade_this_code(correct = paste("Correct! The force is strong in you! Note that this function works regardless of whether the months in the existing column are written out using characters or numbers"))
+```
+
+### Another way to parse dates
 
 Base R also has a function to parse dates, called `as.Date()`, which you can read more about [here](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/as.Date).
 
@@ -143,7 +223,9 @@ rebels_cl |>
 
 #### Padawan practice: using filter() with dates
 
-Identify the episodes that aired in October 2017:
+Identify the episodes that aired in October 2017. 
+
+Hint: Use the `filter()` function to specify that you only want to include episodes that aired on October 1, 2017 or later—and also aired before November 1 the same year.
 
 ```{r filter-exercise, exercise = TRUE}
 rebels_cl |> 
@@ -160,6 +242,7 @@ rebels_cl |>
 #grade_this_code(correct = paste(that_correct, praise() ) )
 grade_this_code(correct = paste("That's right! The force is strong with you!"))
 ```
+
 ## Using specific parts of a date
 
 ### Which month had the most episodes (throughout the entire period)?
@@ -227,9 +310,9 @@ To get information about specific years, we can use the `year()` function, which
 Hint: you'll need to use the `air_date_fixed` column.
 
 ```{r month-function-exercise, exercise = TRUE}
+### USE THE year() FUNCTION HERE TO CREATE A NEW VARIABLE CALLED "year"
 rebels_cl_newcols <- rebels_cl_newcols |> 
-  mutate(### USE THE YEAR() FUNCTION HERE TO CREATE A NEW VARIABLE CALLED "YEAR"
-           )
+  mutate( )
 
 ### finding number of episodes per year (you don't need to change the code below)
 rebels_cl_newcols |> 
@@ -257,9 +340,9 @@ grade_this_code(correct = paste(that_correct, praise()) )
 ```
 
 
-### Round_date()
+### Floor_date()
 
-An alternative would be to use `Lubridate`'s `floor_date()` function, which let's us round date-time objects *down* to their nearest year, month, week, day, etc. It works like this:
+An alternative would be to use [`Lubridate`'s `floor_date()`-function](https://lubridate.tidyverse.org/reference/round_date.html), which let's us round date-time objects *down* to their nearest year, month, week, day, etc. It works like this:
 
 ```{r floor_date}
 rebels_cl_newcols |> 
@@ -271,7 +354,7 @@ rebels_cl_newcols |>
   head(10) #print just the ten first rows
 ```
 
-Notice that the new column, *month_foor*, only include dates that are the first day in any given month? 
+Notice that the new column, *month_floor*, only include dates that are the first day in any given month? 
 
 Rounding the dates to their nearest year/month/week/day/etc can be helpful later on, for example when visualizing the data. Instead of round to the nearest values, we can use `ceiling_date()` to round up to the nearest value or `round_date()` to round to the closest value. In this tutorial we'll mostly focus on `floor_date()` but as a future JedR Master, you should know about the other options, too! 
 
@@ -289,7 +372,7 @@ rebels_rounded_cols |> select(episode_title, year_fl, month_fl, week_fl, day_fl)
 
 ### The yday() function
 
-What if we wanted to identify the earliest, each year, that an episode aired? For that purpose, we could use the `yday()` (year day) function, which simply tells us how many days into a year a given date is. My son and I share the same birthday (February 5). That's the 36th day of the year:
+What if we wanted to find the earliest date within a year that an episode aired? For that purpose, we could use the `yday()` (year day) function, which simply tells us how many days into a year a given date is. My son and I share the same birthday (February 5). That's the 36th day of the year:
 
 ```{r yday}
 yday("2022-02-05")
@@ -316,7 +399,7 @@ There are few things going on in the chunk above. Here's a quick recap of what e
 * We use `mutate()` to create a new column called `dy` ...
 * To get the `dy` column to specify each dates number within a year, we use `yday()`, and then ...
 * We `group_by()` because we want the earliest episode within each year, and then ...
-* We use `slice_min()` to get just the earliest episode within each year. (Otherwise, we our output would all the episodes.) And then ...
+* We use `slice_min()` to get just the earliest episode within each year. (Otherwise, our output would all the episodes.) And then ...
 * We use `ungroup()` to remove the grouped `dy` column. Not essential here but might be handy if you need to perform additional operations. And then ...
 * `select()` let's us show just a few columns to make the output more readable at a glance.
 
@@ -354,7 +437,7 @@ ggplot(rebels_gs, aes(x = month_fl, y = no_episodes)) +
 Here's a quick explanation of what's happening in the chunk above:
 
 * In the first line, we're specifying the dataset ("rebels_gs", x-variable ("month_fl"), and y-variable ("no_episodes")
-* In the second line, we're using `geom_bar()` to tell R to make a bar chart. We use the "state = 'identity'" arugment to clarify that we'll be providing the values for the bars
+* In the second line, we're using `geom_bar()` to tell R to make a bar chart. We use the "stat = 'identity'" arugment to clarify that we'll be providing the values for the bars
 * In the third portion, we're using `labs()` to create the title and caption. We're using "subtitle" rather than "title" b/c it works better with the theme we're using
 * In the fourth and final portion, we're employing `theme_fivethirtyeight()` from the `ggthemes` package.
 
