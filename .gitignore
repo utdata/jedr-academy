@@ -5,6 +5,12 @@
 ### crit adds ###
 # learnR/shinyapps
 rsconnect/
+# trials/*.html
+# trials/*_files
+# tutorials/*.html
+# tutorials/*_files
+# files list
+CONTRIBUTING.html
 
 ### macOS ###
 # General
