@@ -5,13 +5,6 @@ To be clear, this isn’t a package. It’s some training material.
 
 ## Overview
 
-<div style="float:right; margin-left: 10px; max-width: 200px">
-
-<img src='images/baby_yoda.jpeg' height="200" alt="Grogu"/><br> The
-project is in its infancy. You know, like Baby Yoda.
-
-</div>
-
 This project is series of [learnr](https://rstudio.github.io/learnr/)
 interactive tutorials designed to develop and improve R skills with a
 heavy lean toward the [tidyverse](https://www.tidyverse.org/). There are
@@ -29,34 +22,34 @@ some situations.
 
 We also try to have a little fun.
 
+This project is in its infancy. You know, like Baby Yoda.
+
+![Grogu](images/baby_yoda.jpeg)
+
 ## How to use this project
 
 There are two types of lessons here:
 
-- JedR Training: Tutorials focused on feats of skills instead of on
+- **JedR Training**: Tutorials focused on feats of skills instead of on
   specific packages. For instance, “How to manage dates” vs “How to use
   lubridate.”
-- JedR Trials: A test of skill for JedR Padawans to check their
+- **JedR Trials**: A test of skill for JedR Padawans to check their
   understanding for specific feats of skill. These trials are used in
   our J 327D Reporting with Data class.
 
 JedR Padawans can download this repo and run each notebook on their
 local machines. The notebooks are stored in the `tutorials/` and
-`trials/` folders. Once you open a notebook, use the **Run Document**
-option.
+`trials/` folders. All notebooks require `tidyverse`, `learnr` and
+`gradethis`. Some notebooks might require additional packages.
 
-All notebooks require `tidyverse`, `learnr` and `gradethis`. Some
-notebooks might require additional packages.
+Once you open a notebook, use the **Run Document** option.
 
 ![Run Document](images/run-document.png)
 
 Another option is to use the links listed below to run the lessons
-online (at least until we run out of money to pay for Shiny).
+online (at least until we run out of money to pay for shinyapps.io).
 
 ### JedR Training
-
-> Need to rename these files! Perhaps “categorizesion” and
-> “manage-dates”.
 
 - [Recoding values](https://utdata.shinyapps.io/jedr-categorization/):
   When you need to rename values in your data, perhaps to create a new
@@ -71,9 +64,10 @@ online (at least until we run out of money to pay for Shiny).
   lessons. Covers some basic functions to look at data.
 - [Summarize with
   Count](https://utdata.shinyapps.io/jedr-trial-02-count/): Covers
-  counting rows within groups.
+  counting rows using group_by and summarize. (We skip `count()` here to
+  focus on group_by, summarize and arrange.)
 - [Summarize with Math](https://utdata.shinyapps.io/jedr-trial-03-sum/):
-  Covers grouping data and then using math functions to summarize.
+  Covers grouping data and math functions within summarize.
 - [Plotting](https://utdata.shinyapps.io/jedr-trial-04-plot/): Making a
   very basic ggplot chart.
 - Pivoting: TK
@@ -99,25 +93,22 @@ from `tidyverse`.
   Star Wars Rebels from
   [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes)
 
-### From Kaggle
-
-“The csv files listed below are from
-[Kaggle](https://www.kaggle.com/jsphyg/star-wars), which was gathered
-using the Star Wars API that is no longer available. The origin of the
-data is [The Star Wars Wiki](https://starwars.fandom.com/wiki).”
-
-- `characters`
-- `planets`
-- `species`
-- `starships`
-- `vehicles`
-
 ### Other possible data sources
 
 These might be explored later.
 
 - [SWAPI](https://swapi.dev/)
 - [Star Wars Databank](https://www.starwars.com/databank)
+- We’ve pulled some data from
+  [Kaggle](https://www.kaggle.com/jsphyg/star-wars), which notes “This
+  data was gathered using the Star Wars API that is no longer available.
+  The origin of the data is [The Star Wars
+  Wiki](https://starwars.fandom.com/wiki).”
+  - `characters`
+  - `planets`
+  - `species`
+  - `starships`
+  - `vehicles`
 
 ## Credits
 
