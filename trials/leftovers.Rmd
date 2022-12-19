@@ -1,0 +1,14 @@
+
+As J-327D is looking over your shoulder at the glimpse of the data, they notice there are differences in the data types for `height` and `mass`. They ask you to explain the difference between `<int>` and `<dbl>`. What can you tell them?
+
+```{r question-datatype, echo=FALSE}
+question("Which statements best describe `<int>` and `<dbl>` datatypes? (select ALL that apply)",
+  answer("`<int>` stands for **integer**, or a whole number.", correct = TRUE),
+  answer("`<int>` stands for **interogatory**, meaning a question."),
+  answer("`<dbl>` stands for **double**, which is short for double-precision floating-point format. It's the format of storing a real number.", correct = TRUE),
+  answer("`<dbl>` stands for **divisible**, meaning it is not a prime number."),
+  incorrect = "Incorrect. These are both different kinds of numbers. Try again.",
+  allow_retry = TRUE,
+  random_answer_order = TRUE
+)
+```
