@@ -1,0 +1,160 @@
+---
+title: "JedR Trial Intro"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse) 
+library(gradethis)
+
+starwars <- starwars
+gradethis_setup()
+
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!")
+
+#random_sw_praise <- function(){sample(praise_list, 1)}
+```
+
+## JedR Trial No. 1: Introduction
+
+Congratulations! You have recently been hired as a **data jedi** for the *Galactic News Hub*, the premiere news organization for the Star Wars Universe. Your first task: apply beginning `tidyverse` skills to learn about the characters in the Star Wars universe you'll be reporting on.
+
+### 1. Previewing our data
+
+For this exercise, we will use the data collection called `starwars`. This data comes with the `tidyverse` package, so if you have loaded `tidyverse` into your R environment using `library()`, the `starwars` data should be there! As you can see below, `starwars` contains some information about Star Wars characters, like their name and height.
+
+Let's learn a bit more about the structure of the `starwars` data and how to conquer these JedR Trials.
+
+This is what it looks like when we load the `tidyverse` library and look at the first few lines in the `starwars` data. Each row of the data is a character within the Star Wars franchise:
+
+```{r starwarsintro, eval = TRUE}
+library(tidyverse)
+starwars %>% head()
+```
+
+Within the JedR Trails, you can enter and run code right inside this page. Since the tidyverse was loaded above, all the functions you would normally see in RStudio are available in this interactive. Once you enter the code, click the blue **Run Code** button to see the results, and then once you think you have the correct code, click the **Submit Answer** to pass the test.
+
+The first thing you need to learn is how many rows are in the `starwars` data, along with all the columns and datatypes.
+
+What function would you add to the starwars data here to *glimpse* the data and find those answers?
+
+```{r glimpseexercise, exercise = TRUE}
+starwars
+
+```
+
+<div id="glimpseexercise-hint">
+**Hint:** Check out the `glimpse()` function. You can [learn more here](https://dplyr.tidyverse.org/reference/glimpse.html).
+</div>
+
+```{r glimpseexercise-solution}
+glimpse(starwars)
+```
+
+```{r glimpseexercise-check}
+grade_this({
+  if(identical(.result,.solution)){ 
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+
+```
+
+(Don't forget to **Submit Answer**.)
+
+Just as you submitted the answer, your humanoid robot editor (J-327D) pops into your office and asks you how many people (characters) are in your data. What is your answer?
+
+```{r question-glimpse, echo = FALSE}
+question("How many Star Wars characters are in the dataset",
+  answer("14"),
+  answer("87", correct = TRUE),
+  answer("41"),
+  answer("Unknown"),
+  random_answer_order = TRUE
+
+)
+```
+
+
+### 2. Focusing on variables
+
+Now that we know how to *glimpse* into our data, let's work on *select*ing specific variables of interest. Let's say the *Galactic News Hub* has asked you to write a story about height differences across different species. What function would you use to *select* only the following variables in `starwars`: `name`, `height`, `homeworld`, and `species`?
+
+```{r selectexercise, exercise = TRUE}
+
+```
+
+<div id="selectexercise-hint">
+**Hint:** You might look into the `select()` function, you can [learn about here](https://dplyr.tidyverse.org/reference/select.html).
+</div>
+
+```{r selectexercise-solution}
+starwars %>%
+  select(
+    name,
+    height,
+    homeworld,
+    species
+  )
+```
+
+```{r selectexercise-check}
+grade_this({
+  if(identical(.result, .solution)){
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+```
+
+### 3. Arranging our Data {data-progressive=FALSE}
+
+```{r arrangeexercise-setup, include=FALSE}
+starwars <- starwars %>%
+  select(name, height, homeworld, species)
+```
+
+Now that we have *glimpse*d our data and *select*ed our variables in the `starwars`, let's *arrange* them using by height. What function would we add to our code below to *arrange* our data so that the tallest person is listed at the top? (Hint: since `tidyverse` *arrange*s numbers from the smallest to the greatest number, you may need another function so the information is in *desc*ending order.)
+
+```{r arrangeexercise, exercise = TRUE}
+starwars %>% 
+ select(name, height, homeworld, species)
+```
+
+<div id="selectexercise-hint">
+**Hint:** I recommend checking out the `arrange()` function, you can [learn about here](https://dplyr.tidyverse.org/reference/arrange.html). Don't forget to put your result in **desc**ending order.
+</div>
+
+```{r arrangeexercise-solution}
+starwars %>% 
+  select(name, height, homeworld, species) |> 
+  arrange(height %>% desc())
+```
+
+```{r arrangeexercise-check}
+grade_this({
+  if(identical(.result, .solution)){
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+```
+
+So many tall characters! If your humanoid robot editor (J-327D) wanted you to write a story about the tallest character in the data, who would that be?
+
+```{r question-arrange, echo = FALSE}
+question("Who is the tallest character?",
+  answer("Yoda"),
+  answer("Darth Vader"),
+  answer("Chewbacca"),
+  answer("Yarael Poof", correct = TRUE),
+  random_answer_order = TRUE
+)
+```
+
+Great job! Please inform your JedR Master that you have completed this exercise.

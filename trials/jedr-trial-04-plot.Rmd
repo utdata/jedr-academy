@@ -1,0 +1,146 @@
+---
+title: "JedR Trail: Plotting"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(gradethis)
+
+starwars <- starwars
+
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The force is strong with this one.")
+```
+
+## JedR Trial No. 4: Plotting
+
+In this JedR Trial, we'll be exploring the [ggplot2](https://ggplot2.tidyverse.org/) skills. Like our previous exercise, we'll be using the data `starwars` in the `tidyverse` packages.
+
+Your humanoid robot editor (J-327D) has asked to _**see**_ how many characters there are for each species in the `starwars` data. They have asked you to make a bar chart from this data.
+
+As you may recall in your training, making a chart usually takes two steps: Preparing the data, then plotting the data.
+
+As a reminder, here is the `starwars` data:
+
+```{r glimpse}
+glimpse(starwars)
+```
+
+
+### Prepare your data
+
+To prepare this data for your plot, you need to:
+
+1. Group by species and count the number of rows. Name the new variable `characters`
+1. Arrange the result so the most characters are at the top.
+1. Drop any NA values.
+1. Save the result of this into a new data frame called `species_count` and then print that out at the end.
+
+```{r speciesctexercise, exercise = TRUE}
+starwars
+```
+
+```{r speciesctexercise-hint}
+# fill in the blanks with functions and variables
+species_count <- starwars %>%
+  ________(_______) %>%
+  _________(characters = _()) %>%
+  _______(desc(characters)) %>%
+  drop_na()
+
+species_count
+```
+
+```{r speciesctexercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+species_count <- starwars %>%
+  group_by(species) %>%
+  summarize(characters = n()) %>%
+  arrange(desc(characters)) %>%
+  drop_na()
+
+species_count
+```
+
+
+```{r speciesctexercise-check}
+grade_this({
+  if(identical(.result,.solution)){
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+```
+
+### Plotting the chart
+
+Now that we have our prepared data into `species_count`, you need to plot your data as a bar chart, with the species with the most characters at the top.
+
+A couple of things that the code checker is persnickety about:
+
+- You should use the geom for a column chart, but the flip it so you can read the species names.
+- Don't forget to reorder your bars.
+- For the labs, we're looking only for three things:
+  - The title should be "Count of species in Star Wars"
+  - The axis that has the numbers should be called "Number of characters".
+  - The other axis label should be blank or removed.
+
+```{r speciesplot-setup, include=FALSE}
+species_count <- starwars %>%
+  group_by(species) %>%
+  summarize(characters = n()) %>%
+  arrange(desc(characters)) %>%
+  drop_na()
+```
+
+
+```{r speciesplot, exercise = TRUE}
+species_count
+```
+
+```{r speciesplot-hint-1}
+# Try building the plot one layer at a time
+# First, just get the chart to work
+ggplot(species_count, ___(x = _______, y = __________)) +
+  geom_col()
+```
+
+
+```{r speciesplot-hint-2}
+# Then you modify to reorder the bars and flip the coordinates
+ggplot(species_count, ___(x = _______(species, characters), y = __________)) +
+  geom_col() +
+  __________()
+```
+
+```{r speciesplot-hint-3}
+# Then add your labels
+ggplot(species_count, ___(x = _______(species, characters), y = __________)) +
+  geom_col() +
+  __________() +
+  ____(
+    _____ = "Count of species in Star Wars",
+    y = "Number of characters",
+    x = ""
+  )
+```
+
+```{r speciesplot-solution, exercise.reveal_solution = FALSE, include = FALSE}
+ggplot(species_count, aes(x = reorder(species, characters), y = characters)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Count of species in Star Wars",
+    y = "Number of characters",
+    x = ""
+  )
+```
+
+```{r speciesplot-check}
+grade_code()
+```
+
+Show your completed plot to your JedR Master.
