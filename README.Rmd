@@ -10,7 +10,7 @@ To be clear, this isn't a package. It's some training material.
 
 This project is series of [learnr](https://rstudio.github.io/learnr/) interactive tutorials designed to develop and improve R skills with a heavy lean toward the [tidyverse](https://www.tidyverse.org/). There are two main goals:
 
-- To focus tutorials on feats of skill or tasks to accomplish instead of on specific packages.
+- To focus tutorials on feats of skill or tasks to accomplish instead of on specific packages or functions.
 - To use the same data whenever possible to avoid the cognitive load of learning new data for each example.
 
 While we strive to use the [starwars](https://dplyr.tidyverse.org/reference/starwars.html) data as much as possible, we've had to introduce other Star Wars related data in some situations.
@@ -52,7 +52,7 @@ Another option is to use the links listed below to run the lessons online (at le
 
 ### Others to come?
 
-This is a work in progress. We have a [list of ideas](https://github.com/utdata/jedr-training/issues/2) and would be consider additions that follow our philosophy (which is admittedly also under development).
+This is a work in progress. We have a [list of ideas](https://github.com/utdata/jedr-academy/issues/2) and would be consider additions that follow our philosophy (which is admittedly also under development).
 
 ## Data sources
 
