@@ -1,5 +1,5 @@
 ---
-title: "JedR Trial Sum"
+title: "JedR Trial: Sum"
 output: 
   learnr::tutorial:
     progressive: true
@@ -31,7 +31,7 @@ glimpse(starwars)
 
 Your droid editor, J-327D, notes that Chewbacca is taller than the rest of the crew in the Millennium Falcon, but he wonders if he is just tall for a Wookiee. He asks you to find the average heights of Humans, Droids, Gungans and Wookiees from within the starwars data. (By the way, that height variable is a measurement in centimeters.)
 
-### Select and filter
+## Select and filter
 
 First, create a data frame with just the columns and rows you need to work with.
 
@@ -83,13 +83,13 @@ grade_this({
 
 ```
 
-### Finding the mean
+## Finding the mean
 
-In our last JedR Trail, we counted the number of characters (rows) that were different species. In this trail we need to use `group_by()` and `summarize()` and `arrange()` again, but we must summarize to get the average height -- or `mean()` -- of each species in the data.
+In our last JedR Trial, we counted the number of characters (rows) that were different species. In this trail we need to use `group_by()` and `summarize()` and `arrange()` again, but we must summarize to get the average height -- or `mean()` -- of each species in the data.
 
 Of note:
 
-- Call the new summarized variable `height_avg` so our AI grade checker knows what to look for.
+- Call the new summarized variable `height_avg` so our Prof_AI grade checker knows what to look for.
 - If you try to do match on rows with no values `NA`, then the result is also `NA`. You can fix this by adding `na.rm = TRUE` to remove those rows from consideration.
 
 ```{r avgexercise-setup, include=FALSE}

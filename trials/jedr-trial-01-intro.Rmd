@@ -1,5 +1,5 @@
 ---
-title: "JedR Trial Intro"
+title: "JedR Trial: Intro"
 output: 
   learnr::tutorial:
     progressive: true
