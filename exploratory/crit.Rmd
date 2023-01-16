@@ -1,0 +1,68 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(readxl)
+library(lubridate)
+library(janitor)
+```
+
+```{r}
+survey <- read_csv("../data/survey.csv") |> clean_names()
+soundtracks <- read_csv("../data/soundtracks.csv") |> clean_names()
+rt_ratings <- read_csv("../data/rt_ratings.csv")
+imdb_ratings <- read_csv("../data/imdb_ratings.csv")
+principles <- read_csv("../data/principles.csv")
+
+
+```
+
+```{r}
+soundtracks |> 
+  mutate(album_date = mdy(album_date)) |> 
+  count(yr = year(album_date)) |> 
+  ggplot(aes(x = yr, y = n)) +
+  geom_col()
+```
+
+count by species and sex?
+
+
+```{r}
+
+starwars |> count(species, sort = T)
+
+keepers <-  c("Human", "Droid", "Gungan")
+
+sw_species <- starwars |> 
+  drop_na(sex, gender) |> 
+  mutate(species_clean = case_when(
+    !(species %in% keepers) ~ "Other",
+    is.na(species) ~ "Other",
+    TRUE ~ species
+  ))
+
+sw_sp_sx_cnt <- sw_species |> count(species_clean, sex)
+
+sw_sp_sx_cnt
+```
+
+```{r}
+sw_sp_sx_cnt |> 
+  pivot_wider(names_from = species_clean, values_from = n)
+```
+
+```{r}
+sw_sp_sx_cnt |> 
+  pivot_wider(names_from = sex, values_from = n)
+```
+
+
+```{r}
+starwars |> 
+  drop_na(sex, gender)
+```
+

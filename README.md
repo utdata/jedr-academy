@@ -3,6 +3,8 @@
 
 To be clear, this isn’t a package. It’s some training material.
 
+> “Always pass on what you have learned.” – Yoda
+
 ## Overview
 
 This project is series of [learnr](https://rstudio.github.io/learnr/)
@@ -11,7 +13,7 @@ heavy lean toward the [tidyverse](https://www.tidyverse.org/). There are
 two main goals:
 
 - To focus tutorials on feats of skill or tasks to accomplish instead of
-  on specific packages.
+  on specific packages or functions.
 - To use the same data whenever possible to avoid the cognitive load of
   learning new data for each example.
 
@@ -70,13 +72,14 @@ online (at least until we run out of money to pay for shinyapps.io).
   Covers grouping data and math functions within summarize.
 - [Plotting](https://utdata.shinyapps.io/jedr-trial-04-plot/): Making a
   very basic ggplot chart.
-- Pivoting: TK
+- [Pivoting](https://utdata.shinyapps.io/jedr-trial-05-pivot/): Making
+  data wider and longer.
 - Bind and Join: TK
 
 ### Others to come?
 
 This is a work in progress. We have a [list of
-ideas](https://github.com/utdata/jedr-training/issues/2) and would be
+ideas](https://github.com/utdata/jedr-academy/issues/2) and would be
 consider additions that follow our philosophy (which is admittedly also
 under development).
 
@@ -109,6 +112,14 @@ These might be explored later.
   - `species`
   - `starships`
   - `vehicles`
+- Found some additional data on
+  [data.world](https://data.world/datafam-con/may-2022-star-wars/workspace/data-dictionary)
+  that yielded a couple new sets:
+  - `survey` (done from Five Thirty Eight, apparently)
+  - `principles`
+  - `soundtracks`
+  - `rt_ratings`
+  - `imdb_ratings`
 
 ## Credits
 
