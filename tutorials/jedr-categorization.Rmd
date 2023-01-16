@@ -17,6 +17,8 @@ library(learnr)
 library(gradethis)
 ```
 
+##### Tutorial by: Christian McDonald, JedR master
+
 ## How to make categories from data
 
 Welcome Padawan. May your quest to become a JedR Master be fruitful. "Do or do not. There is no try."
