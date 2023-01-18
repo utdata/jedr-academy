@@ -1,0 +1,109 @@
+---
+title: "JedR Trial: Bind and Join"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(gradethis)
+
+starwars <- starwars
+
+droids <- starwars |> 
+  filter(species == "Droid") |> 
+  select(1:6)
+
+humans <- starwars |> 
+  filter(species == "Human") |> 
+  select(1:6)
+
+other <- starwars |> 
+  filter(!(species %in% c("Human", "Droid"))) |> 
+  select(1:6)
+
+characters <- droids |> bind_rows(humans, other)
+
+sw_bio <- starwars |> select(1, 7:11)
+
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The force is strong with this one.")
+```
+
+## JedR Trial No. 6: Bind and Join
+
+<div style="float:right; margin-left:20px"><img src="images/stormtroopers.png" width="200"></div>
+
+With this JedR Trial, you will prove your experience in combining data. While we are using the `starwars` data in a fashion, it has been broken up into parts that you need to put back together.
+
+<br clear="both"/>
+
+### About our data
+
+We start with three separate data frames for `humans`, `droids` and `other` species. The data frames have basic information on these characters, like `height`, `weight`, etc.
+
+The `droids` data looks like this:
+
+```{r show-droids}
+droids
+```
+
+The `humans` and `other` data frames are similar, but have characters from those species only.
+
+## Stack the data
+
+Starting with the `droids` data, stack it together with the two other data frames (`humans` and `other`) and store the result into a single data frame called `characters`. You should end up with 87 observations with 6 variables. After you create the `characters` data frame, print it out to your notebook so the Prof_AI grading bot can properly see it.
+
+```{r bind, exercise = TRUE}
+droids
+```
+
+<div id="bind-hint">**Hint:** You might review the [bind vignette](https://dplyr.tidyverse.org/reference/bind.html) in the Tidyverse documentation.</div>
+
+```{r bind-solution}
+characters <- droids |> 
+  bind_rows(humans, other)
+
+characters
+```
+
+```{r bind-check}
+grade_this({
+  if(identical(.result,.solution)){ 
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+```
+
+## Join with more data
+
+Now that you have created the `characters` data, we need to join this with a different data set. Our `characters` data has the name of the character and then variables for physical characteristics like height and weight, etc.
+
+We have a different data set available to us, called `sw_bio` that has more information, like the `homeworld` and `species` of each character. Your droid editor, J-327D, has asked you to add this bio information to your characters data.
+
+You should end up with the same 87 observations, but you should end up with 11 variables.
+
+```{r join, exercise = TRUE}
+characters
+```
+
+<div id="join-hint">**Hint:** You might review the [join vignette](https://dplyr.tidyverse.org/reference/mutate-joins.html) in the Tidyverse documentation.</div>
+
+```{r join-solution}
+characters  |> 
+  left_join(sw_bio)
+```
+
+```{r join-check}
+grade_this({
+  if(identical(.result,.solution)){ 
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+```
+
+Well done. This JedR Trial is complete. Please inform your JedR Master.
