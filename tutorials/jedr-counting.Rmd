@@ -1,0 +1,73 @@
+---
+title: "JedR: Counting"
+tutorial:
+  id: "jedr-counting"
+output:
+  learnr::tutorial:
+    progressive: true
+    theme: lumen
+    highlight: espresso
+runtime: shiny_prerendered
+---
+
+```{r setup, warning=FALSE, message=FALSE, include=FALSE}
+library(tidyverse) # to clean and wrangle the data
+library(janitor) # to clean column names
+library(learnr)
+library(gradethis)
+
+starwars <- starwars
+
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The force is strong with this one.")
+
+```
+
+
+##### Tutorial by: Christian McDonald, JedR master
+
+## Introduction
+
+Explain we'll do this two ways ... GSA, then count().
+
+## Summarize with n()
+
+```{r}
+starwars |> 
+  summarize(cnt_chars = n())
+```
+
+## Group by and summarize
+
+```{r}
+starwars |> 
+  group_by(species) |> 
+  summarize(cnt_chars = n()) |> 
+  arrange(desc(cnt_chars))
+```
+
+
+Quiz: How many Gungans.
+
+Quiz: Your favorite Gungan
+
+### Multiple grouping values
+
+```{r}
+starwars |> 
+  group_by(sex, species) |> 
+  summarize(cnt_sx_spec = n()) |> 
+  arrange(desc(cnt_sx_spec))
+```
+
+
+
+### New dplyr syntax
+
+dplyr 1.1.0 has a new syntax for grouping and summarizing. I need to decide whether or how to talk about it. I think average height by species would be like this (thought)
+
+```r
+starwars |> summarize(cnt_chars = n(), .by = c(species))`
+```
+
+
+## The count() shortcut
