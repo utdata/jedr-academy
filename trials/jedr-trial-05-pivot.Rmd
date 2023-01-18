@@ -31,9 +31,9 @@ gender_table <- characters |>
 praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The force is strong with this one.")
 ```
 
-## JedR Trial No. 4: Pivot data
+## JedR Trial No. 5: Pivot data
 
-<div style="float:right; margin-left:20px"><img src="https://media.giphy.com/media/J1nr4o7oolWz6/giphy.gif" width="200"></div>
+<div style="float:right; margin-left:20px"><img src="images/jedi-pivot.webp" width="200"></div>
 
 In this JedR Trial we will explore your ability to pivot data to suit your needs. This is a common challenge to prepare data for charting in ggplot or [Datawrapper](https://www.datawrapper.de/).
 
