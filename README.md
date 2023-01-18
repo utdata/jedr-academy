@@ -74,7 +74,8 @@ online (at least until we run out of money to pay for shinyapps.io).
   very basic ggplot chart.
 - [Pivoting](https://utdata.shinyapps.io/jedr-trial-05-pivot/): Making
   data wider and longer.
-- Bind and Join: TK
+- [Bind and Join](https://utdata.shinyapps.io/jedr-trial-06-bind/):
+  Combining data.
 
 ### Others to come?
 
