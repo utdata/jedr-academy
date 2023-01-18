@@ -50,7 +50,7 @@ Another option is to use the links listed below to run the lessons online (at le
 - [Summarize with Math](https://utdata.shinyapps.io/jedr-trial-03-sum/): Covers grouping data and math functions within summarize.
 - [Plotting](https://utdata.shinyapps.io/jedr-trial-04-plot/): Making a very basic ggplot chart.
 - [Pivoting](https://utdata.shinyapps.io/jedr-trial-05-pivot/): Making data wider and longer.
-- Bind and Join: TK
+- [Bind and Join](https://utdata.shinyapps.io/jedr-trial-06-bind/): Combining data.
 
 ### Others to come?
 
