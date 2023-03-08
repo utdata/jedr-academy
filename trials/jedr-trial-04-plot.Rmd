@@ -38,6 +38,7 @@ To prepare this data for your plot, you need to:
 1. Group by species and count the number of rows. Name the new variable `characters`
 1. Arrange the result so the most characters are at the top.
 1. Drop any NA values.
+1. Shorten the list where there is more than one character in the species.
 1. Save the result of this into a new data frame called `species_count` and then print that out at the end.
 
 ```{r speciesctexercise, exercise = TRUE}
@@ -50,7 +51,8 @@ species_count <- starwars %>%
   ________(_______) %>%
   _________(characters = _()) %>%
   _______(desc(characters)) %>%
-  drop_na()
+  drop_na()  %>%
+  ______(characters _ _)
 
 species_count
 ```
@@ -60,7 +62,8 @@ species_count <- starwars %>%
   group_by(species) %>%
   summarize(characters = n()) %>%
   arrange(desc(characters)) %>%
-  drop_na()
+  drop_na() %>%
+  filter(characters > 1)
 
 species_count
 ```
@@ -93,7 +96,8 @@ species_count <- starwars %>%
   group_by(species) %>%
   summarize(characters = n()) %>%
   arrange(desc(characters)) %>%
-  drop_na()
+  drop_na() %>%
+  filter(characters > 1)
 ```
 
 
