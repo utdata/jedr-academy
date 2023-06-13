@@ -1,0 +1,7 @@
+---
+title: "write_rds()"
+---
+
+
+- [`write_rds()`](write_rds.qmd) to save a data frame as an `.rds` R data data file. This preserves all the data types. `read_rds()` is also covered.
+

@@ -1,0 +1,76 @@
+---
+title: "read_csv()"
+---
+
+
+```{r}
+#| label: setup
+#| echo: false
+#| results: hide
+#| message: false
+#| warning: false
+
+library(tidyverse)
+
+starwars  |> write_csv("data/starwars.csv")
+```
+
+```{r}
+#| label: write
+#| echo: false
+
+```
+
+
+`read_csv()` imports data stored as a comma-separated-value file. It requires the [readr](https://readr.tidyverse.org/) or [tidyerse]()
+
+## Official documenation
+
+`read_csv()` is part of the [readr](https://readr.tidyverse.org/) package in Tidyverse. It works similar to `read_tsv()` with the same arguments.
+
+## Common use examples
+
+### Simple import
+
+The first argument is the path to the file as a string.
+
+```{r}
+read_csv("data/starwars.csv")
+```
+
+Users often want to then save that result into an object.
+
+```{r}
+starwars <- read_csv("data/starwars.csv")
+```
+
+### Set column headers
+
+Sometimes a files may not have column headers, or you may want to set your own.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
