@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "JedR Academy"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Getting started"
+        url: index.qmd
+      - section: "Bootcamp"
+        contents:
+          - bootcamp/github.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true

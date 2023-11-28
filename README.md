@@ -1,4 +1,3 @@
-
 # JedR <img src='images/jedr_hex_800.png' align="right" height="139" />
 
 To be clear, this isn’t a package. It’s some training material.
@@ -128,7 +127,7 @@ This project was the brainchild of [Christian
 McDonald](https://journalism.utexas.edu/faculty/christian-mcdonald),
 assistant professor of practice at the School of Journalism and Media at
 the University of Texas at Austin. He began collaborating soon
-thereafter with [Dr. Jo
+thereafter with [Dr. Jo
 Lukito](https://journalism.utexas.edu/faculty/jo-lukito), an assistant
 professor also at UT JaM.
 
@@ -136,6 +135,5 @@ Other contributors include:
 
 - [Christian
   Overgaard](https://journalism.utexas.edu/graduate/profiles/doctoral/christian-staal-bruun-overgaard),
-  Doctoral student. He’s helped think through the project and built
-  tutorials.
+  Doctoral student. He helped think through the project and wrote the "Managing dates" tutorial.
 - Tamara Rodriguez designed our JedR hex logo.
