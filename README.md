@@ -1,12 +1,13 @@
-# JedR Academy
-
 <img src='images/jedr_hex_800.png' align="right" height="139" />
- 
-To be clear, this isn’t a package. It’s some training material.
 
+# JedR Academy
+ 
 > “Always pass on what you have learned.” – Yoda
 
+
 ## Overview
+
+To be clear, this isn’t a package. It’s some training material. Here is a [list of released lessons](resources/links.qmd).
 
 This project is a series of [learnr](https://rstudio.github.io/learnr/)
 interactive tutorials designed to develop and improve R skills with a
@@ -25,7 +26,7 @@ There are two types of lessons:
   lubridate.”
 - **JedR Trials**: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.
 
-JedR Padawans can download this repo and run each notebook on their
+JedR Padawans can [download the repo](https://github.com/utdata/jedr-academy) and run each notebook on their
 local machines. The notebooks are stored in the `training/` and
 `trials/` folders. All notebooks require `tidyverse`, `learnr` and
 `gradethis`. Some notebooks might require additional packages.
@@ -33,9 +34,6 @@ local machines. The notebooks are stored in the `training/` and
 Once you open a notebook, use the **Run Document** option.
 
 ![Run Document](images/run-document.png)
-
-We have published a [select number of lessons](resources/links.qmd) online (at least until we run out of money to pay for shinyapps.io).
-
 
 ## Data sources
 
