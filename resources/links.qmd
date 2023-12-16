@@ -1,0 +1,34 @@
+---
+title: "List of lessons"
+---
+
+## JedR Training
+
+Links go to online version. Locally-runnable files are in the `training/` folder.
+
+- [Categorization](https://utdata.shinyapps.io/jedr-categorization/): When you need to rename values in your data, perhaps to create a new categorization schema. 
+- [Manage dates](https://utdata.shinyapps.io/jedr-manage-dates/): When you need help parsing dates or making useful date parts for grouping.
+
+## JedR Trials
+
+Links go to online version. Locally-runnable files are in the `trails/` folder.
+
+- [Introduction](https://utdata.shinyapps.io/jedr-trial-01-intro/):
+  Introduces the `starwars` data and the interactive format of the
+  lessons. Covers some basic functions to look at data.
+- [Summarize with Count](https://utdata.shinyapps.io/jedr-trial-02-count/): Covers
+  counting rows using group_by and summarize. (We skip `count()` here to
+  focus on group_by, summarize and arrange.)
+- [Summarize with Math](https://utdata.shinyapps.io/jedr-trial-03-sum/):
+  Covers grouping data and math functions within summarize.
+- [Plotting](https://utdata.shinyapps.io/jedr-trial-04-plot/): Making a
+  very basic ggplot chart.
+- [Pivoting](https://utdata.shinyapps.io/jedr-trial-05-pivot/): Making
+  data wider and longer.
+- [Bind and Join](https://utdata.shinyapps.io/jedr-trial-06-bind/):
+  Combining data.
+
+## Others to come?
+
+This is a work in progress. We have a [list of
+ideas](https://github.com/utdata/jedr-academy/issues/2) and would be consider additions that follow our philosophy (which is admittedly also under development).

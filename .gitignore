@@ -7,8 +7,8 @@
 rsconnect/
 trials/*.html
 trials/*_files
-tutorials/*.html
-tutorials/*_files
+training/*.html
+training/*_files
 # files list
 CONTRIBUTING.html
 
@@ -84,7 +84,7 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
+# docs/
 
 # translation temp files
 po/*~
@@ -123,3 +123,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,r
+/.quarto/

@@ -1,0 +1,57 @@
+---
+title: "Using git & Github"
+author: "Christian McDonald"
+---
+
+The purpose of this bootcamp lesson is to fill gaps that my students might have before they can successfully contribute to this project. It might serve best as pointers to existing documentation for certain skills, but then explanations of how they fit into our workflow.
+
+## Prerequisites
+
+- Terminal: If you are not familiar with using a Terminal at all, then there is a chapter in [Intro to Coding for Journalists](https://utdata.github.io/icj-class/start-01-terminal.html) that might be a good first look. FreeCodeCamp has a [Command Line for Beginners](https://www.freecodecamp.org/news/command-line-for-beginners/) that is more detailed than what we need here.
+- Installing Git: Chapters 2.1 through 2.5 of [ICJ Setting Up](https://utdata.github.io/icj-setting-up/setup-part-1.html#install-git) handle installing git and configuring ssh keys, which I think is worth doing. If you already have git and Github and know how to use them, you are good.
+- Using Git: There is a section in [Intro to Coding for Journalists](https://utdata.github.io/icj-class/git-00-intro.html) on how to use Git in the context of that class. The basics apply here, as well.
+
+## Clone the repo
+
+To get the jedr-academy repo on your computer and be able to contribute to its code, you have to clone the repo. This downloads a copy of the code and it's history to your computer.
+
+1. **DO NOT** create a project folder in advance! You'll get one when you clone.
+2. Launch Terminal and use `cd` to get to the directory where you to download the code to.
+3. Do `git clone git@github.com:utdata/jedr-academy.git` to download the repo and it's commit history.
+4. Now you can close Terminal and open the project in RStudio.
+
+You only have to do this once.
+
+## Branches
+
+The Way to contribute to JedR is to use a [git branch](https://www.howtogeek.com/devops/how-do-git-branches-work/). <= Read that tutorial to get an idea how they work.
+
+1. With your project open in RStudio, go to the Terminal within RStudio.
+2. Do `git checkout -b new-branch` but use a more descriptive name than "new-branch", like "pivoting-tutorial". The name should be slug-friendly: all lowercase, words connected with dashes.
+3. Do `git branch` to double-check which branch are on.
+
+At this point, you are working on YOUR copy of the code. You can experiment, add and commit code at will. You can push the code to Github in your branch with ...
+
+```bash
+git push origin new-branch
+```
+
+... but with **your branch name**.
+
+Do know if you edit existing files on your local branch that also get edited by others, then we will have to resolve any conflicts. That's fine, but can be complicated. Just reach out to Christian for help.
+
+### Pull requests
+
+When you are done with your changes and want to merge them into the default branch, let Christian know via email and he'll create a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request). If you want to learn more about that, then request to do it together and he'll explain it.
+
+The pull request process compares the new code to the existing code and notes any conflicts, which have to be "resolved" before the branches can be merged.
+
+## Switching between branches
+
+Now that you are working on a code base that others might be working on, you have to "git pull" as well as "git push".
+
+Some things to consider:
+
+- If you are going to switch branches (like from your own feature branch back to main), then you want to commit (or [stash](https://git-scm.com/docs/git-stash)) your current changes first.
+- `git checkout branch-name` will check out that branch on your local machine.
+- `git pull origin branch-name` will pull the latest version from the Github down to your computer. This is especially important if you are checking out a branch that others have worked on, like `main`.
