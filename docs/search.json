@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "To be clear, this isn’t a package. It’s some training material.\n\n“Always pass on what you have learned.” – Yoda\n\n\n\nThis project is a series of learnr interactive tutorials designed to develop and improve R skills with a heavy lean on the tidyverse. There are two main goals:\n\nTo focus tutorials on feats of skill or tasks to accomplish instead of on specific packages or functions.\nTo use the same data whenever possible to avoid the cognitive load of learning new data for each example.\n\nThere are two types of lessons:\n\nJedR Training: Tutorials focused on feats of skills instead of on specific packages. For instance, “How to manage dates” vs “How to use lubridate.”\nJedR Trials: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.\n\nJedR Padawans can download this repo and run each notebook on their local machines. The notebooks are stored in the training/ and trials/ folders. All notebooks require tidyverse, learnr and gradethis. Some notebooks might require additional packages.\nOnce you open a notebook, use the Run Document option.\n\n\n\nRun Document\n\n\nWe have published a select number of lessons online (at least until we run out of money to pay for shinyapps.io).\n\n\n\nWhile we strive to use the starwars data as much as possible, we’ve had to introduce other Star Wars related data in some situations.\nAll data is in the data/ folder except starwars which is utilized from tidyverse.\n\nstarwars characters data that is part of the tidyverse. It’s our main data set. Small enough to wrap your head around; complex and dirty enough to provide good examples.\nstarwarsrebels is a list of episodes of Star Wars Rebels from tvmaze.com\n\n\n\nThese might be explored later.\n\nSWAPI\nStar Wars Databank\nWe’ve pulled some data from Kaggle, which notes “This data was gathered using the Star Wars API that is no longer available. The origin of the data is The Star Wars Wiki.”\n\ncharacters\nplanets\nspecies\nstarships\nvehicles\n\nFound some additional data on data.world that yielded a couple new sets:\n\nsurvey (done from Five Thirty Eight, apparently)\nprinciples\nsoundtracks\nrt_ratings\nimdb_ratings\n\n\n\n\n\n\nThis project was the brainchild of Christian McDonald, associate professor of practice at the School of Journalism and Media at the University of Texas at Austin. He began collaborating soon thereafter with Dr. Jo Lukito, an assistant professor also at UT JaM.\nOther contributors include:\n\nChristian Overgaard, Doctoral student. He helped think through the project and wrote the “Managing dates” tutorial.\nTamara Rodriguez designed our JedR hex logo."
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "This project is a series of learnr interactive tutorials designed to develop and improve R skills with a heavy lean on the tidyverse. There are two main goals:\n\nTo focus tutorials on feats of skill or tasks to accomplish instead of on specific packages or functions.\nTo use the same data whenever possible to avoid the cognitive load of learning new data for each example.\n\nThere are two types of lessons:\n\nJedR Training: Tutorials focused on feats of skills instead of on specific packages. For instance, “How to manage dates” vs “How to use lubridate.”\nJedR Trials: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.\n\nJedR Padawans can download this repo and run each notebook on their local machines. The notebooks are stored in the training/ and trials/ folders. All notebooks require tidyverse, learnr and gradethis. Some notebooks might require additional packages.\nOnce you open a notebook, use the Run Document option.\n\n\n\nRun Document\n\n\nWe have published a select number of lessons online (at least until we run out of money to pay for shinyapps.io)."
+  },
+  {
+    "objectID": "index.html#jedr-training",
+    "href": "index.html#jedr-training",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "Recoding values: When you need to rename values in your data, perhaps to create a new categorization schema.\nManaging dates: When you need help parsing dates or making useful date parts for grouping."
+  },
+  {
+    "objectID": "index.html#jedr-trials",
+    "href": "index.html#jedr-trials",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "Introduction: Introduces the starwars data and the interactive format of the lessons. Covers some basic functions to look at data.\nSummarize with Count: Covers counting rows using group_by and summarize. (We skip count() here to focus on group_by, summarize and arrange.)\nSummarize with Math: Covers grouping data and math functions within summarize.\nPlotting: Making a very basic ggplot chart.\nPivoting: Making data wider and longer.\nBind and Join: Combining data.\n\n\n\nThis is a work in progress. We have a list of ideas and would be consider additions that follow our philosophy (which is admittedly also under development)."
+  },
+  {
+    "objectID": "index.html#data-sources",
+    "href": "index.html#data-sources",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "While we strive to use the starwars data as much as possible, we’ve had to introduce other Star Wars related data in some situations.\nAll data is in the data/ folder except starwars which is utilized from tidyverse.\n\nstarwars characters data that is part of the tidyverse. It’s our main data set. Small enough to wrap your head around; complex and dirty enough to provide good examples.\nstarwarsrebels is a list of episodes of Star Wars Rebels from tvmaze.com\n\n\n\nThese might be explored later.\n\nSWAPI\nStar Wars Databank\nWe’ve pulled some data from Kaggle, which notes “This data was gathered using the Star Wars API that is no longer available. The origin of the data is The Star Wars Wiki.”\n\ncharacters\nplanets\nspecies\nstarships\nvehicles\n\nFound some additional data on data.world that yielded a couple new sets:\n\nsurvey (done from Five Thirty Eight, apparently)\nprinciples\nsoundtracks\nrt_ratings\nimdb_ratings"
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "This project was the brainchild of Christian McDonald, associate professor of practice at the School of Journalism and Media at the University of Texas at Austin. He began collaborating soon thereafter with Dr. Jo Lukito, an assistant professor also at UT JaM.\nOther contributors include:\n\nChristian Overgaard, Doctoral student. He helped think through the project and wrote the “Managing dates” tutorial.\nTamara Rodriguez designed our JedR hex logo."
+  },
+  {
+    "objectID": "resources/github.html",
+    "href": "resources/github.html",
+    "title": "Using git & Github",
+    "section": "",
+    "text": "The purpose of this bootcamp lesson is to fill gaps that my students might have before they can successfully contribute to this project. It might serve best as pointers to existing documentation for certain skills, but then explanations of how they fit into our workflow."
+  },
+  {
+    "objectID": "resources/github.html#prerequisites",
+    "href": "resources/github.html#prerequisites",
+    "title": "Using git & Github",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nTerminal: If you are not familiar with using a Terminal at all, then there is a chapter in Intro to Coding for Journalists that might be a good first look. FreeCodeCamp has a Command Line for Beginners that is more detailed than what we need here.\nInstalling Git: Chapters 2.1 through 2.5 of ICJ Setting Up handle installing git and configuring ssh keys, which I think is worth doing. If you already have git and Github and know how to use them, you are good.\nUsing Git: There is a section in Intro to Coding for Journalists on how to use Git in the context of that class. The basics apply here, as well."
+  },
+  {
+    "objectID": "resources/github.html#clone-the-repo",
+    "href": "resources/github.html#clone-the-repo",
+    "title": "Using git & Github",
+    "section": "Clone the repo",
+    "text": "Clone the repo\nTo get the jedr-academy repo on your computer and be able to contribute to its code, you have to clone the repo. This downloads a copy of the code and it’s history to your computer.\n\nDO NOT create a project folder in advance! You’ll get one when you clone.\nLaunch Terminal and use cd to get to the directory where you to download the code to.\nDo git clone git@github.com:utdata/jedr-academy.git to download the repo and it’s commit history.\nNow you can close Terminal and open the project in RStudio.\n\nYou only have to do this once."
+  },
+  {
+    "objectID": "resources/github.html#branches",
+    "href": "resources/github.html#branches",
+    "title": "Using git & Github",
+    "section": "Branches",
+    "text": "Branches\nThe Way to contribute to JedR is to use a git branch. &lt;= Read that tutorial to get an idea how they work.\n\nWith your project open in RStudio, go to the Terminal within RStudio.\nDo git checkout -b new-branch but use a more descriptive name than “new-branch”, like “pivoting-tutorial”. The name should be slug-friendly: all lowercase, words connected with dashes.\nDo git branch to double-check which branch are on.\n\nAt this point, you are working on YOUR copy of the code. You can experiment, add and commit code at will. You can push the code to Github in your branch with …\ngit push origin new-branch\n… but with your branch name.\nDo know if you edit existing files on your local branch that also get edited by others, then we will have to resolve any conflicts. That’s fine, but can be complicated. Just reach out to Christian for help.\n\nPull requests\nWhen you are done with your changes and want to merge them into the default branch, let Christian know via email and he’ll create a Pull Request. If you want to learn more about that, then request to do it together and he’ll explain it.\nThe pull request process compares the new code to the existing code and notes any conflicts, which have to be “resolved” before the branches can be merged."
+  },
+  {
+    "objectID": "resources/github.html#switching-between-branches",
+    "href": "resources/github.html#switching-between-branches",
+    "title": "Using git & Github",
+    "section": "Switching between branches",
+    "text": "Switching between branches\nNow that you are working on a code base that others might be working on, you have to “git pull” as well as “git push”.\nSome things to consider:\n\nIf you are going to switch branches (like from your own feature branch back to main), then you want to commit (or stash) your current changes first.\ngit checkout branch-name will check out that branch on your local machine.\ngit pull origin branch-name will pull the latest version from the Github down to your computer. This is especially important if you are checking out a branch that others have worked on, like main."
+  },
+  {
+    "objectID": "resources/learnr.html",
+    "href": "resources/learnr.html",
+    "title": "Learning learnr",
+    "section": "",
+    "text": "Our goal here is to introduce packages used within the JedR Academy. It mostly points to other resources with some description with how the link might fit into our workflow.\nlearnr is the package that allows us to create interactive code in a browser. We are also using shinyapps to publish our interactive files on the web.\nBefore working on any code, make sure you are in a clone of the repo in your own branch."
+  },
+  {
+    "objectID": "resources/learnr.html#learnr",
+    "href": "resources/learnr.html#learnr",
+    "title": "Learning learnr",
+    "section": "learnr",
+    "text": "learnr\nProbably the best way to learn learnr is to scan the documentation, look through some examples and then start building your own.\n\nStart with the learnr package site. Look through one of the examples on that page, along with the code that created it.\nGo through the interactive exercises and interative questions pages.\nLook through some examples in this repo, like trials/jedr-trial-01-intro.Rmd and training/jedr-categorization.Rmd.\nPick an idea from this list and start working on it, in the proper folder."
+  },
+  {
+    "objectID": "resources/learnr.html#structure-and-style",
+    "href": "resources/learnr.html#structure-and-style",
+    "title": "Learning learnr",
+    "section": "Structure and style",
+    "text": "Structure and style\n\nA Trial is little test for folks to practice a new skill. Look at the files in the trails folders for examples to follow. They should be short and focused, with enough hints to help ensure student success. They don’t have to pair with a tutorial, but it would be nice. These should be saved in the trails folder.\nA Training is a more involved tutorial designed to teach a new skill using familiar data sets, with some fun thrown in. To get an idea of how they work, do the Categorization tutorial to see and experience the style. Then look through the code of that file training/jedr-categorization.Rmd as an example. These should be saved in the training folder."
+  },
+  {
+    "objectID": "resources/learnr.html#publishing-to-the-web",
+    "href": "resources/learnr.html#publishing-to-the-web",
+    "title": "Learning learnr",
+    "section": "Publishing to the web",
+    "text": "Publishing to the web\nProfessor McDonald will handle publishing and linking to any new interactives. When you are ready for that, talk to him."
+  },
+  {
+    "objectID": "resources/links.html",
+    "href": "resources/links.html",
+    "title": "List of lessons",
+    "section": "",
+    "text": "Links go to online version. Locally-runnable files are in the training/ folder.\n\nCategorization: When you need to rename values in your data, perhaps to create a new categorization schema.\nManage dates: When you need help parsing dates or making useful date parts for grouping."
+  },
+  {
+    "objectID": "resources/links.html#jedr-training",
+    "href": "resources/links.html#jedr-training",
+    "title": "List of lessons",
+    "section": "",
+    "text": "Links go to online version. Locally-runnable files are in the training/ folder.\n\nCategorization: When you need to rename values in your data, perhaps to create a new categorization schema.\nManage dates: When you need help parsing dates or making useful date parts for grouping."
+  },
+  {
+    "objectID": "resources/links.html#jedr-trials",
+    "href": "resources/links.html#jedr-trials",
+    "title": "List of lessons",
+    "section": "JedR Trials",
+    "text": "JedR Trials\nLinks go to online version. Locally-runnable files are in the trails/ folder.\n\nIntroduction: Introduces the starwars data and the interactive format of the lessons. Covers some basic functions to look at data.\nSummarize with Count: Covers counting rows using group_by and summarize. (We skip count() here to focus on group_by, summarize and arrange.)\nSummarize with Math: Covers grouping data and math functions within summarize.\nPlotting: Making a very basic ggplot chart.\nPivoting: Making data wider and longer.\nBind and Join: Combining data."
+  },
+  {
+    "objectID": "resources/links.html#others-to-come",
+    "href": "resources/links.html#others-to-come",
+    "title": "List of lessons",
+    "section": "Others to come?",
+    "text": "Others to come?\nThis is a work in progress. We have a list of ideas and would be consider additions that follow our philosophy (which is admittedly also under development)."
+  }
+]

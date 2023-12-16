@@ -9,6 +9,7 @@ output:
     highlight: espresso
 runtime: shiny_prerendered
 ---
+
 ##### Tutorial by: Christian Staal Bruun Overgaard, JedR trainer
 
 ## Introduction
@@ -25,12 +26,12 @@ library(rsconnect)
 library(praise)
 
 ### setup dataframes for the exercises
-rebels_cl <- read_csv("https://github.com/utdata/jedr-academy/blob/date-tutorial/data/starwarsrebels.csv?raw=true") |> 
+rebels_cl <- read_csv("https://raw.githubusercontent.com/utdata/jedr-academy/main/data/starwarsrebels.csv") |> 
   clean_names() |> 
   mutate(air_date_fixed = dmy(original_air_date)) |> 
   select(-original_air_date)
 
-rebels_cl_newcols <- read_csv("https://github.com/utdata/jedr-academy/blob/date-tutorial/data/starwarsrebels.csv?raw=true") |> 
+rebels_cl_newcols <- read_csv("https://raw.githubusercontent.com/utdata/jedr-academy/main/data/starwarsrebels.csv") |> 
   clean_names() |> 
   mutate(air_date_fixed = dmy(original_air_date)) |> 
   mutate(month = month(air_date_fixed, label = TRUE)) |> 
@@ -49,7 +50,7 @@ parsing_practice_df <- rebels_cl |>
 ### Import data
 
 ```{r import, message=F}
-rebels_raw <- read_csv("https://github.com/utdata/jedr-academy/blob/date-tutorial/data/starwarsrebels.csv?raw=true") # import data
+rebels_raw <- read_csv("https://raw.githubusercontent.com/utdata/jedr-academy/main/data/starwarsrebels.csv") # import data
 rebels_raw |> head() # see what the data looks like
 ```
 

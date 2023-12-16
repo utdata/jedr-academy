@@ -3,7 +3,7 @@ title: "Using git & Github"
 author: "Christian McDonald"
 ---
 
-This guide is geared toward my students and the gaps those students might have before they can successfully contribute to this project. It might serve best as pointers to existing documentation for certain skills, but then explanations of how they fit into our workflow.
+The purpose of this bootcamp lesson is to fill gaps that my students might have before they can successfully contribute to this project. It might serve best as pointers to existing documentation for certain skills, but then explanations of how they fit into our workflow.
 
 ## Prerequisites
 

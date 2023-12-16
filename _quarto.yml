@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
 
 website:
   title: "JedR Academy"
@@ -8,11 +10,16 @@ website:
     style: "docked"
     search: true
     contents:
-      - text: "Getting started"
+      - text: "Overview"
         url: index.qmd
-      - section: "Bootcamp"
+      - text: "Links"
+        url: resources/links.qmd
+      - text: "Github Repo"
+        url: https://github.com/utdata/jedr-academy
+      - section: "Resources"
         contents:
-          - bootcamp/github.qmd
+          - resources/github.qmd
+          - resources/learnr.qmd
 
 format:
   html:
