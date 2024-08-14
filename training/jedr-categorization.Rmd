@@ -23,7 +23,7 @@ library(gradethis)
 
 Welcome Padawan. May your quest to become a JedR Master be fruitful. "Do or do not. There is no try."
 
-Sometimes as journalists (or data scientist) we need to create new categories for our data. An example might be where we have a column of data that has too many different values to plot effectively. We might be able to re-categorize those values to fewer individual choices, maybe combining less important values into a generic term like "other".
+Sometimes as journalists (or data scientists) we need to create new categories for our data. An example might be where we have a column of data that has too many different values to plot effectively. We might be able to re-categorize those values to fewer individual choices, maybe combining less important values into a generic term like "other".
 
 Some real-worldish examples:
 
@@ -36,7 +36,7 @@ We're taking records and putting them into piles or groups based on one or more 
 
 ### Goals of this training session
 
-- To apply [`recode()`](https://dplyr.tidyverse.org/reference/recode.html) within a `mutate()` to create data categories. It's a one-to-one match, for the most part.
+- To apply [`case_match()`](https://dplyr.tidyverse.org/reference/case_match.html) within a `mutate()` to create data categories. It's a one-to-one match, for the most part.
 - To apply [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) within a `mutate()` to create data categories. This allows more complex logic.
 
 ## Our scenario
@@ -55,166 +55,166 @@ To accomplish this, it would be helpful to have a "species_category" variable us
 Let's take a look at the species column using [`count()`](https://dplyr.tidyverse.org/reference/count.html).
 
 ```{r species-count}
-starwars %>% count(species, sort = TRUE, name = "cnt")
+starwars |> count(species, sort = TRUE, name = "cnt")
 ```
 
 You can see that **Human** and **Droid** values dominate the data. The next most frequent values is `NA`. Maybe we can convince our editor to make that category **Other/Unknown**.
 
-## Using `recode()`
+## Using `case_match()`
 
-One of the easier methods to categorize data is to use [`recode()`](https://dplyr.tidyverse.org/reference/recode.html). The logic is straighforward: For this value, substitute that value.
+One of the easier methods to categorize data is to use [`case_match()`](https://dplyr.tidyverse.org/reference/case_match.html). The logic is straighforward: For this value, substitute that value.
 
 To make clear our goal here for the _Galactic Hub News_: We want to create a new column called `species_category` that has three values: Human, Droid, Other/Unknown. And they need to be based on the existing `species` variable.
 
-### How recode works
+### How case_match works
 
-While is is possible to recode values into the same column, a good JedR will use the `recode()` function within a `mutate()` function, creating a new column and then filling it with the results of the recode.
+While is is possible to recatagorize our values into the same column, a good JedR will instead use `mutate()` and `case_when()` to create a new column and then fill it with the results.
 
 ```r
-data %>% 
+data |> 
   mutate(
-    new_column = recode(
+    new_column = case_when(
       existing_column,
-      "Old Value 1 from existing_column" = "New Value 1",
-      "Old Value 2 from existing_column" = "New Value 2",
+      "Old Value 1 from existing_column" ~ "New Value 1",
+      "Old Value 2 from existing_column" ~ "New Value 2",
+      .default = "Value for everything else"
     )
   )
 ```
 
-- This is standard usage for the `mutate()` function ... you create the new column and then set it to a value. In this case, we are setting the value to the result of the `recode()` function.
-- Within `recode()`, we have to first name the column we are pulling from, then list the recoded values in order of old value, then new value.
+- This is standard usage for the `mutate()` function ... you create the new column and then set it to a value. In this case, we are setting the value to the result of the `case_when()` function.
+- Within `case_when()`, we have to first name the column we are pulling from. Like where are we looking for these values?
+- Then we have a series of statements separated with `~`. If we find what is on the left-hand side, then we change it to what is on the right-hand side.
+- Lastly we have a "default" to handle everything else we haven't specified. In some cases you might make this `.default = existing_column` to keep the existing value for those rows.
 
-**Note:** If you look at the [documentation](https://dplyr.tidyverse.org/reference/recode.html), you'll see that there is a **lifecycle question** about how the function works. Most R functions name a thing before assigning it: You have to have a planet before you can fill it with sentient beings. The `recode()` function breaks that convention by naming the old thing first, then describing what the new value is. We just have to get over it for now.
+The order you put these is important. Once a match has been found and updated, that value won't be changed again.
 
 So, with our `starwars` data, a partial solution might look like this:
 
-```{r recode-ex}
-starwars %>% 
+```{r casematch-ex}
+starwars |> 
   mutate(
-    species_category = recode(
+    species_category = case_match(
       species,
-      "Gungan" = "Other/Unknown",
-      "Neimodian" = "Other/Unknown"
+      "Gungan" ~ "Other/Unknown",
+      "Neimodian" ~ "Other/Unknown"
     )
-  ) %>% # using select and slice to focus on the change
-  select(name, species, species_category) %>% slice(31:40)
+  ) |> # using select and slice to focus on the change
+  select(name, species, species_category) |> slice(31:40)
 ```
 
 In the example above, we use `slice()` to skip down to part of the data where we can see the change. (The first 20 rows are all humans and droids.) We also used `select()` to focus on our columns of interest.
 
-Note we've only changed _two_ of the 36 values we need to change, though. (You can see Toydarian and Dug have not been changed.) This method is very handy if you have just a few things to change.
+Note we've only changed _two_ of the values we need to change, though. (You can see Toydarian and Dug have not been changed.) This method is very handy if you have just a few things to change.
 
 In our case here, we _could_ list all 36 changes, but ... Use the Force, Luke.
 
-### Using .default and .missing
+### Using .default
 
-There are two special values in recode() we can leverage here:
+`case_match()` changes exactly what you specify and leaves anything you don't specify as `NA`. If you want the non-matches to be something else, you can specify them with `.default =`.
 
-- `.default` recodes everything not specified.
-- `.missing` recodes `NA` (or blank) values.
+Using this, we can set Human to Human and Droid to Droid, but then everything else to Other/Unknown.
 
-Using these, we can set Human to Human and Droid to Droid, but then everything else to Other/Unknown.
+**NOTE** that the specific matches use `~` to separate what to look for and what to change it to, but the `.default` designation uses `=`.
 
-```{r recode-default}
-starwars %>% 
+```{r casematch-default}
+starwars |> 
   mutate(
-    species_category = recode(
+    species_category = case_match(
       species,
-      "Human" = "Human",
-      "Droid" = "Droid",
+      "Human" ~ "Human",
+      "Droid" ~ "Droid",
       .default = "Other/Unknown",
-      .missing = "Other/Unknown"
     )
-  ) %>% # using select and slice to focus on change
-  select(name, species, species_category) %>% slice(31:40)
+  ) |> # using select and slice to focus on change
+  select(name, species, species_category) |> slice(31:40)
 
 ```
 
-YLMV\*: The method you choose to use will depend on your needs. \*(Your Lightspeed May Vary)
 
 ### Check your results
 
 > **JedR Mind Trick:** Even with these few rows, it's hard to _see all_ the changes made in your data. It is sometimes helpful to do a `count()` on your changes to check them. Just be sure to count the already-changed data, not the result you are saving into the new object.
 
-Here we save the recoded data into a new object called `sw_species` and then run a `count()` on our two columns to check the results.
+Here we save the recategorized data into a new object called `sw_species` and then run a `count()` on our two columns to check the results.
 
-```{r recode-count}
-sw_species <- starwars %>% 
+```{r casematch-count}
+sw_species <- starwars |> 
   mutate(
-    species_category = recode(
+    species_category = case_match(
       species,
-      "Human" = "Human",
-      "Droid" = "Droid",
+      "Human" ~ "Human",
+      "Droid" ~ "Droid",
       .default = "Other/Unknown",
-      .missing = "Other/Unknown"
     )
   )
 
-sw_species %>% 
+sw_species |> 
   count(species, species_category, sort = TRUE)
 
 ```
 
-The `recode()` function works great if you have one-to-one changes that don't require logic. But when you have more complex needs, we need more Force.
+The `case_match()` function works great if you have one-to-one changes that don't require logic. But when you have more complex needs, we need more Force.
 
-## Padawan practice: recode
+## Padawan practice: case_match
 
 If you look at the `gender` column in the data, you'll see there are two values: **masculine** and **feminine**, but there are four records that don't have a `gender` value are listed as `NA`.
 
 ```{r gender-reveal}
-starwars %>% count(gender)
+starwars |> count(gender)
 ```
 
-For this quest, you will use `recode()` to fill in those blank values with **unknown**.
+For this quest, you will use `case_match()` to fill in those blank values with **unknown**.
 
 Note in the code we are creating a new dataframe and filling with mutated `starwars` data.
 
-Within the recode section you'll need to note what variable you are working form, and then use one of the special helpers to fill the values as required.
+Within the case_match section you'll need to note what variable you are working from, what to do if that value is NA, and set the remainder using a default.
 
 At the end it prints the results.
 
-```{r recode-exercise, exercise = TRUE}
-gender_reveal <- starwars %>% 
+```{r casematch-exercise, exercise = TRUE}
+gender_reveal <- starwars |> 
   mutate(
-    gender_clean = recode(
+    gender_clean = case_match(
       # Fill in here
     )
   )
 
-gender_reveal %>% select(name, gender, gender_clean)
+gender_reveal |> select(name, gender, gender_clean)
 ```
 
-<div id="recode-exercise-hint">
-**Hint:** You should only have to set the base variable and the `.missing = ` values.
+<div id="casematch-exercise-hint">
+**Hint:** You should only have to set what to do of the gender is NA, then set the `.default = ` to the existing gender.
 </div>
 
-```{r recode-exercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
-gender_reveal <- starwars %>% 
+```{r casematch-exercise-solution, exercise.reveal_solution = FALSE, include = FALSE}
+gender_reveal <- starwars |> 
   mutate(
-    gender_clean = recode(
+    gender_clean = case_match(
       gender,
-      .missing = "unknown"
+      NA ~ "unknown",
+      .default = gender
     )
   )
 
-gender_reveal %>% select(name, gender, gender_clean)
+gender_reveal |> select(name, gender, gender_clean)
 ```
 
-```{r recode-exercise-check}
+```{r casematch-exercise-check}
 grade_this_code()
 ```
-
 
 ### Quiz
 
 (Just page through the results of your quest above.)
 
-```{r recode-quiz, echo=FALSE}
+```{r casematch-quiz, echo=FALSE}
 question("Which of these characters has an unknown gender?",
   answer("Yoda"),
   answer("C-3PO"),
-  answer("Captain Phasma", correct = TRUE),
-  answer("Cordé")
+  answer("Captain Phasma"),
+  answer("Cordé", correct = TRUE),
+  allow_retry = TRUE
 )
 ```
 
@@ -223,41 +223,41 @@ question("Which of these characters has an unknown gender?",
 
 The [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) function is useful when you need to set new values based on some kind of logic.
 
-Here we will use `case_when` to do the same thing we did above with `recode()` and then explain how it is working below.
+Here we will use `case_when` to do the same thing we did above with `case_match()` and then explain how it is working below.
 
 ```{r casewhen-show}
-starwars %>% 
+starwars |> 
   mutate(
     species_category = case_when(
       species == "Human" ~ "Human",
       species == "Droid" ~ "Droid",
-      TRUE ~ "Other/Unknown"
+      .default = "Other/Unknown"
     )
-  ) %>%
-  select(name, species, species_category) %>% slice(31:40)
+  ) |>
+  select(name, species, species_category) |> slice(31:40)
 ```
 
 You can see the syntax works differently (once we are past the mutate).
 
 - Within the `case_when()`, there are rules that split with `~`. On the left is a logical test, and on the right is a new value designation.
 - Each rule is run in order. A value is set only once, so if a value is set in one rule, it will NOT be reset by subsequent rules. You must write your rules from the most specific to the most general.
-- The last line `TRUE ~` handles all values not already changed. If left out, values not specified would be set `NA`.
+- The last line `.default =` handles all values not already changed. If left out, values not specified would be set `NA`.
 
 ### A more complex example
 
-Unlike `recode()` where you are drawing from values in one specific column, the logic tests used with `case_when()` can be just about anything as long as they evaluate to `TRUE` or `FALSE`.
+Unlike `case_match()` where you are drawing from values in one specific column, the logic tests used with `case_when()` can be just about anything as long as they evaluate to `TRUE` or `FALSE`.
 
 While this is a silly example, here we create a column called `size_compare` that notes if a character is "larger" or "smaller" than an average human, unless they are a droid, in which case they are labeled "mechanical".
 
 ```{r casewhen-complex-show}
-starwars %>% 
+starwars |> 
   mutate(
     size_compare = case_when(
       species == "Droid" ~ "mechanical",
       height >= 170 & mass >= 80 ~ "larger",
-      TRUE ~ "smaller"
+      .default = "smaller"
     )
-  ) %>% 
+  ) |> 
   select(name, size_compare)
 
 ```
@@ -271,26 +271,26 @@ Create a column called `main_planet` using the `homeworld` column. For each char
 (This is a fill-in-the-blank thing ...)
 
 ```{r casewhen-quest, exercise = TRUE}
-mainchars <- starwars %>% 
+mainchars <- starwars |> 
   mutate(
     main_planet_origin = case_when(
       str_detect(_________, "Tatooine|Naboo") ~ ____,
-      TRUE ~ _____
+      .default = _____
     )
   )
-mainchars %>% select(name, homeworld, main_planet_origin)
+mainchars |> select(name, homeworld, main_planet_origin)
 ```
 
 
 ```{r casewhen-quest-solution, exercise.reveal_solution = FALSE, include = FALSE}
-mainchars <- starwars %>% 
+mainchars <- starwars |> 
   mutate(
     main_planet_origin = case_when(
       str_detect(homeworld, "Tatooine|Naboo") ~ TRUE,
-      TRUE ~ FALSE
+      .default = FALSE
     )
   )
-mainchars %>% select(name, homeworld, main_planet_origin)
+mainchars |> select(name, homeworld, main_planet_origin)
 ```
 
 ```{r casewhen-quest-check}
