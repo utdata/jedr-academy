@@ -1,0 +1,147 @@
+---
+title: "JedR Trial: Sum"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(gradethis)
+
+starwars <- starwars
+gradethis_setup()
+
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The force is strong with this one.")
+```
+
+## JedR Trial No. 3: Summarize with math
+
+Welcome, Padawan. In this exercise, you'll be tested on skills using math-based `summarize()` functions. Like our previous exercises, we'll be using the dataset `starwars` in the `tidyverse` packages.
+
+If you recall from our earlier exercise, `starwars` is a dataset with 87 Star Wars characters.
+
+```{r glimpse}
+glimpse(starwars)
+```
+
+### The quest
+
+Your droid editor, J-327D, notes that Chewbacca is taller than the rest of the crew in the Millennium Falcon, but he wonders if he is just tall for a Wookiee. He asks you to find the average heights of Humans, Droids, Gungans and Wookiees from within the starwars data. (By the way, that height variable is a measurement in centimeters.)
+
+## Select and filter
+
+First, create a data frame with just the columns and rows you need to work with.
+
+1. Select only the `name`, `height`, and `species` variables from the starwars data.
+2. Filter that to include only rows with species of "Human", "Droid", "Gungan" and "Wookiee".
+3. Save the results into a new data frame called `characters` and then print out the new `characters` data frame.
+
+```{r filter, exercise = TRUE}
+starwars
+```
+
+```{r filter-hint-1}
+# start with your select. Fill in the blanks
+starwars %>%
+  ______(name, height, species)
+```
+
+```{r filter-hint-2}
+# There are a couple of ways to filter species Once choice:
+starwars %>%
+  ______(name, height, species) %>%
+  ______(_______ %in% c("Human", "Droid", "Gungan", "Wookiee"))
+```
+
+```{r filter-hint-3}
+# Once have the code, save it into characters
+characters <- starwars %>%
+  ______(name, height, species) %>%
+  ______(_______ %in% c("Human", "Droid", "Gungan", "Wookiee"))
+
+characters
+```
+
+```{r filter-solution, exercise.reveal_solution = FALSE}
+characters <- starwars %>%
+  select(name, height, species) %>%
+  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
+
+characters
+```
+
+```{r filter-check}
+grade_this({
+  if(identical(.result,.solution)){ 
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+
+```
+
+## Finding the mean
+
+In our last JedR Trial, we counted the number of characters (rows) that were different species. In this trail we need to use `group_by()` and `summarize()` and `arrange()` again, but we must summarize to get the average height -- or `mean()` -- of each species in the data.
+
+Of note:
+
+- Call the new summarized variable `height_avg` so our Prof_AI grade checker knows what to look for.
+- If you try to do match on rows with no values `NA`, then the result is also `NA`. You can fix this by adding `na.rm = TRUE` to remove those rows from consideration.
+
+```{r avgexercise-setup, include=FALSE}
+# Creates characters dataframe for exercise=
+characters <- starwars %>%
+  select(name, height, species) %>%
+  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
+```
+
+
+
+```{r avgexercise, exercise = TRUE, exercise.lines = 5}
+characters
+
+```
+
+```{r avgexercise-hint-1, exercise.lines = 5}
+# Try filling in the blanks
+characters %>%
+  ________(_______) %>% 
+  _________(height_avg = ____(______, na.rm = TRUE)) %>%
+  _______(____(height_avg))
+```
+
+```{r avgexercise-solution, exercise.reveal_solution = FALSE}
+characters %>%
+  group_by(species) %>%
+  summarize(height_avg = mean(height, na.rm = TRUE)) %>%
+  arrange(desc(height_avg))
+```
+
+```{r avgexercise-check}
+grade_this({
+  if(identical(.result,.solution)){ 
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+
+```
+
+
+Now you should be able to answer this following question:
+
+```{r quiz-arrange, echo = FALSE}
+question("Among Humans, Droids, Gungans and Wookies, which Star Wars species is the tallest?",
+  answer("Wookiee", correct = TRUE),
+  answer("Droid"),
+  answer("Human"),
+  answer("Gungan"),
+  random_answer_order = TRUE
+)
+```
+
+Please inform your JedR Master that you have completed this trial.

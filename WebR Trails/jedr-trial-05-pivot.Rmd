@@ -1,0 +1,146 @@
+---
+title: "JedR Trial: Pivot"
+output: 
+  learnr::tutorial:
+    progressive: true
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(gradethis)
+
+starwars <- starwars
+keepers <-  c("Human", "Droid", "Gungan")
+characters <- starwars |> 
+  drop_na(sex, gender) |> 
+  mutate(species_clean = case_when(
+    !(species %in% keepers) ~ "Other",
+    is.na(species) ~ "Other",
+    TRUE ~ species
+  )) |> 
+  select(
+    -species,
+    species = species_clean
+  ) |> 
+  count(species, gender)
+gender_table <- characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+  
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The force is strong with this one.")
+```
+
+## JedR Trial No. 5: Pivot data
+
+<div style="float:right; margin-left:20px"><img src="images/jedi-pivot.webp" width="200"></div>
+
+In this JedR Trial we will explore your ability to pivot data to suit your needs. This is a common challenge to prepare data for charting in ggplot or [Datawrapper](https://www.datawrapper.de/).
+
+Your droid editor (J-327D) has sent you some data that they would like to see in a different format. J-327D is pretty sure you can use your JedR powers to "pivot" this data to their liking.
+
+<br clear="both">
+
+## Make wider tables
+
+This is the data you get from J-327D. It is a table with the number of `characters` (as in characters in a story) from the `starwars` data based on their `species` and `gender` identity.
+
+```{r view}
+characters
+```
+
+But J-327D would like to see this data formatted so that it is easier to read ... where for each species there is a column for each gender value. Like this:
+
+```{r as_gender-goal, echo=FALSE}
+characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+```
+
+### Do. Or do not. There is no try.
+
+Write the code below that will transform the `characters` data into the format noted above.
+
+```{r as_gender, exercise = TRUE}
+characters
+```
+
+<div id="as_gender-hint">**Hint:** You might review the [pivoting vignette](https://tidyr.tidyverse.org/articles/pivot.html) in the Tidyverse documentation.</div>
+
+```{r as_gender-solution}
+characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+```
+
+```{r as_gender-check}
+grade_this({
+  if(identical(.result,.solution)){ 
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+```
+
+### Repeat, you must. Train yourself!
+
+Well done, Padawan. Your droid editor is quite pleased, but now they want to see the table with the species as the new columns.
+
+Can you make the `characters` data look like this:
+
+```{r as_species-goal, echo=FALSE}
+characters |> 
+  pivot_wider(names_from = species, values_from = n)
+```
+
+```{r as_species, exercise = TRUE}
+characters
+```
+
+```{r as_species-solution, exercise.reveal_solution = FALSE}
+characters |> 
+  pivot_wider(names_from = species, values_from = n)
+```
+
+```{r as_species-check}
+grade_this({
+  if(identical(.result,.solution)){ 
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+```
+
+
+## Make longer views
+
+### Control, control, you must learn control!
+
+Now that you have mastered, pivoting wider, can you go back the other way?
+
+Starting with our first widened table, which will be in a tibble called `gender_table`, can you convert the data back to its original form, to this?
+
+```{r longer-goal, echo=FALSE}
+characters
+```
+
+> Hint: For the Prof_AI bot to grade this properly, you columns must be named "gender", "species" and "n".
+
+```{r longer, exercise = TRUE}
+gender_table
+```
+
+```{r longer-solution, exercise.reveal_solution = FALSE}
+gender_table |> 
+  pivot_longer(cols = 2:3, names_to = "gender", values_to = "n")
+```
+
+```{r longer-check}
+grade_this({
+  if(identical(.result,.solution)){ 
+    pass(sample(praise_list, 1))
+  }
+  fail()
+})
+```
+
+Great job, padawan. Please inform your JedR Master that you have completed this trial.
+
