@@ -1,5 +1,5 @@
 ---
-title: " JedR Trial No. 1: Introduction"
+title: " JedR Trial: Intro"
 engine: knitr
 format: live-html
 webr:
@@ -11,11 +11,13 @@ webr:
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 {{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
 
+## JedR Trial No. 1: Introduction
+
 Congratulations! You have recently been hired as a **data jedi** for the *Galactic News Hub*, the premiere news organization for the Star Wars Universe. Your first task: apply beginning `tidyverse` skills to learn about the characters in the Star Wars universe you'll be reporting on.
 
 ### 1. Previewing our data
 
-For this exercise, we will use the data collection called `starwars`. This data comes with the `tidyverse` package, so if you have loaded `tidyverse` into your R environment using `library()`, the `starwars` data should be there! As you can see below, `starwars` contains some information about Star Wars characters, like their name and height.
+For this exercise, we will use the data collection called `starwars`. This data comes with the `tidyverse` package. As you can see below, `starwars` contains some information about Star Wars characters, like their name and height.
 
 Let's learn a bit more about the structure of the `starwars` data and how to conquer these JedR Trials.
 
@@ -29,7 +31,7 @@ starwars |>
   head()
 ```
 
-Within the JedR Trails, you can enter and run code right inside this page. Since the tidyverse was loaded above, all the functions you would normally see in RStudio are available in this interactive. Once you enter the code, click the blue **Run Code** button to see the results, and then once you think you have the correct code, click the **Submit Answer** to pass the test.
+Within the JedR Trails, you can enter and run code right inside this page. Since the tidyverse was loaded above, all the functions you would normally see in RStudio are available in this interactive. Once you enter the code, click the blue **Run Code** button to see the results.
 
 The first thing you need to learn is how many rows are in the `starwars` data, along with all the columns and datatypes.
 
@@ -111,7 +113,7 @@ if (identical(.result, .solution)) {
 ::: {.callout-note collapse="false"}
 ## Hint 1
 
-Check out the `rows`` from the previous question.
+Check out the `rows` from the previous question.
 
 :::
 :::

@@ -1,18 +1,25 @@
 ---
 title: "JedR Trial: Pivot"
-output: 
-  learnr::tutorial:
-    progressive: true
-runtime: shiny_prerendered
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - dplyr
 ---
 
-```{r setup, include=FALSE}
-library(learnr)
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}} 
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| include: FALSE
+
 library(tidyverse)
-library(gradethis)
 
 starwars <- starwars
+
 keepers <-  c("Human", "Droid", "Gungan")
+
 characters <- starwars |> 
   drop_na(sex, gender) |> 
   mutate(species_clean = case_when(
@@ -25,10 +32,15 @@ characters <- starwars |>
     species = species_clean
   ) |> 
   count(species, gender)
+
 gender_table <- characters |> 
   pivot_wider(names_from = gender, values_from = n)
-  
-praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The force is strong with this one.")
+
+wider_pivot <- characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+
+wider_pivot_characters <- characters |> 
+  pivot_wider(names_from = species, values_from = n)
 ```
 
 ## JedR Trial No. 5: Pivot data
@@ -45,40 +57,66 @@ Your droid editor (J-327D) has sent you some data that they would like to see in
 
 This is the data you get from J-327D. It is a table with the number of `characters` (as in characters in a story) from the `starwars` data based on their `species` and `gender` identity.
 
-```{r view}
+```{webr}
+#| edit: FALSE
 characters
 ```
 
 But J-327D would like to see this data formatted so that it is easier to read ... where for each species there is a column for each gender value. Like this:
 
-```{r as_gender-goal, echo=FALSE}
-characters |> 
+```{webr}
+#| include: false
+#| setup: true
+wider_pivot <- characters |> 
   pivot_wider(names_from = gender, values_from = n)
+```
+
+```{webr}
+print(wider_pivot)
 ```
 
 ### Do. Or do not. There is no try.
 
 Write the code below that will transform the `characters` data into the format noted above.
 
-```{r as_gender, exercise = TRUE}
-characters
+```{webr}
+#| exercise: ex_1
+characters |>
+  ______
 ```
 
-<div id="as_gender-hint">**Hint:** You might review the [pivoting vignette](https://tidyr.tidyverse.org/articles/pivot.html) in the Tidyverse documentation.</div>
+::: {.solution exercise="ex_1"}
+#### Solution
 
-```{r as_gender-solution}
+```{webr}
+#| exercise: ex_1
+#| solution: true
 characters |> 
   pivot_wider(names_from = gender, values_from = n)
 ```
 
-```{r as_gender-check}
+```{webr}
+#| exercise: ex_1
+#| check: true
+
 grade_this({
-  if(identical(.result,.solution)){ 
-    pass(sample(praise_list, 1))
-  }
-  fail()
-})
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
+
 ```
+:::
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+## Hint 1
+
+You might review the [pivoting vignette](https://tidyr.tidyverse.org/articles/pivot.html) in the Tidyverse documentation.
+
+:::
+:::
 
 ### Repeat, you must. Train yourself!
 
@@ -86,29 +124,46 @@ Well done, Padawan. Your droid editor is quite pleased, but now they want to see
 
 Can you make the `characters` data look like this:
 
-```{r as_species-goal, echo=FALSE}
+```{webr}
+#| include: false
+#| setup: true
+wider_pivot_characters <- characters |> 
+  pivot_wider(names_from = species, values_from = n)
+```
+
+```{webr}
+print(wider_pivot_characters)
+```
+
+```{webr}
+#| exercise: ex_2
+characters |>
+  ______
+```
+
+::: {.solution exercise="ex_2"}
+#### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
 characters |> 
   pivot_wider(names_from = species, values_from = n)
 ```
 
-```{r as_species, exercise = TRUE}
-characters
-```
+```{webr}
+#| exercise: ex_2
+#| check: true
 
-```{r as_species-solution, exercise.reveal_solution = FALSE}
-characters |> 
-  pivot_wider(names_from = species, values_from = n)
-```
-
-```{r as_species-check}
 grade_this({
-  if(identical(.result,.solution)){ 
-    pass(sample(praise_list, 1))
-  }
-  fail()
-})
-```
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
 
+```
+:::
 
 ## Make longer views
 
@@ -118,29 +173,39 @@ Now that you have mastered, pivoting wider, can you go back the other way?
 
 Starting with our first widened table, which will be in a tibble called `gender_table`, can you convert the data back to its original form, to this?
 
-```{r longer-goal, echo=FALSE}
+```{webr}
+#| edit: FALSE
 characters
 ```
 
-> Hint: For the Prof_AI bot to grade this properly, you columns must be named "gender", "species" and "n".
-
-```{r longer, exercise = TRUE}
-gender_table
+```{webr}
+#| exercise: ex_3
+gender_table |>
+  ______
 ```
 
-```{r longer-solution, exercise.reveal_solution = FALSE}
+::: {.solution exercise="ex_3"}
+#### Solution
+
+```{webr}
+#| exercise: ex_3
+#| solution: true
 gender_table |> 
   pivot_longer(cols = 2:3, names_to = "gender", values_to = "n")
 ```
 
-```{r longer-check}
+```{webr}
+#| exercise: ex_3
+#| check: true
+
 grade_this({
-  if(identical(.result,.solution)){ 
-    pass(sample(praise_list, 1))
-  }
-  fail()
-})
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
+
 ```
+:::
 
 Great job, padawan. Please inform your JedR Master that you have completed this trial.
-
