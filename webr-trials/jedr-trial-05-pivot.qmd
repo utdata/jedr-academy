@@ -1,0 +1,211 @@
+---
+title: "JedR Trial: Pivot"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - dplyr
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}} 
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| include: FALSE
+
+library(tidyverse)
+
+starwars <- starwars
+
+keepers <-  c("Human", "Droid", "Gungan")
+
+characters <- starwars |> 
+  drop_na(sex, gender) |> 
+  mutate(species_clean = case_when(
+    !(species %in% keepers) ~ "Other",
+    is.na(species) ~ "Other",
+    TRUE ~ species
+  )) |> 
+  select(
+    -species,
+    species = species_clean
+  ) |> 
+  count(species, gender)
+
+gender_table <- characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+
+wider_pivot <- characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+
+wider_pivot_characters <- characters |> 
+  pivot_wider(names_from = species, values_from = n)
+```
+
+## JedR Trial No. 5: Pivot data
+
+<div style="float:right; margin-left:20px"><img src="images/jedi-pivot.webp" width="200"></div>
+
+In this JedR Trial we will explore your ability to pivot data to suit your needs. This is a common challenge to prepare data for charting in ggplot or [Datawrapper](https://www.datawrapper.de/).
+
+Your droid editor (J-327D) has sent you some data that they would like to see in a different format. J-327D is pretty sure you can use your JedR powers to "pivot" this data to their liking.
+
+<br clear="both">
+
+## Make wider tables
+
+This is the data you get from J-327D. It is a table with the number of `characters` (as in characters in a story) from the `starwars` data based on their `species` and `gender` identity.
+
+```{webr}
+#| edit: FALSE
+characters
+```
+
+But J-327D would like to see this data formatted so that it is easier to read ... where for each species there is a column for each gender value. Like this:
+
+```{webr}
+#| include: false
+#| setup: true
+wider_pivot <- characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+```
+
+```{webr}
+print(wider_pivot)
+```
+
+### Do. Or do not. There is no try.
+
+Write the code below that will transform the `characters` data into the format noted above.
+
+```{webr}
+#| exercise: ex_1
+characters |>
+  ______
+```
+
+::: {.solution exercise="ex_1"}
+#### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+```
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+
+grade_this({
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
+
+```
+:::
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+## Hint 1
+
+You might review the [pivoting vignette](https://tidyr.tidyverse.org/articles/pivot.html) in the Tidyverse documentation.
+
+:::
+:::
+
+### Repeat, you must. Train yourself!
+
+Well done, Padawan. Your droid editor is quite pleased, but now they want to see the table with the species as the new columns.
+
+Can you make the `characters` data look like this:
+
+```{webr}
+#| include: false
+#| setup: true
+wider_pivot_characters <- characters |> 
+  pivot_wider(names_from = species, values_from = n)
+```
+
+```{webr}
+print(wider_pivot_characters)
+```
+
+```{webr}
+#| exercise: ex_2
+characters |>
+  ______
+```
+
+::: {.solution exercise="ex_2"}
+#### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+characters |> 
+  pivot_wider(names_from = species, values_from = n)
+```
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+
+grade_this({
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
+
+```
+:::
+
+## Make longer views
+
+### Control, control, you must learn control!
+
+Now that you have mastered, pivoting wider, can you go back the other way?
+
+Starting with our first widened table, which will be in a tibble called `gender_table`, can you convert the data back to its original form, to this?
+
+```{webr}
+#| edit: FALSE
+characters
+```
+
+```{webr}
+#| exercise: ex_3
+gender_table |>
+  ______
+```
+
+::: {.solution exercise="ex_3"}
+#### Solution
+
+```{webr}
+#| exercise: ex_3
+#| solution: true
+gender_table |> 
+  pivot_longer(cols = 2:3, names_to = "gender", values_to = "n")
+```
+
+```{webr}
+#| exercise: ex_3
+#| check: true
+
+grade_this({
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
+
+```
+:::
+
+Great job, padawan. Please inform your JedR Master that you have completed this trial.

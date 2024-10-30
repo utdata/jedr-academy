@@ -1,0 +1,226 @@
+---
+title: "JedR Trial: Sum"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - dplyr
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}} 
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+## JedR Trial No. 3: Summarize with math
+
+Welcome, Padawan. In this exercise, you'll be tested on skills using math-based `summarize()` functions. Like our previous exercises, we'll be using the dataset `starwars` in the `tidyverse` packages.
+
+If you recall from our earlier exercise, `starwars` is a dataset with 87 Star Wars characters.
+
+```{r glimpse}
+#| message: false
+library(tidyverse)
+
+glimpse(starwars)
+```
+
+### The quest
+
+Your droid editor, J-327D, notes that Chewbacca is taller than the rest of the crew in the Millennium Falcon, but he wonders if he is just tall for a Wookiee. He asks you to find the average heights of Humans, Droids, Gungans and Wookiees from within the starwars data. (By the way, that height variable is a measurement in centimeters.)
+
+## Select and filter
+
+First, create a data frame with just the columns and rows you need to work with.
+
+1.  Select only the `name`, `height`, and `species` variables from the starwars data.
+2.  Filter that to include only rows with species of "Human", "Droid", "Gungan" and "Wookiee".
+3.  Save the results into a new data frame called `characters` and then print out the new `characters` data frame.
+
+```{webr}
+#| exercise: ex_1
+starwars |>
+  ______
+```
+
+::: {.solution exercise="ex_1"}
+#### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+characters <- starwars |>
+  select(name, height, species) |>
+  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
+
+characters
+```
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+
+grade_this({
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
+
+```
+:::
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+## Hint 1
+
+# Start with your select. Fill in the blanks
+
+``` r
+starwars |>
+  ______(name, height, species)
+```
+:::
+:::
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+## Hint 2
+
+# There are a couple of ways to filter species Once choice:
+
+```         
+starwars |>
+  ______(name, height, species) |>
+  ______(_______ %in% c("Human", "Droid", "Gungan", "Wookiee"))
+```
+:::
+:::
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+## Hint 3
+
+# Once have the code, save it into characters
+
+```         
+characters <- starwars |>
+  ______(name, height, species) |>
+  ______(_______ |> c("Human", "Droid", "Gungan", "Wookiee"))
+```
+:::
+:::
+
+## Finding the mean
+
+In our last JedR Trial, we counted the number of characters (rows) that were different species. In this trail we need to use `group_by()` and `summarize()` and `arrange()` again, but we must summarize to get the average height -- or `mean()` -- of each species in the data.
+
+Of note:
+
+-   Call the new summarized variable `height_avg` so our Prof_AI grade checker knows what to look for.
+-   If you try to do match on rows with no values `NA`, then the result is also `NA`. You can fix this by adding `na.rm = TRUE` to remove those rows from consideration.
+
+```{webr, include=FALSE}
+# Creates characters dataframe for exercise=
+#| exercise: ex_2
+#| setup: true
+
+library(tidyverse)
+
+characters <- starwars |>
+  select(name, height, species) |>
+  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
+```
+
+```{webr}
+#| exercise: ex_2
+characters |>
+  
+```
+
+::: {.solution exercise="ex_2"}
+#### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+characters |>
+  group_by(species) |>
+  summarize(height_avg = mean(height, na.rm = TRUE)) |>
+  arrange(desc(height_avg))
+```
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+
+grade_this({
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
+
+```
+:::
+
+::: {.hint exercise="ex_2"}
+::: {.callout-note collapse="false"}
+## Hint 1
+
+# Try filling in the blanks
+```r
+characters |>
+  ________(_______) |>
+  _________(height_avg = ____(______, na.rm = TRUE)) |>
+  _______(____(height_avg))
+```
+:::
+:::
+
+Now you should be able to answer this following question:
+
+Among Humans, Droids, Gungans and Wookies, which Star Wars species is the tallest?
+
+```{webr}
+#| exercise: ex_3
+______
+```
+
+::: {.solution exercise="ex_3"}
+
+#### Solution
+
+```{webr}
+#| exercise: ex_3
+#| solution: true
+"Wookiee"
+```
+
+```{webr}
+#| exercise: ex_3
+#| check: true
+
+grade_this({
+if (identical(.result, .solution)) {
+  pass(message = "Wow! The force is with you!")
+} else {
+  fail(message = "The wrong answer it is, young Padawan.")
+}})
+
+```
+:::
+
+Please inform your JedR Master that you have completed this trial.
+
+
+
+
+
+
+
+
+
+
+
+
+
