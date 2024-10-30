@@ -92,7 +92,7 @@ if (identical(.result, .solution)) {
 ::: {.callout-note collapse="false"}
 ## Hint 1
 
-ou might review the [bind vignette](https://dplyr.tidyverse.org/reference/bind.html) in the Tidyverse documentation.
+You might review the [bind vignette](https://dplyr.tidyverse.org/reference/bind.html) in the Tidyverse documentation.
 
 :::
 :::
@@ -138,7 +138,7 @@ if (identical(.result, .solution)) {
 ::: {.callout-note collapse="false"}
 ## Hint 1
 
-ou might review the [join vignette](https://dplyr.tidyverse.org/reference/mutate-joins.html) in the Tidyverse documentation.
+You might review the [join vignette](https://dplyr.tidyverse.org/reference/mutate-joins.html) in the Tidyverse documentation.
 
 :::
 :::
