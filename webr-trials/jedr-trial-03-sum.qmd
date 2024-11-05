@@ -1,5 +1,5 @@
 ---
-title: "JedR Trial: Sum"
+title: ""
 engine: knitr
 format: live-html
 webr:
@@ -9,7 +9,22 @@ webr:
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}} 
-{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| include: FALSE
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The Force is strong with you!", "You’ve mastered this task like a true Jedi Knight.", "Your skills rival those of a seasoned Jedi Master.", "The galaxy is lucky to have someone as strong and brave as you.", "The Rebellion couldn’t ask for a better ally.", "You’re the hope the galaxy needs!", "Not even the Death Star could stand in your way.", "Darth Vader would tremble in your presence!", "Even a bounty hunter would be impressed by your precision and focus.", "You’ve got the strength of a thousand stormtroopers (but with way better aim)!", "Like a true Jedi, you face challenges with courage and wisdom.")
+
+again_list <- c("Even Yoda didn’t get it on the first try. Keep going, young Padawan!", "The Force is strong with you—just focus and try again.", "Every Jedi stumbles before mastering the lightsaber. Give it another go!", "Remember, the greatest pilots still had to learn to fly first.", "Even Han Solo missed a few shots—try again, and you’ll hit the mark.", "No need to go to the Dark Side; persistence will bring you victory!", "The path of the Jedi is filled with lessons. This is just one of them.", "Even Anakin faced failure; it’s how you rise that matters.", "Not even a Sith Lord could conquer every challenge the first time.", "Mistakes are like hyperspace jumps: each one gets you closer to the destination.", "The Rebellion wasn’t won in a day — keep fighting for what’s possible.","Think of this as training with Master Yoda: patience leads to mastery.", "The Force is with you, always, so don’t give up now!", "Just like rebuilding a lightsaber, try again, and you'll get it right.")
+
+random_praise <- sample(praise_list, 1)
+
+random_again <- sample(again_list, 1)
+
+
+characters <- starwars |>
+  select(name, height, species) |>
+  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
+```
 
 ## JedR Trial No. 3: Summarize with math
 
@@ -17,10 +32,8 @@ Welcome, Padawan. In this exercise, you'll be tested on skills using math-based 
 
 If you recall from our earlier exercise, `starwars` is a dataset with 87 Star Wars characters.
 
-```{r glimpse}
-#| message: false
-library(tidyverse)
-
+```{webr}
+#| edit: false
 glimpse(starwars)
 ```
 
@@ -42,71 +55,57 @@ starwars |>
   ______
 ```
 
-::: {.solution exercise="ex_1"}
-#### Solution
-
-```{webr}
-#| exercise: ex_1
-#| solution: true
-characters <- starwars |>
-  select(name, height, species) |>
-  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
-
-characters
-```
-
 ```{webr}
 #| exercise: ex_1
 #| check: true
 
-grade_this({
-if (identical(.result, .solution)) {
-  pass(message = "Wow! The force is with you!")
+if (identical(.result, characters <- starwars |>
+  select(name, height, species) |>
+  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee")))) {
+  list(correct = TRUE, message = sample(praise_list, 1))
 } else {
-  fail(message = "The wrong answer it is, young Padawan.")
-}})
-
+  list(correct = FALSE, message = sample(again_list, 1))
+}
 ```
-:::
 
 ::: {.hint exercise="ex_1"}
 ::: {.callout-note collapse="false"}
 ## Hint 1
+Start with your select. Fill in the blanks
 
-# Start with your select. Fill in the blanks
-
-``` r
+```r
 starwars |>
   ______(name, height, species)
 ```
+
 :::
 :::
 
 ::: {.hint exercise="ex_1"}
 ::: {.callout-note collapse="false"}
 ## Hint 2
+There are a couple of ways to filter species Once choice:
 
-# There are a couple of ways to filter species Once choice:
-
-```         
+```r    
 starwars |>
   ______(name, height, species) |>
   ______(_______ %in% c("Human", "Droid", "Gungan", "Wookiee"))
 ```
+
 :::
 :::
 
 ::: {.hint exercise="ex_1"}
 ::: {.callout-note collapse="false"}
 ## Hint 3
+Once have the code, save it into characters
 
-# Once have the code, save it into characters
-
-```         
+```r   
 characters <- starwars |>
   ______(name, height, species) |>
   ______(_______ |> c("Human", "Droid", "Gungan", "Wookiee"))
 ```
+
 :::
 :::
 
@@ -114,60 +113,35 @@ characters <- starwars |>
 
 In our last JedR Trial, we counted the number of characters (rows) that were different species. In this trail we need to use `group_by()` and `summarize()` and `arrange()` again, but we must summarize to get the average height -- or `mean()` -- of each species in the data.
 
-Of note:
+Do note:
 
--   Call the new summarized variable `height_avg` so our Prof_AI grade checker knows what to look for.
--   If you try to do match on rows with no values `NA`, then the result is also `NA`. You can fix this by adding `na.rm = TRUE` to remove those rows from consideration.
-
-```{webr, include=FALSE}
-# Creates characters dataframe for exercise=
-#| exercise: ex_2
-#| setup: true
-
-library(tidyverse)
-
-characters <- starwars |>
-  select(name, height, species) |>
-  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
-```
+- If you try to do match on rows with no values `NA`, then the result is also `NA`. You can fix this by adding `na.rm = TRUE` to remove those rows from consideration.
 
 ```{webr}
 #| exercise: ex_2
 characters |>
-  
-```
-
-::: {.solution exercise="ex_2"}
-#### Solution
-
-```{webr}
-#| exercise: ex_2
-#| solution: true
-characters |>
-  group_by(species) |>
-  summarize(height_avg = mean(height, na.rm = TRUE)) |>
-  arrange(desc(height_avg))
+  ______
 ```
 
 ```{webr}
 #| exercise: ex_2
 #| check: true
 
-grade_this({
-if (identical(.result, .solution)) {
-  pass(message = "Wow! The force is with you!")
+if (identical(.result, characters |>
+  group_by(species) |>
+  summarize(height_avg = mean(height, na.rm = TRUE)) |>
+  arrange(desc(height_avg)))) {
+  list(correct = TRUE, message = sample(praise_list, 1))
 } else {
-  fail(message = "The wrong answer it is, young Padawan.")
-}})
-
+  list(correct = FALSE, message = sample(again_list, 1))
+}
 ```
-:::
 
 ::: {.hint exercise="ex_2"}
 ::: {.callout-note collapse="false"}
 ## Hint 1
+Try filling in the blanks
 
-# Try filling in the blanks
 ```r
 characters |>
   ________(_______) |>
@@ -183,31 +157,27 @@ Among Humans, Droids, Gungans and Wookies, which Star Wars species is the talles
 
 ```{webr}
 #| exercise: ex_3
-______
-```
-
-::: {.solution exercise="ex_3"}
-
-#### Solution
-
-```{webr}
-#| exercise: ex_3
-#| solution: true
-"Wookiee"
+"______"
 ```
 
 ```{webr}
 #| exercise: ex_3
 #| check: true
 
-grade_this({
-if (identical(.result, .solution)) {
-  pass(message = "Wow! The force is with you!")
+if (identical(.result, "Wookiee")) {
+  list(correct = TRUE, message = sample(praise_list, 1))
 } else {
-  fail(message = "The wrong answer it is, young Padawan.")
-}})
-
+  list(correct = FALSE, message = sample(again_list, 1))
+}
 ```
+
+::: {.hint exercise="ex_3"}
+::: {.callout-note collapse="false"}
+## Hint 1
+
+Look at the result of the previous code chunk
+
+:::
 :::
 
 Please inform your JedR Master that you have completed this trial.

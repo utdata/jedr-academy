@@ -12,14 +12,14 @@ website:
     contents:
       - text: "Overview"
         url: index.qmd
-      - text: "Links"
-        url: resources/links.qmd
-      - text: "Github Repo"
-        url: https://github.com/utdata/jedr-academy
-      - section: "Resources"
-        contents:
-          - resources/github.qmd
-          - resources/learnr.qmd
+      - text: "Trainings"
+        url: resources/training.qmd
+      - text: "Trials"
+        url: resources/trials.qmd
+      - text: "JedR Contribution"
+        url: resources/github.qmd
+        
+          
 
 format:
   html:

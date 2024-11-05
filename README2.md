@@ -1,15 +1,15 @@
 <img src='images/jedr_hex_800.png' align="right" height="139" />
 
-# JedR Academy
+# Welcome to JedR Academy
  
 > “Always pass on what you have learned.” – Yoda
 
 
-## Overview
+## What is JedR Academy?
 
-To be clear, this isn’t a package. It’s some training material. Here is a [list of released lessons](resources/links.qmd).
+To be clear, this isn’t a package.
 
-This project is a series of [learnr](https://rstudio.github.io/learnr/)
+This project is a series of [learnr](https://rstudio.github.io/learnr/) and [quarto live](https://r-wasm.github.io/quarto-live/)
 interactive tutorials designed to develop and improve R skills with a
 heavy lean on the [tidyverse](https://www.tidyverse.org/). There are
 two main goals:
@@ -21,19 +21,14 @@ two main goals:
 
 There are two types of lessons:
 
-- **JedR Training**: Tutorials focused on feats of skills instead of on
+- [**JedR Training**](resources/training.qmd): Tutorials focused on feats of skills instead of on
   specific packages. For instance, “How to manage dates” vs “How to use
   lubridate.”
-- **JedR Trials**: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.
+- [**JedR Trials**](resources/trials.qmd): Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.
 
 JedR Padawans can [download the repo](https://github.com/utdata/jedr-academy) and run each notebook on their
 local machines. The notebooks are stored in the `training/` and
-`trials/` folders. All notebooks require `tidyverse`, `learnr` and
-`gradethis`. Some notebooks might require additional packages.
-
-Once you open a notebook, use the **Run Document** option.
-
-![Run Document](images/run-document.png)
+`webr-trials/` folders.
 
 ## Data sources
 

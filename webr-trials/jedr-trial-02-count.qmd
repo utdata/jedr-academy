@@ -1,5 +1,5 @@
 ---
-title: "JedR Trial: Count"
+title: ""
 engine: knitr
 format: live-html
 webr:
@@ -9,7 +9,18 @@ webr:
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
-{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| include: FALSE
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The Force is strong with you!", "You’ve mastered this task like a true Jedi Knight.", "Your skills rival those of a seasoned Jedi Master.", "The galaxy is lucky to have someone as strong and brave as you.", "The Rebellion couldn’t ask for a better ally.", "You’re the hope the galaxy needs!", "Not even the Death Star could stand in your way.", "Darth Vader would tremble in your presence!", "Even a bounty hunter would be impressed by your precision and focus.", "You’ve got the strength of a thousand stormtroopers (but with way better aim)!", "Like a true Jedi, you face challenges with courage and wisdom.")
+
+again_list <- c("Even Yoda didn’t get it on the first try. Keep going, young Padawan!", "The Force is strong with you—just focus and try again.", "Every Jedi stumbles before mastering the lightsaber. Give it another go!", "Remember, the greatest pilots still had to learn to fly first.", "Even Han Solo missed a few shots—try again, and you’ll hit the mark.", "No need to go to the Dark Side; persistence will bring you victory!", "The path of the Jedi is filled with lessons. This is just one of them.", "Even Anakin faced failure; it’s how you rise that matters.", "Not even a Sith Lord could conquer every challenge the first time.", "Mistakes are like hyperspace jumps: each one gets you closer to the destination.", "The Rebellion wasn’t won in a day — keep fighting for what’s possible.","Think of this as training with Master Yoda: patience leads to mastery.", "The Force is with you, always, so don’t give up now!", "Just like rebuilding a lightsaber, try again, and you'll get it right.")
+
+random_praise <- sample(praise_list, 1)
+
+random_again <- sample(again_list, 1)
+
+```
 
 ## JedR Trial No. 2: Summarize by counting
 
@@ -21,10 +32,8 @@ For this task, you will **summarize** and **group** the characters by species. Y
 
 If you recall from our earlier exercise, `starwars` is a dataset with 87 Star Wars characters.
 
-```{r glimpse, echo: false}
-#| message: false
-library(tidyverse)
-
+```{webr}
+#| edit: false
 glimpse(starwars)
 ```
 
@@ -38,37 +47,24 @@ starwars |>
   ______
 ```
 
-::: {.solution exercise="ex_1"}
-
-#### Solution
-
-```{webr}
-#| exercise: ex_1
-#| solution: true
-starwars |>
-  group_by(species) |>
-  summarize(characters = n())
-```
-
 ```{webr}
 #| exercise: ex_1
 #| check: true
 
-grade_this({
-if (identical(.result, .solution)) {
-  pass(message = "Wow! The force is with you!")
+if (identical(.result, starwars |>
+  group_by(species) |>
+  summarize(characters = n()))) {
+  list(correct = TRUE, message = sample(praise_list, 1))
 } else {
-  fail(message = "The wrong answer it is, young Padawan.")
-}})
-
+  list(correct = FALSE, message = sample(again_list, 1))
+}
 ```
-:::
 
 ::: {.hint exercise="ex_1"}
 ::: {.callout-note collapse="false"}
 ## Hint 1
 
-heck out the `group_by()` and `summarize()` in [Chapter 4](https://utdata.github.io/rwdir/count-analysis.html#summarize)
+Check out the `group_by()` and `summarize()` in [Chapter 4](https://utdata.github.io/rwdir/count-analysis.html#summarize)
 
 :::
 :::
@@ -84,42 +80,28 @@ As a tip, don't forget that we often want to sort the information by **desc**end
 ```{webr}
 #| exercise: ex_2
 starwars |>
-  group_by(species) |>
-  summarize(characters = n())
-```
-
-::: {.solution exercise="ex_2"}
-
-#### Solution
-
-```{webr}
-#| exercise: ex_2
-#| solution: true
-starwars |>
-  group_by(species) |>
-  summarize(characters = n()) |>
-  arrange(characters |> desc())
+  ______
 ```
 
 ```{webr}
 #| exercise: ex_2
 #| check: true
 
-grade_this({
-if (identical(.result, .solution)) {
-  pass(message = "Wow! The force is with you!")
+if (identical(.result, starwars |>
+  group_by(species) |>
+  summarize(characters = n()) |>
+  arrange(characters |> desc()))) {
+  list(correct = TRUE, message = sample(praise_list, 1))
 } else {
-  fail(message = "The wrong answer it is, young Padawan.")
-}})
-
+  list(correct = FALSE, message = sample(again_list, 1))
+}
 ```
-:::
 
-::: {.hint exercise="ex_3"}
+::: {.hint exercise="ex_2"}
 ::: {.callout-note collapse="false"}
 ## Hint 1
 
-heck out `arrange`. You can [learn more here](https://dplyr.tidyverse.org/reference/arrange.html). 
+Check out `arrange()`. You can [learn more here](https://dplyr.tidyverse.org/reference/arrange.html). 
 
 :::
 :::
@@ -130,31 +112,27 @@ What species is the most common in Star Wars?
 
 ```{webr}
 #| exercise: ex_3
-______
-```
-
-::: {.solution exercise="ex_3"}
-
-#### Solution
-
-```{webr}
-#| exercise: ex_3
-#| solution: true
-"Human"
+"______"
 ```
 
 ```{webr}
 #| exercise: ex_3
 #| check: true
 
-grade_this({
-if (identical(.result, .solution)) {
-  pass(message = "Wow! The force is with you!")
+if (identical(.result, "Human")) {
+  list(correct = TRUE, message = sample(praise_list, 1))
 } else {
-  fail(message = "The wrong answer it is, young Padawan.")
-}})
-
+  list(correct = FALSE, message = sample(again_list, 1))
+}
 ```
+
+::: {.hint exercise="ex_3"}
+::: {.callout-note collapse="false"}
+## Hint 1
+
+Look at the result of previous code chunk 
+
+:::
 :::
 
 Excellent! Please tell your JedR Master that you have completed this trial.

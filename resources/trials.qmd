@@ -1,0 +1,25 @@
+---
+title: "JedR Trials"
+---
+
+Links go to online version. Locally-runnable files are in the `webr-trials/` folder.
+
+- [Introduction](/webr-trials/jedr-trial-01-intro.html):
+  Introduces the `starwars` data and the interactive format of the
+  lessons. Covers some basic functions to look at data.
+- [Summarize with Count](/webr-trials/jedr-trial-02-count.html): Covers
+  counting rows using group_by and summarize. (We skip `count()` here to
+  focus on group_by, summarize and arrange.)
+- [Summarize with Math](/webr-trials/jedr-trial-03-sum.html):
+  Covers grouping data and math functions within summarize.
+- [Plotting](/webr-trials/jedr-trial-04-plot.html): Making a
+  very basic ggplot chart.
+- [Pivoting](/webr-trials/jedr-trial-05-pivot.html): Making
+  data wider and longer.
+- [Bind and Join](/webr-trials/jedr-trial-06-bind.html):
+  Combining data.
+
+## Others to come?
+
+This is a work in progress. We have a [list of
+ideas](https://github.com/utdata/jedr-academy/issues/2) and would consider additions that follow our philosophy (which is admittedly also under development). Check out the `JedR Contribution` tab for more information!

@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Christian McDonald">
 
-<title>JedR Academy - Using git &amp; Github</title>
+<title>JedR Academy - JedR Trials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -114,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/github.html">JedR Contribution</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/trials.html">Trials</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -153,13 +118,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/trials.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources/trials.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Trials</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/github.html" class="sidebar-item-text sidebar-link active">
+  <a href="../resources/github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">JedR Contribution</span></a>
   </div>
 </li>
@@ -173,13 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link active" data-scroll-target="#prerequisites">Prerequisites</a></li>
-  <li><a href="#clone-the-repo" id="toc-clone-the-repo" class="nav-link" data-scroll-target="#clone-the-repo">Clone the repo</a></li>
-  <li><a href="#branches" id="toc-branches" class="nav-link" data-scroll-target="#branches">Branches</a>
-  <ul class="collapse">
-  <li><a href="#pull-requests" id="toc-pull-requests" class="nav-link" data-scroll-target="#pull-requests">Pull requests</a></li>
-  </ul></li>
-  <li><a href="#switching-between-branches" id="toc-switching-between-branches" class="nav-link" data-scroll-target="#switching-between-branches">Switching between branches</a></li>
+  <li><a href="#others-to-come" id="toc-others-to-come" class="nav-link active" data-scroll-target="#others-to-come">Others to come?</a></li>
   </ul>
 </nav>
     </div>
@@ -188,19 +147,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Using git &amp; Github</h1>
+<h1 class="title">JedR Trials</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Christian McDonald </p>
-          </div>
-  </div>
     
   
     
@@ -211,53 +164,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The purpose of this bootcamp lesson is to fill gaps that my students might have before they can successfully contribute to this project. It might serve best as pointers to existing documentation for certain skills, but then explanations of how they fit into our workflow.</p>
-<section id="prerequisites" class="level2">
-<h2 class="anchored" data-anchor-id="prerequisites">Prerequisites</h2>
+<p>Links go to online version. Locally-runnable files are in the <code>webr-trials/</code> folder.</p>
 <ul>
-<li>Terminal: If you are not familiar with using a Terminal at all, then there is a chapter in <a href="https://utdata.github.io/icj-class/start-01-terminal.html">Intro to Coding for Journalists</a> that might be a good first look. FreeCodeCamp has a <a href="https://www.freecodecamp.org/news/command-line-for-beginners/">Command Line for Beginners</a> that is more detailed than what we need here.</li>
-<li>Installing Git: Chapters 2.1 through 2.5 of <a href="https://utdata.github.io/icj-setting-up/setup-part-1.html#install-git">ICJ Setting Up</a> handle installing git and configuring ssh keys, which I think is worth doing. If you already have git and Github and know how to use them, you are good.</li>
-<li>Using Git: There is a section in <a href="https://utdata.github.io/icj-class/git-00-intro.html">Intro to Coding for Journalists</a> on how to use Git in the context of that class. The basics apply here, as well.</li>
+<li><a href="../webr-trials/jedr-trial-01-intro.html">Introduction</a>: Introduces the <code>starwars</code> data and the interactive format of the lessons. Covers some basic functions to look at data.</li>
+<li><a href="../webr-trials/jedr-trial-02-count.html">Summarize with Count</a>: Covers counting rows using group_by and summarize. (We skip <code>count()</code> here to focus on group_by, summarize and arrange.)</li>
+<li><a href="../webr-trials/jedr-trial-03-sum.html">Summarize with Math</a>: Covers grouping data and math functions within summarize.</li>
+<li><a href="../webr-trials/jedr-trial-04-plot.html">Plotting</a>: Making a very basic ggplot chart.</li>
+<li><a href="../webr-trials/jedr-trial-05-pivot.html">Pivoting</a>: Making data wider and longer.</li>
+<li><a href="../webr-trials/jedr-trial-06-bind.html">Bind and Join</a>: Combining data.</li>
 </ul>
-</section>
-<section id="clone-the-repo" class="level2">
-<h2 class="anchored" data-anchor-id="clone-the-repo">Clone the repo</h2>
-<p>To get the jedr-academy repo on your computer and be able to contribute to its code, you have to clone the repo. This downloads a copy of the code and it’s history to your computer.</p>
-<ol type="1">
-<li><strong>DO NOT</strong> create a project folder in advance! You’ll get one when you clone.</li>
-<li>Launch Terminal and use <code>cd</code> to get to the directory where you to download the code to.</li>
-<li>Do <code>git clone git@github.com:utdata/jedr-academy.git</code> to download the repo and it’s commit history.</li>
-<li>Now you can close Terminal and open the project in RStudio.</li>
-</ol>
-<p>You only have to do this once.</p>
-</section>
-<section id="branches" class="level2">
-<h2 class="anchored" data-anchor-id="branches">Branches</h2>
-<p>The Way to contribute to JedR is to use a <a href="https://www.howtogeek.com/devops/how-do-git-branches-work/">git branch</a>. &lt;= Read that tutorial to get an idea how they work.</p>
-<ol type="1">
-<li>With your project open in RStudio, go to the Terminal within RStudio.</li>
-<li>Do <code>git checkout -b new-branch</code> but use a more descriptive name than “new-branch”, like “pivoting-tutorial”. The name should be slug-friendly: all lowercase, words connected with dashes.</li>
-<li>Do <code>git branch</code> to double-check which branch are on.</li>
-</ol>
-<p>At this point, you are working on YOUR copy of the code. You can experiment, add and commit code at will. You can push the code to Github in your branch with …</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin new-branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>… but with <strong>your branch name</strong>.</p>
-<p>Do know if you edit existing files on your local branch that also get edited by others, then we will have to resolve any conflicts. That’s fine, but can be complicated. Just reach out to Christian for help.</p>
-<section id="pull-requests" class="level3">
-<h3 class="anchored" data-anchor-id="pull-requests">Pull requests</h3>
-<p>When you are done with your changes and want to merge them into the default branch, let Christian know via email and he’ll create a <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request">Pull Request</a>. If you want to learn more about that, then request to do it together and he’ll explain it.</p>
-<p>The pull request process compares the new code to the existing code and notes any conflicts, which have to be “resolved” before the branches can be merged.</p>
-</section>
-</section>
-<section id="switching-between-branches" class="level2">
-<h2 class="anchored" data-anchor-id="switching-between-branches">Switching between branches</h2>
-<p>Now that you are working on a code base that others might be working on, you have to “git pull” as well as “git push”.</p>
-<p>Some things to consider:</p>
-<ul>
-<li>If you are going to switch branches (like from your own feature branch back to main), then you want to commit (or <a href="https://git-scm.com/docs/git-stash">stash</a>) your current changes first.</li>
-<li><code>git checkout branch-name</code> will check out that branch on your local machine.</li>
-<li><code>git pull origin branch-name</code> will pull the latest version from the Github down to your computer. This is especially important if you are checking out a branch that others have worked on, like <code>main</code>.</li>
-</ul>
+<section id="others-to-come" class="level2">
+<h2 class="anchored" data-anchor-id="others-to-come">Others to come?</h2>
+<p>This is a work in progress. We have a <a href="https://github.com/utdata/jedr-academy/issues/2">list of ideas</a> and would consider additions that follow our philosophy (which is admittedly also under development). Check out the <code>JedR Contribution</code> tab for more information!</p>
 
 
 </section>

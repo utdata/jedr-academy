@@ -1,0 +1,9 @@
+---
+title: "JedR Training"
+format: html
+---
+
+Links go to online version. Locally-runnable files are in the `training/` folder.
+
+- [Categorization](https://utdata.shinyapps.io/jedr-categorization/): When you need to rename values in your data, perhaps to create a new categorization schema. 
+- [Manage dates](https://utdata.shinyapps.io/jedr-manage-dates/): When you need help parsing dates or making useful date parts for grouping.
