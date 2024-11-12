@@ -12,11 +12,11 @@ website:
     contents:
       - text: "Overview"
         url: index.qmd
-      - text: "Trainings"
-        url: resources/training.qmd
-      - text: "Trials"
+      - text: "JedR Trials"
         url: resources/trials.qmd
-      - text: "JedR Contribution"
+      - text: "JedR Trainings"
+        url: resources/training.qmd
+      - text: "Contribution"
         url: resources/github.qmd
         
           

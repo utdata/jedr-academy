@@ -429,8 +429,7 @@ ggplot(rebels_gs, aes(x = month_fl, y = no_episodes)) +
   geom_bar(stat='identity') +
   labs(
         subtitle = "Number of Star Wars Rebels episodes per month",
-        caption = "JedR Masters Lubridate Tutorial") + 
-  ggthemes::theme_fivethirtyeight()
+        caption = "JedR Masters Lubridate Tutorial")
 ```
 
 Here's a quick explanation of what's happening in the chunk above:

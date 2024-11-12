@@ -1,0 +1,45 @@
+---
+title: "Data Information"
+format: html
+---
+
+While we strive to use the
+[starwars](https://dplyr.tidyverse.org/reference/starwars.html) data as
+much as possible, we’ve had to introduce other Star Wars related data in
+some situations.
+
+All data is in the `data/` folder except `starwars` which is utilized
+from `tidyverse`.
+
+- [starwars](https://dplyr.tidyverse.org/reference/starwars.html)
+  characters data that is part of the tidyverse. It’s our main data set.
+  Small enough to wrap your head around; complex and dirty enough to
+  provide good examples.
+- [starwarsrebels](data/starwarsrebels.csv) is a list of episodes of
+  Star Wars Rebels from
+  [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes)
+
+### Other possible data sources
+
+These might be explored later.
+
+- [SWAPI](https://swapi.dev/)
+- [Star Wars Databank](https://www.starwars.com/databank)
+- We’ve pulled some data from
+  [Kaggle](https://www.kaggle.com/jsphyg/star-wars), which notes “This
+  data was gathered using the Star Wars API that is no longer available.
+  The origin of the data is [The Star Wars
+  Wiki](https://starwars.fandom.com/wiki).”
+  - `characters`
+  - `planets`
+  - `species`
+  - `starships`
+  - `vehicles`
+- Found some additional data on
+  [data.world](https://data.world/datafam-con/may-2022-star-wars/workspace/data-dictionary)
+  that yielded a couple new sets:
+  - `survey` (done from Five Thirty Eight, apparently)
+  - `principles`
+  - `soundtracks`
+  - `rt_ratings`
+  - `imdb_ratings`

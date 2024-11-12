@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>JedR Academy - JedR Training</title>
+<title>JedR Academy - Data Information</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/training.html">JedR Trainings</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      JedR Academy
+      </li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -118,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/training.html" class="sidebar-item-text sidebar-link active">
+  <a href="../resources/training.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">JedR Trainings</span></a>
   </div>
 </li>
@@ -134,14 +136,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#other-possible-data-sources" id="toc-other-possible-data-sources" class="nav-link active" data-scroll-target="#other-possible-data-sources">Other possible data sources</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">JedR Training</h1>
+<h1 class="title">Data Information</h1>
 </div>
 
 
@@ -158,13 +166,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>These modules are designed to help you develop specific R skills, with accessible links provided for online access. If you’d like to run them locally, you can find the necessary files in the <code>webr-trainings/</code> folder. The topics covered are tailored to make R easier to navigate and apply in various projects. If you’re interested in creating additional JedR Training content, please explore the contributions tab for guidelines and opportunities to join the JedR Republic.</p>
+<p>While we strive to use the <a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a> data as much as possible, we’ve had to introduce other Star Wars related data in some situations.</p>
+<p>All data is in the <code>data/</code> folder except <code>starwars</code> which is utilized from <code>tidyverse</code>.</p>
 <ul>
-<li><a href="../webr-trainings/jedr-categorization.html">Categorization</a>: When you need to rename values in your data, perhaps to create a new categorization schema.</li>
-<li><a href="../webr-trainings/jedr-manage-dates.html">Manage dates</a>: When you need help parsing dates or making useful date parts for grouping.</li>
+<li><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a> characters data that is part of the tidyverse. It’s our main data set. Small enough to wrap your head around; complex and dirty enough to provide good examples.</li>
+<li><a href="data/starwarsrebels.csv">starwarsrebels</a> is a list of episodes of Star Wars Rebels from <a href="https://www.tvmaze.com/shows/117/star-wars-rebels/episodes">tvmaze.com</a></li>
+</ul>
+<section id="other-possible-data-sources" class="level3">
+<h3 class="anchored" data-anchor-id="other-possible-data-sources">Other possible data sources</h3>
+<p>These might be explored later.</p>
+<ul>
+<li><a href="https://swapi.dev/">SWAPI</a></li>
+<li><a href="https://www.starwars.com/databank">Star Wars Databank</a></li>
+<li>We’ve pulled some data from <a href="https://www.kaggle.com/jsphyg/star-wars">Kaggle</a>, which notes “This data was gathered using the Star Wars API that is no longer available. The origin of the data is <a href="https://starwars.fandom.com/wiki">The Star Wars Wiki</a>.”
+<ul>
+<li><code>characters</code></li>
+<li><code>planets</code></li>
+<li><code>species</code></li>
+<li><code>starships</code></li>
+<li><code>vehicles</code></li>
+</ul></li>
+<li>Found some additional data on <a href="https://data.world/datafam-con/may-2022-star-wars/workspace/data-dictionary">data.world</a> that yielded a couple new sets:
+<ul>
+<li><code>survey</code> (done from Five Thirty Eight, apparently)</li>
+<li><code>principles</code></li>
+<li><code>soundtracks</code></li>
+<li><code>rt_ratings</code></li>
+<li><code>imdb_ratings</code></li>
+</ul></li>
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -1,8 +1,10 @@
 ---
 title: "JedR Trials"
+format: html
 ---
 
-Links go to online version. Locally-runnable files are in the `webr-trials/` folder.
+These modules are designed to test and strengthen your R skills through a series of interactive lessons. Each module introduces essential data manipulation and visualization techniques, using engaging exercises based on the `starwars` dataset. If you'd like to run them locally, you can find the necessary files in the `webr-trials/` folder. The topics covered are tailored to the Reporting with Data class and apply in various projects. If you're interested in creating additional JedR Trials content, please explore the contributions tab for guidelines and opportunities to join the JedR Republic.
+
 
 - [Introduction](/webr-trials/jedr-trial-01-intro.html):
   Introduces the `starwars` data and the interactive format of the
@@ -18,8 +20,3 @@ Links go to online version. Locally-runnable files are in the `webr-trials/` fol
   data wider and longer.
 - [Bind and Join](/webr-trials/jedr-trial-06-bind.html):
   Combining data.
-
-## Others to come?
-
-This is a work in progress. We have a [list of
-ideas](https://github.com/utdata/jedr-academy/issues/2) and would consider additions that follow our philosophy (which is admittedly also under development). Check out the `JedR Contribution` tab for more information!

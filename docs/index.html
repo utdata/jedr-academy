@@ -112,20 +112,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/training.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Trainings</span></a>
+  <a href="./resources/trials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JedR Trials</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/trials.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Trials</span></a>
+  <a href="./resources/training.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JedR Trainings</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">JedR Contribution</span></a>
+ <span class="menu-text">Contribution</span></a>
   </div>
 </li>
     </ul>
@@ -141,10 +141,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#welcome-to-jedr-academy" id="toc-welcome-to-jedr-academy" class="nav-link active" data-scroll-target="#welcome-to-jedr-academy">Welcome to JedR Academy</a>
   <ul class="collapse">
   <li><a href="#what-is-jedr-academy" id="toc-what-is-jedr-academy" class="nav-link" data-scroll-target="#what-is-jedr-academy">What is JedR Academy?</a></li>
-  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data sources</a>
-  <ul class="collapse">
-  <li><a href="#other-possible-data-sources" id="toc-other-possible-data-sources" class="nav-link" data-scroll-target="#other-possible-data-sources">Other possible data sources</a></li>
-  </ul></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data sources</a></li>
   <li><a href="#credits" id="toc-credits" class="nav-link" data-scroll-target="#credits">Credits</a></li>
   </ul></li>
   </ul>
@@ -165,50 +162,21 @@ ul.task-list li input[type="checkbox"] {
 <section id="what-is-jedr-academy" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-jedr-academy">What is JedR Academy?</h2>
 <p>To be clear, this isn’t a package.</p>
-<p>This project is a series of <a href="https://rstudio.github.io/learnr/">learnr</a> and <a href="https://r-wasm.github.io/quarto-live/">quarto live</a> interactive tutorials designed to develop and improve R skills with a heavy lean on the <a href="https://www.tidyverse.org/">tidyverse</a>. There are two main goals:</p>
+<p>This project is a series of <a href="https://r-wasm.github.io/quarto-live/">quarto live</a> interactive tutorials designed to develop and improve R skills with a heavy lean on the <a href="https://www.tidyverse.org/">tidyverse</a>. There are two main goals:</p>
 <ul>
 <li>To focus tutorials on feats of skill or tasks to accomplish instead of on specific packages or functions.</li>
 <li>To use the same data whenever possible to avoid the cognitive load of learning new data for each example.</li>
 </ul>
 <p>There are two types of lessons:</p>
 <ul>
-<li><a href="./resources/training.html"><strong>JedR Training</strong></a>: Tutorials focused on feats of skills instead of on specific packages. For instance, “How to manage dates” vs “How to use lubridate.”</li>
 <li><a href="./resources/trials.html"><strong>JedR Trials</strong></a>: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.</li>
+<li><a href="./resources/training.html"><strong>JedR Training</strong></a>: Tutorials focused on feats of skills instead of on specific packages. For instance, “How to manage dates” vs “How to use lubridate.”</li>
 </ul>
-<p>JedR Padawans can <a href="https://github.com/utdata/jedr-academy">download the repo</a> and run each notebook on their local machines. The notebooks are stored in the <code>training/</code> and <code>webr-trials/</code> folders.</p>
+<p>JedR Padawans can complete these lessons online through the provided links, without additional setup. For those who prefer working locally, you can <a href="https://github.com/utdata/jedr-academy">download the repo</a> to run each notebook directly on your machine. The notebooks are organized in the <code>webr-trials/</code> and <code>webr-training/</code> folders.</p>
 </section>
 <section id="data-sources" class="level2">
 <h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
-<p>While we strive to use the <a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a> data as much as possible, we’ve had to introduce other Star Wars related data in some situations.</p>
-<p>All data is in the <code>data/</code> folder except <code>starwars</code> which is utilized from <code>tidyverse</code>.</p>
-<ul>
-<li><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a> characters data that is part of the tidyverse. It’s our main data set. Small enough to wrap your head around; complex and dirty enough to provide good examples.</li>
-<li><a href="data/starwarsrebels.csv">starwarsrebels</a> is a list of episodes of Star Wars Rebels from <a href="https://www.tvmaze.com/shows/117/star-wars-rebels/episodes">tvmaze.com</a></li>
-</ul>
-<section id="other-possible-data-sources" class="level3">
-<h3 class="anchored" data-anchor-id="other-possible-data-sources">Other possible data sources</h3>
-<p>These might be explored later.</p>
-<ul>
-<li><a href="https://swapi.dev/">SWAPI</a></li>
-<li><a href="https://www.starwars.com/databank">Star Wars Databank</a></li>
-<li>We’ve pulled some data from <a href="https://www.kaggle.com/jsphyg/star-wars">Kaggle</a>, which notes “This data was gathered using the Star Wars API that is no longer available. The origin of the data is <a href="https://starwars.fandom.com/wiki">The Star Wars Wiki</a>.”
-<ul>
-<li><code>characters</code></li>
-<li><code>planets</code></li>
-<li><code>species</code></li>
-<li><code>starships</code></li>
-<li><code>vehicles</code></li>
-</ul></li>
-<li>Found some additional data on <a href="https://data.world/datafam-con/may-2022-star-wars/workspace/data-dictionary">data.world</a> that yielded a couple new sets:
-<ul>
-<li><code>survey</code> (done from Five Thirty Eight, apparently)</li>
-<li><code>principles</code></li>
-<li><code>soundtracks</code></li>
-<li><code>rt_ratings</code></li>
-<li><code>imdb_ratings</code></li>
-</ul></li>
-</ul>
-</section>
+<p>Our lessons are built around the Star Wars universe, primarily utilizing the <a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a> “characters” data from the tidyverse package. To enhance these lessons, we’ve incorporated additional Star Wars data, which can be found in the <code>data/</code> folder. The starwars data from tidyverse offers a well-sized dataset that’s both approachable and intricate, making it a valuable learning tool. If you’d like to read more about the data click <a href="./resources/data-info.html">here</a></p>
 </section>
 <section id="credits" class="level2">
 <h2 class="anchored" data-anchor-id="credits">Credits</h2>
@@ -217,6 +185,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://journalism.utexas.edu/graduate/profiles/doctoral/christian-staal-bruun-overgaard">Christian Overgaard</a>, Doctoral student. He helped think through the project and wrote the “Managing dates” tutorial.</li>
 <li>Tamara Rodriguez designed our JedR hex logo.</li>
+<li>Johan Villatoro transitioned lessons and training into WebR.</li>
 </ul>
 
 
