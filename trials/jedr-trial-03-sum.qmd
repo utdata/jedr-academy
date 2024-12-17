@@ -118,7 +118,9 @@ In our last JedR Trial, we counted the number of characters (rows) that were dif
 
 Do note:
 
-- If you try to do match on rows with no values `NA`, then the result is also `NA`. You can fix this by adding `na.rm = TRUE` to remove those rows from consideration.
+- If you attempt to match rows containing `NA` values, the result will also be `NA` by default. To address this, you can use `na.rm = TRUE` to exclude rows with NA values.
+- Call the new summarized variable `height_avg` so our grade checker knows what to look for.
+- Don't forget that we often want to sort the `height_avg` by **desc**ending order, because journalists are typically interested in the *most* of something.
 
 ```{webr}
 #| exercise: ex_2
@@ -156,36 +158,13 @@ characters |>
 :::
 :::
 
-Now you should be able to answer this following question:
+::: {.callout-tip collapse="true"}
+## "In a galaxy filled with towering droids, noble Gungans, resilient Humans, and mighty Wookiees... which species truly stands tallest?"
 
-Among Humans, Droids, Gungans and Wookies, which Star Wars species is the tallest?
-
-```{webr}
-#| exercise: ex_3
-"_______"
-```
-
-```{webr}
-#| exercise: ex_3
-#| check: true
-
-if (identical(.result, "Wookiee")) {
-  list(correct = TRUE, message = sample(praise_list, 1))
-} else {
-  list(correct = FALSE, message = sample(again_list, 1))
-}
-```
-
-::: {.hint exercise="ex_3"}
-::: {.callout-note collapse="false"}
-## Hint 1
-
-Look at the result of the previous code chunk
-
-:::
+The tallest species in Star Wars is **Wookiees**.
 :::
 
-Please inform your JedR Master that you have completed this trial. "The path is not for the faint of heart. Will you rise to meet the next challenge, or turn back to the shadows?" [Face Your Next Trial](/trials/jedr-trial-04-plot.html)
+Please inform your JedR Master that you have completed this trial. The path is not for the faint of heart. Will you rise to meet the next challenge, or turn back to the shadows? [Face Your Next Trial](/trials/jedr-trial-04-plot.html)
 
 
 

@@ -8,6 +8,8 @@ webr:
     - dplyr
     
 render-df: paged-table
+live:
+  show-hints: true
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
@@ -51,11 +53,23 @@ The first thing you need to learn is how many rows are in the `starwars` data, a
 
 What function would you add to the `starwars` data here to *glimpse* the data and find those answers?
 
+:::: {.panel-tabset}
+
+## Exercise
+
 ```{webr}
 #| exercise: ex_1
 #| label: glimpse
 _______(starwars)
 ```
+
+## Hint
+
+::: { .hint exercise="ex_1"}
+Check out the `glimpse()` function. You can [learn more here](https://dplyr.tidyverse.org/reference/glimpse.html).
+:::
+
+::::
 
 ```{webr}
 #| exercise: ex_1
@@ -67,40 +81,10 @@ if (identical(.result, glimpse(starwars))) {
 }
 ```
 
-::: {.hint exercise="ex_1"}
-::: {.callout-note collapse="false"}
-## Hint 1
+::: {.callout-tip collapse="true"}
+## "So, how many characters are there in your data? You might be surprised to see..."
 
-Check out the `glimpse()` function. You can [learn more here](https://dplyr.tidyverse.org/reference/glimpse.html).
-
-:::
-:::
-
-Just as you submitted the answer, your humanoid robot editor (J-327D) pops into your office and asks you how many people (characters) are in your data. What is your answer?
-
-```{webr}
-#| exercise: ex_2
-__
-```
-
-```{webr}
-#| exercise: ex_2
-#| check: true
-
-if (identical(.result, 87)) {
-  list(correct = TRUE, message = sample(praise_list, 1))
-} else {
-  list(correct = FALSE, message = sample(again_list, 1))
-}
-```
-
-::: {.hint exercise="ex_2"}
-::: {.callout-note collapse="false"}
-## Hint 1
-
-Check out the `rows` from the previous question.
-
-:::
+There are **87** characters in the `starwars` dataset!
 :::
 
 ### 2. Focusing on variables
@@ -168,31 +152,10 @@ I recommend checking out the `arrange()` function, you can [learn about here](ht
 :::
 :::
 
-So many tall characters! If your humanoid robot editor (J-327D) wanted you to write a story about the tallest character in the data, who would that be?
+::: {.callout-tip collapse="true"}
+## "If J-327D asked you to write about the tallest being in the galaxy, who would it be? Perhaps a towering Wookiee or a menacing Sith lord... Let’s see!"
 
-```{webr}
-#| exercise: ex_5
-"______ ____"
-```
-
-```{webr}
-#| exercise: ex_5
-#| check: true
-
-if (identical(.result, "Yarael Poof")) {
-   list(correct = TRUE, message = sample(praise_list, 1))
-} else {
-  list(correct = FALSE, message = sample(again_list, 1))
-}
-```
-
-::: {.hint exercise="ex_5"}
-::: {.callout-note collapse="false"}
-## Hint 1
-
-Look at the result of previous code chunk
-
-:::
+The tallest character is **Yarael Poof** with a height of **264 cm**.
 :::
 
-Great job! Please inform your JedR Master that you have completed this exercise. "You have conquered much, but the next trial calls to you through the Force. Do you dare step forward?" [Continue Your Journey](/trials/jedr-trial-02-count.html)
+Great job! Please inform your JedR Master that you have completed this exercise. You have conquered much, but the next trial calls to you through the Force. Do you dare step forward? [Continue Your Journey](/trials/jedr-trial-02-count.html)

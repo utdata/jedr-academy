@@ -58,7 +58,7 @@ glimpse(starwars)
 
 To prepare this data for your plot, you need to:
 
-1. Group by species and count the number of rows. Name the new variable `characters`
+1. `Group_by` species and `summarize` the number of rows. Name the new variable `characters`
 1. Arrange the result so the most characters are at the top.
 1. Drop any NA values.
 1. Save the result of this into a new data frame called `species_count` and then print that out at the end.
@@ -189,4 +189,4 @@ ggplot(species_count, ___(x = _______(species, characters), y = __________)) +
 :::
 :::
 
-Show your completed plot to your JedR Master. "Evil stirs in the galaxy, and the balance trembles. Your training must continue. Step forward, Jedi." [Continue the Fight](/trials/jedr-trial-05-pivot.html)
+Show your completed plot to your JedR Master. Evil stirs in the galaxy, and the balance trembles. Your training must continue. Step forward, Jedi. [Continue the Fight](/trials/jedr-trial-05-pivot.html)

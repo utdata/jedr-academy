@@ -66,6 +66,7 @@ This is the data you get from J-327D. It is a table with the number of `characte
 
 ```{webr}
 #| edit: FALSE
+#| echo: FALSE
 characters
 ```
 
@@ -73,12 +74,16 @@ But J-327D would like to see this data formatted so that it is easier to read ..
 
 ```{webr}
 #| edit: false
+#| echo: FALSE
 wider_pivot
 ```
 
 ### Do. Or do not. There is no try.
 
 Write the code below that will transform the `characters` data into the format noted above.
+
+Do note: 
+- Ensure that the table has `gender` as the new column name.
 
 ```{webr}
 #| exercise: ex_1
@@ -109,12 +114,13 @@ You might review the [pivoting vignette](https://tidyr.tidyverse.org/articles/pi
 
 ### Repeat, you must. Train yourself!
 
-Well done, Padawan. Your droid editor is quite pleased, but now they want to see the table with the species as the new columns.
+Well done, Padawan. Your droid editor is quite pleased, but now they want to see the table with the `species` as the new **columns**.
 
 Can you make the `characters` data look like this:
 
 ```{webr}
 #| edit: false
+#| echo: FALSE
 wider_pivot_characters
 ```
 
@@ -142,12 +148,23 @@ if (identical(.result, characters |>
 
 Now that you have mastered, pivoting wider, can you go back the other way?
 
-Starting with our first widened table, which will be in a tibble called `gender_table`, can you convert the data back to its original form, to this?
+Starting with our first widened table, which will be in a tibble called `gender_table`.
 
 ```{webr}
 #| edit: FALSE
+#| echo: FALSE
+gender_table
+```
+
+can you convert the data back to its original form, to this?
+
+```{webr}
+#| edit: FALSE
+#| echo: FALSE
 characters
 ```
+
+Use what you've learned young padawan!
 
 ```{webr}
 #| exercise: ex_3
@@ -167,4 +184,4 @@ if (identical(.result, gender_table |>
 }
 ```
 
-Great job, padawan. Please inform your JedR Master that you have completed this trial. "Even the greatest Jedi faced many trials. Trust in the Force, and continue on your journey." [Embrace Your Path](/trials/jedr-trial-06-bind.html)
+Great job, padawan. Please inform your JedR Master that you have completed this trial. Even the greatest Jedi faced many trials. Trust in the Force, and continue on your journey. [Embrace Your Path](/trials/jedr-trial-06-bind.html)

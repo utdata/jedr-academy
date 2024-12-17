@@ -112,31 +112,10 @@ Check out `arrange()`. You can [learn more here](https://dplyr.tidyverse.org/ref
 
 Now that you've **grouped** the data, **summarized** the number of characters of each species, and **arranged** the data (in **desc**ending order), you can finally tell your editor that you've compiled this information!
 
-What species is the most common in Star Wars?
+::: {.callout-tip collapse="true"}
+## "After traversing the galaxy and compiling your data in the Jedi Temple... you might wonder: Which species dominates the galaxy?"
 
-```{webr}
-#| exercise: ex_3
-"_____"
-```
-
-```{webr}
-#| exercise: ex_3
-#| check: true
-
-if (identical(.result, "Human")) {
-  list(correct = TRUE, message = sample(praise_list, 1))
-} else {
-  list(correct = FALSE, message = sample(again_list, 1))
-}
-```
-
-::: {.hint exercise="ex_3"}
-::: {.callout-note collapse="false"}
-## Hint 1
-
-Look at the result of previous code chunk 
-
-:::
+The most common species in Star Wars is **Human**.
 :::
 
-Excellent! Please tell your JedR Master that you have completed this trial. "Every trial brings you closer to your destiny. Only those who persist will uncover the truths of the galaxy." [Embrace Your Next Challenge](/trials/jedr-trial-03-sum.html)
+Excellent! Please tell your JedR Master that you have completed this trial. Every trial brings you closer to your destiny. Only those who persist will uncover the truths of the galaxy. [Embrace Your Next Challenge](/trials/jedr-trial-03-sum.html)
