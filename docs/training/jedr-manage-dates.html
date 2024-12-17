@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>JedR Academy - JedR: Managing dates</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      JedR Academy
+      </li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">JedR Academy</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/trials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JedR Trials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/training.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">JedR Trainings</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources/github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contribution</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#import-data" id="toc-import-data" class="nav-link" data-scroll-target="#import-data">Import data</a></li>
+  </ul></li>
+  <li><a href="#parsing-dates-how-to-reconize-dates-in-r" id="toc-parsing-dates-how-to-reconize-dates-in-r" class="nav-link" data-scroll-target="#parsing-dates-how-to-reconize-dates-in-r">Parsing dates: How to reconize dates in R</a>
+  <ul class="collapse">
+  <li><a href="#another-way-to-parse-dates" id="toc-another-way-to-parse-dates" class="nav-link" data-scroll-target="#another-way-to-parse-dates">Another way to parse dates</a></li>
+  </ul></li>
+  <li><a href="#working-with-dates" id="toc-working-with-dates" class="nav-link" data-scroll-target="#working-with-dates">Working with dates</a>
+  <ul class="collapse">
+  <li><a href="#which-episodes-were-oldest-or-newest" id="toc-which-episodes-were-oldest-or-newest" class="nav-link" data-scroll-target="#which-episodes-were-oldest-or-newest">Which episodes were oldest or newest?</a></li>
+  <li><a href="#only-view-episodes-that-aired-before-or-after-a-given-date" id="toc-only-view-episodes-that-aired-before-or-after-a-given-date" class="nav-link" data-scroll-target="#only-view-episodes-that-aired-before-or-after-a-given-date">Only view episodes that aired before or after a given date</a></li>
+  </ul></li>
+  <li><a href="#using-specific-parts-of-a-date" id="toc-using-specific-parts-of-a-date" class="nav-link" data-scroll-target="#using-specific-parts-of-a-date">Using specific parts of a date</a>
+  <ul class="collapse">
+  <li><a href="#which-month-had-the-most-episodes-throughout-the-entire-period" id="toc-which-month-had-the-most-episodes-throughout-the-entire-period" class="nav-link" data-scroll-target="#which-month-had-the-most-episodes-throughout-the-entire-period">Which month had the most episodes (throughout the entire period)?</a></li>
+  <li><a href="#floor_date" id="toc-floor_date" class="nav-link" data-scroll-target="#floor_date">Floor_date()</a></li>
+  <li><a href="#the-yday-function" id="toc-the-yday-function" class="nav-link" data-scroll-target="#the-yday-function">The yday() function</a></li>
+  </ul></li>
+  <li><a href="#plotting-with-dates" id="toc-plotting-with-dates" class="nav-link" data-scroll-target="#plotting-with-dates">Plotting with dates</a></li>
+  <li><a href="#the-end" id="toc-the-end" class="nav-link" data-scroll-target="#the-end">The end</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">JedR: Managing dates</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<pre class="{webr}"><code>#| include: FALSE
+praise_list &lt;- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The Force is strong with you!", "You’ve mastered this task like a true Jedi Knight.", "Your skills rival those of a seasoned Jedi Master.", "The galaxy is lucky to have someone as strong and brave as you.", "The Rebellion couldn’t ask for a better ally.", "You’re the hope the galaxy needs!", "Not even the Death Star could stand in your way.", "Darth Vader would tremble in your presence!", "Even a bounty hunter would be impressed by your precision and focus.", "You’ve got the strength of a thousand stormtroopers (but with way better aim)!", "Like a true Jedi, you face challenges with courage and wisdom.")
+
+random_praise &lt;- sample(praise_list, 1)
+
+again_list &lt;- c("Even Yoda didn’t get it on the first try. Keep going, young Padawan!", "The Force is strong with you—just focus and try again.", "Every Jedi stumbles before mastering the lightsaber. Give it another go!", "Remember, the greatest pilots still had to learn to fly first.", "Even Han Solo missed a few shots—try again, and you’ll hit the mark.", "No need to go to the Dark Side; persistence will bring you victory!", "The path of the Jedi is filled with lessons. This is just one of them.", "Even Anakin faced failure; it’s how you rise that matters.", "Not even a Sith Lord could conquer every challenge the first time.", "Mistakes are like hyperspace jumps: each one gets you closer to the destination.", "The Rebellion wasn’t won in a day — keep fighting for what’s possible.","Think of this as training with Master Yoda: patience leads to mastery.", "The Force is with you, always, so don’t give up now!", "Just like rebuilding a lightsaber, try again, and you'll get it right.")
+
+random_again &lt;- sample(again_list, 1)
+
+### setup dataframes for the exercises
+rebels_cl &lt;- read_csv("https://raw.githubusercontent.com/utdata/jedr-academy/main/data/starwarsrebels.csv") |&gt; 
+  clean_names() |&gt; 
+  mutate(air_date_fixed = dmy(original_air_date)) |&gt; 
+  select(-original_air_date)
+
+rebels_cl_newcols &lt;- read_csv("https://raw.githubusercontent.com/utdata/jedr-academy/main/data/starwarsrebels.csv") |&gt; 
+  clean_names() |&gt; 
+  mutate(air_date_fixed = dmy(original_air_date)) |&gt; 
+  mutate(month = month(air_date_fixed, label = TRUE)) |&gt; 
+  mutate(year = year(air_date_fixed)) |&gt; 
+  select(-original_air_date)
+
+parsing_practice_df &lt;- rebels_cl |&gt; 
+  head(10) |&gt;
+  mutate(
+    date2 = c("10-13-2014", "10-20-2014", "10-27-2014", "11-03-2014", "11-10-2014", "11-17-2014", "11-24-2014", "01-05-2015", "01-19-2015", "02-02-2015"),
+    date3 = c("13-Oct-2014", "20-Oct-2014", "27-Oct-2014", "03-Nov-2014", "10-Nov-2014", "17-Nov-2014","24-Nov-2014", "05-Jan-2015", "19-Jan-2015", "02-Feb-2015"),
+    date1 = as.character(air_date_fixed)) |&gt; 
+  select(episode_title, date1, date2, date3)</code></pre>
+</div>
+<section id="tutorial-by-christian-staal-bruun-overgaard-jedr-trainer" class="level5">
+<h5 class="anchored" data-anchor-id="tutorial-by-christian-staal-bruun-overgaard-jedr-trainer">Tutorial by: Christian Staal Bruun Overgaard, JedR trainer</h5>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Hello, young Padawan! In this tutorial we’ll look at managing dates, often using <code>Lubridate</code> package, which can make life easier when dealing with dates in R. In doing so, we’ll examine a dataset, scraped from <a href="https://www.tvmaze.com/shows/117/star-wars-rebels/episodes">tvmaze.com</a>, with information about the <em>Star Wars Rebels</em> series. I encourage you to follow along in your own R notebook! Good luck and may the force be with you!</p>
+<section id="import-data" class="level3">
+<h3 class="anchored" data-anchor-id="import-data">Import data</h3>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+#| message: FALSE
+#| warning: FALSE
+rebels_raw &lt;- read_csv("https://raw.githubusercontent.com/utdata/jedr-academy/main/data/starwarsrebels.csv") # import data
+rebels_raw |&gt; head() # see what the data looks like</code></pre>
+</div>
+<p>This dataset has information about the <em>Star Wars Rebels</em> series. For each of the show’s 69 episodes, we have its episode number, air date, title, and season.</p>
+<p>Note that some of the column names have spaces in them, which can make life harder. To fix it, let’s use the <code>clean_names()</code> function from the <code>Janitor</code> package:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels &lt;- rebels_raw |&gt; clean_names() # clean the names
+rebels |&gt; glimpse() # glimpse the "rebels" object</code></pre>
+</div>
+<p>Now, the column names are easier to work with.</p>
+</section>
+</section>
+<section id="parsing-dates-how-to-reconize-dates-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="parsing-dates-how-to-reconize-dates-in-r">Parsing dates: How to reconize dates in R</h2>
+<p>Notice that when we used the <code>glimpse()</code> above, we also got info about the type of each column. The episode number and season are read as <em>dbl</em> (“doubles, which is a number”), whereas the episode title and air date are read as <em>chr</em> (“characters”).</p>
+<p>To work effectively with dates, we need R to recognize when we’re reading with dates. Do fix this, we can use <code>lubridate</code>’s <a href="https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf">parse date functions</a>. In this particular dataset, the dates are written in the <em>dmy</em> (date-month-year) format. (If you look in the <code>glimpse()</code> output above, you’ll see that the first observation, for example, was: “13-Oct-14”). Let’s use <code>lubridate</code>’s <code>dmy()</code> function to create a new version of the dataset, called <em>rebels_fix</em>, which has a new column called <em>air_date_fixed</em>:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels |&gt; 
+  mutate(air_date_fixed = dmy(original_air_date)) |&gt; 
+  glimpse()</code></pre>
+</div>
+<p>Notice that, in the chunk above, we’re just looking at the output to see that this worked as intented. See that the <code>air_date_fixed</code> column is being read as a <code>date</code> whereas the <code>original_air_date</code> column was read as a <code>character</code>? Also, we’re not saving it into a new object using the <code>&lt;-</code> operator. Let’s use the <code>&lt;-</code> operator operator to save our work in a new object, called <code>rebels_cl</code>, without the <code>original_air_date</code> column, which we’re not going to need:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl &lt;- rebels |&gt; 
+  mutate(air_date_fixed = dmy(original_air_date)) |&gt; 
+  select(-original_air_date)
+
+rebels_cl |&gt; glimpse()</code></pre>
+</div>
+<p>Two key things to notice here:</p>
+<ul>
+<li><code>air_date_fixed</code> has the format <code>date</code>.</li>
+<li>In <code>air_date_fixed</code>, the year is written first, followed by the month and then the day. That’s just what the date format looks like in R.</li>
+</ul>
+<p>In this example, <code>lubridate</code>’s <code>dmy()</code> function came in handy. Here are some other functions we might’ve used if the dates had been formatted differently:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+### when using the mdy function, R knows that the first value is month, followed by day, followed by year
+mdy("May 15, 1988")
+
+### here, the ymd function makes it clear that the first value is year, followed by month, followed by day
+ymd("1988-May-15")</code></pre>
+</div>
+<p>You can find more examples and tips <a href="https://rawgit.com/rstudio/cheatsheets/main/lubridate.pdf">in this cheatsheet</a>.</p>
+<section id="padawan-practice-parsing-dates" class="level4">
+<h4 class="anchored" data-anchor-id="padawan-practice-parsing-dates">Padawan practice: Parsing dates</h4>
+<p>Here’s a small portion of the data, called <code>parsing_practice_df</code>, with three columns that need to be parsed:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+parsing_practice_df</code></pre>
+</div>
+<p>Each column is currently written in the <em>character</em> format and should be converted to the <em>date</em> format. Can you figure out how to do this?</p>
+<section id="practice-parse-date1" class="level5">
+<h5 class="anchored" data-anchor-id="practice-parse-date1">Practice: Parse <code>date1</code></h5>
+<p><em>Hint: Replace the three lines, <code>___</code> with the appropriate function.</em></p>
+<div class="cell" data-exercise="ex_1">
+<pre class="{webr}"><code>#| exercise: ex_1
+parsing_practice_df |&gt; 
+  mutate(date1_cleaned = ___(date1))</code></pre>
+</div>
+<div class="cell" data-exercise="ex_1" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_1
+#| check: true
+if (identical(.result, parsing_practice_df |&gt; 
+  mutate(date1_cleaned = ymd(date1)))) {
+  list(correct = TRUE, message = "Correct, young Padawan! We're using the ymd() function to indicate that the year goes first, followed by month, followed by day. This is our way of telling R how to parse this date.")
+} else {
+  list(correct = FALSE, message = sample(again_list, 1))
+}</code></pre>
+</div>
+<p>Here, as in the two following exercises, we’re not saving the output but only displaying it. If we wanted to save it, we’d use the <code>&lt;-</code> operator. Okay, see if you can solve the two following exercises, too!</p>
+</section>
+<section id="practice-parse-date2" class="level5">
+<h5 class="anchored" data-anchor-id="practice-parse-date2">Practice: Parse <code>date2</code></h5>
+<div class="cell" data-exercise="ex_2">
+<pre class="{webr}"><code>#| exercise: ex_2
+parsing_practice_df |&gt; 
+  mutate(date2_cleaned = ___(date2))</code></pre>
+</div>
+<div class="cell" data-exercise="ex_2" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_2
+#| check: true
+if (identical(.result, parsing_practice_df |&gt; 
+  mutate(date2_cleaned = mdy(date2)))) {
+  list(correct = TRUE, message = "Bravo, Padawan! Looks like the new column is in the date format!")
+} else {
+  list(correct = FALSE, message = sample(again_list, 1))
+}</code></pre>
+</div>
+</section>
+<section id="practice-parse-date3" class="level5">
+<h5 class="anchored" data-anchor-id="practice-parse-date3">Practice: Parse <code>date3</code></h5>
+<div class="cell" data-exercise="ex_3">
+<pre class="{webr}"><code>#| exercise: ex_3
+parsing_practice_df |&gt; 
+  mutate(date3_cleaned = ___(date3))</code></pre>
+</div>
+<div class="cell" data-exercise="ex_3" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_3
+#| check: true
+if (identical(.result, parsing_practice_df |&gt; 
+  mutate(date3_cleaned = dmy(date3)))) {
+  list(correct = TRUE, message = "Correct! The force is strong in you! Note that this function works regardless of whether the months in the existing column are written out using characters or numbers!")
+} else {
+  list(correct = FALSE, message = sample(again_list, 1))
+}</code></pre>
+</div>
+</section>
+</section>
+<section id="another-way-to-parse-dates" class="level3">
+<h3 class="anchored" data-anchor-id="another-way-to-parse-dates">Another way to parse dates</h3>
+<p>Base R also has a function to parse dates, called <code>as.Date()</code>, which you can read more about <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/as.Date">here</a>.</p>
+</section>
+</section>
+<section id="working-with-dates" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-dates">Working with dates</h2>
+<p>Let’s now make use of our newly created <code>air_date_fixed</code> column to understand the data.</p>
+<section id="which-episodes-were-oldest-or-newest" class="level3">
+<h3 class="anchored" data-anchor-id="which-episodes-were-oldest-or-newest">Which episodes were oldest or newest?</h3>
+<p>We can use the <code>arrange()</code> function to sort data frames based on dates.</p>
+<section id="the-oldest-episodes" class="level4">
+<h4 class="anchored" data-anchor-id="the-oldest-episodes">The oldest episodes</h4>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl |&gt; 
+  arrange(air_date_fixed)</code></pre>
+</div>
+</section>
+<section id="the-newest-episodes" class="level4">
+<h4 class="anchored" data-anchor-id="the-newest-episodes">The newest episodes</h4>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl |&gt; 
+  arrange(desc(air_date_fixed)) # add "desc" to sort in descending order</code></pre>
+</div>
+</section>
+</section>
+<section id="only-view-episodes-that-aired-before-or-after-a-given-date" class="level3">
+<h3 class="anchored" data-anchor-id="only-view-episodes-that-aired-before-or-after-a-given-date">Only view episodes that aired before or after a given date</h3>
+<p>We can use the <code>filter()</code> function to only view episodes that aired before or after a given date:</p>
+<section id="episodes-aired-in-2018-the-last-year-available" class="level4">
+<h4 class="anchored" data-anchor-id="episodes-aired-in-2018-the-last-year-available">Episodes aired in 2018 (the last year available)</h4>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl |&gt; 
+  filter(air_date_fixed &gt;= "2018-01-01") #Notice that the date is written in quotes!</code></pre>
+</div>
+</section>
+<section id="episodes-that-aired-in-february-2016" class="level4">
+<h4 class="anchored" data-anchor-id="episodes-that-aired-in-february-2016">Episodes that aired in February 2016</h4>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl |&gt; 
+  filter(air_date_fixed &gt;= "2016-02-01" &amp; air_date_fixed &lt; "2016-03-01")</code></pre>
+</div>
+</section>
+<section id="padawan-practice-using-filter-with-dates" class="level4">
+<h4 class="anchored" data-anchor-id="padawan-practice-using-filter-with-dates">Padawan practice: using filter() with dates</h4>
+<p>Identify the episodes that aired in October 2017.</p>
+<p>Hint: Use the <code>filter()</code> function to specify that you only want to include episodes that aired on October 1, 2017 or later—and also aired before November 1 the same year.</p>
+<div class="cell" data-exercise="ex_4">
+<pre class="{webr}"><code>#| exercise: ex_4
+rebels_cl |&gt; 
+  filter() # fill out the filter function!</code></pre>
+</div>
+<div class="cell" data-exercise="ex_4" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_4
+#| check: true
+if (identical(.result, rebels_cl |&gt; 
+  filter(air_date_fixed &gt;= "2017-10-01" &amp; air_date_fixed &lt; "2017-11-01"))) {
+  list(correct = TRUE, message = sample(praise_list,1))
+} else {
+  list(correct = FALSE, message = sample(again_list, 1))
+}</code></pre>
+</div>
+</section>
+</section>
+</section>
+<section id="using-specific-parts-of-a-date" class="level2">
+<h2 class="anchored" data-anchor-id="using-specific-parts-of-a-date">Using specific parts of a date</h2>
+<section id="which-month-had-the-most-episodes-throughout-the-entire-period" class="level3">
+<h3 class="anchored" data-anchor-id="which-month-had-the-most-episodes-throughout-the-entire-period">Which month had the most episodes (throughout the entire period)?</h3>
+<p>To answer this question, we can use <code>Lubridate</code>’s <code>month()</code> function, which allows us to focus only on months (while ignoring years). It works like this:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl_newcols &lt;- rebels_cl |&gt; 
+  mutate(month = month(air_date_fixed))
+
+rebels_cl_newcols |&gt; glimpse()</code></pre>
+</div>
+<p>Here, we’re creating a new dataframe called <code>rebels_cl_newcols</code>. We’ll use this to add more columns later on.</p>
+<p>It’s worth keeping in mind that “month” is now the name of a column (which we just created) <em>and</em> the name of a function from the <code>lubridate</code> package. That can be a bit confusing and it’s generally best to avoid creating object with the same names as functions.</p>
+<p>Also, see how the newly created <code>month</code> column only has information about which month the episodes aired in, in this case “10” (October) for the first three observations and “11” (November) for the next four observations. If we wanted the names of the months, we can use the <code>label = TRUE</code> argument within the month function. Like this:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl_newcols &lt;- rebels_cl_newcols |&gt; 
+  mutate(month = month(air_date_fixed, label = TRUE))
+
+rebels_cl_newcols |&gt; glimpse()</code></pre>
+</div>
+<p>Notice that the type for <em>month</em> is <em>“ord”</em>? This means that the column is written as an “ordered factor”, which simply means (in this case) that although it looks like text, it would be ordered by time, not alphabetically. In other words, we can sort by the month column, if we want to do so:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl_newcols |&gt; 
+  select(episode_title, month) |&gt; 
+  arrange(month)</code></pre>
+</div>
+<p>See how it’s arranged by month?</p>
+<p>Going back to our question about which month had the most episodes, let’s take a look:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl_newcols |&gt; 
+  count(month, name = "number_of_episodes") |&gt; 
+  arrange(desc(number_of_episodes) )</code></pre>
+</div>
+<p>It looks like there were lot’s of new episodes in October, November, February, and March.</p>
+<p>As a quick aside, when we do the month labels, we can also get R to write out the full month rather than the abbreviation. Let’s look at an example:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+month("2022-05-04", label = TRUE, abbr = FALSE)</code></pre>
+</div>
+<p>The <code>abbr</code> argument defaults to TRUE, so if we don’t specific <code>abbr = FALSE</code>, we’d get the abbreviated version as we saw above.</p>
+<section id="padawan-practice-using-the-year-function" class="level4">
+<h4 class="anchored" data-anchor-id="padawan-practice-using-the-year-function">Padawan practice: using the <code>year()</code> function</h4>
+<p>To get information about specific years, we can use the <code>year()</code> function, which is quite similar. Try to create a variable called <code>year</code> see we can check how many episodes aired in each year.</p>
+<p>Hint: you’ll need to use the <code>air_date_fixed</code> column.</p>
+<div class="cell" data-exercise="ex_5">
+<pre class="{webr}"><code>#| exercise: ex_5
+### USE THE year() FUNCTION HERE TO CREATE A NEW VARIABLE CALLED "year"
+rebels_cl_newcols |&gt; 
+  mutate(______)|&gt; 
+  group_by(year) |&gt; 
+  count(name = "number_of_episodes") |&gt; 
+  arrange(desc(number_of_episodes))</code></pre>
+</div>
+<div class="cell" data-exercise="ex_5" data-check="true">
+<pre class="{webr}"><code>#| exercise: ex_5
+#| check: true
+if (identical(.result, rebels_cl_newcols |&gt; 
+  mutate(year = year(air_date_fixed)) |&gt; 
+  group_by(year) |&gt; 
+  count(name = "number_of_episodes") |&gt; 
+  arrange(desc(number_of_episodes)))) {
+  list(correct = TRUE, message = sample(praise_list,1))
+} else {
+  list(correct = FALSE, message = sample(again_list, 1))
+}</code></pre>
+</div>
+</section>
+</section>
+<section id="floor_date" class="level3">
+<h3 class="anchored" data-anchor-id="floor_date">Floor_date()</h3>
+<p>An alternative would be to use <a href="https://lubridate.tidyverse.org/reference/round_date.html"><code>Lubridate</code>’s <code>floor_date()</code>-function</a>, which let’s us round date-time objects <em>down</em> to their nearest year, month, week, day, etc. It works like this:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_cl_newcols |&gt; 
+  mutate( #use the mutate function to create a new column
+    month_floor = #set the new column name to 
+      floor_date(air_date_fixed, #use the round_date function on our existing date varible
+                       "month")) |&gt; #we want to round to nearest month
+  select(episode_title, month_floor) |&gt; #we only want to view these columns now
+  head(10) #print just the ten first rows</code></pre>
+</div>
+<p>Notice that the new column, <em>month_floor</em>, only include dates that are the first day in any given month?</p>
+<p>Rounding the dates to their nearest year/month/week/day/etc can be helpful later on, for example when visualizing the data. Instead of round to the nearest values, we can use <code>ceiling_date()</code> to round up to the nearest value or <code>round_date()</code> to round to the closest value. In this tutorial we’ll mostly focus on <code>floor_date()</code> but as a future JedR Master, you should know about the other options, too!</p>
+<p>Okay, let’s create a dataframe with four new columns, rounded by <code>floor_date()</code>. We’ll use this later on.</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_rounded_cols &lt;- rebels_cl_newcols |&gt; 
+  mutate(year_fl = floor_date(air_date_fixed, "year")) |&gt;
+  mutate(month_fl = floor_date(air_date_fixed, "month")) |&gt;
+  mutate(week_fl = floor_date(air_date_fixed, "week")) |&gt;
+  mutate(day_fl = floor_date(air_date_fixed, "day"))
+
+rebels_rounded_cols |&gt; select(episode_title, year_fl, month_fl, week_fl, day_fl) |&gt; glimpse()</code></pre>
+</div>
+</section>
+<section id="the-yday-function" class="level3">
+<h3 class="anchored" data-anchor-id="the-yday-function">The yday() function</h3>
+<p>What if we wanted to find the earliest date within a year that an episode aired? For that purpose, we could use the <code>yday()</code> (year day) function, which simply tells us how many days into a year a given date is. My son and I share the same birthday (February 5). That’s the 36th day of the year:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+yday("2022-02-05")</code></pre>
+</div>
+<p>To find the earliest episode airdate for each year, we could do this:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_rounded_cols |&gt;
+  mutate(
+    dy = yday(air_date_fixed),
+    year = year(air_date_fixed)) |&gt; 
+  group_by(year) |&gt; 
+  slice_min(air_date_fixed) |&gt; 
+  ungroup() |&gt;
+  select(episode_title, season, air_date_fixed, year, dy)</code></pre>
+</div>
+<p>This shows the first-aired episode for each of the years from 2014–2018. Notice the few doppelgängers? It looks like seasons 3 and 4 started each started with a double episode.</p>
+<p>There are few things going on in the chunk above. Here’s a quick recap of what each line does:</p>
+<ul>
+<li>We start with our object, <code>rebels_rounded_cols</code>, and then …</li>
+<li>We use <code>mutate()</code> to create a new column called <code>dy</code> …</li>
+<li>To get the <code>dy</code> column to specify each dates number within a year, we use <code>yday()</code>, and then …</li>
+<li>We <code>group_by()</code> because we want the earliest episode within each year, and then …</li>
+<li>We use <code>slice_min()</code> to get just the earliest episode within each year. (Otherwise, our output would all the episodes.) And then …</li>
+<li>We use <code>ungroup()</code> to remove the grouped <code>dy</code> column. Not essential here but might be handy if you need to perform additional operations. And then …</li>
+<li><code>select()</code> let’s us show just a few columns to make the output more readable at a glance.</li>
+</ul>
+</section>
+</section>
+<section id="plotting-with-dates" class="level2">
+<h2 class="anchored" data-anchor-id="plotting-with-dates">Plotting with dates</h2>
+<p>When working with dates it can be super useful to plot your date. This can show how things are changing over time. Let’s look at a quick example. Remember above where we used <code>floor_date()</code> to round all dates down to their nearest month? We can use that column to plot how many episodes that aired per month throughout the entire period.</p>
+<p>First, let’s get the data into a more handy format.</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+rebels_gs &lt;- rebels_rounded_cols |&gt; 
+  group_by(month_fl) |&gt; 
+  summarise(no_episodes = n())
+
+rebels_gs |&gt; head() #let's see what this new dataframe looks like</code></pre>
+</div>
+<p>A quick rundown of what’s happening above:</p>
+<ul>
+<li>We’re grouping by month_fl.&nbsp;This is because we’re interested in the number of episodes per month. We could also have used year_fl, week_fl, or day_fl here.</li>
+<li>Then we’re using the summarise function to simply count the number of episodes per month.</li>
+<li>We’re storing this in a new dataframe, <code>rebels_gs</code>, which we’ll use below.</li>
+</ul>
+<p>With that taken care of, here’s an example of how we could use <code>ggplot</code> to visualize it:</p>
+<div class="cell" data-edit="false">
+<pre class="{webr}"><code>#| edit: FALSE
+ggplot(rebels_gs, aes(x = month_fl, y = no_episodes)) + 
+  geom_bar(stat='identity') +
+  labs(
+        subtitle = "Number of Star Wars Rebels episodes per month",
+        caption = "JedR Masters Lubridate Tutorial")</code></pre>
+</div>
+<p>Here’s a quick explanation of what’s happening in the chunk above:</p>
+<ul>
+<li>In the first line, we’re specifying the dataset (“rebels_gs”, x-variable (“month_fl”), and y-variable (“no_episodes”)</li>
+<li>In the second line, we’re using <code>geom_bar()</code> to tell R to make a bar chart. We use the “stat = ‘identity’” arugment to clarify that we’ll be providing the values for the bars</li>
+<li>In the third portion, we’re using <code>labs()</code> to create the title and caption. We’re using “subtitle” rather than “title” b/c it works better with the theme we’re using</li>
+<li>In the fourth and final portion, we’re employing <code>theme_fivethirtyeight()</code> from the <code>ggthemes</code> package.</li>
+</ul>
+</section>
+<section id="the-end" class="level2">
+<h2 class="anchored" data-anchor-id="the-end">The end</h2>
+<p>That’s it for now, young Padawan! Good luck on your next quest, stay safe, and may the force be with you! 💪</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

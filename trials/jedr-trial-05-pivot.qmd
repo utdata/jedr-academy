@@ -1,11 +1,13 @@
 ---
-title: ""
+title: "JedR Trial: Pivot"
 engine: knitr
 format: live-html
 webr:
   packages:
     - tidyverse
     - dplyr
+    
+render-df: paged-table
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}} 
@@ -80,8 +82,8 @@ Write the code below that will transform the `characters` data into the format n
 
 ```{webr}
 #| exercise: ex_1
-characters |>
-  ______
+characters |> 
+  ___________(__________ = ______, ___________ = _)
 ```
 
 ```{webr}
@@ -118,8 +120,8 @@ wider_pivot_characters
 
 ```{webr}
 #| exercise: ex_2
-characters |>
-  ______
+characters |> 
+  ___________(__________ = _______, ___________ = _)
 ```
 
 ```{webr}
@@ -149,8 +151,8 @@ characters
 
 ```{webr}
 #| exercise: ex_3
-gender_table |>
-  ______
+gender_table |> 
+  ____________(____ = _:_, ________ = "______", _________ = "_")
 ```
 
 ```{webr}
@@ -165,4 +167,4 @@ if (identical(.result, gender_table |>
 }
 ```
 
-Great job, padawan. Please inform your JedR Master that you have completed this trial.
+Great job, padawan. Please inform your JedR Master that you have completed this trial. "Even the greatest Jedi faced many trials. Trust in the Force, and continue on your journey." [Embrace Your Path](/trials/jedr-trial-06-bind.html)

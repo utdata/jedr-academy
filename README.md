@@ -29,15 +29,15 @@ There are two types of lessons:
 JedR Padawans can complete these lessons online through the provided links, 
 without additional setup. For those who prefer working locally, you can 
 [download the repo](https://github.com/utdata/jedr-academy) to run each notebook 
-directly on your machine. The notebooks are organized in the `webr-trials/` and 
-`webr-training/` folders.
+directly on your machine. The notebooks are organized in the `/trials` and 
+`/training` folders.
 
 ## Data sources
 
 Our lessons are built around the Star Wars universe, primarily utilizing the 
 [starwars](https://dplyr.tidyverse.org/reference/starwars.html) "characters" 
 data from the tidyverse package. To enhance these lessons, we've incorporated 
-additional Star Wars data, which can be found in the `data/` folder.
+additional Star Wars data, which can be found in the `/data` folder.
 The starwars data from tidyverse offers a well-sized dataset that's both 
 approachable and intricate, making it a valuable learning tool. If you'd like to 
 read more about the data click [here](/resources/data-info.html)

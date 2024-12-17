@@ -1,11 +1,13 @@
 ---
-title: ""
+title: "JedR Trial: Intro"
 engine: knitr
 format: live-html
 webr:
   packages:
     - tidyverse
     - dplyr
+    
+render-df: paged-table
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
@@ -52,7 +54,7 @@ What function would you add to the `starwars` data here to *glimpse* the data an
 ```{webr}
 #| exercise: ex_1
 #| label: glimpse
-______(starwars)
+_______(starwars)
 ```
 
 ```{webr}
@@ -78,7 +80,7 @@ Just as you submitted the answer, your humanoid robot editor (J-327D) pops into 
 
 ```{webr}
 #| exercise: ex_2
-______
+__
 ```
 
 ```{webr}
@@ -109,7 +111,7 @@ Now that we know how to *glimpse* into our data, let's work on *select*ing speci
 #| exercise: ex_3
 #| label: selecting
 starwars |> 
-  ______
+  ______(____, ______, _________, _______)
 ```
 
 ```{webr}
@@ -140,7 +142,8 @@ Now that we have *glimpse*d our data and *select*ed our variables in the `starwa
 ```{webr}
 #| exercise: ex_4
 starwars |>
-  ______
+  ______(____, ______, _________, _______) |>   
+  _______(______ |> ____())
 ```
 
 ```{webr}
@@ -169,7 +172,7 @@ So many tall characters! If your humanoid robot editor (J-327D) wanted you to wr
 
 ```{webr}
 #| exercise: ex_5
-"______"
+"______ ____"
 ```
 
 ```{webr}
@@ -192,4 +195,4 @@ Look at the result of previous code chunk
 :::
 :::
 
-Great job! Please inform your JedR Master that you have completed this exercise.
+Great job! Please inform your JedR Master that you have completed this exercise. "You have conquered much, but the next trial calls to you through the Force. Do you dare step forward?" [Continue Your Journey](/trials/jedr-trial-02-count.html)

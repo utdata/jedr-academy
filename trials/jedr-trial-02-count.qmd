@@ -1,11 +1,13 @@
 ---
-title: ""
+title: "JedR Trial: Count"
 engine: knitr
 format: live-html
 webr:
   packages:
     - tidyverse
     - dplyr
+    
+render-df: paged-table
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
@@ -19,7 +21,6 @@ again_list <- c("Even Yoda didn’t get it on the first try. Keep going, young P
 random_praise <- sample(praise_list, 1)
 
 random_again <- sample(again_list, 1)
-
 ```
 
 ## JedR Trial No. 2: Summarize by counting
@@ -44,7 +45,8 @@ How do we do that? What functions would we use? *We insist you name the new vari
 ```{webr}
 #| exercise: ex_1
 starwars |>
-  ______
+  ________(_______) |>
+  _________(__________ = _())
 ```
 
 ```{webr}
@@ -80,7 +82,9 @@ As a tip, don't forget that we often want to sort the information by **desc**end
 ```{webr}
 #| exercise: ex_2
 starwars |>
-  ______
+  ________(_______) |>
+  _________(__________ = _()) |> 
+  _______(__________ |> ____())
 ```
 
 ```{webr}
@@ -112,7 +116,7 @@ What species is the most common in Star Wars?
 
 ```{webr}
 #| exercise: ex_3
-"______"
+"_____"
 ```
 
 ```{webr}
@@ -135,4 +139,4 @@ Look at the result of previous code chunk
 :::
 :::
 
-Excellent! Please tell your JedR Master that you have completed this trial.
+Excellent! Please tell your JedR Master that you have completed this trial. "Every trial brings you closer to your destiny. Only those who persist will uncover the truths of the galaxy." [Embrace Your Next Challenge](/trials/jedr-trial-03-sum.html)

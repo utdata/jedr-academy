@@ -1,11 +1,13 @@
 ---
-title: ""
+title: "JedR Trial: Bind and Join"
 engine: knitr
 format: live-html
 webr:
   packages:
     - tidyverse
     - dplyr
+    
+render-df: paged-table
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}} 
@@ -66,7 +68,8 @@ Starting with the `droids` data, stack it together with the two other data frame
 
 ```{webr}
 #| exercise: ex_1
-droids
+__________ <- droids |> 
+  _________(______, _____)
 ```
 
 ```{webr}
@@ -100,7 +103,8 @@ You should end up with the same 87 observations, but you should end up with 11 v
 
 ```{webr}
 #| exercise: ex_2
-characters
+characters  |> 
+  _________(______)
 ```
 
 ```{webr}
@@ -124,5 +128,5 @@ You might review the [join vignette](https://dplyr.tidyverse.org/reference/mutat
 :::
 :::
 
-Well done. This JedR Trial is complete. Please inform your JedR Master.
+Well done. This JedR Trial is complete. Please inform your JedR Master. You have overcome this challenge, proving your strength and resolve. But beware, young one—darkness is never truly vanquished. It lurks in the shadows, waiting for its chance to rise again...
 
