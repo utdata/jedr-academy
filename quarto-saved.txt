@@ -1,0 +1,36 @@
+project:
+  # type: book
+  type: websites
+  output-dir: docs
+  render:
+    - "*.qmd"
+
+# book:
+#   title: "JedR Academy"
+#   chapters:
+#     - index.qmd
+#     - intro.qmd
+#     - summary.qmd
+#     - references.qmd
+#   page-navigation: true
+website:
+  title: "JedR Academy"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Overview"
+        url: index.qmd
+      - text: "JedR Trials"
+        url: trials/index.qmd
+      - text: "JedR Trainings"
+        url: training/index.qmd
+      - text: "Contributions"
+        url: resources/contributing.qmd
+        
+          
+
+format:
+  html:
+    theme: cosmo
+    toc: true

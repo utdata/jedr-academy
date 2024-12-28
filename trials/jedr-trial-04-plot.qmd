@@ -7,8 +7,7 @@ webr:
     - tidyverse
     - dplyr
     - ggplot2
-    
-render-df: paged-table
+  render-df: paged-table
 ---
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}} 

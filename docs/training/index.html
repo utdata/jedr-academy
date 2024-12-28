@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.542">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>JedR Academy - JedR Trials</title>
+<title>JedR Academy - JedR Training</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resources/trials.html">JedR Trials</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../training/index.html">JedR Trainings</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -112,20 +112,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/trials.html" class="sidebar-item-text sidebar-link active">
+  <a href="../trials/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">JedR Trials</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/training.html" class="sidebar-item-text sidebar-link">
+  <a href="../training/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">JedR Trainings</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contribution</span></a>
+  <a href="../resources/contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributions</span></a>
   </div>
 </li>
     </ul>
@@ -141,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">JedR Trials</h1>
+<h1 class="title">JedR Training</h1>
 </div>
 
 
@@ -158,14 +158,10 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>These modules are designed to test and strengthen your R skills through a series of interactive lessons. Each module introduces essential data manipulation and visualization techniques, using engaging exercises based on the <code>starwars</code> dataset. If you’d like to run them locally, you can find the necessary files in the <code>webr-trials/</code> folder. The topics covered are tailored to the Reporting with Data class and apply in various projects. If you’re interested in creating additional JedR Trials content, please explore the contributions tab for guidelines and opportunities to join the JedR Republic.</p>
+<p>These modules are designed to help you develop specific R skills, with accessible links provided for online access. If you’d like to run them locally, you can find the necessary files in the <code>webr-trainings/</code> folder. The topics covered are tailored to make R easier to navigate and apply in various projects. If you’re interested in creating additional JedR Training content, please explore the contributions tab for guidelines and opportunities to join the JedR Republic.</p>
 <ul>
-<li><a href="../trials/jedr-trial-01-intro.html">Introduction</a>: Introduces the <code>starwars</code> data and the interactive format of the lessons. Covers some basic functions to look at data.</li>
-<li><a href="../trials/jedr-trial-02-count.html">Summarize with Count</a>: Covers counting rows using group_by and summarize. (We skip <code>count()</code> here to focus on group_by, summarize and arrange.)</li>
-<li><a href="../trials/jedr-trial-03-sum.html">Summarize with Math</a>: Covers grouping data and math functions within summarize.</li>
-<li><a href="../trials/jedr-trial-04-plot.html">Plotting</a>: Making a very basic ggplot chart.</li>
-<li><a href="../trials/jedr-trial-05-pivot.html">Pivoting</a>: Making data wider and longer.</li>
-<li><a href="../trials/jedr-trial-06-bind.html">Bind and Join</a>: Combining data.</li>
+<li><a href="../training/jedr-categorization.html">Categorization</a>: When you need to rename values in your data, perhaps to create a new categorization schema.</li>
+<li><a href="../training/jedr-manage-dates.html">Manage dates</a>: When you need help parsing dates or making useful date parts for grouping.</li>
 </ul>
 
 
@@ -332,12 +328,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

@@ -4,7 +4,6 @@
  
 > “Always pass on what you have learned.” – Yoda
 
-
 ## What is JedR Academy?
 
 To be clear, this isn’t a package.
@@ -21,14 +20,14 @@ two main goals:
 
 There are two types of lessons:
 
-- [**JedR Trials**](/resources/trials.html): Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.
-- [**JedR Training**](/resources/training.html): Tutorials focused on feats of skills instead of on
+- [**JedR Trials**](trials/index.html): Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.
+- [**JedR Training**](training/index.html): Tutorials focused on feats of skills instead of on
   specific packages. For instance, “How to manage dates” vs “How to use
   lubridate.”
 
 JedR Padawans can complete these lessons online through the provided links, 
 without additional setup. For those who prefer working locally, you can 
-[download the repo](https://github.com/utdata/jedr-academy) to run each notebook 
+[download the repo](https://github.com/utdata/jedr-academy) to Render each notebook 
 directly on your machine. The notebooks are organized in the `/trials` and 
 `/training` folders.
 
@@ -40,7 +39,7 @@ data from the tidyverse package. To enhance these lessons, we've incorporated
 additional Star Wars data, which can be found in the `/data` folder.
 The starwars data from tidyverse offers a well-sized dataset that's both 
 approachable and intricate, making it a valuable learning tool. If you'd like to 
-read more about the data click [here](/resources/data-info.html)
+read more about the data click [here](/resources/data-info.html).
 
 ## Credits
 
@@ -58,4 +57,4 @@ Other contributors include:
   Overgaard](https://journalism.utexas.edu/graduate/profiles/doctoral/christian-staal-bruun-overgaard),
   Doctoral student. He helped think through the project and wrote the "Managing dates" tutorial.
 - Tamara Rodriguez designed our JedR hex logo.
-- Johan Villatoro transitioned lessons and training into WebR.
+- Johan Villatoro, a UT Journalism  undergraduate student, transitioned lessons and training into WebR.

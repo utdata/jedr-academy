@@ -17,11 +17,11 @@ from `tidyverse`.
   provide good examples.
 - [starwarsrebels](data/starwarsrebels.csv) is a list of episodes of
   Star Wars Rebels from
-  [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes)
+  [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes).
 
 ### Other possible data sources
 
-These might be explored later.
+Other options available or that could explored later.
 
 - [SWAPI](https://swapi.dev/)
 - [Star Wars Databank](https://www.starwars.com/databank)
@@ -29,7 +29,7 @@ These might be explored later.
   [Kaggle](https://www.kaggle.com/jsphyg/star-wars), which notes “This
   data was gathered using the Star Wars API that is no longer available.
   The origin of the data is [The Star Wars
-  Wiki](https://starwars.fandom.com/wiki).”
+  Wiki](https://starwars.fandom.com/wiki).” We have copies stored in `data/`. The tidyverse `starwars` dataset seems to be a combination of all of these tables.
   - `characters`
   - `planets`
   - `species`

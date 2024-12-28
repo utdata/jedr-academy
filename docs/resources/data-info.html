@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.542">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -114,20 +114,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/trials.html" class="sidebar-item-text sidebar-link">
+  <a href="../trials/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">JedR Trials</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/training.html" class="sidebar-item-text sidebar-link">
+  <a href="../training/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">JedR Trainings</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resources/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contribution</span></a>
+  <a href="../resources/contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributions</span></a>
   </div>
 </li>
     </ul>
@@ -170,15 +170,15 @@ ul.task-list li input[type="checkbox"] {
 <p>All data is in the <code>data/</code> folder except <code>starwars</code> which is utilized from <code>tidyverse</code>.</p>
 <ul>
 <li><a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a> characters data that is part of the tidyverse. It’s our main data set. Small enough to wrap your head around; complex and dirty enough to provide good examples.</li>
-<li><a href="data/starwarsrebels.csv">starwarsrebels</a> is a list of episodes of Star Wars Rebels from <a href="https://www.tvmaze.com/shows/117/star-wars-rebels/episodes">tvmaze.com</a></li>
+<li><a href="data/starwarsrebels.csv">starwarsrebels</a> is a list of episodes of Star Wars Rebels from <a href="https://www.tvmaze.com/shows/117/star-wars-rebels/episodes">tvmaze.com</a>.</li>
 </ul>
 <section id="other-possible-data-sources" class="level3">
 <h3 class="anchored" data-anchor-id="other-possible-data-sources">Other possible data sources</h3>
-<p>These might be explored later.</p>
+<p>Other options available or that could explored later.</p>
 <ul>
 <li><a href="https://swapi.dev/">SWAPI</a></li>
 <li><a href="https://www.starwars.com/databank">Star Wars Databank</a></li>
-<li>We’ve pulled some data from <a href="https://www.kaggle.com/jsphyg/star-wars">Kaggle</a>, which notes “This data was gathered using the Star Wars API that is no longer available. The origin of the data is <a href="https://starwars.fandom.com/wiki">The Star Wars Wiki</a>.”
+<li>We’ve pulled some data from <a href="https://www.kaggle.com/jsphyg/star-wars">Kaggle</a>, which notes “This data was gathered using the Star Wars API that is no longer available. The origin of the data is <a href="https://starwars.fandom.com/wiki">The Star Wars Wiki</a>.” We have copies stored in <code>data/</code>. The tidyverse <code>starwars</code> dataset seems to be a combination of all of these tables.
 <ul>
 <li><code>characters</code></li>
 <li><code>planets</code></li>
@@ -361,12 +361,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {

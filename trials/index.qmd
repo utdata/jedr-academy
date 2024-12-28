@@ -3,7 +3,7 @@ title: "JedR Trials"
 format: html
 ---
 
-These modules are designed to test and strengthen your R skills through a series of interactive lessons. Each module introduces essential data manipulation and visualization techniques, using engaging exercises based on the `starwars` dataset. If you'd like to run them locally, you can find the necessary files in the `webr-trials/` folder. The topics covered are tailored to the Reporting with Data class and apply in various projects. If you're interested in creating additional JedR Trials content, please explore the contributions tab for guidelines and opportunities to join the JedR Republic.
+These modules are designed to test your R skills through a series of interactive lessons. Each module introduces different journalism-centric data science techniques, using exercises based on the `starwars` dataset. The topics covered are tailored to the Reporting with Data class.
 
 
 - [Introduction](/trials/jedr-trial-01-intro.html):
@@ -20,3 +20,7 @@ These modules are designed to test and strengthen your R skills through a series
   data wider and longer.
 - [Bind and Join](/trials/jedr-trial-06-bind.html):
   Combining data.
+
+If you'd like to run them locally, you can find the necessary files in the `trials/` folder.
+
+If you're interested in creating additional JedR Trials content, please explore the [Contribution]() section for guidelines and opportunities to join the JedR Republic.

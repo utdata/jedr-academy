@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.542">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -112,20 +112,20 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/trials.html" class="sidebar-item-text sidebar-link">
+  <a href="./trials/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">JedR Trials</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/training.html" class="sidebar-item-text sidebar-link">
+  <a href="./training/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">JedR Trainings</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources/github.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Contribution</span></a>
+  <a href="./resources/contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributions</span></a>
   </div>
 </li>
     </ul>
@@ -169,14 +169,14 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>There are two types of lessons:</p>
 <ul>
-<li><a href="./resources/trials.html"><strong>JedR Trials</strong></a>: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.</li>
-<li><a href="./resources/training.html"><strong>JedR Training</strong></a>: Tutorials focused on feats of skills instead of on specific packages. For instance, “How to manage dates” vs “How to use lubridate.”</li>
+<li><a href="trials/index.html"><strong>JedR Trials</strong></a>: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.</li>
+<li><a href="training/index.html"><strong>JedR Training</strong></a>: Tutorials focused on feats of skills instead of on specific packages. For instance, “How to manage dates” vs “How to use lubridate.”</li>
 </ul>
-<p>JedR Padawans can complete these lessons online through the provided links, without additional setup. For those who prefer working locally, you can <a href="https://github.com/utdata/jedr-academy">download the repo</a> to run each notebook directly on your machine. The notebooks are organized in the <code>/trials</code> and <code>/training</code> folders.</p>
+<p>JedR Padawans can complete these lessons online through the provided links, without additional setup. For those who prefer working locally, you can <a href="https://github.com/utdata/jedr-academy">download the repo</a> to Render each notebook directly on your machine. The notebooks are organized in the <code>/trials</code> and <code>/training</code> folders.</p>
 </section>
 <section id="data-sources" class="level2">
 <h2 class="anchored" data-anchor-id="data-sources">Data sources</h2>
-<p>Our lessons are built around the Star Wars universe, primarily utilizing the <a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a> “characters” data from the tidyverse package. To enhance these lessons, we’ve incorporated additional Star Wars data, which can be found in the <code>/data</code> folder. The starwars data from tidyverse offers a well-sized dataset that’s both approachable and intricate, making it a valuable learning tool. If you’d like to read more about the data click <a href="./resources/data-info.html">here</a></p>
+<p>Our lessons are built around the Star Wars universe, primarily utilizing the <a href="https://dplyr.tidyverse.org/reference/starwars.html">starwars</a> “characters” data from the tidyverse package. To enhance these lessons, we’ve incorporated additional Star Wars data, which can be found in the <code>/data</code> folder. The starwars data from tidyverse offers a well-sized dataset that’s both approachable and intricate, making it a valuable learning tool. If you’d like to read more about the data click <a href="./resources/data-info.html">here</a>.</p>
 </section>
 <section id="credits" class="level2">
 <h2 class="anchored" data-anchor-id="credits">Credits</h2>
@@ -185,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://journalism.utexas.edu/graduate/profiles/doctoral/christian-staal-bruun-overgaard">Christian Overgaard</a>, Doctoral student. He helped think through the project and wrote the “Managing dates” tutorial.</li>
 <li>Tamara Rodriguez designed our JedR hex logo.</li>
-<li>Johan Villatoro transitioned lessons and training into WebR.</li>
+<li>Johan Villatoro, a UT Journalism undergraduate student, transitioned lessons and training into WebR.</li>
 </ul>
 
 
@@ -354,12 +354,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
+      return note.innerHTML;
     }
   }
   for (var i=0; i<xrefs.length; i++) {
