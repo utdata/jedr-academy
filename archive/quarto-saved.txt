@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+
+website:
+  title: "JedR Academy"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - text: "Overview"
+        url: index.qmd
+      - text: "JedR Trials"
+        url: resources/trials.qmd
+      - text: "JedR Trainings"
+        url: resources/training.qmd
+      - text: "Contribution"
+        url: resources/github.qmd
+
+          
+
+format:
+  html:
+    theme: cosmo
+    toc: true

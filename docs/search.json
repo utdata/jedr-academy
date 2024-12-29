@@ -18,14 +18,14 @@
     "href": "trials/trial-template.html#jedr-challenge",
     "title": "Document Title",
     "section": "JedR challenge",
-    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nDarth Vader would tremble in your presence!\nOnce you’ve completed the exercises above, move to the next part of this trial."
+    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nYour skills rival those of a seasoned Jedi Master.\nOnce you’ve completed the exercises above, move to the next part of this trial."
   },
   {
     "objectID": "trials/part-next.html",
     "href": "trials/part-next.html",
     "title": "JedR Academy",
     "section": "",
-    "text": "Even a bounty hunter would be impressed by your precision and focus.\nOnce you’ve completed the exercises above, move to the next part of this trial."
+    "text": "The galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial."
   },
   {
     "objectID": "trials/index.html",
@@ -53,7 +53,7 @@
     "href": "trials/05-pivots/pivots-p2.html#youre-done-with-this-trial",
     "title": "Pivots Part 2",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nDarth Vader would tremble in your presence! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nThe Force is strong with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Pivots",
       "Pivots Part 2"
@@ -130,7 +130,7 @@
     "href": "trials/04-plots/plots-01.html#to-be-continued",
     "title": "Plots Part 1",
     "section": "To be continued …",
-    "text": "To be continued …\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "To be continued …\nThe Force is strong with you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 1"
@@ -174,7 +174,7 @@
     "href": "trials/02-count/count-p2.html#youre-done-with-this-trial",
     "title": "Counting Part 2",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nGreat job! Mind tricks don’t work on you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nGreat job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Count",
       "Counting Part 2"
@@ -207,7 +207,7 @@
     "href": "trials/01-intro/intro-p4.html#youre-done-with-this-trial",
     "title": "Intro Part 4",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nLike a true Jedi, you face challenges with courage and wisdom. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nThe Force is strong with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 4"
@@ -218,7 +218,7 @@
     "href": "trials/01-intro/intro-p2.html#focusing-on-variables",
     "title": "Intro Part 2",
     "section": "Focusing on variables",
-    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nGreat job you have done!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 2"
@@ -497,7 +497,7 @@
     "href": "trials/01-intro/intro-p1.html#jedr-challenge",
     "title": "Intro Part 1",
     "section": "JedR Challenge",
-    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nNot even the Death Star could stand in your way.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 1"
@@ -519,7 +519,7 @@
     "href": "trials/01-intro/intro-p3.html#jedr-challenge",
     "title": "Intro Part 3",
     "section": "JedR challenge",
-    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nThe galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 3"
@@ -552,7 +552,7 @@
     "href": "trials/02-count/count-p1.html#jedr-challenge",
     "title": "Counting Part 1",
     "section": "JedR challenge",
-    "text": "JedR challenge\nJ-327D says that Jar Jar Binks is his favorite being in the Unvierse.\n\nHow many Gungan characters are there?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThere are three Gungan characters in the starwars data.\n\n\n\nYou’ve mastered this task like a true Jedi Knight.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR challenge\nJ-327D says that Jar Jar Binks is his favorite being in the Unvierse.\n\nHow many Gungan characters are there?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThere are three Gungan characters in the starwars data.\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Count",
       "Counting Part 1"
@@ -603,7 +603,7 @@
     "href": "trials/03-sums/sums-p1.html#youre-done-with-this-trial",
     "title": "Trial: Sums",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nDarth Vader would tremble in your presence! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nLike a true Jedi, you face challenges with courage and wisdom. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Sums"
     ]
@@ -646,7 +646,7 @@
     "href": "trials/04-plots/plots-02.html#on-to-the-next-step",
     "title": "Plots Part 2",
     "section": "On to the next step",
-    "text": "On to the next step\nNot even the Death Star could stand in your way.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "On to the next step\nEven a bounty hunter would be impressed by your precision and focus.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 2"
@@ -690,7 +690,7 @@
     "href": "trials/05-pivots/pivots-p1.html#now-lets-try-going-longer",
     "title": "Pivots Part 1",
     "section": "Now let’s try going longer …",
-    "text": "Now let’s try going longer …\nNice work. You have controlled your fear.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "Now let’s try going longer …\nYour skills rival those of a seasoned Jedi Master.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Pivots",
       "Pivots Part 1"
@@ -741,7 +741,7 @@
     "href": "trials/06-binds/binds-p1.html#youre-done-with-this-trial",
     "title": "Trial: Binding",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nGreat job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Binding"
     ]
@@ -751,13 +751,13 @@
     "href": "trials/part-end.html",
     "title": "JedR Academy",
     "section": "",
-    "text": "Wow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+    "text": "Great job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
   },
   {
     "objectID": "trials/part-end.html#youre-done-with-this-trial",
     "href": "trials/part-end.html#youre-done-with-this-trial",
     "title": "JedR Academy",
     "section": "",
-    "text": "Wow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+    "text": "Great job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
   }
 ]
