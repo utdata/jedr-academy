@@ -58,3 +58,9 @@ Some things to consider:
 - If you are going to switch branches (like from your own feature branch back to main), then you want to commit (or [stash](https://git-scm.com/docs/git-stash)) your current changes first.
 - `git checkout branch-name` will check out that branch on your local machine.
 - `git pull origin branch-name` will pull the latest version from the Github down to your computer. This is especially important if you are checking out a branch that others have worked on, like `main`.
+
+## Trials
+
+There is a Quarto template for JedR Trials. Some notes about that.
+
+- We put the order of exercise elements like this: setup (if needed), exercise, solution, grading, hint 1 (if used), hint 2 (if used), etc. In short, we put hints last as they are optional. We typically include the sullution in a callout, but you can remove the callout to hide it but it will still work.

@@ -1,5 +1,5 @@
 ---
-title: "JedR: Managing dates"
+title: "Managing dates"
 engine: knitr
 format: live-html
 webr:

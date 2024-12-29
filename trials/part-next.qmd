@@ -1,0 +1,7 @@
+
+{{< include /trials/praise-list.qmd >}}
+
+`{r} sample(priase_list, 1)`
+
+Once you've completed the exercises above, **move to the next part of this trial.**
+

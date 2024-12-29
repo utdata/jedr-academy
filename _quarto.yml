@@ -5,6 +5,8 @@ project:
     - "*.qmd"
 
 website:
+  repo-url: https://github.com/utdata/jedr-academy
+  repo-actions: [edit, source, issue]
   title: "JedR Academy"
   sidebar:
     style: "docked"
@@ -12,12 +14,34 @@ website:
     contents:
       - text: "Overview"
         url: index.qmd
+      - text: "---"
       - text: "JedR Trials"
-        url: resources/trials.qmd
-      - text: "JedR Trainings"
-        url: resources/training.qmd
-      - text: "Contribution"
-        url: resources/github.qmd
+        url: trials/index.qmd
+      - section: "Trial: Intro"
+        contents:
+          - auto: "trials/01-intro/*.qmd"
+      - section: "Trial: Count"
+        contents:
+          - auto: "trials/02-count/*.qmd"
+      - text: "Trial: Sums"
+        url: trials/03-sums/sums-p1.qmd
+      - section: "Trial: Plots"
+        contents:
+          - auto: "trials/04-plots/*.qmd"
+      - section: "Trial: Pivots"
+        contents:
+          - auto: "trials/05-pivots/*.qmd"
+      - text: "Trial: Binding"
+        url: trials/06-binds/binds-p1.qmd
+      - text: "---"
+      - section: "Training"
+        href: training/index.qmd
+        contents:
+          - auto: "training/*.qmd"
+      - text: "---"
+      - text: "Contributions"
+        url: resources/contributing.qmd
+  page-navigation: true
         
           
 
@@ -25,3 +49,4 @@ format:
   html:
     theme: cosmo
     toc: true
+    code-overflow: wrap

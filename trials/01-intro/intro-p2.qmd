@@ -1,0 +1,65 @@
+---
+title: "Intro Part 2"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - dplyr
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+## Focusing on variables
+
+Now that we know how to *glimpse* into our data, let's work on *select*ing specific variables of interest.
+
+Let's say the *Galactic News Hub* has asked you to write a story about height differences across different species. What function would you use to *select* only the following variables in `starwars`: `name`, `height`, `homeworld`, and `species`? (Make sure you list your variables in that order!)
+
+```{webr}
+#| exercise: ex_2
+#| label: selecting
+starwars |> 
+  ______(____, ______, _________, _______)
+```
+
+
+::: {.solution exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+starwars |> 
+  select(name, height, homeworld, species)
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Hint
+
+J-327D suggests the `select()` function, which you can [learn about here](https://dplyr.tidyverse.org/reference/select.html).
+
+:::
+:::
+
+
+
+{{< include /trials/part-next.qmd >}}
+

@@ -1,0 +1,125 @@
+---
+title: "Plots Part 2"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+Your humanoid robot editor J-327D takes a look at your chart and nods his head up and down, and then shakes it side to side. Things rattle inside, but you try not to notice.
+
+> "You have a good *start* to a chart here, but it could be mo betta."
+>
+> -- <cite>J-327D, *Galactic News Hub* editor</cite>
+
+## A plot as an object
+
+J-327D points out a cool thing about ggplot is your can save your plot into an object, and then keep adding layers onto that basic plot using the `+` operator.
+
+He shows you how you can do this ...
+
+```{webr}
+#| echo: false
+species_count <- starwars |>
+  group_by(species) |>
+  summarize(count_species = n()) |>
+  arrange(desc(count_species)) |>
+  drop_na()
+```
+
+```{webr}
+#| edit: false
+species_plot <- species_count |> 
+  filter(count_species > 1) |> 
+  ggplot(aes(
+    x = count_species,
+    y = species |> reorder(count_species))
+  ) +
+  geom_col()
+
+species_plot
+
+```
+
+
+## Plotting values as text labels
+
+J-327D first suggestion to improve the chart is to add the count of each species onto each bar so it is easier to read.
+
+**Use a geom to plot the `count_species` on top of each bar as text.**
+
+Note there are some adjustments in the code already for the location and color of the text.
+
+```{webr}
+## Use only if setup is needed
+#| exercise: ex_1
+#| setup: true
+species_plot <- species_count |> 
+  filter(count_species > 1) |> 
+  ggplot(aes(
+    x = count_species,
+    y = species |> reorder(count_species))
+  ) +
+  geom_col()
+
+species_plot
+```
+
+
+```{webr}
+#| exercise: ex_1
+species_plot +
+  geom_____(
+    ___(_____ = count_species),
+    hjust = 1.75,
+    color = "white"
+  )
+```
+
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+species_plot +
+  geom_text(
+    aes(label = count_species),
+    hjust = 1.75,
+    color = "white"
+  )
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+J-327D says it is interesting that you can plot a value onto a chart using `geom_text()`. He noted an important thing to know is since you are pulling the value from the data you have to use `aes()` to captue the data point to plot it as a **label**.
+
+:::
+:::
+
+## On to the next step
+
+{{< include /trials/part-next.qmd >}}

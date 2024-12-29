@@ -1,26 +1,21 @@
----
-title: "JedR Trials"
-format: html
----
+# JedR Trials
 
-These modules are designed to test your R skills through a series of interactive lessons. Each module introduces different journalism-centric data science techniques, using exercises based on the `starwars` dataset. The topics covered are tailored to the Reporting with Data class.
+Congratulations! You have recently been hired as a **JedR Padawan** for the *Galactic News Hub*, the premiere news organization for the Star Wars Universe.
 
+Your editor, droid **J-327D**, will ask you to explore the Star Wars Universe to find facts to include in stories for the *News Hub*. (You're probably thinking this should work the other way around: that the Human should be asking the Droid for data facts. Perhaps that will come true once you pass all the Trials and become a JedR Knight!)
 
-- [Introduction](/trials/jedr-trial-01-intro.html):
+The JedR Trials are designed to test your R skills through a series of interactive exercises. Each Trial introduces different journalism-centric data science techniques, using exercises based on the `starwars` dataset.
+
+Each Trial might have more than one part, and it is best to complete them in order. That said, you are always welcome to go back to an earlier Trial to give yourself a review.
+
+- [Introduction: The data](01-intro/intro-p1.qmd):
   Introduces the `starwars` data and the interactive format of the
   lessons. Covers some basic functions to look at data.
-- [Summarize with Count](/trials/jedr-trial-02-count.html): Covers
-  counting rows using group_by and summarize. (We skip `count()` here to
+- [Summarize with Count](02-count/count-p1.qmd): Covers
+  counting rows using `group_by()` and `summarize()`. (We skip `count()` here to
   focus on group_by, summarize and arrange.)
-- [Summarize with Math](/trials/jedr-trial-03-sum.html):
+- [Summarize with Math](03-sums/sums-p1.qmd):
   Covers grouping data and math functions within summarize.
-- [Plotting](/trials/jedr-trial-04-plot.html): Making a
-  very basic ggplot chart.
-- [Pivoting](/trials/jedr-trial-05-pivot.html): Making
-  data wider and longer.
-- [Bind and Join](/trials/jedr-trial-06-bind.html):
-  Combining data.
-
-If you'd like to run them locally, you can find the necessary files in the `trials/` folder.
-
-If you're interested in creating additional JedR Trials content, please explore the [Contribution]() section for guidelines and opportunities to join the JedR Republic.
+- [Plotting](04-plots/plots-01.qmd): Making a very basic ggplot chart.
+- [Pivoting](05-pivots/pivots-p1.qmd): Making data wider and longer.
+- [Bind and Join](06-binds/binds-p1.qmd):  Combining data.

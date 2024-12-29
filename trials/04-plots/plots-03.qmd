@@ -1,0 +1,120 @@
+---
+title: "Plots Part 3"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+Your editor J-327D would begin cracking a smile if only his facial expressions weren't set in some kind of metal alloy. He says your chart is almost ready ... it just needs some proper chart titles and axis labels.
+
+## Setting chart labels
+
+> "ggplot it quite incredible in that it uses \"sensible defaults\" for most things, but you can override them if you know how. Titles and axis labels are a good example of this.
+>
+> -- <cite>J-327D, Galactic News Hub editor</cite>
+
+Your editor says you should change the fugly axis labels and add good titles and captions to your chart. **He suggests you use `labs()` to update and create these.**
+
+::: callout-warning
+
+What J-327D doesn't quite understand is the robot grading mechanism of the Trials is super particular about how code is written, so you have to use the following words and phrases in your code:
+
+- title ... A lot of humans
+- subtitle ... Of the species in the the Star Wars Universe with more than one unit in our data, humans are the most prefalent. This could indicate a sampling problem.
+- caption ... By Galactic News Hub
+- x axis ... Count of species
+- y axis ... Species
+
+:::
+
+**Question for this exercise**
+
+```{webr}
+## Use only if setup is needed
+#| exercise: ex_1
+#| setup: true
+species_count <- starwars |>
+  group_by(species) |>
+  summarize(count_species = n()) |>
+  arrange(desc(count_species)) |>
+  drop_na()
+
+species_plot <- species_count |> 
+  filter(count_species > 1) |> 
+  ggplot(aes(
+    x = count_species,
+    y = species |> reorder(count_species))
+  ) +
+  geom_col()
+```
+
+
+```{webr}
+#| exercise: ex_1
+species_plot +
+  geom_text(
+    aes(label = count_species),
+    hjust = 1.75,
+    color = "white"
+  ) +
+  ____(
+    title = "___",
+    ___title = str_wrap("___"),
+    x = "___", y = "___",
+    _______ = "___"
+  )
+```
+
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+species_plot +
+  geom_text(
+    aes(label = count_species),
+    hjust = 1.75,
+    color = "white"
+  ) +
+  labs(
+    title = "A lot of humans",
+    subtitle = str_wrap("Of the species in the the Star Wars Universe with more than one unit in our data, humans are the most prefalent. This could indicate a sampling problem."),
+    x = "Count of species", y = "Species",
+    caption = "By Galactic News Hub"
+  )
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+J-327D says there isn't much to tell you here. You should set all these text items using the `labs()` function. Just make sure you use the extact text phrasing as noted above.
+
+:::
+:::
+
+
+{{< include /trials/part-end.qmd >}}

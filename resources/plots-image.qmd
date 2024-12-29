@@ -1,0 +1,46 @@
+---
+title: "plots-image"
+format: html
+---
+
+This notebook creates the image for the Plots Trial.
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+```
+
+```{r}
+species_count <- starwars |>
+  group_by(species) |>
+  summarize(count_species = n()) |>
+  arrange(desc(count_species)) |>
+  drop_na()
+
+species_plot <- species_count |> 
+  filter(count_species > 1) |> 
+  ggplot(aes(
+    x = count_species,
+    y = species |> reorder(count_species))
+  ) +
+  geom_col()
+
+species_plot_save <- species_plot +
+  geom_text(
+    aes(label = count_species),
+    hjust = 1.75,
+    color = "white"
+  ) +
+  labs(
+    title = "A lot of humans",
+    subtitle = str_wrap("Of the species in the Star Wars Universe with more than one unit in our data, humans are the most prevalent. This could indicate a sampling problem. "),
+    x = "Count of species", y = "Species",
+    caption = "By Galactic News Hub"
+  )
+
+ggsave("../trials/04-plots/img/species.png")
+```
+

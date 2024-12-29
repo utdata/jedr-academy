@@ -1,0 +1,179 @@
+---
+title: "Trial: Sums"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+Welcome, Padawan. In this exercise, you'll be tested on skills using math-based `summarize()` functions. Like our previous Trials, J-327D will be asking for information from the dataset `starwars` in the `tidyverse` packages.
+
+If you recall from our earlier exercise, `starwars` is a dataset with 87 Star Wars characters.
+
+```{webr}
+#| edit: false
+glimpse(starwars)
+```
+
+
+## Select and filter
+
+Your droid editor, J-327D, notes that Chewbacca is taller than the rest of the crew in the Millennium Falcon, but he wonders if he is just tall for a Wookiee. He asks you to find the average heights of Humans, Droids, Gungans and Wookiees from within the starwars data. He notes that that height variable is a measurement in centimeters.
+
+**J-327D has a specific goal in mind for this first part of the Trial.** He says it would be helpful to focus on some specific data before we find the average height.
+
+1.  Select only the `name`, `height`, `species` variables from the starwars data.
+2.  Filter that to include only rows with species of `"Human", "Droid", "Gungan", "Wookiee"`.
+3.  Save the results into a new data frame called `characters` and then print out the new `characters` data frame.
+
+
+```{webr}
+#| exercise: ex_1
+characters <- starwars |>
+  select(____, ______, _______) |>
+  filter(_______ ____ _("_____", "_____", "______", "_______"))
+         
+characters
+```
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+characters <- starwars |>
+  select(name, height, species) |>
+  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
+
+characters
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+Start with your select. Fill in the blanks
+
+```r
+starwars |>
+  select(name, height, species)
+```
+
+:::
+:::
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 2
+
+J-327D notes there are several ways to filter for more than one species, but his favorite, most efficient way is through using `%in%`:
+
+```r    
+starwars |>
+  select(name, height, species) |>
+  filter(species ____ c("Human", "Droid", "Gungan", "Wookiee"))
+```
+
+:::
+:::
+
+## Finding the mean
+
+OK, now that we have a dataframe with our selected rows based on species, we can find the answer to the question J-327D really wants to know.
+
+In our last JedR Trial, we counted the number of characters (rows) that were different species. In this trail we need to use `group_by()` and `summarize()` and `arrange()` again, but we must summarize to get the average height -- or `mean()` -- of each species in the data.
+
+Do note:
+
+- If you attempt to match rows containing `NA` values, the result will also be `NA` by default. To address this, we are suing `na.rm = TRUE` to exclude rows with NA values.
+- We are calling the new summarized variable `height_avg` so our grade checker knows what to look for.
+- Don't forget that we often want to sort the `height_avg` by **desc**ending order, because journalists are typically interested in the *most* of something.
+
+**Question for this exercise**
+
+```{webr}
+#| exercise: ex_2
+#| setup: true
+characters <- starwars |>
+  select(name, height, species) |>
+  filter(species %in% c("Human", "Droid", "Gungan", "Wookiee"))
+```
+
+```{webr}
+#| exercise: ex_2
+characters |>
+  ________(species) |>
+  _________(height_avg = ____(height, na.rm = TRUE)) |>
+  _______(____(height_avg))
+```
+
+::: {.hint exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+J-327D notes that we have a saying for a typical summarize function: GSA stands for `group_by()`, `summarize()` and `arrange()`. They typicaly come together in that order.
+
+:::
+:::
+
+::: {.solution exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+characters |>
+  group_by(species) |>
+  summarize(height_avg = mean(height, na.rm = TRUE)) |>
+  arrange(desc(height_avg))
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+grade_this_code()
+```
+
+
+## JedR challenge
+
+### What are the tallest species in the Star Wars Universe?
+
+::: {.callout-tip collapse="true"}
+
+### Click to reveal the answer
+
+Wookiees are the tallest species with an average height of 231 centemeters. That's about 7 feet, 7 inches.
+
+:::
+
+{{< include /trials/part-end.qmd >}}

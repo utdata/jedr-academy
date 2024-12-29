@@ -1,0 +1,192 @@
+---
+title: "Pivots Part 1"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+```{webr}
+#| include: false
+
+starwars <- starwars
+
+keepers <-  c("Human", "Droid", "Gungan")
+
+characters <- starwars |> 
+  drop_na(sex, gender) |> 
+  mutate(species_clean = case_when(
+    !(species %in% keepers) ~ "Other",
+    is.na(species) ~ "Other",
+    TRUE ~ species
+  )) |> 
+  select(
+    -species,
+    species = species_clean
+  ) |> 
+  count(species, gender)
+
+gender_table <- characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+
+wider_pivot <- characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+
+wider_pivot_characters <- characters |> 
+  pivot_wider(names_from = species, values_from = n)
+```
+
+
+<div style="float:right; margin-left:20px"><img src="img/jedi-pivot.webp" width="200"></div>
+
+In this JedR Trial we will explore your ability to pivot data to suit your needs. This is a common challenge to prepare data for charting in ggplot or [Datawrapper](https://www.datawrapper.de/).
+
+Your droid editor (J-327D) has sent you some data they would like in a different format. J-327D is pretty sure you can use your JedR powers to "pivot" this data to their liking.
+
+<br clear="both">
+
+# Make wider tables
+
+This is the data you get from J-327D. It is a dataframe called `characters` (as in characters in a story) that summarizes the `starwars` data based on their `species` and `gender` identity.
+
+```{webr}
+#| edit: FALSE
+#| echo: FALSE
+characters
+```
+
+But J-327D would like to see this data formatted so that it is easier to read ... where each species is on its own row, with a column for each gender showing the number of characters. Like this:
+
+```{webr}
+#| edit: false
+#| echo: FALSE
+wider_pivot
+```
+
+## Pivot to make more columns
+
+Write the code below that will transform the `characters` data into the format noted above.
+
+```{webr}
+#| exercise: ex_1
+characters |> 
+  pivot______(______from = gender, _______from = n)
+```
+
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+You might review the [pivoting vignette](https://tidyr.tidyverse.org/articles/pivot.html) in the Tidyverse documentation.
+
+:::
+:::
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 2
+
+Does it help to know which way you are going? Now you can just review the arguments of [`pivot_wider()`](https://tidyr.tidyverse.org/reference/pivot_wider.html).
+
+```r
+characters |> 
+  pivot_wider(______from = gender, _______from = n)
+```
+
+:::
+:::
+
+## Repeat, you must. Train yourself!
+
+Well done, Padawan. Your droid editor is quite pleased, but now he wants to see the table with the `species` as the new **columns**.
+
+Can you take the `characters` data that starts like this:
+
+```{webr}
+#| edit: false
+#| echo: false
+characters
+```
+
+
+But make it look like this:
+
+```{webr}
+#| edit: false
+#| echo: false
+wider_pivot_characters
+```
+
+```{webr}
+#| exercise: ex_2
+characters |> 
+  pivot______(_______from = _______, _______from = _)
+```
+
+::: {.solution exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+characters |> 
+  pivot_wider(names_from = gender, values_from = n)
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+grade_this_code()
+```
+
+
+::: {.hint exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Hint
+
+This is just like the challenge above in that you are still using `pivot_wider()`, but you are using different values for the names and values.
+
+:::
+:::
+
+## Now let's try going longer ...
+
+{{< include /trials/part-next.qmd >}}

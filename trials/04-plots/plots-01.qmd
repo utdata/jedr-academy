@@ -1,0 +1,170 @@
+---
+title: "Plots Part 1"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+In this JedR Trial, we'll be exploring the [ggplot2](https://ggplot2.tidyverse.org/) skills. Like in all our previous exercises, we'll be using the `starwars` data in the `tidyverse` packages.
+
+Your humanoid robot editor (J-327D) has asked to _**see**_ how many characters there are for the most common species in the `starwars` data. He has asked you to make a bar chart from this data. It should look like this:
+
+![](img/species.png)
+
+But know we'll build this one piece at a time, taking advantage of ggplots layering methods.
+
+As a reminder, here is the `starwars` data:
+
+```{webr}
+#| edit: false
+glimpse(starwars)
+```
+
+## Prepare the data
+
+As you may recall in your training, making a chart usually takes two steps: Preparing the data, then plotting the data.
+
+To prepare this data for your plot, you need to:
+
+1. `Group_by` species and `summarize` the number of rows. Name the new variable `count_species`.
+1. Arrange the result so the highest count is at the top.
+1. Drop any NA values.
+1. We are saving the result into a new dataframe called `species_data`. We print that out at the end.
+
+```{webr}
+#| exercise: ex_1
+species_data <- starwars |>
+  ________(species) |>
+  _________(count_species = _()) |>
+  _______(____(count_species)) |>
+  _______()
+
+species_data
+```
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+species_data <- starwars |>
+  group_by(species) |>
+  summarize(count_species = n()) |>
+  arrange(desc(count_species)) |>
+  drop_na()
+
+species_data
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+J-327D notes this is a typical GSA summary, using `group_by()`, `summarize()` and `arrange()`. We count rows using the `n()` function.
+
+There is one more unusual function here to [remove rows with NA values](https://tidyr.tidyverse.org/reference/drop_na.html).
+
+:::
+:::
+
+## Starting our plot
+
+### Plotting the chart
+
+Now that you have prepared your data in `species_data`, you need to plot your data as a column chart, ordered so the species with the most characters is at the top.
+
+::: callout-warning
+
+A couple of things that J-327D and the code checker are persnickety about:
+
+- We are starting with `species_data` but filtered to results with more than one `count_species`. You'll start with species that have more than one result in the data so we don't have a super long chart.
+- You should set the x axis to the characters and y axis to species. You'll need to reorder the species.
+- We'll deal with chart titles and such later.
+
+:::
+
+```{webr}
+## Use only if setup is needed
+#| exercise: ex_2
+#| setup: true
+species_count <- starwars |>
+  group_by(species) |>
+  summarize(count_species = n()) |>
+  arrange(desc(count_species)) |>
+  drop_na()
+```
+
+
+```{webr}
+#| exercise: ex_2
+species_count |> 
+  filter(count_species > 1) |> 
+  ggplot(aes(
+    x = _____________,
+    y = _______ |> reorder(_____________))
+  ) +
+  geom____()
+```
+
+
+::: {.solution exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+species_count |> 
+  filter(count_species > 1) |> 
+  ggplot(aes(
+    x = count_species,
+    y = species |> reorder(count_species))
+  ) +
+  geom_col()
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+J-327D notes there are only two variables to choose from the data, `species` and `count_species`. This is a *col*umn chart, which is a type of bar chart so you should be able to figure it out from the [geom lists](https://ggplot2.tidyverse.org/reference/#geoms).
+
+:::
+:::
+
+## To be continued ...
+
+{{< include /trials/part-next.qmd >}}
