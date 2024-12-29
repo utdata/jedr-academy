@@ -1,0 +1,336 @@
+---
+title: "Categorization"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - janitor
+---
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| include: FALSE
+praise_list <- c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The Force is strong with you!", "You’ve mastered this task like a true Jedi Knight.", "Your skills rival those of a seasoned Jedi Master.", "The galaxy is lucky to have someone as strong and brave as you.", "The Rebellion couldn’t ask for a better ally.", "You’re the hope the galaxy needs!", "Not even the Death Star could stand in your way.", "Darth Vader would tremble in your presence!", "Even a bounty hunter would be impressed by your precision and focus.", "You’ve got the strength of a thousand stormtroopers (but with way better aim)!", "Like a true Jedi, you face challenges with courage and wisdom.")
+
+random_praise <- sample(praise_list, 1)
+
+again_list <- c("Even Yoda didn’t get it on the first try. Keep going, young Padawan!", "The Force is strong with you—just focus and try again.", "Every Jedi stumbles before mastering the lightsaber. Give it another go!", "Remember, the greatest pilots still had to learn to fly first.", "Even Han Solo missed a few shots—try again, and you’ll hit the mark.", "No need to go to the Dark Side; persistence will bring you victory!", "The path of the Jedi is filled with lessons. This is just one of them.", "Even Anakin faced failure; it’s how you rise that matters.", "Not even a Sith Lord could conquer every challenge the first time.", "Mistakes are like hyperspace jumps: each one gets you closer to the destination.", "The Rebellion wasn’t won in a day — keep fighting for what’s possible.","Think of this as training with Master Yoda: patience leads to mastery.", "The Force is with you, always, so don’t give up now!", "Just like rebuilding a lightsaber, try again, and you'll get it right.")
+
+random_again <- sample(again_list, 1)
+
+gender_reveal <- starwars |> 
+  mutate(
+    gender_clean = case_match(
+      gender,
+      NA ~ "unknown",
+      .default = gender
+    )) |> 
+  select(name, gender, gender_clean)
+
+mainchars <- starwars |> 
+  mutate(
+    main_planet_origin = case_when(
+      str_detect(homeworld, "Tatooine|Naboo") ~ TRUE,
+      .default = FALSE
+    )) |> 
+  select(name, homeworld, main_planet_origin)
+```
+
+##### Tutorial by: Christian McDonald, JedR master
+
+## How to make categories from data
+
+Welcome Padawan. May your quest to become a JedR Master be fruitful. "Do or do not. There is no try."
+
+Sometimes as journalists (or data scientists) we need to create new categories for our data. An example might be where we have a column of data that has too many different values to plot effectively. We might be able to re-categorize those values to fewer individual choices, maybe combining less important values into a generic term like "other".
+
+Some real-worldish examples:
+
+- You want to show race/ethnicity breakdowns in a chart or story about Hispanic representation. There are eight different values and some are quite small. You might create a column to use the values Asian, Black, Hispanic and White with all others changed to "Other".
+- Perhaps you are doing a story on crime and want to highlight violent crimes vs property vs other crimes. You might create a new column that categorizes many individual charges into these buckets.
+
+We're taking records and putting them into piles or groups based on one or more values.
+
+> **JedR Mind Trick:** When we categorize values like this, we want to create a new column intead of overwriting an existing one. This way you can check your work. You can always remove or rename columns later.
+
+### Goals of this training session
+
+- To apply [`case_match()`](https://dplyr.tidyverse.org/reference/case_match.html) within a `mutate()` to create data categories. It's a one-to-one match, for the most part.
+- To apply [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) within a `mutate()` to create data categories. This allows more complex logic.
+
+## Our scenario
+
+Here at the _Galactic News Hub_, we have a dataset of all the sources we connect with on a regular basis: The `starwars` data set that comes with the `tidyverse` library.
+
+```{webr}
+#| edit: FALSE
+#| message: FALSE
+#| label: showcase
+library(tidyverse)
+starwars
+```
+
+This data includes a variable called `species`, and our editor wants a report breaking down the species of our source list based on three broad categories: **human**, **droid**, and **other**. Our editor is hoping we can later cross reference these categories against gender and other variables within the source list.
+
+To accomplish this, it would be helpful to have a "species_category" variable using these three values so we can group and aggregate with other columns.
+
+Let's take a look at the species column using [`count()`](https://dplyr.tidyverse.org/reference/count.html).
+
+```{webr}
+#| edit: false
+starwars |> count(species, sort = TRUE, name = "cnt")
+```
+
+You can see that **Human** and **Droid** values dominate the data. The next most frequent values is `NA`. Maybe we can convince our editor to make that category **Other/Unknown**.
+
+## Using `case_match()`
+
+One of the easier methods to categorize data is to use [`case_match()`](https://dplyr.tidyverse.org/reference/case_match.html). The logic is straighforward: For this value, substitute that value.
+
+To make clear our goal here for the _Galactic Hub News_: We want to create a new column called `species_category` that has three values: Human, Droid, Other/Unknown. And they need to be based on the existing `species` variable.
+
+### How case_match works
+
+While is is possible to recatagorize our values into the same column, a good JedR will instead use `mutate()` and `case_when()` to create a new column and then fill it with the results.
+
+```r
+data |> 
+  mutate(
+    new_column = case_when(
+      existing_column,
+      "Old Value 1 from existing_column" ~ "New Value 1",
+      "Old Value 2 from existing_column" ~ "New Value 2",
+      .default = "Value for everything else"
+    )
+  )
+```
+
+- This is standard usage for the `mutate()` function ... you create the new column and then set it to a value. In this case, we are setting the value to the result of the `case_when()` function.
+- Within `case_when()`, we have to first name the column we are pulling from. Like where are we looking for these values?
+- Then we have a series of statements separated with `~`. If we find what is on the left-hand side, then we change it to what is on the right-hand side.
+- Lastly we have a "default" to handle everything else we haven't specified. In some cases you might make this `.default = existing_column` to keep the existing value for those rows.
+
+The order you put these is important. Once a match has been found and updated, that value won't be changed again.
+
+So, with our `starwars` data, a partial solution might look like this:
+
+```{webr}
+#| edit: FALSE
+starwars |> 
+  mutate(
+    species_category = case_match(
+      species,
+      "Gungan" ~ "Other/Unknown",
+      "Neimodian" ~ "Other/Unknown"
+    )
+  ) |> # using select and slice to focus on the change
+  select(name, species, species_category) |> slice(31:40)
+```
+
+In the example above, we use `slice()` to skip down to part of the data where we can see the change. (The first 20 rows are all humans and droids.) We also used `select()` to focus on our columns of interest.
+
+Note we've only changed _two_ of the values we need to change, though. (You can see Toydarian and Dug have not been changed.) This method is very handy if you have just a few things to change.
+
+In our case here, we _could_ list all 36 changes, but ... Use the Force, Luke.
+
+### Using .default
+
+`case_match()` changes exactly what you specify and leaves anything you don't specify as `NA`. If you want the non-matches to be something else, you can specify them with `.default =`.
+
+Using this, we can set Human to Human and Droid to Droid, but then everything else to Other/Unknown.
+
+**NOTE** that the specific matches use `~` to separate what to look for and what to change it to, but the `.default` designation uses `=`.
+
+```{webr}
+#| edit: FALSE
+starwars |> 
+  mutate(
+    species_category = case_match(
+      species,
+      "Human" ~ "Human",
+      "Droid" ~ "Droid",
+      .default = "Other/Unknown",
+    )
+  ) |> # using select and slice to focus on change
+  select(name, species, species_category) |> slice(31:40)
+```
+
+### Check your results
+
+> **JedR Mind Trick:** Even with these few rows, it's hard to _see all_ the changes made in your data. It is sometimes helpful to do a `count()` on your changes to check them. Just be sure to count the already-changed data, not the result you are saving into the new object.
+
+Here we save the recategorized data into a new object called `sw_species` and then run a `count()` on our two columns to check the results.
+
+```{webr}
+#| edit: FALSE
+sw_species <- starwars |> 
+  mutate(
+    species_category = case_match(
+      species,
+      "Human" ~ "Human",
+      "Droid" ~ "Droid",
+      .default = "Other/Unknown",
+    )
+  )
+
+sw_species |> 
+  count(species, species_category, sort = TRUE)
+```
+
+The `case_match()` function works great if you have one-to-one changes that don't require logic. But when you have more complex needs, we need more Force.
+
+## Padawan practice: case_match
+
+If you look at the `gender` column in the data, you'll see there are two values: **masculine** and **feminine**, but there are four records that don't have a `gender` value are listed as `NA`.
+
+```{webr}
+#| edit: FALSE
+starwars |> count(gender)
+```
+
+For this quest, you will use `case_match()` to fill in those blank values with **unknown**.
+
+Note in the code we are creating a new dataframe and filling with mutated `starwars` data.
+
+Within the case_match section you'll need to note what variable you are working from, what to do if that value is NA, and set the remainder using a default.
+
+At the end it prints the results.
+
+```{webr}
+#| exercise: ex_1
+gender_reveal <- starwars |> 
+  mutate(
+    gender_clean = case_match(
+      ______,
+      ______,
+      ______
+    )) |> 
+  select(name, gender, gender_clean)
+
+gender_reveal
+```
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+if (identical(.result, gender_reveal <- starwars |> 
+  mutate(
+    gender_clean = case_match(
+      gender,
+      NA ~ "unknown",
+      .default = gender
+    )) |> 
+  select(name, gender, gender_clean))) {
+  list(correct = TRUE, message = sample(praise_list, 1))
+} else {
+  list(correct = FALSE, message = sample(again_list, 1))
+}
+```
+
+## Using `case_when()`
+
+The [`case_when()`](https://dplyr.tidyverse.org/reference/case_when.html) function is useful when you need to set new values based on some kind of logic.
+
+Here we will use `case_when` to do the same thing we did above with `case_match()` and then explain how it is working below.
+
+```{webr}
+#| edit: FALSE
+starwars |> 
+  mutate(
+    species_category = case_when(
+      species == "Human" ~ "Human",
+      species == "Droid" ~ "Droid",
+      .default = "Other/Unknown"
+    )
+  ) |>
+  select(name, species, species_category) |> slice(31:40)
+```
+
+You can see the syntax works differently (once we are past the mutate).
+
+- Within the `case_when()`, there are rules that split with `~`. On the left is a logical test, and on the right is a new value designation.
+- Each rule is run in order. A value is set only once, so if a value is set in one rule, it will NOT be reset by subsequent rules. You must write your rules from the most specific to the most general.
+- The last line `.default =` handles all values not already changed. If left out, values not specified would be set `NA`.
+
+### A more complex example
+
+Unlike `case_match()` where you are drawing from values in one specific column, the logic tests used with `case_when()` can be just about anything as long as they evaluate to `TRUE` or `FALSE`.
+
+While this is a silly example, here we create a column called `size_compare` that notes if a character is "larger" or "smaller" than an average human, unless they are a droid, in which case they are labeled "mechanical".
+
+```{webr}
+#| edit: FALSE
+starwars |> 
+  mutate(
+    size_compare = case_when(
+      species == "Droid" ~ "mechanical",
+      height >= 170 & mass >= 80 ~ "larger",
+      .default = "smaller"
+    )
+  ) |> 
+  select(name, size_compare)
+```
+
+Note we started with the rule for "Droid" because that is the most specific thing we needed to change. When then set the "larger" value, and the rest got "smaller."
+
+## Padawan practice: case_when
+
+Create a column called `main_planet` using the `homeworld` column. For each characters with a homeworld of "Tatooine" or "Naboo", label it as `TRUE` and otherwise label as `FALSE`, which will create a logical datatype column.
+
+(This is a fill-in-the-blank thing ...)
+
+```{webr}
+#| exercise: ex_2
+mainchars <- starwars |> 
+  mutate(
+    main_planet_origin = case_when(
+      str_detect(_________, "Tatooine|Naboo") ~ ____,
+      .default = _____
+    )) |> 
+  select(name, homeworld, main_planet_origin)
+
+mainchars
+```
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+if (identical(.result, mainchars <- starwars |> 
+  mutate(
+    main_planet_origin = case_when(
+      str_detect(homeworld, "Tatooine|Naboo") ~ TRUE,
+      .default = FALSE
+    )) |> 
+  select(name, homeworld, main_planet_origin))) {
+  list(correct = TRUE, message = sample(praise_list, 1))
+} else {
+  list(correct = FALSE, message = sample(again_list, 1))
+}
+```
+
+Page through your results to check your answers.
+
+That's it for now.
+
+-30-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

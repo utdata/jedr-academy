@@ -2,6 +2,11 @@
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,r
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,r
 
+
+### johan adds ###
+# Ignore the "archive" folder
+archive/
+
 ### crit adds ###
 # learnR/shinyapps
 rsconnect/

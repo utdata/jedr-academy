@@ -1,0 +1,102 @@
+---
+title: "Intro Part 1"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+## Learning about our data
+
+Your first task: apply beginning `tidyverse` skills to learn about the characters in the Star Wars universe you'll be reporting on.
+
+Throughout this trial we will use the data collection called `starwars`, which is included with the `tidyverse` package. Let's learn a bit more about the structure of the `starwars` data and how to conquer these JedR Trials.
+
+This is what it looks like when we load the `tidyverse` library and look at the first few lines in the `starwars` data. Each row of the data is a character within the Star Wars franchise.
+
+```{webr}
+#| edit: false
+#| message: false
+library(tidyverse)
+
+starwars |> head()
+```
+
+As you can see above, `starwars` contains some information about Star Wars characters, like their name and height.
+
+Within these JedR Trails, you can enter and run code right inside this page. Please make sure to only remove the **underscores** to add your answers. Since the tidyverse was loaded above, all the functions you would normally see in RStudio are available. Once you enter the code, click the blue **Run Code** button to see the results.
+
+::: {.callout-important}
+
+### Working within exercise blocks
+
+- The exercise blocks usually have the structure of the code you need, with underscores as placeholders for functions and variables. Replace the underscores with code. Note the number of underscores should match the code you are looking for.
+- Once you enter code and click the **Run Code** button, your code will be checked vs the solution and you'll get a grading response after your code output.
+- If you have trouble with an exercise you can click on the **Show Hint** button. Once all the hints are exhausted, you'll get a **Show Solution** button.
+- The auto-complete within code blocks works a little differently than in RStudio and takes "a bit getting used to". That's droid-parlance for "it sucks".
+
+:::
+
+## Exploring your data
+
+The first thing J-327D asks you for is **the number of rows in the `starwars` data, along with all the variable names and datatypes**. What function would you add to the `starwars` data here to *glimpse* the data and find those answers? 
+
+```{webr}
+#| label: glimpse
+#| exercise: ex_1
+_______(starwars)
+```
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution 1
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+glimpse(starwars)
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+J-327-D says the star horse you want to ride here is [`glimpse()`](https://dplyr.tidyverse.org/reference/glimpse.html).
+
+:::
+:::
+
+
+## JedR Challenge
+
+### How many rows are there in your data?
+
+::: {.callout-tip collapse="true"}
+
+### Click to check your answer 
+
+There are **87** characters in the `starwars` dataset!
+
+:::
+
+
+{{< include /trials/part-next.qmd >}}

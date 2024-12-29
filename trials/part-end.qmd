@@ -1,0 +1,6 @@
+## You're done with this Trial
+
+{{< include /trials/praise-list.qmd >}}
+
+`{r} sample(priase_list, 1)` **Please inform your JedR Master that you have completed this trial.** You are free to attempt the next JedR Trial or continue with JedR Training.
+

@@ -1,0 +1,85 @@
+---
+title: "Intro Part 4"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - dplyr
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+
+## Filtering data
+
+Our editor droid J-327D has seen that you can select specific columns (or variables) from our list of characters in the Star Wars world. But now he is curious to see more about his own kind.
+
+**J-327D asks if you can list just the droid characters in the data?**
+
+```{webr}
+#| exercise: ex_4
+starwars |> 
+  ______(_______ __ "Droid")
+```
+
+::: {.solution exercise="ex_4"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_4
+#| solution: true
+starwars |>
+  filter(species == "Droid")
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_4
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_4"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+J-327D suggests you check out [`filter()` function](https://dplyr.tidyverse.org/reference/filter.html) from the tidyverse.
+
+:::
+:::
+
+::: {.hint exercise="ex_4"}
+::: {.callout-note collapse="false"}
+
+### Hint 2
+
+J-327D notes there are a [number of functions and operators]((https://dplyr.tidyverse.org/reference/filter.html#useful-filter-functions)) that are useful when building a filter. He points out a tricky one: `==` tests if both sides of an equation are true. It is sometimes confused with `=`, which typically sets a variable name.
+
+:::
+:::
+
+## JedR challenge
+
+### Which droid in the data assumes a "feminine" gender?
+
+You might have to look through your different variable columns to find this answer.
+
+::: {.callout-tip collapse="true"}
+
+### Click to reveal the answer
+
+**R4-P17** is the only droid listed in the data with a *feminine* gender.
+
+:::
+
+{{< include /trials/part-end.qmd >}}

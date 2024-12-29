@@ -1,0 +1,6 @@
+
+```{r}
+#| echo: false
+
+priase_list = c("Great job you have done!", "Nice work. You have controlled your fear.", "Wow! The force is with you!", "Great job! Mind tricks don't work on you!", "The Force is strong with you!", "You’ve mastered this task like a true Jedi Knight.", "Your skills rival those of a seasoned Jedi Master.", "The galaxy is lucky to have someone as strong and brave as you.", "The Rebellion couldn’t ask for a better ally.", "You’re the hope the galaxy needs!", "Not even the Death Star could stand in your way.", "Darth Vader would tremble in your presence!", "Even a bounty hunter would be impressed by your precision and focus.", "You’ve got the strength of a thousand stormtroopers (but with way better aim)!", "Like a true Jedi, you face challenges with courage and wisdom.")
+```

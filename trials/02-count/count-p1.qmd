@@ -1,0 +1,95 @@
+---
+title: "Counting Part 1"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+As a **JedR Padawan** of the *Galactic News Hub*, you have been assigned to help with a new story about the demographics of the Star Wars Universe. After pitching a few different topics, your droid editor (J-327D) has green lighted a pitch about species variation. For this article, you have been asked to provide a summary statistic about which species is the most common in the Star Wars universe.
+
+For this task, you will **summarize** and **group** the characters by species. You will then **arrange** the data to identify the most common species of all the Star Wars characters.
+
+
+## Summarize and count
+
+If you recall from our earlier exercise, `starwars` is a dataset with 87 Star Wars characters.
+
+```{webr}
+#| edit: false
+glimpse(starwars)
+```
+
+First, we'll need to *group* the data by species and then *summarize* by counting the *n*umber of rows of each species. (We will tackle the arranging part later.)
+
+::: callout-warning
+
+J-327D is a bit insistent that you spell it **summarize** and not summarise.
+
+:::
+
+How do we do that? What functions would we use? *We insist you name the new variable "characters"!*
+
+```{webr}
+#| exercise: ex_1
+starwars |>
+  ________(_______) |>
+  _________(characters = _())
+```
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+starwars |> 
+  group_by(species) |>
+  summarize(characters = n())
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+Your editor J-327D says that the tidyverse function [`summarize()`](https://dplyr.tidyverse.org/reference/summarise.html) and the `n()` function are super useful to count rows of data. He says it's "even cooler" if you use [`group_by()`](https://dplyr.tidyverse.org/reference/group_by.html).
+
+
+:::
+:::
+
+## JedR challenge
+
+J-327D says that Jar Jar Binks is his favorite being in the Unvierse.
+
+### How many Gungan characters are there?
+
+::: {.callout-tip collapse="true"}
+
+### Click to reveal the answer
+
+There are **three** Gungan characters in the `starwars` data.
+
+:::
+
+{{< include /trials/part-next.qmd >}}

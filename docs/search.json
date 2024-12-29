@@ -1,0 +1,763 @@
+[
+  {
+    "objectID": "trials/trial-template.html",
+    "href": "trials/trial-template.html",
+    "title": "Document Title",
+    "section": "",
+    "text": "Preamble"
+  },
+  {
+    "objectID": "trials/trial-template.html#main-headline",
+    "href": "trials/trial-template.html#main-headline",
+    "title": "Document Title",
+    "section": "Main headline",
+    "text": "Main headline\nSetup\nQuestion for this exercise\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nHint description here.\n\n\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nDelete this callout if there is no second hint."
+  },
+  {
+    "objectID": "trials/trial-template.html#jedr-challenge",
+    "href": "trials/trial-template.html#jedr-challenge",
+    "title": "Document Title",
+    "section": "JedR challenge",
+    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nYour skills rival those of a seasoned Jedi Master.\nOnce you’ve completed the exercises above, move to the next part of this trial."
+  },
+  {
+    "objectID": "trials/part-next.html",
+    "href": "trials/part-next.html",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "The galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial."
+  },
+  {
+    "objectID": "trials/index.html",
+    "href": "trials/index.html",
+    "title": "JedR Trials",
+    "section": "",
+    "text": "JedR Trials\nCongratulations! You have recently been hired as a JedR Padawan for the Galactic News Hub, the premiere news organization for the Star Wars Universe.\nYour editor, droid J-327D, will ask you to explore the Star Wars Universe to find facts to include in stories for the News Hub. (You’re probably thinking this should work the other way around: that the Human should be asking the Droid for data facts. Perhaps that will come true once you pass all the Trials and become a JedR Knight!)\nThe JedR Trials are designed to test your R skills through a series of interactive exercises. Each Trial introduces different journalism-centric data science techniques, using exercises based on the starwars dataset.\nEach Trial might have more than one part, and it is best to complete them in order. That said, you are always welcome to go back to an earlier Trial to give yourself a review.\n\nIntroduction: The data: Introduces the starwars data and the interactive format of the lessons. Covers some basic functions to look at data.\nSummarize with Count: Covers counting rows using group_by() and summarize(). (We skip count() here to focus on group_by, summarize and arrange.)\nSummarize with Math: Covers grouping data and math functions within summarize.\nPlotting: Making a very basic ggplot chart.\nPivoting: Making data wider and longer.\nBind and Join: Combining data.",
+    "crumbs": [
+      "JedR Trials"
+    ]
+  },
+  {
+    "objectID": "trials/05-pivots/pivots-p2.html#making-longer-data",
+    "href": "trials/05-pivots/pivots-p2.html#making-longer-data",
+    "title": "Pivots Part 2",
+    "section": "Making longer data",
+    "text": "Making longer data\nNow that you have mastered, pivoting wider, can you go back the other way?\nStarting with our first widened table, which will be in a tibble called gender_table.\n\n\n\n\n\n\n\n\ncan you convert the data back to its original form, to this?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\n\nPart of pivot_longer() requires you to specify which columns will be pivoted to rows, but this can be specified in any number of ways. Our droid code checker is not as smart as you are, though, so you need to specify those in a very specific way.\nSet the value to: feminine:masculine\n\n\nUse what you’ve learned young padawan!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\ngender_table |&gt; \n  pivot_longer(\n    cols = feminine:masculine,\n    names_to = \"gender\",\n    values_to = \"n\"\n  )\ngender_table |&gt; \n  pivot_longer(\n    cols = feminine:masculine,\n    names_to = \"gender\",\n    values_to = \"n\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nNote the warning above that you have to specify the cols = argument in a very specific way.\nBeyond that, perhaps check the pivot_longer() arguments of the pivot vignette.",
+    "crumbs": [
+      "Trial: Pivots",
+      "Pivots Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/05-pivots/pivots-p2.html#youre-done-with-this-trial",
+    "href": "trials/05-pivots/pivots-p2.html#youre-done-with-this-trial",
+    "title": "Pivots Part 2",
+    "section": "You’re done with this Trial",
+    "text": "You’re done with this Trial\nThe Force is strong with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "crumbs": [
+      "Trial: Pivots",
+      "Pivots Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-03.html",
+    "href": "trials/04-plots/plots-03.html",
+    "title": "Plots Part 3",
+    "section": "",
+    "text": "Your editor J-327D would begin cracking a smile if only his facial expressions weren’t set in some kind of metal alloy. He says your chart is almost ready … it just needs some proper chart titles and axis labels.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 3"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-03.html#setting-chart-labels",
+    "href": "trials/04-plots/plots-03.html#setting-chart-labels",
+    "title": "Plots Part 3",
+    "section": "Setting chart labels",
+    "text": "Setting chart labels\n\n“ggplot it quite incredible in that it uses \"sensible defaults\" for most things, but you can override them if you know how. Titles and axis labels are a good example of this.\n– J-327D, Galactic News Hub editor\n\nYour editor says you should change the fugly axis labels and add good titles and captions to your chart. He suggests you use labs() to update and create these.\n\n\n\n\n\n\nWarning\n\n\n\nWhat J-327D doesn’t quite understand is the robot grading mechanism of the Trials is super particular about how code is written, so you have to use the following words and phrases in your code:\n\ntitle … A lot of humans\nsubtitle … Of the species in the the Star Wars Universe with more than one unit in our data, humans are the most prefalent. This could indicate a sampling problem.\ncaption … By Galactic News Hub\nx axis … Count of species\ny axis … Species\n\n\n\nQuestion for this exercise\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nspecies_plot +\n  geom_text(\n    aes(label = count_species),\n    hjust = 1.75,\n    color = \"white\"\n  ) +\n  labs(\n    title = \"A lot of humans\",\n    subtitle = str_wrap(\"Of the species in the the Star Wars Universe with more than one unit in our data, humans are the most prefalent. This could indicate a sampling problem.\"),\n    x = \"Count of species\", y = \"Species\",\n    caption = \"By Galactic News Hub\"\n  )\nspecies_plot +\n  geom_text(\n    aes(label = count_species),\n    hjust = 1.75,\n    color = \"white\"\n  ) +\n  labs(\n    title = \"A lot of humans\",\n    subtitle = str_wrap(\"Of the species in the the Star Wars Universe with more than one unit in our data, humans are the most prefalent. This could indicate a sampling problem.\"),\n    x = \"Count of species\", y = \"Species\",\n    caption = \"By Galactic News Hub\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nJ-327D says there isn’t much to tell you here. You should set all these text items using the labs() function. Just make sure you use the extact text phrasing as noted above.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 3"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-03.html#youre-done-with-this-trial",
+    "href": "trials/04-plots/plots-03.html#youre-done-with-this-trial",
+    "title": "Plots Part 3",
+    "section": "You’re done with this Trial",
+    "text": "You’re done with this Trial\nWow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 3"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-01.html",
+    "href": "trials/04-plots/plots-01.html",
+    "title": "Plots Part 1",
+    "section": "",
+    "text": "In this JedR Trial, we’ll be exploring the ggplot2 skills. Like in all our previous exercises, we’ll be using the starwars data in the tidyverse packages.\nYour humanoid robot editor (J-327D) has asked to see how many characters there are for the most common species in the starwars data. He has asked you to make a bar chart from this data. It should look like this:\nBut know we’ll build this one piece at a time, taking advantage of ggplots layering methods.\nAs a reminder, here is the starwars data:",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-01.html#prepare-the-data",
+    "href": "trials/04-plots/plots-01.html#prepare-the-data",
+    "title": "Plots Part 1",
+    "section": "Prepare the data",
+    "text": "Prepare the data\nAs you may recall in your training, making a chart usually takes two steps: Preparing the data, then plotting the data.\nTo prepare this data for your plot, you need to:\n\nGroup_by species and summarize the number of rows. Name the new variable count_species.\nArrange the result so the highest count is at the top.\nDrop any NA values.\nWe are saving the result into a new dataframe called species_data. We print that out at the end.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nspecies_data &lt;- starwars |&gt;\n  group_by(species) |&gt;\n  summarize(count_species = n()) |&gt;\n  arrange(desc(count_species)) |&gt;\n  drop_na()\n\nspecies_data\nspecies_data &lt;- starwars |&gt;\n  group_by(species) |&gt;\n  summarize(count_species = n()) |&gt;\n  arrange(desc(count_species)) |&gt;\n  drop_na()\n\nspecies_data\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nJ-327D notes this is a typical GSA summary, using group_by(), summarize() and arrange(). We count rows using the n() function.\nThere is one more unusual function here to remove rows with NA values.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-01.html#starting-our-plot",
+    "href": "trials/04-plots/plots-01.html#starting-our-plot",
+    "title": "Plots Part 1",
+    "section": "Starting our plot",
+    "text": "Starting our plot\n\nPlotting the chart\nNow that you have prepared your data in species_data, you need to plot your data as a column chart, ordered so the species with the most characters is at the top.\n\n\n\n\n\n\nWarning\n\n\n\nA couple of things that J-327D and the code checker are persnickety about:\n\nWe are starting with species_data but filtered to results with more than one count_species. You’ll start with species that have more than one result in the data so we don’t have a super long chart.\nYou should set the x axis to the characters and y axis to species. You’ll need to reorder the species.\nWe’ll deal with chart titles and such later.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nspecies_count |&gt; \n  filter(count_species &gt; 1) |&gt; \n  ggplot(aes(\n    x = count_species,\n    y = species |&gt; reorder(count_species))\n  ) +\n  geom_col()\nspecies_count |&gt; \n  filter(count_species &gt; 1) |&gt; \n  ggplot(aes(\n    x = count_species,\n    y = species |&gt; reorder(count_species))\n  ) +\n  geom_col()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nJ-327D notes there are only two variables to choose from the data, species and count_species. This is a column chart, which is a type of bar chart so you should be able to figure it out from the geom lists.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-01.html#to-be-continued",
+    "href": "trials/04-plots/plots-01.html#to-be-continued",
+    "title": "Plots Part 1",
+    "section": "To be continued …",
+    "text": "To be continued …\nThe Force is strong with you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/02-count/count-p2.html",
+    "href": "trials/02-count/count-p2.html",
+    "title": "Counting Part 2",
+    "section": "",
+    "text": "While the group_by() and summarize() functions are great for summarizing this information, a Padawan youngling has pointed out that the information is not ordered.\n🙄 Rolling your eyes, you tell them that you know this! We just need to use another function in order to arrange this data. It’s time for you to demostrate this. J-327D notes that journalists are typically interested in the most of something, so to make sure to sort in descending order.",
+    "crumbs": [
+      "Trial: Count",
+      "Counting Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/02-count/count-p2.html#sorting-a-dataframe",
+    "href": "trials/02-count/count-p2.html#sorting-a-dataframe",
+    "title": "Counting Part 2",
+    "section": "Sorting a dataframe",
+    "text": "Sorting a dataframe\nChange the counted list to show the species with the most characters are the top\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt;\n  group_by(species) |&gt;\n  summarize(characters = n()) |&gt;\n  arrange(desc(characters))\nstarwars |&gt;\n  group_by(species) |&gt;\n  summarize(characters = n()) |&gt;\n  arrange(desc(characters))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D wonders just how many hints you need, but suggests you check out arrange().",
+    "crumbs": [
+      "Trial: Count",
+      "Counting Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/02-count/count-p2.html#jedr-challenge",
+    "href": "trials/02-count/count-p2.html#jedr-challenge",
+    "title": "Counting Part 2",
+    "section": "JedR challenge",
+    "text": "JedR challenge\nYour driod editor J-327D has traversed the galaxy but still wonders …\n\nWhich species dominates the galaxy?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThere are 35 Human characters in the starwars data, the most of all species.",
+    "crumbs": [
+      "Trial: Count",
+      "Counting Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/02-count/count-p2.html#youre-done-with-this-trial",
+    "href": "trials/02-count/count-p2.html#youre-done-with-this-trial",
+    "title": "Counting Part 2",
+    "section": "You’re done with this Trial",
+    "text": "You’re done with this Trial\nGreat job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "crumbs": [
+      "Trial: Count",
+      "Counting Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p4.html#filtering-data",
+    "href": "trials/01-intro/intro-p4.html#filtering-data",
+    "title": "Intro Part 4",
+    "section": "Filtering data",
+    "text": "Filtering data\nOur editor droid J-327D has seen that you can select specific columns (or variables) from our list of characters in the Star Wars world. But now he is curious to see more about his own kind.\nJ-327D asks if you can list just the droid characters in the data?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt;\n  filter(species == \"Droid\")\nstarwars |&gt;\n  filter(species == \"Droid\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nJ-327D suggests you check out filter() function from the tidyverse.\n\n\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nJ-327D notes there are a number of functions and operators that are useful when building a filter. He points out a tricky one: == tests if both sides of an equation are true. It is sometimes confused with =, which typically sets a variable name.",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 4"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p4.html#jedr-challenge",
+    "href": "trials/01-intro/intro-p4.html#jedr-challenge",
+    "title": "Intro Part 4",
+    "section": "JedR challenge",
+    "text": "JedR challenge\n\nWhich droid in the data assumes a “feminine” gender?\nYou might have to look through your different variable columns to find this answer.\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nR4-P17 is the only droid listed in the data with a feminine gender.",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 4"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p4.html#youre-done-with-this-trial",
+    "href": "trials/01-intro/intro-p4.html#youre-done-with-this-trial",
+    "title": "Intro Part 4",
+    "section": "You’re done with this Trial",
+    "text": "You’re done with this Trial\nThe Force is strong with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 4"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p2.html#focusing-on-variables",
+    "href": "trials/01-intro/intro-p2.html#focusing-on-variables",
+    "title": "Intro Part 2",
+    "section": "Focusing on variables",
+    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nGreat job you have done!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 2"
+    ]
+  },
+  {
+    "objectID": "training/jedr-manage-dates.html#introduction",
+    "href": "training/jedr-manage-dates.html#introduction",
+    "title": "Managing dates",
+    "section": "Introduction",
+    "text": "Introduction\nHello, young Padawan! In this tutorial we’ll look at managing dates, often using Lubridate package, which can make life easier when dealing with dates in R. In doing so, we’ll examine a dataset, scraped from tvmaze.com, with information about the Star Wars Rebels series. I encourage you to follow along in your own R notebook! Good luck and may the force be with you!\n\nImport data\n\n\n\n\n\n\n\n\nThis dataset has information about the Star Wars Rebels series. For each of the show’s 69 episodes, we have its episode number, air date, title, and season.\nNote that some of the column names have spaces in them, which can make life harder. To fix it, let’s use the clean_names() function from the Janitor package:\n\n\n\n\n\n\n\n\nNow, the column names are easier to work with.",
+    "crumbs": [
+      "Training",
+      "Managing dates"
+    ]
+  },
+  {
+    "objectID": "training/jedr-manage-dates.html#parsing-dates-how-to-reconize-dates-in-r",
+    "href": "training/jedr-manage-dates.html#parsing-dates-how-to-reconize-dates-in-r",
+    "title": "Managing dates",
+    "section": "Parsing dates: How to reconize dates in R",
+    "text": "Parsing dates: How to reconize dates in R\nNotice that when we used the glimpse() above, we also got info about the type of each column. The episode number and season are read as dbl (“doubles, which is a number”), whereas the episode title and air date are read as chr (“characters”).\nTo work effectively with dates, we need R to recognize when we’re reading with dates. Do fix this, we can use lubridate’s parse date functions. In this particular dataset, the dates are written in the dmy (date-month-year) format. (If you look in the glimpse() output above, you’ll see that the first observation, for example, was: “13-Oct-14”). Let’s use lubridate’s dmy() function to create a new version of the dataset, called rebels_fix, which has a new column called air_date_fixed:\n\n\n\n\n\n\n\n\nNotice that, in the chunk above, we’re just looking at the output to see that this worked as intented. See that the air_date_fixed column is being read as a date whereas the original_air_date column was read as a character? Also, we’re not saving it into a new object using the &lt;- operator. Let’s use the &lt;- operator operator to save our work in a new object, called rebels_cl, without the original_air_date column, which we’re not going to need:\n\n\n\n\n\n\n\n\nTwo key things to notice here:\n\nair_date_fixed has the format date.\nIn air_date_fixed, the year is written first, followed by the month and then the day. That’s just what the date format looks like in R.\n\nIn this example, lubridate’s dmy() function came in handy. Here are some other functions we might’ve used if the dates had been formatted differently:\n\n\n\n\n\n\n\n\nYou can find more examples and tips in this cheatsheet.\n\nPadawan practice: Parsing dates\nHere’s a small portion of the data, called parsing_practice_df, with three columns that need to be parsed:\n\n\n\n\n\n\n\n\nEach column is currently written in the character format and should be converted to the date format. Can you figure out how to do this?\n\nPractice: Parse date1\nHint: Replace the three lines, ___ with the appropriate function.\n\n\n\n\n\n\n\n\n\n\n\nHere, as in the two following exercises, we’re not saving the output but only displaying it. If we wanted to save it, we’d use the &lt;- operator. Okay, see if you can solve the two following exercises, too!\n\n\nPractice: Parse date2\n\n\n\n\n\n\n\n\n\n\n\n\n\nPractice: Parse date3\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAnother way to parse dates\nBase R also has a function to parse dates, called as.Date(), which you can read more about here.",
+    "crumbs": [
+      "Training",
+      "Managing dates"
+    ]
+  },
+  {
+    "objectID": "training/jedr-manage-dates.html#working-with-dates",
+    "href": "training/jedr-manage-dates.html#working-with-dates",
+    "title": "Managing dates",
+    "section": "Working with dates",
+    "text": "Working with dates\nLet’s now make use of our newly created air_date_fixed column to understand the data.\n\nWhich episodes were oldest or newest?\nWe can use the arrange() function to sort data frames based on dates.\n\nThe oldest episodes\n\n\n\n\n\n\n\n\n\n\nThe newest episodes\n\n\n\n\n\n\n\n\n\n\n\nOnly view episodes that aired before or after a given date\nWe can use the filter() function to only view episodes that aired before or after a given date:\n\nEpisodes aired in 2018 (the last year available)\n\n\n\n\n\n\n\n\n\n\nEpisodes that aired in February 2016\n\n\n\n\n\n\n\n\n\n\nPadawan practice: using filter() with dates\nIdentify the episodes that aired in October 2017.\nHint: Use the filter() function to specify that you only want to include episodes that aired on October 1, 2017 or later—and also aired before November 1 the same year.",
+    "crumbs": [
+      "Training",
+      "Managing dates"
+    ]
+  },
+  {
+    "objectID": "training/jedr-manage-dates.html#using-specific-parts-of-a-date",
+    "href": "training/jedr-manage-dates.html#using-specific-parts-of-a-date",
+    "title": "Managing dates",
+    "section": "Using specific parts of a date",
+    "text": "Using specific parts of a date\n\nWhich month had the most episodes (throughout the entire period)?\nTo answer this question, we can use Lubridate’s month() function, which allows us to focus only on months (while ignoring years). It works like this:\n\n\n\n\n\n\n\n\nHere, we’re creating a new dataframe called rebels_cl_newcols. We’ll use this to add more columns later on.\nIt’s worth keeping in mind that “month” is now the name of a column (which we just created) and the name of a function from the lubridate package. That can be a bit confusing and it’s generally best to avoid creating object with the same names as functions.\nAlso, see how the newly created month column only has information about which month the episodes aired in, in this case “10” (October) for the first three observations and “11” (November) for the next four observations. If we wanted the names of the months, we can use the label = TRUE argument within the month function. Like this:\n\n\n\n\n\n\n\n\nNotice that the type for month is “ord”? This means that the column is written as an “ordered factor”, which simply means (in this case) that although it looks like text, it would be ordered by time, not alphabetically. In other words, we can sort by the month column, if we want to do so:\n\n\n\n\n\n\n\n\nSee how it’s arranged by month?\nGoing back to our question about which month had the most episodes, let’s take a look:\n\n\n\n\n\n\n\n\nIt looks like there were lot’s of new episodes in October, November, February, and March.\nAs a quick aside, when we do the month labels, we can also get R to write out the full month rather than the abbreviation. Let’s look at an example:\n\n\n\n\n\n\n\n\nThe abbr argument defaults to TRUE, so if we don’t specific abbr = FALSE, we’d get the abbreviated version as we saw above.\n\nPadawan practice: using the year() function\nTo get information about specific years, we can use the year() function, which is quite similar. Try to create a variable called year see we can check how many episodes aired in each year.\nHint: you’ll need to use the air_date_fixed column.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFloor_date()\nAn alternative would be to use Lubridate’s floor_date()-function, which let’s us round date-time objects down to their nearest year, month, week, day, etc. It works like this:\n\n\n\n\n\n\n\n\nNotice that the new column, month_floor, only include dates that are the first day in any given month?\nRounding the dates to their nearest year/month/week/day/etc can be helpful later on, for example when visualizing the data. Instead of round to the nearest values, we can use ceiling_date() to round up to the nearest value or round_date() to round to the closest value. In this tutorial we’ll mostly focus on floor_date() but as a future JedR Master, you should know about the other options, too!\nOkay, let’s create a dataframe with four new columns, rounded by floor_date(). We’ll use this later on.\n\n\n\n\n\n\n\n\n\n\nThe yday() function\nWhat if we wanted to find the earliest date within a year that an episode aired? For that purpose, we could use the yday() (year day) function, which simply tells us how many days into a year a given date is. My son and I share the same birthday (February 5). That’s the 36th day of the year:\n\n\n\n\n\n\n\n\nTo find the earliest episode airdate for each year, we could do this:\n\n\n\n\n\n\n\n\nThis shows the first-aired episode for each of the years from 2014–2018. Notice the few doppelgängers? It looks like seasons 3 and 4 started each started with a double episode.\nThere are few things going on in the chunk above. Here’s a quick recap of what each line does:\n\nWe start with our object, rebels_rounded_cols, and then …\nWe use mutate() to create a new column called dy …\nTo get the dy column to specify each dates number within a year, we use yday(), and then …\nWe group_by() because we want the earliest episode within each year, and then …\nWe use slice_min() to get just the earliest episode within each year. (Otherwise, our output would all the episodes.) And then …\nWe use ungroup() to remove the grouped dy column. Not essential here but might be handy if you need to perform additional operations. And then …\nselect() let’s us show just a few columns to make the output more readable at a glance.",
+    "crumbs": [
+      "Training",
+      "Managing dates"
+    ]
+  },
+  {
+    "objectID": "training/jedr-manage-dates.html#plotting-with-dates",
+    "href": "training/jedr-manage-dates.html#plotting-with-dates",
+    "title": "Managing dates",
+    "section": "Plotting with dates",
+    "text": "Plotting with dates\nWhen working with dates it can be super useful to plot your date. This can show how things are changing over time. Let’s look at a quick example. Remember above where we used floor_date() to round all dates down to their nearest month? We can use that column to plot how many episodes that aired per month throughout the entire period.\nFirst, let’s get the data into a more handy format.\n\n\n\n\n\n\n\n\nA quick rundown of what’s happening above:\n\nWe’re grouping by month_fl. This is because we’re interested in the number of episodes per month. We could also have used year_fl, week_fl, or day_fl here.\nThen we’re using the summarise function to simply count the number of episodes per month.\nWe’re storing this in a new dataframe, rebels_gs, which we’ll use below.\n\nWith that taken care of, here’s an example of how we could use ggplot to visualize it:\n\n\n\n\n\n\n\n\nHere’s a quick explanation of what’s happening in the chunk above:\n\nIn the first line, we’re specifying the dataset (“rebels_gs”, x-variable (“month_fl”), and y-variable (“no_episodes”)\nIn the second line, we’re using geom_bar() to tell R to make a bar chart. We use the “stat = ‘identity’” arugment to clarify that we’ll be providing the values for the bars\nIn the third portion, we’re using labs() to create the title and caption. We’re using “subtitle” rather than “title” b/c it works better with the theme we’re using\nIn the fourth and final portion, we’re employing theme_fivethirtyeight() from the ggthemes package.",
+    "crumbs": [
+      "Training",
+      "Managing dates"
+    ]
+  },
+  {
+    "objectID": "training/jedr-manage-dates.html#the-end",
+    "href": "training/jedr-manage-dates.html#the-end",
+    "title": "Managing dates",
+    "section": "The end",
+    "text": "The end\nThat’s it for now, young Padawan! Good luck on your next quest, stay safe, and may the force be with you! 💪",
+    "crumbs": [
+      "Training",
+      "Managing dates"
+    ]
+  },
+  {
+    "objectID": "training/index.html",
+    "href": "training/index.html",
+    "title": "JedR Training",
+    "section": "",
+    "text": "These modules are designed to help you develop specific R skills, with accessible links provided for online access. If you’d like to run them locally, you can find the necessary files in the webr-trainings/ folder. The topics covered are tailored to make R easier to navigate and apply in various projects. If you’re interested in creating additional JedR Training content, please explore the contributions tab for guidelines and opportunities to join the JedR Republic.\n\nCategorization: When you need to rename values in your data, perhaps to create a new categorization schema.\nManage dates: When you need help parsing dates or making useful date parts for grouping.",
+    "crumbs": [
+      "Training"
+    ]
+  },
+  {
+    "objectID": "resources/data-info.html",
+    "href": "resources/data-info.html",
+    "title": "Data Information",
+    "section": "",
+    "text": "While we strive to use the starwars data as much as possible, we’ve had to introduce other Star Wars related data in some situations.\nAll data is in the data/ folder except starwars which is utilized from tidyverse.\n\nstarwars characters data that is part of the tidyverse. It’s our main data set. Small enough to wrap your head around; complex and dirty enough to provide good examples.\nstarwarsrebels is a list of episodes of Star Wars Rebels from tvmaze.com.\n\n\nOther possible data sources\nOther options available or that could explored later.\n\nSWAPI\nStar Wars Databank\nWe’ve pulled some data from Kaggle, which notes “This data was gathered using the Star Wars API that is no longer available. The origin of the data is The Star Wars Wiki.” We have copies stored in data/. The tidyverse starwars dataset seems to be a combination of all of these tables.\n\ncharacters\nplanets\nspecies\nstarships\nvehicles\n\nFound some additional data on data.world that yielded a couple new sets:\n\nsurvey (done from Five Thirty Eight, apparently)\nprinciples\nsoundtracks\nrt_ratings\nimdb_ratings"
+  },
+  {
+    "objectID": "index.html#what-is-jedr-academy",
+    "href": "index.html#what-is-jedr-academy",
+    "title": "Welcome to JedR Academy",
+    "section": "What is JedR Academy?",
+    "text": "What is JedR Academy?\nTo be clear, this isn’t a package.\nThis project is a series of quarto live interactive tutorials designed to develop and improve R skills with a heavy lean on the tidyverse. There are two main goals:\n\nTo focus tutorials on feats of skill or tasks to accomplish instead of on specific packages or functions.\nTo use the same data whenever possible to avoid the cognitive load of learning new data for each example.\n\nThere are two types of lessons:\n\nJedR Trials: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.\nJedR Training: Tutorials focused on feats of skills instead of on specific packages. For instance, “How to manage dates” vs “How to use lubridate.”\n\nJedR Padawans can complete these lessons online through the provided links, without additional setup. For those who prefer working locally, you can download the repo to Render each notebook directly on your machine. The notebooks are organized in the /trials and /training folders.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#data-sources",
+    "href": "index.html#data-sources",
+    "title": "Welcome to JedR Academy",
+    "section": "Data sources",
+    "text": "Data sources\nOur lessons are built around the Star Wars universe, primarily utilizing the starwars “characters” data from the tidyverse package. To enhance these lessons, we’ve incorporated additional Star Wars data, which can be found in the /data folder. The starwars data from tidyverse offers a well-sized dataset that’s both approachable and intricate, making it a valuable learning tool. If you’d like to read more about the data click here.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Welcome to JedR Academy",
+    "section": "Credits",
+    "text": "Credits\nThis project was the brainchild of Christian McDonald, associate professor of practice at the School of Journalism and Media at the University of Texas at Austin. He began collaborating soon thereafter with Dr. Jo Lukito, an assistant professor also at UT JaM.\nOther contributors include:\n\nChristian Overgaard, Doctoral student. He helped think through the project and wrote the “Managing dates” tutorial.\nTamara Rodriguez designed our JedR hex logo.\nJohan Villatoro, a UT Journalism undergraduate student, transitioned lessons and training into WebR.",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "resources/contributing.html",
+    "href": "resources/contributing.html",
+    "title": "Contributing to JedR Academy",
+    "section": "",
+    "text": "I actually haven’t thought through this yet, but here are some things that come to mind.",
+    "crumbs": [
+      "Contributions"
+    ]
+  },
+  {
+    "objectID": "resources/contributing.html#prerequisites",
+    "href": "resources/contributing.html#prerequisites",
+    "title": "Contributing to JedR Academy",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nTerminal: If you are not familiar with using a Terminal at all, then there is a chapter in Intro to Coding for Journalists that might be a good first look. FreeCodeCamp has a Command Line for Beginners that is more detailed than what we need here.\nInstalling Git: Chapters 2.1 through 2.5 of ICJ Setting Up handle installing git and configuring ssh keys, which I think is worth doing. If you already have git and Github and know how to use them, you are good.\nUsing Git: There is a section in Intro to Coding for Journalists on how to use Git in the context of that class. The basics apply here, as well.",
+    "crumbs": [
+      "Contributions"
+    ]
+  },
+  {
+    "objectID": "resources/contributing.html#clone-the-repo",
+    "href": "resources/contributing.html#clone-the-repo",
+    "title": "Contributing to JedR Academy",
+    "section": "Clone the repo",
+    "text": "Clone the repo\nTo get the jedr-academy repo on your computer and be able to contribute to its code, you have to clone the repo. This downloads a copy of the code and it’s history to your computer.\n\nDO NOT create a project folder in advance! You’ll get one when you clone.\nLaunch Terminal and use cd to get to the directory where you to download the code to.\nDo git clone git@github.com:utdata/jedr-academy.git to download the repo and it’s commit history.\nNow you can close Terminal and open the project in RStudio.\n\nYou only have to do this once.",
+    "crumbs": [
+      "Contributions"
+    ]
+  },
+  {
+    "objectID": "resources/contributing.html#branches",
+    "href": "resources/contributing.html#branches",
+    "title": "Contributing to JedR Academy",
+    "section": "Branches",
+    "text": "Branches\nThe Way to contribute to JedR is to use a git branch. &lt;= Read that tutorial to get an idea how they work.\n\nWith your project open in RStudio, go to the Terminal within RStudio.\nDo git checkout -b new-branch but use a more descriptive name than “new-branch”, like “pivoting-tutorial”. The name should be slug-friendly: all lowercase, words connected with dashes.\nDo git branch to double-check which branch are on.\n\nAt this point, you are working on YOUR copy of the code. You can experiment, add and commit code at will. You can push the code to Github in your branch with …\ngit push origin new-branch\n… but with your branch name.\nDo know if you edit existing files on your local branch that also get edited by others, then we will have to resolve any conflicts. That’s fine, but can be complicated. Just reach out to Christian for help.\n\nPull requests\nWhen you are done with your changes and want to merge them into the default branch, let Christian know via email and he’ll create a Pull Request. If you want to learn more about that, then request to do it together and he’ll explain it.\nThe pull request process compares the new code to the existing code and notes any conflicts, which have to be “resolved” before the branches can be merged.",
+    "crumbs": [
+      "Contributions"
+    ]
+  },
+  {
+    "objectID": "resources/contributing.html#switching-between-branches",
+    "href": "resources/contributing.html#switching-between-branches",
+    "title": "Contributing to JedR Academy",
+    "section": "Switching between branches",
+    "text": "Switching between branches\nNow that you are working on a code base that others might be working on, you have to “git pull” as well as “git push”.\nSome things to consider:\n\nIf you are going to switch branches (like from your own feature branch back to main), then you want to commit (or stash) your current changes first.\ngit checkout branch-name will check out that branch on your local machine.\ngit pull origin branch-name will pull the latest version from the Github down to your computer. This is especially important if you are checking out a branch that others have worked on, like main.",
+    "crumbs": [
+      "Contributions"
+    ]
+  },
+  {
+    "objectID": "resources/contributing.html#trials",
+    "href": "resources/contributing.html#trials",
+    "title": "Contributing to JedR Academy",
+    "section": "Trials",
+    "text": "Trials\nThere is a Quarto template for JedR Trials. Some notes about that.\n\nWe put the order of exercise elements like this: setup (if needed), exercise, solution, grading, hint 1 (if used), hint 2 (if used), etc. In short, we put hints last as they are optional. We typically include the sullution in a callout, but you can remove the callout to hide it but it will still work.",
+    "crumbs": [
+      "Contributions"
+    ]
+  },
+  {
+    "objectID": "resources/plots-image.html",
+    "href": "resources/plots-image.html",
+    "title": "plots-image",
+    "section": "",
+    "text": "This notebook creates the image for the Plots Trial.\n\nlibrary(tidyverse)\n\n\nspecies_count &lt;- starwars |&gt;\n  group_by(species) |&gt;\n  summarize(count_species = n()) |&gt;\n  arrange(desc(count_species)) |&gt;\n  drop_na()\n\nspecies_plot &lt;- species_count |&gt; \n  filter(count_species &gt; 1) |&gt; \n  ggplot(aes(\n    x = count_species,\n    y = species |&gt; reorder(count_species))\n  ) +\n  geom_col()\n\nspecies_plot_save &lt;- species_plot +\n  geom_text(\n    aes(label = count_species),\n    hjust = 1.75,\n    color = \"white\"\n  ) +\n  labs(\n    title = \"A lot of humans\",\n    subtitle = str_wrap(\"Of the species in the Star Wars Universe with more than one unit in our data, humans are the most prevalent. This could indicate a sampling problem. \"),\n    x = \"Count of species\", y = \"Species\",\n    caption = \"By Galactic News Hub\"\n  )\n\nggsave(\"../trials/04-plots/img/species.png\")\n\nSaving 7 x 5 in image"
+  },
+  {
+    "objectID": "training/jedr-categorization.html#how-to-make-categories-from-data",
+    "href": "training/jedr-categorization.html#how-to-make-categories-from-data",
+    "title": "Categorization",
+    "section": "How to make categories from data",
+    "text": "How to make categories from data\nWelcome Padawan. May your quest to become a JedR Master be fruitful. “Do or do not. There is no try.”\nSometimes as journalists (or data scientists) we need to create new categories for our data. An example might be where we have a column of data that has too many different values to plot effectively. We might be able to re-categorize those values to fewer individual choices, maybe combining less important values into a generic term like “other”.\nSome real-worldish examples:\n\nYou want to show race/ethnicity breakdowns in a chart or story about Hispanic representation. There are eight different values and some are quite small. You might create a column to use the values Asian, Black, Hispanic and White with all others changed to “Other”.\nPerhaps you are doing a story on crime and want to highlight violent crimes vs property vs other crimes. You might create a new column that categorizes many individual charges into these buckets.\n\nWe’re taking records and putting them into piles or groups based on one or more values.\n\nJedR Mind Trick: When we categorize values like this, we want to create a new column intead of overwriting an existing one. This way you can check your work. You can always remove or rename columns later.\n\n\nGoals of this training session\n\nTo apply case_match() within a mutate() to create data categories. It’s a one-to-one match, for the most part.\nTo apply case_when() within a mutate() to create data categories. This allows more complex logic.",
+    "crumbs": [
+      "Training",
+      "Categorization"
+    ]
+  },
+  {
+    "objectID": "training/jedr-categorization.html#our-scenario",
+    "href": "training/jedr-categorization.html#our-scenario",
+    "title": "Categorization",
+    "section": "Our scenario",
+    "text": "Our scenario\nHere at the Galactic News Hub, we have a dataset of all the sources we connect with on a regular basis: The starwars data set that comes with the tidyverse library.\n\n\n\n\n\n\n\n\nThis data includes a variable called species, and our editor wants a report breaking down the species of our source list based on three broad categories: human, droid, and other. Our editor is hoping we can later cross reference these categories against gender and other variables within the source list.\nTo accomplish this, it would be helpful to have a “species_category” variable using these three values so we can group and aggregate with other columns.\nLet’s take a look at the species column using count().\n\n\n\n\n\n\n\n\nYou can see that Human and Droid values dominate the data. The next most frequent values is NA. Maybe we can convince our editor to make that category Other/Unknown.",
+    "crumbs": [
+      "Training",
+      "Categorization"
+    ]
+  },
+  {
+    "objectID": "training/jedr-categorization.html#using-case_match",
+    "href": "training/jedr-categorization.html#using-case_match",
+    "title": "Categorization",
+    "section": "Using case_match()",
+    "text": "Using case_match()\nOne of the easier methods to categorize data is to use case_match(). The logic is straighforward: For this value, substitute that value.\nTo make clear our goal here for the Galactic Hub News: We want to create a new column called species_category that has three values: Human, Droid, Other/Unknown. And they need to be based on the existing species variable.\n\nHow case_match works\nWhile is is possible to recatagorize our values into the same column, a good JedR will instead use mutate() and case_when() to create a new column and then fill it with the results.\ndata |&gt; \n  mutate(\n    new_column = case_when(\n      existing_column,\n      \"Old Value 1 from existing_column\" ~ \"New Value 1\",\n      \"Old Value 2 from existing_column\" ~ \"New Value 2\",\n      .default = \"Value for everything else\"\n    )\n  )\n\nThis is standard usage for the mutate() function … you create the new column and then set it to a value. In this case, we are setting the value to the result of the case_when() function.\nWithin case_when(), we have to first name the column we are pulling from. Like where are we looking for these values?\nThen we have a series of statements separated with ~. If we find what is on the left-hand side, then we change it to what is on the right-hand side.\nLastly we have a “default” to handle everything else we haven’t specified. In some cases you might make this .default = existing_column to keep the existing value for those rows.\n\nThe order you put these is important. Once a match has been found and updated, that value won’t be changed again.\nSo, with our starwars data, a partial solution might look like this:\n\n\n\n\n\n\n\n\nIn the example above, we use slice() to skip down to part of the data where we can see the change. (The first 20 rows are all humans and droids.) We also used select() to focus on our columns of interest.\nNote we’ve only changed two of the values we need to change, though. (You can see Toydarian and Dug have not been changed.) This method is very handy if you have just a few things to change.\nIn our case here, we could list all 36 changes, but … Use the Force, Luke.\n\n\nUsing .default\ncase_match() changes exactly what you specify and leaves anything you don’t specify as NA. If you want the non-matches to be something else, you can specify them with .default =.\nUsing this, we can set Human to Human and Droid to Droid, but then everything else to Other/Unknown.\nNOTE that the specific matches use ~ to separate what to look for and what to change it to, but the .default designation uses =.\n\n\n\n\n\n\n\n\n\n\nCheck your results\n\nJedR Mind Trick: Even with these few rows, it’s hard to see all the changes made in your data. It is sometimes helpful to do a count() on your changes to check them. Just be sure to count the already-changed data, not the result you are saving into the new object.\n\nHere we save the recategorized data into a new object called sw_species and then run a count() on our two columns to check the results.\n\n\n\n\n\n\n\n\nThe case_match() function works great if you have one-to-one changes that don’t require logic. But when you have more complex needs, we need more Force.",
+    "crumbs": [
+      "Training",
+      "Categorization"
+    ]
+  },
+  {
+    "objectID": "training/jedr-categorization.html#padawan-practice-case_match",
+    "href": "training/jedr-categorization.html#padawan-practice-case_match",
+    "title": "Categorization",
+    "section": "Padawan practice: case_match",
+    "text": "Padawan practice: case_match\nIf you look at the gender column in the data, you’ll see there are two values: masculine and feminine, but there are four records that don’t have a gender value are listed as NA.\n\n\n\n\n\n\n\n\nFor this quest, you will use case_match() to fill in those blank values with unknown.\nNote in the code we are creating a new dataframe and filling with mutated starwars data.\nWithin the case_match section you’ll need to note what variable you are working from, what to do if that value is NA, and set the remainder using a default.\nAt the end it prints the results.",
+    "crumbs": [
+      "Training",
+      "Categorization"
+    ]
+  },
+  {
+    "objectID": "training/jedr-categorization.html#using-case_when",
+    "href": "training/jedr-categorization.html#using-case_when",
+    "title": "Categorization",
+    "section": "Using case_when()",
+    "text": "Using case_when()\nThe case_when() function is useful when you need to set new values based on some kind of logic.\nHere we will use case_when to do the same thing we did above with case_match() and then explain how it is working below.\n\n\n\n\n\n\n\n\nYou can see the syntax works differently (once we are past the mutate).\n\nWithin the case_when(), there are rules that split with ~. On the left is a logical test, and on the right is a new value designation.\nEach rule is run in order. A value is set only once, so if a value is set in one rule, it will NOT be reset by subsequent rules. You must write your rules from the most specific to the most general.\nThe last line .default = handles all values not already changed. If left out, values not specified would be set NA.\n\n\nA more complex example\nUnlike case_match() where you are drawing from values in one specific column, the logic tests used with case_when() can be just about anything as long as they evaluate to TRUE or FALSE.\nWhile this is a silly example, here we create a column called size_compare that notes if a character is “larger” or “smaller” than an average human, unless they are a droid, in which case they are labeled “mechanical”.\n\n\n\n\n\n\n\n\nNote we started with the rule for “Droid” because that is the most specific thing we needed to change. When then set the “larger” value, and the rest got “smaller.”",
+    "crumbs": [
+      "Training",
+      "Categorization"
+    ]
+  },
+  {
+    "objectID": "training/jedr-categorization.html#padawan-practice-case_when",
+    "href": "training/jedr-categorization.html#padawan-practice-case_when",
+    "title": "Categorization",
+    "section": "Padawan practice: case_when",
+    "text": "Padawan practice: case_when\nCreate a column called main_planet using the homeworld column. For each characters with a homeworld of “Tatooine” or “Naboo”, label it as TRUE and otherwise label as FALSE, which will create a logical datatype column.\n(This is a fill-in-the-blank thing …)\n\n\n\n\n\n\n\n\n\n\n\nPage through your results to check your answers.\nThat’s it for now.\n-30-",
+    "crumbs": [
+      "Training",
+      "Categorization"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p1.html#learning-about-our-data",
+    "href": "trials/01-intro/intro-p1.html#learning-about-our-data",
+    "title": "Intro Part 1",
+    "section": "Learning about our data",
+    "text": "Learning about our data\nYour first task: apply beginning tidyverse skills to learn about the characters in the Star Wars universe you’ll be reporting on.\nThroughout this trial we will use the data collection called starwars, which is included with the tidyverse package. Let’s learn a bit more about the structure of the starwars data and how to conquer these JedR Trials.\nThis is what it looks like when we load the tidyverse library and look at the first few lines in the starwars data. Each row of the data is a character within the Star Wars franchise.\n\n\n\n\n\n\n\n\nAs you can see above, starwars contains some information about Star Wars characters, like their name and height.\nWithin these JedR Trails, you can enter and run code right inside this page. Please make sure to only remove the underscores to add your answers. Since the tidyverse was loaded above, all the functions you would normally see in RStudio are available. Once you enter the code, click the blue Run Code button to see the results.\n\n\n\n\n\n\nWorking within exercise blocks\n\n\n\n\nThe exercise blocks usually have the structure of the code you need, with underscores as placeholders for functions and variables. Replace the underscores with code. Note the number of underscores should match the code you are looking for.\nOnce you enter code and click the Run Code button, your code will be checked vs the solution and you’ll get a grading response after your code output.\nIf you have trouble with an exercise you can click on the Show Hint button. Once all the hints are exhausted, you’ll get a Show Solution button.\nThe auto-complete within code blocks works a little differently than in RStudio and takes “a bit getting used to”. That’s droid-parlance for “it sucks”.",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p1.html#exploring-your-data",
+    "href": "trials/01-intro/intro-p1.html#exploring-your-data",
+    "title": "Intro Part 1",
+    "section": "Exploring your data",
+    "text": "Exploring your data\nThe first thing J-327D asks you for is the number of rows in the starwars data, along with all the variable names and datatypes. What function would you add to the starwars data here to glimpse the data and find those answers?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution 1\n\n\n\n\n\n\n\nglimpse(starwars)\nglimpse(starwars)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nJ-327-D says the star horse you want to ride here is glimpse().",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p1.html#jedr-challenge",
+    "href": "trials/01-intro/intro-p1.html#jedr-challenge",
+    "title": "Intro Part 1",
+    "section": "JedR Challenge",
+    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p3.html#arranging-our-data",
+    "href": "trials/01-intro/intro-p3.html#arranging-our-data",
+    "title": "Intro Part 3",
+    "section": "Arranging our Data",
+    "text": "Arranging our Data\nJ-327D has seen you glimpse the data and select variables in starwars. He now wants to find the tallest character.\nWhat function should you add to the code below to arrange the data so the tallest person is listed at the top? (Important note: Since tidyverse arranges numbers from the smallest to the greatest number, you may need another function so the information is in descending order.)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species) |&gt;   \n  arrange(desc(height))\nstarwars |&gt; \n  select(name, height, homeworld, species) |&gt;   \n  arrange(desc(height))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D recommends checking out the arrange() function, which you can learn about here. Don’t forget to put your result in descending order.",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 3"
+    ]
+  },
+  {
+    "objectID": "trials/01-intro/intro-p3.html#jedr-challenge",
+    "href": "trials/01-intro/intro-p3.html#jedr-challenge",
+    "title": "Intro Part 3",
+    "section": "JedR challenge",
+    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nThe galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "crumbs": [
+      "Trial: Intro",
+      "Intro Part 3"
+    ]
+  },
+  {
+    "objectID": "trials/02-count/count-p1.html",
+    "href": "trials/02-count/count-p1.html",
+    "title": "Counting Part 1",
+    "section": "",
+    "text": "As a JedR Padawan of the Galactic News Hub, you have been assigned to help with a new story about the demographics of the Star Wars Universe. After pitching a few different topics, your droid editor (J-327D) has green lighted a pitch about species variation. For this article, you have been asked to provide a summary statistic about which species is the most common in the Star Wars universe.\nFor this task, you will summarize and group the characters by species. You will then arrange the data to identify the most common species of all the Star Wars characters.",
+    "crumbs": [
+      "Trial: Count",
+      "Counting Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/02-count/count-p1.html#summarize-and-count",
+    "href": "trials/02-count/count-p1.html#summarize-and-count",
+    "title": "Counting Part 1",
+    "section": "Summarize and count",
+    "text": "Summarize and count\nIf you recall from our earlier exercise, starwars is a dataset with 87 Star Wars characters.\n\n\n\n\n\n\n\n\nFirst, we’ll need to group the data by species and then summarize by counting the number of rows of each species. (We will tackle the arranging part later.)\n\n\n\n\n\n\nWarning\n\n\n\nJ-327D is a bit insistent that you spell it summarize and not summarise.\n\n\nHow do we do that? What functions would we use? We insist you name the new variable “characters”!\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  group_by(species) |&gt;\n  summarize(characters = n())\nstarwars |&gt; \n  group_by(species) |&gt;\n  summarize(characters = n())\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nYour editor J-327D says that the tidyverse function summarize() and the n() function are super useful to count rows of data. He says it’s “even cooler” if you use group_by().",
+    "crumbs": [
+      "Trial: Count",
+      "Counting Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/02-count/count-p1.html#jedr-challenge",
+    "href": "trials/02-count/count-p1.html#jedr-challenge",
+    "title": "Counting Part 1",
+    "section": "JedR challenge",
+    "text": "JedR challenge\nJ-327D says that Jar Jar Binks is his favorite being in the Unvierse.\n\nHow many Gungan characters are there?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThere are three Gungan characters in the starwars data.\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "crumbs": [
+      "Trial: Count",
+      "Counting Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/03-sums/sums-p1.html",
+    "href": "trials/03-sums/sums-p1.html",
+    "title": "Trial: Sums",
+    "section": "",
+    "text": "Welcome, Padawan. In this exercise, you’ll be tested on skills using math-based summarize() functions. Like our previous Trials, J-327D will be asking for information from the dataset starwars in the tidyverse packages.\nIf you recall from our earlier exercise, starwars is a dataset with 87 Star Wars characters.",
+    "crumbs": [
+      "Trial: Sums"
+    ]
+  },
+  {
+    "objectID": "trials/03-sums/sums-p1.html#select-and-filter",
+    "href": "trials/03-sums/sums-p1.html#select-and-filter",
+    "title": "Trial: Sums",
+    "section": "Select and filter",
+    "text": "Select and filter\nYour droid editor, J-327D, notes that Chewbacca is taller than the rest of the crew in the Millennium Falcon, but he wonders if he is just tall for a Wookiee. He asks you to find the average heights of Humans, Droids, Gungans and Wookiees from within the starwars data. He notes that that height variable is a measurement in centimeters.\nJ-327D has a specific goal in mind for this first part of the Trial. He says it would be helpful to focus on some specific data before we find the average height.\n\nSelect only the name, height, species variables from the starwars data.\nFilter that to include only rows with species of \"Human\", \"Droid\", \"Gungan\", \"Wookiee\".\nSave the results into a new data frame called characters and then print out the new characters data frame.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\ncharacters &lt;- starwars |&gt;\n  select(name, height, species) |&gt;\n  filter(species %in% c(\"Human\", \"Droid\", \"Gungan\", \"Wookiee\"))\n\ncharacters\ncharacters &lt;- starwars |&gt;\n  select(name, height, species) |&gt;\n  filter(species %in% c(\"Human\", \"Droid\", \"Gungan\", \"Wookiee\"))\n\ncharacters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nStart with your select. Fill in the blanks\nstarwars |&gt;\n  select(name, height, species)\n\n\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nJ-327D notes there are several ways to filter for more than one species, but his favorite, most efficient way is through using %in%:\nstarwars |&gt;\n  select(name, height, species) |&gt;\n  filter(species ____ c(\"Human\", \"Droid\", \"Gungan\", \"Wookiee\"))",
+    "crumbs": [
+      "Trial: Sums"
+    ]
+  },
+  {
+    "objectID": "trials/03-sums/sums-p1.html#finding-the-mean",
+    "href": "trials/03-sums/sums-p1.html#finding-the-mean",
+    "title": "Trial: Sums",
+    "section": "Finding the mean",
+    "text": "Finding the mean\nOK, now that we have a dataframe with our selected rows based on species, we can find the answer to the question J-327D really wants to know.\nIn our last JedR Trial, we counted the number of characters (rows) that were different species. In this trail we need to use group_by() and summarize() and arrange() again, but we must summarize to get the average height – or mean() – of each species in the data.\nDo note:\n\nIf you attempt to match rows containing NA values, the result will also be NA by default. To address this, we are suing na.rm = TRUE to exclude rows with NA values.\nWe are calling the new summarized variable height_avg so our grade checker knows what to look for.\nDon’t forget that we often want to sort the height_avg by descending order, because journalists are typically interested in the most of something.\n\nQuestion for this exercise\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nJ-327D notes that we have a saying for a typical summarize function: GSA stands for group_by(), summarize() and arrange(). They typicaly come together in that order.\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\ncharacters |&gt;\n  group_by(species) |&gt;\n  summarize(height_avg = mean(height, na.rm = TRUE)) |&gt;\n  arrange(desc(height_avg))\ncharacters |&gt;\n  group_by(species) |&gt;\n  summarize(height_avg = mean(height, na.rm = TRUE)) |&gt;\n  arrange(desc(height_avg))",
+    "crumbs": [
+      "Trial: Sums"
+    ]
+  },
+  {
+    "objectID": "trials/03-sums/sums-p1.html#jedr-challenge",
+    "href": "trials/03-sums/sums-p1.html#jedr-challenge",
+    "title": "Trial: Sums",
+    "section": "JedR challenge",
+    "text": "JedR challenge\n\nWhat are the tallest species in the Star Wars Universe?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nWookiees are the tallest species with an average height of 231 centemeters. That’s about 7 feet, 7 inches.",
+    "crumbs": [
+      "Trial: Sums"
+    ]
+  },
+  {
+    "objectID": "trials/03-sums/sums-p1.html#youre-done-with-this-trial",
+    "href": "trials/03-sums/sums-p1.html#youre-done-with-this-trial",
+    "title": "Trial: Sums",
+    "section": "You’re done with this Trial",
+    "text": "You’re done with this Trial\nLike a true Jedi, you face challenges with courage and wisdom. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "crumbs": [
+      "Trial: Sums"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-02.html",
+    "href": "trials/04-plots/plots-02.html",
+    "title": "Plots Part 2",
+    "section": "",
+    "text": "Your humanoid robot editor J-327D takes a look at your chart and nods his head up and down, and then shakes it side to side. Things rattle inside, but you try not to notice.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-02.html#a-plot-as-an-object",
+    "href": "trials/04-plots/plots-02.html#a-plot-as-an-object",
+    "title": "Plots Part 2",
+    "section": "A plot as an object",
+    "text": "A plot as an object\nJ-327D points out a cool thing about ggplot is your can save your plot into an object, and then keep adding layers onto that basic plot using the + operator.\nHe shows you how you can do this …",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-02.html#plotting-values-as-text-labels",
+    "href": "trials/04-plots/plots-02.html#plotting-values-as-text-labels",
+    "title": "Plots Part 2",
+    "section": "Plotting values as text labels",
+    "text": "Plotting values as text labels\nJ-327D first suggestion to improve the chart is to add the count of each species onto each bar so it is easier to read.\nUse a geom to plot the count_species on top of each bar as text.\nNote there are some adjustments in the code already for the location and color of the text.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nspecies_plot +\n  geom_text(\n    aes(label = count_species),\n    hjust = 1.75,\n    color = \"white\"\n  )\nspecies_plot +\n  geom_text(\n    aes(label = count_species),\n    hjust = 1.75,\n    color = \"white\"\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nJ-327D says it is interesting that you can plot a value onto a chart using geom_text(). He noted an important thing to know is since you are pulling the value from the data you have to use aes() to captue the data point to plot it as a label.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/04-plots/plots-02.html#on-to-the-next-step",
+    "href": "trials/04-plots/plots-02.html#on-to-the-next-step",
+    "title": "Plots Part 2",
+    "section": "On to the next step",
+    "text": "On to the next step\nEven a bounty hunter would be impressed by your precision and focus.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "crumbs": [
+      "Trial: Plots",
+      "Plots Part 2"
+    ]
+  },
+  {
+    "objectID": "trials/05-pivots/pivots-p1.html",
+    "href": "trials/05-pivots/pivots-p1.html",
+    "title": "Pivots Part 1",
+    "section": "",
+    "text": "In this JedR Trial we will explore your ability to pivot data to suit your needs. This is a common challenge to prepare data for charting in ggplot or Datawrapper.\nYour droid editor (J-327D) has sent you some data they would like in a different format. J-327D is pretty sure you can use your JedR powers to “pivot” this data to their liking.",
+    "crumbs": [
+      "Trial: Pivots",
+      "Pivots Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/05-pivots/pivots-p1.html#pivot-to-make-more-columns",
+    "href": "trials/05-pivots/pivots-p1.html#pivot-to-make-more-columns",
+    "title": "Pivots Part 1",
+    "section": "Pivot to make more columns",
+    "text": "Pivot to make more columns\nWrite the code below that will transform the characters data into the format noted above.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\ncharacters |&gt; \n  pivot_wider(names_from = gender, values_from = n)\ncharacters |&gt; \n  pivot_wider(names_from = gender, values_from = n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nYou might review the pivoting vignette in the Tidyverse documentation.\n\n\n\n\n\n\n\n\n\n\n\nHint 2\n\n\n\n\n\nDoes it help to know which way you are going? Now you can just review the arguments of pivot_wider().\ncharacters |&gt; \n  pivot_wider(______from = gender, _______from = n)",
+    "crumbs": [
+      "Trial: Pivots",
+      "Pivots Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/05-pivots/pivots-p1.html#repeat-you-must.-train-yourself",
+    "href": "trials/05-pivots/pivots-p1.html#repeat-you-must.-train-yourself",
+    "title": "Pivots Part 1",
+    "section": "Repeat, you must. Train yourself!",
+    "text": "Repeat, you must. Train yourself!\nWell done, Padawan. Your droid editor is quite pleased, but now he wants to see the table with the species as the new columns.\nCan you take the characters data that starts like this:\n\n\n\n\n\n\n\n\nBut make it look like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\ncharacters |&gt; \n  pivot_wider(names_from = gender, values_from = n)\ncharacters |&gt; \n  pivot_wider(names_from = gender, values_from = n)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nThis is just like the challenge above in that you are still using pivot_wider(), but you are using different values for the names and values.",
+    "crumbs": [
+      "Trial: Pivots",
+      "Pivots Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/05-pivots/pivots-p1.html#now-lets-try-going-longer",
+    "href": "trials/05-pivots/pivots-p1.html#now-lets-try-going-longer",
+    "title": "Pivots Part 1",
+    "section": "Now let’s try going longer …",
+    "text": "Now let’s try going longer …\nYour skills rival those of a seasoned Jedi Master.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "crumbs": [
+      "Trial: Pivots",
+      "Pivots Part 1"
+    ]
+  },
+  {
+    "objectID": "trials/06-binds/binds-p1.html",
+    "href": "trials/06-binds/binds-p1.html",
+    "title": "Trial: Binding",
+    "section": "",
+    "text": "With this JedR Trial, you will prove your experience in combining data. While we are using the starwars data in a fashion, it has been broken up into parts that you need to put back together.",
+    "crumbs": [
+      "Trial: Binding"
+    ]
+  },
+  {
+    "objectID": "trials/06-binds/binds-p1.html#about-our-data",
+    "href": "trials/06-binds/binds-p1.html#about-our-data",
+    "title": "Trial: Binding",
+    "section": "About our data",
+    "text": "About our data\nWe start with three separate data frames for humans, droids and other species. The data frames have basic information on these characters, like height, weight, etc.\nThe droids data looks like this:\n\n\n\n\n\n\n\n\nThe humans and other data frames are similar, but have characters from those species only.",
+    "crumbs": [
+      "Trial: Binding"
+    ]
+  },
+  {
+    "objectID": "trials/06-binds/binds-p1.html#stack-the-data",
+    "href": "trials/06-binds/binds-p1.html#stack-the-data",
+    "title": "Trial: Binding",
+    "section": "Stack the data",
+    "text": "Stack the data\nStarting with the droids data, stack it together with the two other data frames (humans and other) and store the result into a single data frame called characters. You should end up with 87 observations with 6 variables. After you create the characters data frame, print it out to your notebook.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\ncharacters &lt;- droids |&gt; \n  bind_rows(humans, other)\n\ncharacters\ncharacters &lt;- droids |&gt; \n  bind_rows(humans, other)\n\ncharacters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nYou might review the bind vignette in the Tidyverse documentation.",
+    "crumbs": [
+      "Trial: Binding"
+    ]
+  },
+  {
+    "objectID": "trials/06-binds/binds-p1.html#add-columns-with-join",
+    "href": "trials/06-binds/binds-p1.html#add-columns-with-join",
+    "title": "Trial: Binding",
+    "section": "Add columns with join",
+    "text": "Add columns with join\nNow that you have created the characters data, we need to join this with a different data set. Our characters data has the name of the character along with variables for physical characteristics like height and weight, etc.\nWe have a different data set available to us, called sw_bio that has more information, like the homeworld and species of each character. It looks like this:\n\n\n\n\n\n\n\n\nYour droid editor, J-327D, has asked you to add this sw_bio information to your characters data.\nYou should end up with the same 87 observations, but you should end up with 11 variables.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\ncharacters  |&gt; \n  left_join(sw_bio)\ncharacters  |&gt; \n  left_join(sw_bio)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nYou might review the join vignette in the Tidyverse documentation.",
+    "crumbs": [
+      "Trial: Binding"
+    ]
+  },
+  {
+    "objectID": "trials/06-binds/binds-p1.html#youre-done-with-this-trial",
+    "href": "trials/06-binds/binds-p1.html#youre-done-with-this-trial",
+    "title": "Trial: Binding",
+    "section": "You’re done with this Trial",
+    "text": "You’re done with this Trial\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "crumbs": [
+      "Trial: Binding"
+    ]
+  },
+  {
+    "objectID": "trials/part-end.html",
+    "href": "trials/part-end.html",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "Great job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+  },
+  {
+    "objectID": "trials/part-end.html#youre-done-with-this-trial",
+    "href": "trials/part-end.html#youre-done-with-this-trial",
+    "title": "JedR Academy",
+    "section": "",
+    "text": "Great job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+  }
+]

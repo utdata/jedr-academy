@@ -1,0 +1,9 @@
+---
+title: "JedR Training"
+format: html
+---
+
+These modules are designed to help you develop specific R skills, with accessible links provided for online access. If you'd like to run them locally, you can find the necessary files in the `webr-trainings/` folder. The topics covered are tailored to make R easier to navigate and apply in various projects. If you're interested in creating additional JedR Training content, please explore the contributions tab for guidelines and opportunities to join the JedR Republic.
+
+- [Categorization](/training/jedr-categorization.html): When you need to rename values in your data, perhaps to create a new categorization schema. 
+- [Manage dates](/training/jedr-manage-dates.html): When you need help parsing dates or making useful date parts for grouping.

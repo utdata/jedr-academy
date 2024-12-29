@@ -1,15 +1,14 @@
 <img src='images/jedr_hex_800.png' align="right" height="139" />
 
-# JedR Academy
+# Welcome to JedR Academy
  
 > “Always pass on what you have learned.” – Yoda
 
+## What is JedR Academy?
 
-## Overview
+To be clear, this isn’t a package.
 
-To be clear, this isn’t a package. It’s some training material. Here is a [list of released lessons](resources/links.qmd).
-
-This project is a series of [learnr](https://rstudio.github.io/learnr/)
+This project is a series of [quarto live](https://r-wasm.github.io/quarto-live/)
 interactive tutorials designed to develop and improve R skills with a
 heavy lean on the [tidyverse](https://www.tidyverse.org/). There are
 two main goals:
@@ -21,62 +20,26 @@ two main goals:
 
 There are two types of lessons:
 
-- **JedR Training**: Tutorials focused on feats of skills instead of on
+- [**JedR Trials**](trials/index.html): Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.
+- [**JedR Training**](training/index.html): Tutorials focused on feats of skills instead of on
   specific packages. For instance, “How to manage dates” vs “How to use
   lubridate.”
-- **JedR Trials**: Short tests over specific skills. These trials are used by students in our J 327D Reporting with Data class.
 
-JedR Padawans can [download the repo](https://github.com/utdata/jedr-academy) and run each notebook on their
-local machines. The notebooks are stored in the `training/` and
-`trials/` folders. All notebooks require `tidyverse`, `learnr` and
-`gradethis`. Some notebooks might require additional packages.
-
-Once you open a notebook, use the **Run Document** option.
-
-![Run Document](images/run-document.png)
+JedR Padawans can complete these lessons online through the provided links, 
+without additional setup. For those who prefer working locally, you can 
+[download the repo](https://github.com/utdata/jedr-academy) to Render each notebook 
+directly on your machine. The notebooks are organized in the `/trials` and 
+`/training` folders.
 
 ## Data sources
 
-While we strive to use the
-[starwars](https://dplyr.tidyverse.org/reference/starwars.html) data as
-much as possible, we’ve had to introduce other Star Wars related data in
-some situations.
-
-All data is in the `data/` folder except `starwars` which is utilized
-from `tidyverse`.
-
-- [starwars](https://dplyr.tidyverse.org/reference/starwars.html)
-  characters data that is part of the tidyverse. It’s our main data set.
-  Small enough to wrap your head around; complex and dirty enough to
-  provide good examples.
-- [starwarsrebels](data/starwarsrebels.csv) is a list of episodes of
-  Star Wars Rebels from
-  [tvmaze.com](https://www.tvmaze.com/shows/117/star-wars-rebels/episodes)
-
-### Other possible data sources
-
-These might be explored later.
-
-- [SWAPI](https://swapi.dev/)
-- [Star Wars Databank](https://www.starwars.com/databank)
-- We’ve pulled some data from
-  [Kaggle](https://www.kaggle.com/jsphyg/star-wars), which notes “This
-  data was gathered using the Star Wars API that is no longer available.
-  The origin of the data is [The Star Wars
-  Wiki](https://starwars.fandom.com/wiki).”
-  - `characters`
-  - `planets`
-  - `species`
-  - `starships`
-  - `vehicles`
-- Found some additional data on
-  [data.world](https://data.world/datafam-con/may-2022-star-wars/workspace/data-dictionary)
-  that yielded a couple new sets:
-  - `survey` (done from Five Thirty Eight, apparently)
-  - `principles`
-  - `soundtracks`
-  - `rt_ratings`
-  - `imdb_ratings`
+Our lessons are built around the Star Wars universe, primarily utilizing the 
+[starwars](https://dplyr.tidyverse.org/reference/starwars.html) "characters" 
+data from the tidyverse package. To enhance these lessons, we've incorporated 
+additional Star Wars data, which can be found in the `/data` folder.
+The starwars data from tidyverse offers a well-sized dataset that's both 
+approachable and intricate, making it a valuable learning tool. If you'd like to 
+read more about the data click [here](/resources/data-info.html).
 
 ## Credits
 
@@ -94,3 +57,4 @@ Other contributors include:
   Overgaard](https://journalism.utexas.edu/graduate/profiles/doctoral/christian-staal-bruun-overgaard),
   Doctoral student. He helped think through the project and wrote the "Managing dates" tutorial.
 - Tamara Rodriguez designed our JedR hex logo.
+- Johan Villatoro, a UT Journalism  undergraduate student, transitioned lessons and training into WebR.

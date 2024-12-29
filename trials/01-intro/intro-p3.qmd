@@ -1,0 +1,75 @@
+---
+title: "Intro Part 3"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - dplyr
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+## Arranging our Data
+
+J-327D has seen you *glimpse* the data and *select* variables in `starwars`. He now wants to find the tallest character.
+
+What function should you add to the code below to *arrange* the data so the tallest person is listed at the top? (**Important note:** Since `tidyverse` *arrange*s numbers from the smallest to the greatest number, you may need another function so the information is in *desc*ending order.)
+
+```{webr}
+#| exercise: ex_3
+starwars |> 
+  select(name, height, homeworld, species) |>   
+  _______(____(______))
+```
+
+
+::: {.solution exercise="ex_3"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_3
+#| solution: true
+starwars |> 
+  select(name, height, homeworld, species) |>   
+  arrange(desc(height))
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_3
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_3"}
+::: {.callout-note collapse="false"}
+
+### Hint
+
+J-327D recommends checking out the `arrange()` function, which you can [learn about here](https://dplyr.tidyverse.org/reference/arrange.html). Don't forget to put your result in **desc**ending order.
+
+:::
+:::
+
+## JedR challenge
+
+### If J-327D asked you to write about the tallest being in the galaxy, who would it be?
+
+Perhaps a towering Wookiee or a menacing Sith lord... Let’s see!
+
+::: {.callout-tip collapse="true"}
+## Click to reveal the answer
+
+The tallest character is **Yarael Poof** with a height of **264 cm**.
+:::
+
+{{< include /trials/part-next.qmd >}}

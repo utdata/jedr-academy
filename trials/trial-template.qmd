@@ -1,0 +1,93 @@
+---
+title: "Document Title"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+Preamble
+
+## Main headline
+
+Setup
+
+**Question for this exercise**
+
+```{webr}
+## Use only if setup is needed
+#| exercise: ex_1
+#| setup: true
+
+```
+
+
+```{webr}
+#| exercise: ex_1
+
+```
+
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_1
+#| solution: true
+
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+Hint description here.
+
+:::
+:::
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 2
+
+Delete this callout if there is no second hint.
+
+:::
+:::
+
+## JedR challenge
+
+### The question from the data
+
+Possible explanation
+
+::: {.callout-tip collapse="true"}
+
+### Click to reveal the answer
+
+**Note** the answer here.
+
+:::
+
+{{< include /trials/part-next.qmd >}}

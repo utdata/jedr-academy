@@ -1,0 +1,80 @@
+---
+title: "Counting Part 2"
+engine: knitr
+format: live-html
+webr:
+  packages:
+    - tidyverse
+    - gradethis
+  render-df: paged-table
+live:
+  show-hints: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+While the `group_by()` and `summarize()` functions are great for summarizing this information, a [Padawan youngling](https://www.starwars.com/news/what-is-a-padawan) has pointed out that the information is not ordered. 
+
+🙄 Rolling your eyes, you tell them that you know this! We just need to use another function in order to **arrange** this data. It's time for you to demostrate this. J-327D notes that journalists  are typically interested in the *most* of something, so to make sure to sort in **desc**ending order.
+
+## Sorting a dataframe
+
+**Change the counted list to show the species with the most characters are the top**
+
+```{webr}
+#| exercise: ex_2
+starwars |>
+  group_by(species) |>
+  summarize(characters = n()) |>
+  _______(____(__________))
+```
+
+::: {.solution exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| exercise: ex_2
+#| solution: true
+starwars |>
+  group_by(species) |>
+  summarize(characters = n()) |>
+  arrange(desc(characters))
+```
+
+:::
+:::
+
+```{webr}
+#| exercise: ex_2
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_2"}
+::: {.callout-note collapse="false"}
+
+### Hint
+
+J-327D wonders just how many hints you need, but suggests you check out [`arrange()`](https://dplyr.tidyverse.org/reference/arrange.html).
+
+:::
+:::
+
+## JedR challenge
+
+Your driod editor J-327D has traversed the galaxy but still wonders ...
+
+### Which species dominates the galaxy?
+
+::: {.callout-tip collapse="true"}
+
+### Click to reveal the answer
+
+There are **35 Human characters** in the `starwars` data, the most of all species.
+
+:::
+
+{{< include /trials/part-end.qmd >}}
