@@ -11,8 +11,8 @@ live:
   show-hints: true
 ---
 
-{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
-{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
 
 Your editor J-327D would begin cracking a smile if only his facial expressions weren't set in some kind of metal alloy. He says your chart is almost ready ... it just needs some proper chart titles and axis labels.
 

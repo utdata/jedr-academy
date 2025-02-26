@@ -11,8 +11,8 @@ live:
   show-hints: true
 ---
 
-{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
-{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
 
 Your humanoid robot editor J-327D takes a look at your chart and nods his head up and down, and then shakes it side to side. Things rattle inside, but you try not to notice.
 

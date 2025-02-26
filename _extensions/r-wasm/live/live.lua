@@ -528,7 +528,10 @@ function setupPyodide(doc)
 
   -- Initial Pyodide startup options
   local pyodide_options = {
-    indexURL = "https://cdn.jsdelivr.net/pyodide/v0.26.1/full/",
+    indexURL = "https://cdn.jsdelivr.net/pyodide/v0.27.0/full/",
+    env = {
+      PLOTLY_RENDERER = 'plotly_mimetype',
+    }
   }
   if (pyodide["engine-url"]) then
     pyodide_options["indexURL"] = pandoc.utils.stringify(pyodide["engine-url"])
