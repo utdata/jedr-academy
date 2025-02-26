@@ -11,7 +11,7 @@ live:
   show-hints: true
 ---
 
-{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 {{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
 
 ## Arranging our Data

@@ -1,0 +1,67 @@
+---
+title: "NICAR Guided Example"
+engine: knitr 
+format: live-html 
+webr:
+  packages:
+    - tidyverse 
+    - gradethis 
+  render-df: paged-table
+live:
+  show-hints: true
+  show-solutions: true
+---
+
+{{< include /_extensions/r-wasm/live/_knitr.qmd >}} 
+{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+
+## NICAR Trial
+
+*Who is the tallest character in the starwars data?*
+
+```{webr}
+#| label: Question
+#| exercise: ex_1
+starwars |> 
+  ________(____) |> 
+  _________(______) |> 
+  _______(____(______))
+```
+
+
+::: {.solution exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Solution
+
+```{webr}
+#| label: Solution
+#| exercise: ex_1
+#| solution: true
+starwars |>
+   group_by(name) |> 
+   summarize (height) |> 
+   arrange(desc(height))
+```
+
+:::
+:::
+
+```{webr}
+#| label: Check
+#| exercise: ex_1
+#| check: true
+grade_this_code()
+```
+
+::: {.hint exercise="ex_1"}
+::: {.callout-note collapse="false"}
+
+### Hint 1
+
+Use `group_by`, `summarize` and `arrange` to find the characters heights from tallest to shortest.
+
+:::
+:::
+
+

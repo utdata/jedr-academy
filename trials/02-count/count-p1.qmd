@@ -11,8 +11,8 @@ live:
   show-hints: true
 ---
 
-{{< include /_extensions/r-wasm/live/_knitr.qmd >}}
-{{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+{{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
 
 As a **JedR Padawan** of the *Galactic News Hub*, you have been assigned to help with a new story about the demographics of the Star Wars Universe. After pitching a few different topics, your droid editor (J-327D) has green lighted a pitch about species variation. For this article, you have been asked to provide a summary statistic about which species is the most common in the Star Wars universe.
 

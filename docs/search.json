@@ -18,14 +18,14 @@
     "href": "trials/trial-template.html#jedr-challenge",
     "title": "Document Title",
     "section": "JedR challenge",
-    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nDarth Vader would tremble in your presence!\nOnce you’ve completed the exercises above, move to the next part of this trial."
+    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nWow! The force is with you!\nOnce you’ve completed the exercises above, move to the next part of this trial."
   },
   {
     "objectID": "trials/part-next.html",
     "href": "trials/part-next.html",
     "title": "JedR Academy",
     "section": "",
-    "text": "Not even the Death Star could stand in your way.\nOnce you’ve completed the exercises above, move to the next part of this trial."
+    "text": "You’ve got the strength of a thousand stormtroopers (but with way better aim)!\nOnce you’ve completed the exercises above, move to the next part of this trial."
   },
   {
     "objectID": "trials/index.html",
@@ -53,7 +53,7 @@
     "href": "trials/05-pivots/pivots-p2.html#youre-done-with-this-trial",
     "title": "Pivots Part 2",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nDarth Vader would tremble in your presence! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nYou’ve mastered this task like a true Jedi Knight. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Pivots",
       "Pivots Part 2"
@@ -130,7 +130,7 @@
     "href": "trials/04-plots/plots-01.html#to-be-continued",
     "title": "Plots Part 1",
     "section": "To be continued …",
-    "text": "To be continued …\nDarth Vader would tremble in your presence!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "To be continued …\nNot even the Death Star could stand in your way.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 1"
@@ -174,7 +174,7 @@
     "href": "trials/02-count/count-p2.html#youre-done-with-this-trial",
     "title": "Counting Part 2",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nGreat job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nYou’ve mastered this task like a true Jedi Knight. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Count",
       "Counting Part 2"
@@ -207,7 +207,7 @@
     "href": "trials/01-intro/intro-p4.html#youre-done-with-this-trial",
     "title": "Intro Part 4",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nGreat job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nNice work. You have controlled your fear. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 4"
@@ -218,7 +218,7 @@
     "href": "trials/01-intro/intro-p2.html#focusing-on-variables",
     "title": "Intro Part 2",
     "section": "Focusing on variables",
-    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nThe galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nNot even the Death Star could stand in your way.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 2"
@@ -497,7 +497,7 @@
     "href": "trials/01-intro/intro-p1.html#jedr-challenge",
     "title": "Intro Part 1",
     "section": "JedR Challenge",
-    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nEven a bounty hunter would be impressed by your precision and focus.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 1"
@@ -519,7 +519,7 @@
     "href": "trials/01-intro/intro-p3.html#jedr-challenge",
     "title": "Intro Part 3",
     "section": "JedR challenge",
-    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nNot even the Death Star could stand in your way.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nDarth Vader would tremble in your presence!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 3"
@@ -603,7 +603,7 @@
     "href": "trials/03-sums/sums-p1.html#youre-done-with-this-trial",
     "title": "Trial: Sums",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nLike a true Jedi, you face challenges with courage and wisdom. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nThe Rebellion couldn’t ask for a better ally. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Sums"
     ]
@@ -646,7 +646,7 @@
     "href": "trials/04-plots/plots-02.html#on-to-the-next-step",
     "title": "Plots Part 2",
     "section": "On to the next step",
-    "text": "On to the next step\nYou’re the hope the galaxy needs!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "On to the next step\nThe Force is strong with you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 2"
@@ -690,7 +690,7 @@
     "href": "trials/05-pivots/pivots-p1.html#now-lets-try-going-longer",
     "title": "Pivots Part 1",
     "section": "Now let’s try going longer …",
-    "text": "Now let’s try going longer …\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "Now let’s try going longer …\nYour skills rival those of a seasoned Jedi Master.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Pivots",
       "Pivots Part 1"
@@ -751,13 +751,83 @@
     "href": "trials/part-end.html",
     "title": "JedR Academy",
     "section": "",
-    "text": "Not even the Death Star could stand in your way. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+    "text": "Wow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
   },
   {
     "objectID": "trials/part-end.html#youre-done-with-this-trial",
     "href": "trials/part-end.html#youre-done-with-this-trial",
     "title": "JedR Academy",
     "section": "",
-    "text": "Not even the Death Star could stand in your way. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+    "text": "Wow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+  },
+  {
+    "objectID": "NICAR/trial-r-building.html#headline",
+    "href": "NICAR/trial-r-building.html#headline",
+    "title": "NICAR Guided Example",
+    "section": "Headline",
+    "text": "Headline\n\nRename Headline as NICAR Trial\n\nQuestion\n\nIn the Question Code Chunk, paste Who is the tallest character in the starwars data?\nIn the Question Code Chunk, paste starwars |&gt; ________(____) |&gt; _________(______) |&gt; _______(____(______))\n\n\n#| label: Question\n#| exercise: ex_1\n# This is what will show up on the rendered page \n\n\n\nSolution. \n\n\n\n\n\n\nSolution\n\n\n\n\n\nIn the Solution Code Chunk, paste starwars |&gt; group_by(name) |&gt; summarize (height) |&gt; arrange(desc(height))\n\n#| label: Solution\n#| exercise: ex_1\n#| solution: true\n# This is the solution to the previous code chunk\n\n\n\n\n\n\nIn the Check Code Chuck, paste grade_this_code()\n\n#| label: Check\n#| exercise: ex_1\n#| check: true\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nIn the Hint Code Chunk, paste Use group_by, summarize and arrange to find the characters heights from tallest to shortest.\n\nHint 1\n\n\n\n\n\nDelete all of these instruction and comments. Then, render!!!"
+  },
+  {
+    "objectID": "NICAR/trial-r-building.html#nicar-trial",
+    "href": "NICAR/trial-r-building.html#nicar-trial",
+    "title": "NICAR OYO Example",
+    "section": "NICAR Trial",
+    "text": "NICAR Trial\nWho is the tallest character in the starwars data?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt;\n   group_by(name) |&gt; \n   summarize (height) |&gt; \n   arrange(desc(height))\nstarwars |&gt;\n   group_by(name) |&gt; \n   summarize (height) |&gt; \n   arrange(desc(height))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nUse group_by, summarize and arrange to find the characters heights from tallest to shortest."
+  },
+  {
+    "objectID": "NICAR/trial-r-building-solution.html#headline",
+    "href": "NICAR/trial-r-building-solution.html#headline",
+    "title": "NICAR Guided Example",
+    "section": "Headline",
+    "text": "Headline\n\nRename Headline as NICAR Trial\nIn the QuestionCode Chunk, paste Who is the tallest character in the starwars data?\nIn the Question Code Chunk, paste starwars |&gt; ________(____) |&gt; _________(______) |&gt; _______(____(______))\nIn the Solution Code Chunk, paste starwars |&gt; group_by(name) |&gt; summarize (height) |&gt; arrange(desc(height))\nIn the Check Code Chuck, paste grade_this_code()\nIn the Hint Code Chunk, paste Use group_by, summarize and arrange to find the characters heights from tallest to shortest.\nDelete all of these instruction and Render\n\nQuestion\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1"
+  },
+  {
+    "objectID": "NICAR/trial-r-building-solution.html#nicar-trial",
+    "href": "NICAR/trial-r-building-solution.html#nicar-trial",
+    "title": "NICAR Guided Example",
+    "section": "NICAR Trial",
+    "text": "NICAR Trial\nWho is the tallest character in the starwars data?\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt;\n   group_by(name) |&gt; \n   summarize (height) |&gt; \n   arrange(desc(height))\nstarwars |&gt;\n   group_by(name) |&gt; \n   summarize (height) |&gt; \n   arrange(desc(height))\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nUse group_by, summarize and arrange to find the characters heights from tallest to shortest."
+  },
+  {
+    "objectID": "NICAR/posit_instructions.html",
+    "href": "NICAR/posit_instructions.html",
+    "title": "Postit.Cloud Instructions",
+    "section": "",
+    "text": "Posit.cloud is an online version of R & RStudio.\n\nGo to posit.cloud\nIf you don’t already have an account, use the Sign up or Get Started options to create a new account. If you already have an account, go ahead and log in.\nOnce you are logged into posit.cloud, go to this here!\nWe’ll start with the file NICAR.qmd"
+  },
+  {
+    "objectID": "NICAR/posit_instructions.html#using-posit.cloud",
+    "href": "NICAR/posit_instructions.html#using-posit.cloud",
+    "title": "Postit.Cloud Instructions",
+    "section": "",
+    "text": "Posit.cloud is an online version of R & RStudio.\n\nGo to posit.cloud\nIf you don’t already have an account, use the Sign up or Get Started options to create a new account. If you already have an account, go ahead and log in.\nOnce you are logged into posit.cloud, go to this here!\nWe’ll start with the file NICAR.qmd"
+  },
+  {
+    "objectID": "NICAR/trial-r-building.html",
+    "href": "NICAR/trial-r-building.html",
+    "title": "NICAR Guided Example",
+    "section": "",
+    "text": "#| edit: false\n#| output: false\nwebr::install(\"gradethis\", quiet = TRUE)\nlibrary(gradethis)\noptions(webr.exercise.checker = function(\n  label, user_code, solution_code, check_code, envir_result, evaluate_result,\n  envir_prep, last_value, engine, stage, ...\n) {\n  if (is.null(check_code)) {\n    # No grading code, so just skip grading\n    invisible(NULL)\n  } else if (is.null(label)) {\n    list(\n      correct = FALSE,\n      type = \"warning\",\n      message = \"All exercises must have a label.\"\n    )\n  } else if (is.null(solution_code)) {\n    list(\n      correct = FALSE,\n      type = \"warning\",\n      message = htmltools::tags$div(\n        htmltools::tags$p(\"A problem occurred grading this exercise.\"),\n        htmltools::tags$p(\n          \"No solution code was found. Note that grading exercises using the \",\n          htmltools::tags$code(\"gradethis\"),\n          \"package requires a model solution to be included in the document.\"\n        )\n      )\n    )\n  } else {\n    gradethis::gradethis_exercise_checker(\n      label = label, solution_code = solution_code, user_code = user_code,\n      check_code = check_code, envir_result = envir_result,\n      evaluate_result = evaluate_result, envir_prep = envir_prep,\n      last_value = last_value, stage = stage, engine = engine)\n  }\n})"
+  },
+  {
+    "objectID": "NICAR/trial-r-building.html#learning-about-our-data",
+    "href": "NICAR/trial-r-building.html#learning-about-our-data",
+    "title": "NICAR Guided Example",
+    "section": "Learning about our data",
+    "text": "Learning about our data\nYour first task: apply beginning tidyverse skills to learn about the characters in the Star Wars universe you’ll be reporting on.\nThroughout this trial we will use the data collection called starwars, which is included with the tidyverse package. Let’s learn a bit more about the structure of the starwars data and how to conquer these JedR Trials.\nThis is what it looks like when we load the tidyverse library and look at the first few lines in the starwars data. Each row of the data is a character within the Star Wars franchise.\n\n#| edit: false\n#| message: false\nlibrary(tidyverse)\n\nstarwars |&gt; head()\n\nAs you can see above, starwars contains some information about Star Wars characters, like their name and height.\nWithin these JedR Trails, you can enter and run code right inside this page. Please make sure to only remove the underscores to add your answers. Since the tidyverse was loaded above, all the functions you would normally see in RStudio are available. Once you enter the code, click the blue Run Code button to see the results.\n\n\n\n\n\n\nWorking within exercise blocks\n\n\n\n\nThe exercise blocks usually have the structure of the code you need, with underscores as placeholders for functions and variables. Replace the underscores with code. Note the number of underscores should match the code you are looking for.\nOnce you enter code and click the Run Code button, your code will be checked vs the solution and you’ll get a grading response after your code output.\nIf you have trouble with an exercise you can click on the Show Hint button. Once all the hints are exhausted, you’ll get a Show Solution button.\nThe auto-complete within code blocks works a little differently than in RStudio and takes “a bit getting used to”. That’s droid-parlance for “it sucks”."
+  },
+  {
+    "objectID": "NICAR/trial-r-building.html#exploring-your-data",
+    "href": "NICAR/trial-r-building.html#exploring-your-data",
+    "title": "NICAR Guided Example",
+    "section": "Exploring your data",
+    "text": "Exploring your data\nThe first thing J-327D asks you for is the number of rows in the starwars data, along with all the variable names and datatypes. What function would you add to the starwars data here to glimpse the data and find those answers?\n\n#| label: glimpse\n#| exercise: ex_1\n_______(starwars)\n\n\nSolution. \n\n\n\n\n\n\nSolution 1\n\n\n\n\n\n\n#| exercise: ex_1\n#| solution: true\nglimpse(starwars)\n\n\n\n\n\n\n#| exercise: ex_1\n#| check: true\ngrade_this_code()\n\n\n\n\n\n\n\n\nHint 1\n\n\n\n\n\nJ-327-D says the star horse you want to ride here is glimpse()."
+  },
+  {
+    "objectID": "NICAR/trial-r-building.html#jedr-challenge",
+    "href": "NICAR/trial-r-building.html#jedr-challenge",
+    "title": "NICAR Guided Example",
+    "section": "JedR Challenge",
+    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!"
   }
 ]
