@@ -24,12 +24,37 @@ There are two types of lessons:
 - [**JedR Training**](training/index.html): Tutorials focused on feats of skills instead of on
   specific packages. For instance, “How to manage dates” vs “How to use
   lubridate.”
+  
+## Installation
 
 JedR Padawans can complete these lessons online through the provided links, 
 without additional setup. For those who prefer working locally, you can 
 [download the repo](https://github.com/utdata/jedr-academy) to Render each notebook 
 directly on your machine. The notebooks are organized in the `/trials` and 
 `/training` folders.
+
+### Packages
+
+Ensure that you have the following packages downloaded as they are required for JedR 
+Academy to function properly.
+
+- tidyverse
+- gradethis
+
+### Quarto CLI
+
+Download [Quarto CLI](https://quarto.org/docs/get-started/) for your corresponding operating system.
+
+### Quarto-Live
+
+Once you open the repository, to use the `quarto-live` extension in your own documents, 
+follow the steps below using a Quarto project as the working directory:
+
+- Open the terminal in RStudio.
+- Paste the following command: `quarto add r-wasm/quarto-live` and run it.
+- Follow the remaining prompts, and Quarto Live will be installed.
+
+For more information, check out the (quarto-live)[https://r-wasm.github.io/quarto-live/] documentation.
 
 ## Data sources
 
