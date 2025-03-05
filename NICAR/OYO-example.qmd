@@ -15,19 +15,17 @@ live:
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}} 
 {{< include /_extensions/r-wasm/live/_gradethis.qmd >}}
 
+# OYO: Create a Quarto Live Example!
+
 ## NICAR Trial
 
-*Who is the tallest character in the starwars data?*
+*Question*
 
 ```{webr}
 #| label: Question
 #| exercise: ex_1
-starwars |> 
-  ________(____) |> 
-  _________(______) |> 
-  _______(____(______))
-```
 
+```
 
 ::: {.solution exercise="ex_1"}
 ::: {.callout-note collapse="false"}
@@ -38,10 +36,7 @@ starwars |>
 #| label: Solution
 #| exercise: ex_1
 #| solution: true
-starwars |>
-   group_by(name) |> 
-   summarize (height) |> 
-   arrange(desc(height))
+
 ```
 
 :::
@@ -51,7 +46,7 @@ starwars |>
 #| label: Check
 #| exercise: ex_1
 #| check: true
-grade_this_code()
+
 ```
 
 ::: {.hint exercise="ex_1"}
@@ -59,9 +54,7 @@ grade_this_code()
 
 ### Hint 1
 
-Use `group_by`, `summarize` and `arrange` to find the characters heights from tallest to shortest.
+
 
 :::
 :::
-
-

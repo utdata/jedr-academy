@@ -1,15 +1,15 @@
 ---
 title: "NICAR Guided Example"
-engine: knitr # Not need if teaching python
-format: live-html # Format for your Quarto document as a `live` variant
+engine: knitr 
+format: live-html
 webr:
   packages:
-    - tidyverse # Can include any needed packages
+    - tidyverse 
     - gradethis 
   render-df: paged-table
 live:
-  show-hints: true # Can be turned off (false)
-  show-solutions: true # Can be turned off (false)
+  show-hints: true 
+  show-solutions: true 
 ---
 
 {{< include /_extensions/r-wasm/live/_knitr.qmd >}} 
@@ -51,7 +51,7 @@ Within these JedR Trails, you can enter and run code right inside this page. Ple
 The first thing J-327D asks you for is **the number of rows in the `starwars` data, along with all the variable names and datatypes**. What function would you add to the `starwars` data here to *glimpse* the data and find those answers? 
 
 ```{webr}
-#| label: glimpse
+#| label: question
 #| exercise: ex_1
 _______(starwars)
 ```
@@ -98,76 +98,3 @@ J-327-D says the star horse you want to ride here is [`glimpse()`](https://dplyr
 There are **87** characters in the `starwars` dataset!
 
 :::
-
-# OYO: Create a Quarto Live Example!
-
-## Headline 
-
-- Rename `Headline` as `NICAR Trial`
-
-*Question*
-
-- In the `Question` Code Chunk, paste
-  Who is the tallest character in the starwars data?
-
-- In the `Question` Code Chunk, paste
-  starwars |> 
-  ________(____) |> 
-  _________(______) |> 
-  _______(____(______))
-
-```{webr}
-#| label: Question
-#| exercise: ex_1
-# This is what will show up on the rendered page 
-
-```
-
-
-::: {.solution exercise="ex_1"}
-::: {.callout-note collapse="false"}
-
-### Solution
-
-In the `Solution` Code Chunk, paste
-   starwars |>
-   group_by(name) |> 
-   summarize (height) |> 
-   arrange(desc(height))
-   
-
-```{webr}
-#| label: Solution
-#| exercise: ex_1
-#| solution: true
-# This is the solution to the previous code chunk
-
-```
-
-:::
-:::
-
-In the `Check` Code Chuck, paste
-  grade_this_code()
-
-```{webr}
-#| label: Check
-#| exercise: ex_1
-#| check: true
-
-```
-
-::: {.hint exercise="ex_1"}
-::: {.callout-note collapse="false"}
-
-In the `Hint` Code Chunk, paste
-  Use `group_by`, `summarize` and `arrange` to find the characters heights from tallest to shortest.
-
-### Hint 1
-
-
-
-:::
-:::
-
-Delete all of these instruction and comments. Then, render!!!
