@@ -51,10 +51,15 @@ Once you open the repository, to use the `quarto-live` extension in your own doc
 follow the steps below using a Quarto project as the working directory:
 
 - Open the terminal in RStudio.
-- Paste the following command: `quarto add r-wasm/quarto-live` and run it.
+- Paste the following command and run it:
+
+    ``` bash
+    quarto add r-wasm/quarto-live
+    ```
+
 - Follow the remaining prompts, and Quarto Live will be installed.
 
-For more information, check out the (quarto-live)[https://r-wasm.github.io/quarto-live/] documentation.
+For more information, check out the [quarto-live](https://r-wasm.github.io/quarto-live/) documentation.
 
 ## Data sources
 

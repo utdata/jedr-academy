@@ -18,14 +18,14 @@
     "href": "trials/trial-template.html#jedr-challenge",
     "title": "Document Title",
     "section": "JedR challenge",
-    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)!\nOnce you’ve completed the exercises above, move to the next part of this trial."
+    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nLike a true Jedi, you face challenges with courage and wisdom.\nOnce you’ve completed the exercises above, move to the next part of this trial."
   },
   {
     "objectID": "trials/part-next.html",
     "href": "trials/part-next.html",
     "title": "JedR Academy",
     "section": "",
-    "text": "The galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial."
+    "text": "You’ve mastered this task like a true Jedi Knight.\nOnce you’ve completed the exercises above, move to the next part of this trial."
   },
   {
     "objectID": "trials/index.html",
@@ -53,7 +53,7 @@
     "href": "trials/05-pivots/pivots-p2.html#youre-done-with-this-trial",
     "title": "Pivots Part 2",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nDarth Vader would tremble in your presence! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Pivots",
       "Pivots Part 2"
@@ -86,7 +86,7 @@
     "href": "trials/04-plots/plots-03.html#youre-done-with-this-trial",
     "title": "Plots Part 3",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nYou’re the hope the galaxy needs! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nGreat job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 3"
@@ -130,7 +130,7 @@
     "href": "trials/04-plots/plots-01.html#to-be-continued",
     "title": "Plots Part 1",
     "section": "To be continued …",
-    "text": "To be continued …\nLike a true Jedi, you face challenges with courage and wisdom.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "To be continued …\nGreat job you have done!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 1"
@@ -174,7 +174,7 @@
     "href": "trials/02-count/count-p2.html#youre-done-with-this-trial",
     "title": "Counting Part 2",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nGreat job! Mind tricks don’t work on you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nWow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Count",
       "Counting Part 2"
@@ -207,7 +207,7 @@
     "href": "trials/01-intro/intro-p4.html#youre-done-with-this-trial",
     "title": "Intro Part 4",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nGreat job! Mind tricks don’t work on you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 4"
@@ -218,7 +218,7 @@
     "href": "trials/01-intro/intro-p2.html#focusing-on-variables",
     "title": "Intro Part 2",
     "section": "Focusing on variables",
-    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nThe galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nThe Rebellion couldn’t ask for a better ally.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 2"
@@ -322,7 +322,7 @@
     "href": "index.html#installation",
     "title": "Welcome to JedR Academy",
     "section": "Installation",
-    "text": "Installation\nJedR Padawans can complete these lessons online through the provided links, without additional setup. For those who prefer working locally, you can download the repo to Render each notebook directly on your machine. The notebooks are organized in the /trials and /training folders.\n\nPackages\nEnsure that you have the following packages downloaded as they are required for JedR Academy to function properly.\n\ntidyverse\ngradethis\n\n\n\nQuarto CLI\n\n\nQuarto-Live\nOnce you open the repository, to use the quarto-live extension in your own documents, follow the steps below using a Quarto project as the working directory:\n\nOpen the terminal in RStudio.\nPaste the following command: quarto add r-wasm/quarto-live and run it.\nFollow the remaining prompts, and Quarto Live will be installed.\n\nFor more information, check out the (quarto-live)[https://r-wasm.github.io/quarto-live/] documentation.",
+    "text": "Installation\nJedR Padawans can complete these lessons online through the provided links, without additional setup. For those who prefer working locally, you can download the repo to Render each notebook directly on your machine. The notebooks are organized in the /trials and /training folders.\n\nPackages\nEnsure that you have the following packages downloaded as they are required for JedR Academy to function properly.\n\ntidyverse\ngradethis\n\n\n\nQuarto CLI\nDownload Quarto CLI for your corresponding operating system.\n\n\nQuarto-Live\nOnce you open the repository, to use the quarto-live extension in your own documents, follow the steps below using a Quarto project as the working directory:\n\nOpen the terminal in RStudio.\nPaste the following command and run it:\nquarto add r-wasm/quarto-live\nFollow the remaining prompts, and Quarto Live will be installed.\n\nFor more information, check out the quarto-live documentation.",
     "crumbs": [
       "Overview"
     ]
@@ -352,7 +352,7 @@
     "href": "NICAR/OYO-example.html#nicar-trial",
     "title": "NICAR Guided Example",
     "section": "NICAR Trial",
-    "text": "NICAR Trial\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1"
+    "text": "NICAR Trial\nQuestion\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint 1"
   },
   {
     "objectID": "NICAR/intro-1-example.html#learning-about-our-data",
@@ -513,7 +513,7 @@
     "href": "trials/01-intro/intro-p1.html#learning-about-our-data",
     "title": "Intro Part 1",
     "section": "Learning about our data",
-    "text": "Learning about our data\nYour first task: apply beginning tidyverse skills to learn about the characters in the Star Wars universe you’ll be reporting on.\nThroughout this trial we will use the data collection called starwars, which is included with the tidyverse package. Let’s learn a bit more about the structure of the starwars data and how to conquer these JedR Trials.\nThis is what it looks like when we load the tidyverse library and look at the first few lines in the starwars data. Each row of the data is a character within the Star Wars franchise.\n\n\n\n\n\n\n\n\nAs you can see above, starwars contains some information about Star Wars characters, like their name and height.\nWithin these JedR Trails, you can enter and run code right inside this page. Please make sure to only remove the underscores to add your answers. Since the tidyverse was loaded above, all the functions you would normally see in RStudio are available. Once you enter the code, click the blue Run Code button to see the results.\n\n\n\n\n\n\nWorking within exercise blocks\n\n\n\n\nThe exercise blocks usually have the structure of the code you need, with underscores as placeholders for functions and variables. Replace the underscores with code. Note the number of underscores should match the code you are looking for.\nOnce you enter code and click the Run Code button, your code will be checked vs the solution and you’ll get a grading response after your code output.\nIf you have trouble with an exercise you can click on the Show Hint button. Once all the hints are exhausted, you’ll get a Show Solution button.\nThe auto-complete within code blocks works a little differently than in RStudio and takes “a bit getting used to”. That’s droid-parlance for “it sucks”.",
+    "text": "Learning about our data\nYour first task: apply beginning tidyverse skills to learn about the characters in the Star Wars universe you’ll be reporting on.\nThroughout this trial we will use the data collection called starwars, which is included with the dplyr package within the tidyverse. Let’s learn a bit more about the structure of the starwars data and how to conquer these JedR Trials.\nThis is what it looks like when we load the dplyr library and look at the first few lines in the starwars data. Each row of the data is a character within the Star Wars franchise.\n\n\n\n\n\n\n\n\nAs you can see above, starwars contains some information about Star Wars characters, like their name and height.\nWithin these JedR Trails, you can enter and run code right inside this page. Please make sure to only remove the underscores to add your answers. Since the tidyverse was loaded above, all the functions you would normally see in RStudio are available. Once you enter the code, click the blue Run Code button to see the results.\n\n\n\n\n\n\nWorking within exercise blocks\n\n\n\n\nThe exercise blocks usually have the structure of the code you need, with underscores as placeholders for functions and variables. Replace the underscores with code. Note the number of underscores should match the code you are looking for.\nOnce you enter code and click the Run Code button, your code will be checked vs the solution and you’ll get a grading response after your code output.\nIf you have trouble with an exercise you can click on the Show Hint button. Once all the hints are exhausted, you’ll get a Show Solution button.\nThe auto-complete within code blocks works a little differently than in RStudio and takes “a bit getting used to”. That’s droid-parlance for “it sucks”.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 1"
@@ -535,7 +535,7 @@
     "href": "trials/01-intro/intro-p1.html#jedr-challenge",
     "title": "Intro Part 1",
     "section": "JedR Challenge",
-    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nYou’ve mastered this task like a true Jedi Knight.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nThe galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 1"
@@ -557,7 +557,7 @@
     "href": "trials/01-intro/intro-p3.html#jedr-challenge",
     "title": "Intro Part 3",
     "section": "JedR challenge",
-    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nThe Force is strong with you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 3"
@@ -590,7 +590,7 @@
     "href": "trials/02-count/count-p1.html#jedr-challenge",
     "title": "Counting Part 1",
     "section": "JedR challenge",
-    "text": "JedR challenge\nJ-327D says that Jar Jar Binks is his favorite being in the Unvierse.\n\nHow many Gungan characters are there?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThere are three Gungan characters in the starwars data.\n\n\n\nThe Force is strong with you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR challenge\nJ-327D says that Jar Jar Binks is his favorite being in the Unvierse.\n\nHow many Gungan characters are there?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThere are three Gungan characters in the starwars data.\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Count",
       "Counting Part 1"
@@ -641,7 +641,7 @@
     "href": "trials/03-sums/sums-p1.html#youre-done-with-this-trial",
     "title": "Trial: Sums",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nNot even the Death Star could stand in your way. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nThe galaxy is lucky to have someone as strong and brave as you. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Sums"
     ]
@@ -684,7 +684,7 @@
     "href": "trials/04-plots/plots-02.html#on-to-the-next-step",
     "title": "Plots Part 2",
     "section": "On to the next step",
-    "text": "On to the next step\nYou’ve mastered this task like a true Jedi Knight.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "On to the next step\nGreat job you have done!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 2"
@@ -728,7 +728,7 @@
     "href": "trials/05-pivots/pivots-p1.html#now-lets-try-going-longer",
     "title": "Pivots Part 1",
     "section": "Now let’s try going longer …",
-    "text": "Now let’s try going longer …\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "Now let’s try going longer …\nNice work. You have controlled your fear.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Pivots",
       "Pivots Part 1"
@@ -779,7 +779,7 @@
     "href": "trials/06-binds/binds-p1.html#youre-done-with-this-trial",
     "title": "Trial: Binding",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nEven a bounty hunter would be impressed by your precision and focus. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nWow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Binding"
     ]
@@ -789,13 +789,13 @@
     "href": "trials/part-end.html",
     "title": "JedR Academy",
     "section": "",
-    "text": "Your skills rival those of a seasoned Jedi Master. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+    "text": "Not even the Death Star could stand in your way. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
   },
   {
     "objectID": "trials/part-end.html#youre-done-with-this-trial",
     "href": "trials/part-end.html#youre-done-with-this-trial",
     "title": "JedR Academy",
     "section": "",
-    "text": "Your skills rival those of a seasoned Jedi Master. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+    "text": "Not even the Death Star could stand in your way. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
   }
 ]

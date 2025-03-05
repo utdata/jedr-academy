@@ -4,7 +4,7 @@ engine: knitr
 format: live-html
 webr:
   packages:
-    - tidyverse
+    - dplyr
     - gradethis
   render-df: paged-table
 live:
@@ -16,16 +16,16 @@ live:
 
 ## Learning about our data
 
-Your first task: apply beginning `tidyverse` skills to learn about the characters in the Star Wars universe you'll be reporting on.
+Your first task: apply beginning [tidyverse](https://www.tidyverse.org/) skills to learn about the characters in the Star Wars universe you'll be reporting on.
 
-Throughout this trial we will use the data collection called `starwars`, which is included with the `tidyverse` package. Let's learn a bit more about the structure of the `starwars` data and how to conquer these JedR Trials.
+Throughout this trial we will use the data collection called `starwars`, which is included with the `dplyr` package within the [tidyverse](https://www.tidyverse.org/). Let's learn a bit more about the structure of the `starwars` data and how to conquer these JedR Trials.
 
-This is what it looks like when we load the `tidyverse` library and look at the first few lines in the `starwars` data. Each row of the data is a character within the Star Wars franchise.
+This is what it looks like when we load the `dplyr` library and look at the first few lines in the `starwars` data. Each row of the data is a character within the Star Wars franchise.
 
 ```{webr}
 #| edit: false
 #| message: false
-library(tidyverse)
+library(dplyr)
 
 starwars |> head()
 ```
