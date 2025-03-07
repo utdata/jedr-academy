@@ -18,14 +18,14 @@
     "href": "trials/trial-template.html#jedr-challenge",
     "title": "Document Title",
     "section": "JedR challenge",
-    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nLike a true Jedi, you face challenges with courage and wisdom.\nOnce you’ve completed the exercises above, move to the next part of this trial."
+    "text": "JedR challenge\n\nThe question from the data\nPossible explanation\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nNote the answer here.\n\n\n\nYour skills rival those of a seasoned Jedi Master.\nOnce you’ve completed the exercises above, move to the next part of this trial."
   },
   {
     "objectID": "trials/part-next.html",
     "href": "trials/part-next.html",
     "title": "JedR Academy",
     "section": "",
-    "text": "You’ve mastered this task like a true Jedi Knight.\nOnce you’ve completed the exercises above, move to the next part of this trial."
+    "text": "Like a true Jedi, you face challenges with courage and wisdom.\nOnce you’ve completed the exercises above, move to the next part of this trial."
   },
   {
     "objectID": "trials/index.html",
@@ -53,7 +53,7 @@
     "href": "trials/05-pivots/pivots-p2.html#youre-done-with-this-trial",
     "title": "Pivots Part 2",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nGreat job! Mind tricks don’t work on you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Pivots",
       "Pivots Part 2"
@@ -86,7 +86,7 @@
     "href": "trials/04-plots/plots-03.html#youre-done-with-this-trial",
     "title": "Plots Part 3",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nGreat job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 3"
@@ -130,7 +130,7 @@
     "href": "trials/04-plots/plots-01.html#to-be-continued",
     "title": "Plots Part 1",
     "section": "To be continued …",
-    "text": "To be continued …\nGreat job you have done!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "To be continued …\nThe galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 1"
@@ -174,7 +174,7 @@
     "href": "trials/02-count/count-p2.html#youre-done-with-this-trial",
     "title": "Counting Part 2",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nWow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nDarth Vader would tremble in your presence! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Count",
       "Counting Part 2"
@@ -207,7 +207,7 @@
     "href": "trials/01-intro/intro-p4.html#youre-done-with-this-trial",
     "title": "Intro Part 4",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nGreat job! Mind tricks don’t work on you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nGreat job you have done! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 4"
@@ -218,7 +218,7 @@
     "href": "trials/01-intro/intro-p2.html#focusing-on-variables",
     "title": "Intro Part 2",
     "section": "Focusing on variables",
-    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nThe Rebellion couldn’t ask for a better ally.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "Focusing on variables\nNow that we know how to glimpse into our data, let’s work on selecting specific variables of interest.\nLet’s say the Galactic News Hub has asked you to write a story about height differences across different species. What function would you use to select only the following variables in starwars: name, height, homeworld, and species? (Make sure you list your variables in that order!)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n\nstarwars |&gt; \n  select(name, height, homeworld, species)\nstarwars |&gt; \n  select(name, height, homeworld, species)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHint\n\n\n\n\n\nJ-327D suggests the select() function, which you can learn about here.\n\n\n\n\nLike a true Jedi, you face challenges with courage and wisdom.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 2"
@@ -380,57 +380,7 @@
     "href": "resources/contributing.html",
     "title": "Contributing to JedR Academy",
     "section": "",
-    "text": "I actually haven’t thought through this yet, but here are some things that come to mind.",
-    "crumbs": [
-      "Contributions"
-    ]
-  },
-  {
-    "objectID": "resources/contributing.html#prerequisites",
-    "href": "resources/contributing.html#prerequisites",
-    "title": "Contributing to JedR Academy",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nTerminal: If you are not familiar with using a Terminal at all, then there is a chapter in Intro to Coding for Journalists that might be a good first look. FreeCodeCamp has a Command Line for Beginners that is more detailed than what we need here.\nInstalling Git: Chapters 2.1 through 2.5 of ICJ Setting Up handle installing git and configuring ssh keys, which I think is worth doing. If you already have git and Github and know how to use them, you are good.\nUsing Git: There is a section in Intro to Coding for Journalists on how to use Git in the context of that class. The basics apply here, as well.",
-    "crumbs": [
-      "Contributions"
-    ]
-  },
-  {
-    "objectID": "resources/contributing.html#clone-the-repo",
-    "href": "resources/contributing.html#clone-the-repo",
-    "title": "Contributing to JedR Academy",
-    "section": "Clone the repo",
-    "text": "Clone the repo\nTo get the jedr-academy repo on your computer and be able to contribute to its code, you have to clone the repo. This downloads a copy of the code and it’s history to your computer.\n\nDO NOT create a project folder in advance! You’ll get one when you clone.\nLaunch Terminal and use cd to get to the directory where you to download the code to.\nDo git clone git@github.com:utdata/jedr-academy.git to download the repo and it’s commit history.\nNow you can close Terminal and open the project in RStudio.\n\nYou only have to do this once.",
-    "crumbs": [
-      "Contributions"
-    ]
-  },
-  {
-    "objectID": "resources/contributing.html#branches",
-    "href": "resources/contributing.html#branches",
-    "title": "Contributing to JedR Academy",
-    "section": "Branches",
-    "text": "Branches\nThe Way to contribute to JedR is to use a git branch. &lt;= Read that tutorial to get an idea how they work.\n\nWith your project open in RStudio, go to the Terminal within RStudio.\nDo git checkout -b new-branch but use a more descriptive name than “new-branch”, like “pivoting-tutorial”. The name should be slug-friendly: all lowercase, words connected with dashes.\nDo git branch to double-check which branch are on.\n\nAt this point, you are working on YOUR copy of the code. You can experiment, add and commit code at will. You can push the code to Github in your branch with …\ngit push origin new-branch\n… but with your branch name.\nDo know if you edit existing files on your local branch that also get edited by others, then we will have to resolve any conflicts. That’s fine, but can be complicated. Just reach out to Christian for help.\n\nPull requests\nWhen you are done with your changes and want to merge them into the default branch, let Christian know via email and he’ll create a Pull Request. If you want to learn more about that, then request to do it together and he’ll explain it.\nThe pull request process compares the new code to the existing code and notes any conflicts, which have to be “resolved” before the branches can be merged.",
-    "crumbs": [
-      "Contributions"
-    ]
-  },
-  {
-    "objectID": "resources/contributing.html#switching-between-branches",
-    "href": "resources/contributing.html#switching-between-branches",
-    "title": "Contributing to JedR Academy",
-    "section": "Switching between branches",
-    "text": "Switching between branches\nNow that you are working on a code base that others might be working on, you have to “git pull” as well as “git push”.\nSome things to consider:\n\nIf you are going to switch branches (like from your own feature branch back to main), then you want to commit (or stash) your current changes first.\ngit checkout branch-name will check out that branch on your local machine.\ngit pull origin branch-name will pull the latest version from the Github down to your computer. This is especially important if you are checking out a branch that others have worked on, like main.",
-    "crumbs": [
-      "Contributions"
-    ]
-  },
-  {
-    "objectID": "resources/contributing.html#trials",
-    "href": "resources/contributing.html#trials",
-    "title": "Contributing to JedR Academy",
-    "section": "Trials",
-    "text": "Trials\nThere is a Quarto template for JedR Trials. Some notes about that.\n\nWe put the order of exercise elements like this: setup (if needed), exercise, solution, grading, hint 1 (if used), hint 2 (if used), etc. In short, we put hints last as they are optional. We typically include the sullution in a callout, but you can remove the callout to hide it but it will still work.",
+    "text": "OK, to be honest, we haven’t yet done any collaboration outside our little universe, so this is sparse and subject to change.\nSee the Installation section of the project README for setup and information about Quarto Live.\nWhere we need the most help is in building new “Training” modules. You can look at this github issue for some ideas.\n\nFork the repository: Click the “Fork” button on the project page to create a copy of the repository in your own GitHub account.\nClone your fork: Use Git command line to download your forked repository to your local machine.\nCreate a branch: Create a new branch from the main branch to isolate your changes.\nMake changes/create content: Follow our styles. Look at the existing tutorials and trials. Follow the fun you find there.Put tutorials in the tutorials/ folders and trials in the trials/ folder.\nCommit changes: Save your changes with a descriptive commit message explaining what you modified.\nPush to your fork: Upload your changes to your forked repository on GitHub.\nOpen a pull request: Initiate a request to merge your changes into the original project by creating a pull request.\n\nAt that point we will review your pull request. We may ask for revisions, and eventually merge your changes if approved.",
     "crumbs": [
       "Contributions"
     ]
@@ -443,11 +393,22 @@
     "text": "This notebook creates the image for the Plots Trial.\n\nlibrary(tidyverse)\n\n\nspecies_count &lt;- starwars |&gt;\n  group_by(species) |&gt;\n  summarize(count_species = n()) |&gt;\n  arrange(desc(count_species)) |&gt;\n  drop_na()\n\nspecies_plot &lt;- species_count |&gt; \n  filter(count_species &gt; 1) |&gt; \n  ggplot(aes(\n    x = count_species,\n    y = species |&gt; reorder(count_species))\n  ) +\n  geom_col()\n\nspecies_plot_save &lt;- species_plot +\n  geom_text(\n    aes(label = count_species),\n    hjust = 1.75,\n    color = \"white\"\n  ) +\n  labs(\n    title = \"A lot of humans\",\n    subtitle = str_wrap(\"Of the species in the Star Wars Universe with more than one unit in our data, humans are the most prevalent. This could indicate a sampling problem. \"),\n    x = \"Count of species\", y = \"Species\",\n    caption = \"By Galactic News Hub\"\n  )\n\nggsave(\"../trials/04-plots/img/species.png\")\n\nSaving 7 x 5 in image"
   },
   {
+    "objectID": "training/jedr-categorization.html",
+    "href": "training/jedr-categorization.html",
+    "title": "Categorization",
+    "section": "",
+    "text": "Tutorial by: Christian McDonald, JedR master",
+    "crumbs": [
+      "Training",
+      "Categorization"
+    ]
+  },
+  {
     "objectID": "training/jedr-categorization.html#how-to-make-categories-from-data",
     "href": "training/jedr-categorization.html#how-to-make-categories-from-data",
     "title": "Categorization",
     "section": "How to make categories from data",
-    "text": "How to make categories from data\nWelcome Padawan. May your quest to become a JedR Master be fruitful. “Do or do not. There is no try.”\nSometimes as journalists (or data scientists) we need to create new categories for our data. An example might be where we have a column of data that has too many different values to plot effectively. We might be able to re-categorize those values to fewer individual choices, maybe combining less important values into a generic term like “other”.\nSome real-worldish examples:\n\nYou want to show race/ethnicity breakdowns in a chart or story about Hispanic representation. There are eight different values and some are quite small. You might create a column to use the values Asian, Black, Hispanic and White with all others changed to “Other”.\nPerhaps you are doing a story on crime and want to highlight violent crimes vs property vs other crimes. You might create a new column that categorizes many individual charges into these buckets.\n\nWe’re taking records and putting them into piles or groups based on one or more values.\n\nJedR Mind Trick: When we categorize values like this, we want to create a new column intead of overwriting an existing one. This way you can check your work. You can always remove or rename columns later.\n\n\nGoals of this training session\n\nTo apply case_match() within a mutate() to create data categories. It’s a one-to-one match, for the most part.\nTo apply case_when() within a mutate() to create data categories. This allows more complex logic.",
+    "text": "How to make categories from data\nWelcome Padawan. May your quest to become a JedR Master be fruitful.\n\n“Do or do not. There is no try.”\n\nSometimes as journalists (or data scientists) we need to create new categories for our data. An example might be where we have a column of data that has too many different values to plot effectively. We might be able to re-categorize those values to fewer individual choices, maybe combining less important values into a generic term like “other”.\nSome real-worldish examples:\n\nYou want to show race/ethnicity breakdowns in a chart or story about Hispanic representation. There are eight different values and some are quite small. You might create a column to use the values Asian, Black, Hispanic and White with all others changed to “Other”.\nPerhaps you are doing a story on crime and want to highlight violent crimes vs property vs other crimes. You might create a new column that categorizes many individual charges into these buckets.\n\nWe’re taking records and putting them into piles or groups based on one or more values.\n\nGoals of this training session\n\nTo apply case_match() within a mutate() to create data categories. It’s a one-to-one match, for the most part.\nTo apply case_when() within a mutate() to create data categories. This allows more complex logic.",
     "crumbs": [
       "Training",
       "Categorization"
@@ -469,7 +430,7 @@
     "href": "training/jedr-categorization.html#using-case_match",
     "title": "Categorization",
     "section": "Using case_match()",
-    "text": "Using case_match()\nOne of the easier methods to categorize data is to use case_match(). The logic is straighforward: For this value, substitute that value.\nTo make clear our goal here for the Galactic Hub News: We want to create a new column called species_category that has three values: Human, Droid, Other/Unknown. And they need to be based on the existing species variable.\n\nHow case_match works\nWhile is is possible to recatagorize our values into the same column, a good JedR will instead use mutate() and case_when() to create a new column and then fill it with the results.\ndata |&gt; \n  mutate(\n    new_column = case_when(\n      existing_column,\n      \"Old Value 1 from existing_column\" ~ \"New Value 1\",\n      \"Old Value 2 from existing_column\" ~ \"New Value 2\",\n      .default = \"Value for everything else\"\n    )\n  )\n\nThis is standard usage for the mutate() function … you create the new column and then set it to a value. In this case, we are setting the value to the result of the case_when() function.\nWithin case_when(), we have to first name the column we are pulling from. Like where are we looking for these values?\nThen we have a series of statements separated with ~. If we find what is on the left-hand side, then we change it to what is on the right-hand side.\nLastly we have a “default” to handle everything else we haven’t specified. In some cases you might make this .default = existing_column to keep the existing value for those rows.\n\nThe order you put these is important. Once a match has been found and updated, that value won’t be changed again.\nSo, with our starwars data, a partial solution might look like this:\n\n\n\n\n\n\n\n\nIn the example above, we use slice() to skip down to part of the data where we can see the change. (The first 20 rows are all humans and droids.) We also used select() to focus on our columns of interest.\nNote we’ve only changed two of the values we need to change, though. (You can see Toydarian and Dug have not been changed.) This method is very handy if you have just a few things to change.\nIn our case here, we could list all 36 changes, but … Use the Force, Luke.\n\n\nUsing .default\ncase_match() changes exactly what you specify and leaves anything you don’t specify as NA. If you want the non-matches to be something else, you can specify them with .default =.\nUsing this, we can set Human to Human and Droid to Droid, but then everything else to Other/Unknown.\nNOTE that the specific matches use ~ to separate what to look for and what to change it to, but the .default designation uses =.\n\n\n\n\n\n\n\n\n\n\nCheck your results\n\nJedR Mind Trick: Even with these few rows, it’s hard to see all the changes made in your data. It is sometimes helpful to do a count() on your changes to check them. Just be sure to count the already-changed data, not the result you are saving into the new object.\n\nHere we save the recategorized data into a new object called sw_species and then run a count() on our two columns to check the results.\n\n\n\n\n\n\n\n\nThe case_match() function works great if you have one-to-one changes that don’t require logic. But when you have more complex needs, we need more Force.",
+    "text": "Using case_match()\nOne of the easier methods to categorize data is to use case_match(). The logic is straighforward: For this value, substitute that value.\n\nJedR Mind Trick: When we categorize values like this, we want to create a new column intead of overwriting an existing one. This way you can check your work. You can always remove or rename columns later.\n\nTo make clear our goal here for the Galactic Hub News: We want to create a new column called species_category that has three values: Human, Droid, Other/Unknown. And they need to be based on the existing species variable.\n\nHow case_match works\nWhile it is possible to recatagorize our values into the same column, a good JedR will instead use mutate() and case_when() to create a new column and then fill it with the results.\ndata |&gt; \n1  mutate(\n2    new_column = case_when(\n3      existing_column,\n4      \"Old Value 1 from existing_column\" ~ \"New Value 1\",\n      \"Old Value 2 from existing_column\" ~ \"New Value 2\",\n5      .default = \"Value for everything else\"\n    )\n  )\n\n1\n\nThis is standard usage for the mutate() function … you create the new column and then set it to a value. In this case, we are setting the value to the result of the case_when() function.\n\n2\n\nWe are putting our categorized values into a new column.\n\n3\n\nWithin case_when(), we have to specify the column we are looking into when we search for thse values.\n\n4\n\nThen we have a series of statements separated with ~. If we find what is on the left-hand side, then we change it to what is on the right-hand side.\n\n5\n\nLastly we have a “default” to handle everything else we haven’t specified. In some cases you might make this .default = existing_column to keep the existing value for those rows.\n\n\nThe order you put these is important. Once a match has been found and updated, that value won’t be changed again.\nSo, with our starwars data, a partial solution might look like this:\n\n\n\n\n\n\n\n\nAt the end here we are using select() and slide to just focus our result to just to focus on our columns and rows of interest. (The first 20 rows are all humans and droids.)\nNote we’ve only changed two of the values we need to change, though. (You can see Toydarian and Dug have not been changed.) This method is very handy if you have just a few things to change.\nIn our case here, we could list all 36 changes, but … Use the Force, Luke.\n\n\nUsing .default\ncase_match() changes exactly what you specify and leaves anything you don’t specify as NA. If you want the non-matches to be something else, you can specify them with .default =.\nSo, we’ll tackle this in a different way. We can set Human to “Human” (i.e, keep it) and Droid to “Mechanical”, but then everything else to “Other/Unknown”.\nNOTE that the specific matches use ~ to separate what to look for and what to change it to, but the .default designation uses =.\n\n\n\n\n\n\n\n\n\n\nCheck your results\n\nJedR Mind Trick: Even with these few rows, it’s hard to see all the changes made in your data. It is sometimes helpful to do a count() on your changes to check them. Just be sure to count the already-changed data, not the result you are saving into the new object.\n\nHere we save the recategorized data into a new object called sw_species and then run a count() on our two columns to check the results.",
     "crumbs": [
       "Training",
       "Categorization"
@@ -480,7 +441,7 @@
     "href": "training/jedr-categorization.html#padawan-practice-case_match",
     "title": "Categorization",
     "section": "Padawan practice: case_match",
-    "text": "Padawan practice: case_match\nIf you look at the gender column in the data, you’ll see there are two values: masculine and feminine, but there are four records that don’t have a gender value are listed as NA.\n\n\n\n\n\n\n\n\nFor this quest, you will use case_match() to fill in those blank values with unknown.\nNote in the code we are creating a new dataframe and filling with mutated starwars data.\nWithin the case_match section you’ll need to note what variable you are working from, what to do if that value is NA, and set the remainder using a default.\nAt the end it prints the results.",
+    "text": "Padawan practice: case_match\nIf you look at the gender column in the data, you’ll see there are two values: masculine and feminine, but there are four records that don’t have a gender value are listed as NA.\n\n\n\n\n\n\n\n\nFor this quest, you will use case_match() to fill in those blank values with unknown.\nNote in the code you are creating a new dataframe and then filling it with the mutated starwars data.\nWithin the case_match section you’ll need to note what variable you are working from, what to do if that value is NA, and set the remainder using a default.\nAt the end it prints the results.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution 1\n\n\n\n\n\n\n\ngender_reveal &lt;- starwars |&gt; \n  mutate(\n    gender_clean = case_match(\n      gender,\n      NA ~ \"unknown\",\n      .default = gender\n    ))\n\ngender_reveal |&gt; \n  select(name, gender, gender_clean)\ngender_reveal &lt;- starwars |&gt; \n  mutate(\n    gender_clean = case_match(\n      gender,\n      NA ~ \"unknown\",\n      .default = gender\n    ))\n\ngender_reveal |&gt; \n  select(name, gender, gender_clean)",
     "crumbs": [
       "Training",
       "Categorization"
@@ -491,7 +452,7 @@
     "href": "training/jedr-categorization.html#using-case_when",
     "title": "Categorization",
     "section": "Using case_when()",
-    "text": "Using case_when()\nThe case_when() function is useful when you need to set new values based on some kind of logic.\nHere we will use case_when to do the same thing we did above with case_match() and then explain how it is working below.\n\n\n\n\n\n\n\n\nYou can see the syntax works differently (once we are past the mutate).\n\nWithin the case_when(), there are rules that split with ~. On the left is a logical test, and on the right is a new value designation.\nEach rule is run in order. A value is set only once, so if a value is set in one rule, it will NOT be reset by subsequent rules. You must write your rules from the most specific to the most general.\nThe last line .default = handles all values not already changed. If left out, values not specified would be set NA.\n\n\nA more complex example\nUnlike case_match() where you are drawing from values in one specific column, the logic tests used with case_when() can be just about anything as long as they evaluate to TRUE or FALSE.\nWhile this is a silly example, here we create a column called size_compare that notes if a character is “larger” or “smaller” than an average human, unless they are a droid, in which case they are labeled “mechanical”.\n\n\n\n\n\n\n\n\nNote we started with the rule for “Droid” because that is the most specific thing we needed to change. When then set the “larger” value, and the rest got “smaller.”",
+    "text": "Using case_when()\nThe case_match() function works great if you have one-to-one changes that don’t require logic. But when you have more complex needs, we need a more powerful use of the Force.\nWith the case_when() function, we can set new values based on some kind of logic instead of one-to-one matching.\ndata |&gt; \n1  mutate(\n    new_column = case_when(\n2      logic_test1 ~ \"New value 1\",\n3      logic_test2 ~ \"New value 2\",\n4      .default = \"Default value\"\n    )\n  )\n\n1\n\nAgain, we start with a mutate() and put our results into a new column.\n\n2\n\nBut now with case_when(), instead of looking at values in a single column, we can use more complex logic. The test is on the left side of the ~, and on the right is a new value designation.\n\n3\n\nEach rule is run in order. A value is set only once, so if a value is set in one rule, it will NOT be reset by subsequent rules. You must write your rules from the most specific to the most general.\n\n4\n\nWe still have a .default = to handles all values not already changed. If left out, values not specified would be set NA.\n\n\nHere we will use case_when() and its logic statements to do the same thing we did above with case_match(), setting Human and Droid, but making the rest “Other/Unknown”.\n\n\n\n\n\n\n\n\nAgain, we’ve used the select() and slice() just to preview some specific rows in the result.\n\nA more complex example\nUnlike case_match() where you are drawing from values in one specific column, the logic tests used with case_when() can be just about anything as long as they evaluate to TRUE or FALSE.\nWhile this is a silly example, here we create a column called size_compare that notes if a character is “Larger” or “Smaller” than an average male human, unless they are a droid, in which case they are labeled “Mechanical”.\n\n\n\n\n\n\n\n\nNote we started with the rule for “Droid” because that is the most specific thing we needed to change. When then set the “larger” value, and the rest got “smaller.”",
     "crumbs": [
       "Training",
       "Categorization"
@@ -502,7 +463,7 @@
     "href": "training/jedr-categorization.html#padawan-practice-case_when",
     "title": "Categorization",
     "section": "Padawan practice: case_when",
-    "text": "Padawan practice: case_when\nCreate a column called main_planet using the homeworld column. For each characters with a homeworld of “Tatooine” or “Naboo”, label it as TRUE and otherwise label as FALSE, which will create a logical datatype column.\n(This is a fill-in-the-blank thing …)\n\n\n\n\n\n\n\n\n\n\n\nPage through your results to check your answers.\nThat’s it for now.\n-30-",
+    "text": "Padawan practice: case_when\nCreate a column called main_planet using the homeworld column. For each character with a homeworld of “Tatooine” or “Naboo”, label it as TRUE and otherwise label as FALSE, which will create a logical datatype column.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolution 1\n\n\n\n\n\n\n\nmainchars &lt;- starwars |&gt; \n  mutate(\n    main_planet_origin = case_when(\n      str_detect(homeworld, \"Tatooine|Naboo\") ~ TRUE,\n      .default = FALSE\n    ))\n\nmainchars |&gt; \n  select(name, homeworld, main_planet_origin)\nmainchars &lt;- starwars |&gt; \n  mutate(\n    main_planet_origin = case_when(\n      str_detect(homeworld, \"Tatooine|Naboo\") ~ TRUE,\n      .default = FALSE\n    ))\n\nmainchars |&gt; \n  select(name, homeworld, main_planet_origin)\n\n\n\n\n\n\n\n\n\nPage through your results to check your answers.\nThat’s it for now.\n-30-",
     "crumbs": [
       "Training",
       "Categorization"
@@ -535,7 +496,7 @@
     "href": "trials/01-intro/intro-p1.html#jedr-challenge",
     "title": "Intro Part 1",
     "section": "JedR Challenge",
-    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nThe galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR Challenge\n\nHow many rows are there in your data?\n\n\n\n\n\n\nClick to check your answer\n\n\n\n\n\nThere are 87 characters in the starwars dataset!\n\n\n\nNot even the Death Star could stand in your way.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 1"
@@ -557,7 +518,7 @@
     "href": "trials/01-intro/intro-p3.html#jedr-challenge",
     "title": "Intro Part 3",
     "section": "JedR challenge",
-    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR challenge\n\nIf J-327D asked you to write about the tallest being in the galaxy, who would it be?\nPerhaps a towering Wookiee or a menacing Sith lord… Let’s see!\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThe tallest character is Yarael Poof with a height of 264 cm.\n\n\n\nThe galaxy is lucky to have someone as strong and brave as you.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Intro",
       "Intro Part 3"
@@ -590,7 +551,7 @@
     "href": "trials/02-count/count-p1.html#jedr-challenge",
     "title": "Counting Part 1",
     "section": "JedR challenge",
-    "text": "JedR challenge\nJ-327D says that Jar Jar Binks is his favorite being in the Unvierse.\n\nHow many Gungan characters are there?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThere are three Gungan characters in the starwars data.\n\n\n\nGreat job! Mind tricks don’t work on you!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "JedR challenge\nJ-327D says that Jar Jar Binks is his favorite being in the Unvierse.\n\nHow many Gungan characters are there?\n\n\n\n\n\n\nClick to reveal the answer\n\n\n\n\n\nThere are three Gungan characters in the starwars data.\n\n\n\nYou’ve got the strength of a thousand stormtroopers (but with way better aim)!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Count",
       "Counting Part 1"
@@ -641,7 +602,7 @@
     "href": "trials/03-sums/sums-p1.html#youre-done-with-this-trial",
     "title": "Trial: Sums",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nThe galaxy is lucky to have someone as strong and brave as you. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nNot even the Death Star could stand in your way. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Sums"
     ]
@@ -684,7 +645,7 @@
     "href": "trials/04-plots/plots-02.html#on-to-the-next-step",
     "title": "Plots Part 2",
     "section": "On to the next step",
-    "text": "On to the next step\nGreat job you have done!\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "On to the next step\nThe Rebellion couldn’t ask for a better ally.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Plots",
       "Plots Part 2"
@@ -728,7 +689,7 @@
     "href": "trials/05-pivots/pivots-p1.html#now-lets-try-going-longer",
     "title": "Pivots Part 1",
     "section": "Now let’s try going longer …",
-    "text": "Now let’s try going longer …\nNice work. You have controlled your fear.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
+    "text": "Now let’s try going longer …\nLike a true Jedi, you face challenges with courage and wisdom.\nOnce you’ve completed the exercises above, move to the next part of this trial.",
     "crumbs": [
       "Trial: Pivots",
       "Pivots Part 1"
@@ -779,7 +740,7 @@
     "href": "trials/06-binds/binds-p1.html#youre-done-with-this-trial",
     "title": "Trial: Binding",
     "section": "You’re done with this Trial",
-    "text": "You’re done with this Trial\nWow! The force is with you! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
+    "text": "You’re done with this Trial\nThe Rebellion couldn’t ask for a better ally. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training.",
     "crumbs": [
       "Trial: Binding"
     ]
@@ -789,13 +750,13 @@
     "href": "trials/part-end.html",
     "title": "JedR Academy",
     "section": "",
-    "text": "Not even the Death Star could stand in your way. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+    "text": "You’re the hope the galaxy needs! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
   },
   {
     "objectID": "trials/part-end.html#youre-done-with-this-trial",
     "href": "trials/part-end.html#youre-done-with-this-trial",
     "title": "JedR Academy",
     "section": "",
-    "text": "Not even the Death Star could stand in your way. Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
+    "text": "You’re the hope the galaxy needs! Please inform your JedR Master that you have completed this trial. You are free to attempt the next JedR Trial or continue with JedR Training."
   }
 ]
